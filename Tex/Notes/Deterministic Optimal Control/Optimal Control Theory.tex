@@ -1,0 +1,162 @@
+\documentclass[12pt,a4paper]{book}
+% \usepackage{times}
+\usepackage[a4paper, margin=0.6in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\selectlanguage{english}
+\usepackage{amsmath,amsthm,amssymb,fge,mathrsfs}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{makeidx} %per fare l'indice
+\usepackage{faktor} %per i quozienti
+
+%tikz (pacchetto per i disegni)
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{calc} %per poter fare i calcoli
+\usetikzlibrary{arrows.meta} %per usare veri tipi di frecce
+\usetikzlibrary{calc,patterns,angles,quotes} %per disegnare gli angoli
+\usetikzlibrary{decorations} %per i grafici orientati (con sopra le frecce)
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{backgrounds} %per il colore sullo sfondo delle immagini
+\usetikzlibrary{shapes.geometric} %per i triangoli negli alberi
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween} %per colorare le aree comprese tra due grafici
+
+\usepackage{caption} %per la caption sotto alle immagini
+\usepackage[tracking=true]{microtype} %per avvicinare il testo
+\usepackage{enumitem} %per modificare agilmente gli elenchi
+\usepackage{esvect} %per le freccette di vettore sui caratteri
+\usepackage{stmaryrd} %fulmine per il simbolo dell'assurdo
+\usepackage{relsize} %per fare i simboli più grandi
+\usepackage{mathabx} %per il simbolo di dotminus
+\usepackage{esint} %per l'integrale tagliato (fint)
+
+\usepackage[customcolors]{hf-tikz} %per evidenziare pezzi di matrice
+
+\usepackage{verbatim} %per commentare un blocco
+
+\usepackage{multirow} %per la tabella
+\usepackage{array} %per lo spazio nella tabella
+
+%Libreria per gli alberi
+\usepackage[linguistics]{forest}
+
+%Librerie aggiunte
+\usepackage{multicol} %per gli elenchi puntati su più colonne/righe
+\usepackage{multirow}
+
+%pacchetto per il prodotto interno
+\usepackage{physics}
+
+%Libreria per i subfiles
+
+\usepackage{subfiles} %meglio caricarla per ultima
+
+\usepackage{biblatex}
+\addbibresource{biblio.bib}
+%usiamo paragraph come nuova sottosottosottosezione 
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+\newtheorem{theorem}{Theorem}
+\numberwithin{theorem}{section}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+
+\newtheorem{definition}{Definition}
+\numberwithin{definition}{section}
+
+\newtheorem*{remark}{Remark}
+
+\newtheorem{example}{Example}
+\numberwithin{example}{section}
+
+\newtheorem{exercise}{Exercise}
+\numberwithin{exercise}{section}
+
+\renewcommand{\proofname}{\proof}
+
+\renewcommand{\thefootnote}{[\arabic{footnote}]}% Modify footnote globally
+
+%%%simboli speciali
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\CO}{\mathcal{C}}
+
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\Ima}{Im}
+
+\DeclareMathOperator{\mcd}{MCD}
+\DeclareMathOperator{\mcm}{mcm}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\spanlin}{span}
+
+%\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+%\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+%Necessario per far si che la dimensione del valore assoluto e della norma si adatti all'aromento passato
+%\makeatletter
+%\let\oldabs\abs
+%\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+%\let\oldnorm\norm
+%\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+%\makeatother
+
+%rinomino il comando per il prodotto interno
+\let\pint\braket
+%comando per il prodotto scalare
+\newcommand{\pscal}[2]{\left\langle #1, #2 \right\rangle}
+
+%Spaziatura per i quantificatori
+\let\oldforall\forall
+\renewcommand{\forall}{\; \oldforall \;}
+\let\oldexists\exists
+\renewcommand{\exists}{\; \oldexists \;}
+
+%freccia per la convergenza debole
+\newcommand{\longrightharpoonup}{\xrightharpoonup{\phantom{AB}}}
+
+\newcommand{\warrow}{\xrightharpoonup{\:\, w \:\, }}
+\newcommand{\sarrow}{\overset{s}{\longrightarrow}}
+\newcommand{\wastarrow}{\xrightharpoonup{ w^* }}
+
+\setlength{\parindent}{0in} 
+\title{Title}
+\author{Andrea Scalenghe}
+\date{March 2024}
+
+
+
+\begin{document}
+
+%I want to understand how to proceed also in view of stochastics
+
+\section{Motivating example} %the idea is to use a working example that we borrow all over the dissertation. Starting deterministic we get stochastic and generalize it
+
+\section{Finite horizon}
+
+\section{Pontryagin} %Maybe in dynamic programming?
+
+\section{Dynamic programming}
+
+\section{Existence theorem}
+
+\end{document}
