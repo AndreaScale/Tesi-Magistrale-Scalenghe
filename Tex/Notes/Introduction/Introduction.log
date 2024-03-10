@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  10 MAR 2024 20:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  10 MAR 2024 17:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex"
-(c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex
+**c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Introduction/Introduction.tex
+(c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Introduction/Introduction.tex
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
 (c:/texlive/2023/texmf-dist/tex/latex/base/book.cls
@@ -1382,8 +1382,8 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count502
 \@quotereset=\count503
-(./Optimal Control Theory.aux)
-\openout1 = `"Optimal Control Theory.aux"'.
+(./Introduction.aux)
+\openout1 = `Introduction.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
 LaTeX Font Info:    ... okay on input line 148.
@@ -1441,9 +1441,9 @@ LaTeX Font Info:    ... okay on input line 148.
 LaTeX Info: Command `\dddot' is already robust on input line 148.
 LaTeX Info: Command `\ddddot' is already robust on input line 148.
 Package hyperref Info: Link coloring OFF on input line 148.
-(./Optimal Control Theory.out) (./Optimal Control Theory.out)
+(./Introduction.out) (./Introduction.out)
 \@outlinefile=\write6
-\openout6 = `"Optimal Control Theory.out"'.
+\openout6 = `Introduction.out'.
 
  (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1496,91 +1496,38 @@ File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout5 = `"Optimal Control Theory.bcf"'.
+\openout5 = `Introduction.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '"Optimal Control Theory".bbl' not found.
+Package biblatex Info: ... file 'Introduction.bbl' not found.
 
-No file "Optimal Control Theory".bbl.
+No file Introduction.bbl.
 Package biblatex Info: Reference section=0 on input line 148.
 Package biblatex Info: Reference segment=0 on input line 148.
-(./Finite horizon.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
- (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (c:/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
- (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (c:/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Trying to load font information for U+fgerm on input line 4.
- (c:/texlive/2023/texmf-dist/tex/latex/fge/Ufgerm.fd
-File: fgerm.fd 2015/05/19 1.25 fge roman symbol font definitions
-)
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/12'
-(microtype)             (new value: 12.0pt) on input line 4.
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/8'
-(microtype)             (new value: 8.0pt) on input line 4.
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/6'
-(microtype)             (new value: 6.0pt) on input line 4.
-LaTeX Font Info:    Trying to load font information for U+fgeit on input line 4.
- (c:/texlive/2023/texmf-dist/tex/latex/fge/Ufgeit.fd
-File: fgeit.fd 2015/05/19 1.25 fge italic symbol font definitions
-)
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/12'
-(microtype)             (new value: 12.0pt) on input line 4.
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/8'
-(microtype)             (new value: 8.0pt) on input line 4.
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/6'
-(microtype)             (new value: 6.0pt) on input line 4.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 4.
- (c:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for U+esvect on input line 4.
- (c:/texlive/2023/texmf-dist/tex/latex/esvect/uesvect.fd
-File: uesvect.fd 
-)
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 4.
- (c:/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+esint on input line 4.
- (c:/texlive/2023/texmf-dist/tex/latex/esint/uesint.fd
-File: uesint.fd 
-)) [1{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-] (./Dynamic programming principle.tex [2]
-Overfull \hbox (7.99551pt too wide) detected at line 83
-[][][][] [] \U/matha/m/n/12 ^^P \OT1/cmr/m/n/12 0
- []
-
-) [3] (./Optimal Control Theory.aux)
+(./Introduction.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
-Package rerunfilecheck Info: File `"Optimal Control Theory".out' has not changed.
-(rerunfilecheck)             Checksum: F393E304B2CCAB52EE60A87907FBE3DE;557.
-Package logreq Info: Writing requests to '"Optimal Control Theory".run.xml'.
-\openout1 = `"Optimal Control Theory.run.xml"'.
+Package rerunfilecheck Info: File `Introduction.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package logreq Info: Writing requests to 'Introduction.run.xml'.
+\openout1 = `Introduction.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56582 strings out of 474267
- 1322594 string characters out of 5751465
- 2273350 words of memory out of 5000000
- 77881 multiletter control sequences out of 15000+600000
- 571766 words of font info for 116 fonts, out of 8000000 for 9000
+ 56183 strings out of 474267
+ 1315155 string characters out of 5751465
+ 2250634 words of memory out of 5000000
+ 77637 multiletter control sequences out of 15000+600000
+ 558465 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,10n,107p,1674b,1946s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Optimal Control Theory.pdf" (3 pages, 173403 bytes).
+ 102i,1n,107p,1645b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+No pages of output.
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 16429 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 6 PDF objects out of 1000 (max. 8388607)
+ 4 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 2061 words of extra memory for PDF output out of 10000 (max. 10000000)
 

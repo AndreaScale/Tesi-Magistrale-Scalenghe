@@ -1,0 +1,9 @@
+PWD c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control
+INPUT c:/texlive/2023/texmf.cnf
+INPUT c:/texlive/2023/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Finite horizon.tex
+OUTPUT Finite horizon.log
+INPUT c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
