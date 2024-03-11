@@ -105,13 +105,51 @@ Equation \ref{1-2-HJB1} turns out to be the main sufficient condition for the co
 
     \[W(t,x)\leq V(t,x)\]
 
-    Moreover, if there exists $u^{\ast}\in\mathcal{U}$ such that:
+    Moreover, there exists $u^{\ast}\in\mathcal{U}$ such that:
 
-    \[L(s,x^{\ast}(s),u^{\ast}(s)) + f(s,x^{\ast},u^{\ast}(s))\cdot D_xW(s,x^{\ast}(s)) = - H(s,x^{\ast}(s),D_xW(s,x^{\ast}(s)))\]
+    \begin{equation}\label{1-2-uoptim}
+        L(s,x^{\ast}(s),u^{\ast}(s)) + f(s,x^{\ast},u^{\ast}(s))\cdot D_xW(s,x^{\ast}(s)) = - H(s,x^{\ast}(s),D_xW(s,x^{\ast}(s)))
+    \end{equation}
 
-    For almost all $s\in[t,t_1]$, then $u^{ast}$ is optimal and $W=V$.
+    For almost all $s\in[t,t_1]$ if and only if $u^{\ast}$ is optimal and $W=V$.
 
     \begin{proof}
-        
-    \end{proof}
+        Let $u\in\mathcal{U}$, then:
+
+        \begin{align*}
+            \psi(x(t_1)) & = W(t_1,x(t_1)) = W(t,x(t)) + \int_t^{t_1}\frac{d}{ds}W(s,x(s)) \,ds \\
+            & = W(t,x(t)) + \int_t^{t_1} \frac{\partial}{\partial t}W(s,x(s)) + \dot{x}(s)\cdot D_xW(s,x(s)) \,ds \\
+            & = W(t,x(t)) + \int_t^{t_1} \frac{\partial}{\partial t}W(s,x(s)) + f(s,x(s),u(s))\cdot D_xW(s,x(s)) \,ds \\
+            & \overset{\circledast}{\geq} W(t,x(t)) - \int_t^{t_1} L(s,x(s),u(s)) \,ds  
+        \end{align*}
+
+        Then:
+
+        \[W(t,x(t)) \leq J(t,x;u)\]
+
+        And therefore by taking the infimum over $\mathcal{U}$ and recalling $x(t)=x$ we get:
+
+        \[W(t,x) \leq V(t,x)\]
+
+        If furthermore $u^{\ast}$ satisfies \ref{1-2-uoptim} then the inequality $\overset{\circledast}{\geq}$ is an equality, and therefore:
+
+        \[W(t,x) = J(t,x;u^{\ast})\]
+
+        Which implies that $u^{\ast}$ is optimal and $W(t,x)=J(t,x;u^{\ast})=V(t,x)$. Conversely, if $u^{\ast}$ is optimal:
+
+        \begin{align*}
+            - \int_t^{t_1} L(s,x(s),u^{\ast}(s)) \,ds & \leq \int_t^{t_1} \frac{\partial}{\partial t}W(s,x(s)) + f(s,x(s),u^{\ast}(s))\cdot D_xW(s,x(s)) \,ds \\
+            & = \int_t^{t_1} \frac{\partial}{\partial t}W(s,x(s)) + f(s,x(s),u(s))\cdot D_xW(s,x(s)) \,ds = 
+        \end{align*}
+    \end{proof} 
 \end{theorem}
+
+
+Theorem \ref{1-2-Verificationthe} is an important tool in determining the explicit form of and optimal control. 
+    Indeed, condition \ref{1-2-uoptim} can be restated as:
+
+    \begin{equation}\label{1-2-optimalityconditionu}
+        u^{\ast}(s) \in \argmin_{v\in U} \left\{ f(s,x^{\ast}(s),v) \cdot D_xW(s,x^{\ast}(s)) + L(s,x^{\ast}(s),v)\right\}
+    \end{equation}
+
+    For almost all $s\in[t,t_1]$.

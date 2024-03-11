@@ -1,20 +1,20 @@
 # Fdb version 4
-["biber Optimal Control Theory"] 1710099963 "Optimal Control Theory.bcf" "Optimal Control Theory.bbl" "Optimal Control Theory" 1710099963 0
-  "Optimal Control Theory.bcf" 1710099962 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
+["biber Optimal Control Theory"] 1710191067 "Optimal Control Theory.bcf" "Optimal Control Theory.bbl" "Optimal Control Theory" 1710191067 0
+  "Optimal Control Theory.bcf" 1710191066 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
   "biblio.bib" 0 -1 0 ""
   (generated)
   "Optimal Control Theory.bbl"
   "Optimal Control Theory.blg"
   (rewritten before read)
-["pdflatex"] 1710099958 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex" "Optimal Control Theory.pdf" "Optimal Control Theory" 1710099963 0
-  "Dynamic programming principle.tex" 1710099940 6262 f00ef3dd5ddfbd088edfd4cfe0be4c13 ""
+["pdflatex"] 1710191063 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex" "Optimal Control Theory.pdf" "Optimal Control Theory" 1710191067 0
+  "Dynamic programming principle.tex" 1710191047 8070 3ef7999c85dd50d1fdfd2e66ddf1ccf7 ""
   "Finite horizon.tex" 1710091240 3249 11fd441acea1af8050a3b6fafa4e7982 ""
-  "Optimal Control Theory.aux" 1710099962 1835 c620ae5f42258f34f23fa8c49f64a3fc "pdflatex"
+  "Optimal Control Theory.aux" 1710191066 2002 05ebab02f30ae30796e75dc6103fd4a9 "pdflatex"
   "Optimal Control Theory.bbl" 0 -1 0 "biber Optimal Control Theory"
-  "Optimal Control Theory.out" 1710099962 557 f393e304b2ccab52ee60a87907fbe3de "pdflatex"
-  "Optimal Control Theory.run.xml" 1710099962 2441 4c7cf1eeed9c080888d6657e73c6978b "pdflatex"
-  "Optimal Control Theory.tex" 1710074809 5315 b1fece6ee61833102b8c72e944452761 ""
-  "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex" 1710074809 5315 b1fece6ee61833102b8c72e944452761 ""
+  "Optimal Control Theory.out" 1710191066 557 f393e304b2ccab52ee60a87907fbe3de "pdflatex"
+  "Optimal Control Theory.run.xml" 1710191066 2441 4c7cf1eeed9c080888d6657e73c6978b "pdflatex"
+  "Optimal Control Theory.tex" 1710185243 5401 5e77d4410b1fea173550502f473232c7 ""
+  "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex" 1710185243 5401 5e77d4410b1fea173550502f473232c7 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1702046692 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1702045120 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1702045120 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
