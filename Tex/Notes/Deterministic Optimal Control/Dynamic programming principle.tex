@@ -68,10 +68,16 @@ In the proof we used the concept of $\delta$-\textit{optimal control}, that is t
 This new representation allows us to find the so-called \textit{dynamic programming equation}. We have to impose that the value function 
 is continuously differentiable, although this is not always the case. If differentiability fails, the notion of viscosity solution is needed. 
 
-We restrict our study to $O=\R^n$, as the other cases need viscosity solutions. In this situation the boundary condition is simply:
+Let us first impose boundary conditions of the value function. Clearly if $t=t_1$ then:
 
-\begin{equation}\label{1-2-boundcondR}
-    V(t_1,x)=\psi(x)\,\forall x\in\R^n
+\begin{equation}\label{1-2-boundcond1}
+    V(t_1,x)=\psi(x)\,\forall x\in \overline{O}
+\end{equation}
+
+If $(t,x)\in [t_0,t_1)\times\partial O$ then the value function is $g$:
+
+\begin{equation}\label{1-2-boundcond2}
+    V(t, x) = g(t,x)
 \end{equation}
 
 Before stating the fundamental theorem which gives sufficient conditions 
@@ -100,27 +106,32 @@ Where for $(t,x,p)\in \overline{Q}\times\R^n$ the Hamiltonian is defined as:
 
 Equation \ref{1-2-HJB1} turns out to be the main sufficient condition for the control to be optimal.
 
-\begin{theorem}[Verification Theorem]\label{1-2-Verificationthe}
-    Let $W\in C^1(\overline{Q})$ satisfy \ref{1-2-HJB1} and \ref{1-2-boundcondR} then:
+Maybe only differentiability is needed (also for if, for only if we already know).
 
-    \[W(t,x)\leq V(t,x)\]
+\begin{theorem}[Verification Theorem]\label{1-2-Verificationthe}
+    Let $W\in C^1(\overline{Q})$ satisfy \ref{1-2-HJB1} and the boundary conditions \ref{1-2-boundcond1} and \ref{1-2-boundcond2} then:
+
+    \[W(t,x)\leq V(t,x) \, \forall (t,x)\in\overline{Q}\]
 
     Moreover, there exists $u^{\ast}\in\mathcal{U}$ such that:
 
     \begin{equation}\label{1-2-uoptim}
-        L(s,x^{\ast}(s),u^{\ast}(s)) + f(s,x^{\ast},u^{\ast}(s))\cdot D_xW(s,x^{\ast}(s)) = - H(s,x^{\ast}(s),D_xW(s,x^{\ast}(s)))
+        \begin{cases}
+            L(s,x^{\ast}(s),u^{\ast}(s)) + f(s,x^{\ast},u^{\ast}(s))\cdot D_xW(s,x^{\ast}(s)) = - H(s,x^{\ast}(s),D_xW(s,x^{\ast}(s))) & \text{a.s. for } s\in[t,\tau^{\ast}] \\
+            W(\tau^{\ast},x^{\ast}(\tau^{\ast})) = g(\tau^{\ast},x^{\ast}(\tau^{\ast})) & \text{if } \tau^{\ast}<t_1
+        \end{cases}    
     \end{equation}
 
-    For almost all $s\in[t,t_1]$ if and only if $u^{\ast}$ is optimal and $W=V$.
+    if and only if $u^{\ast}$ is optimal and $W=V$.
 
     \begin{proof}
         Let $u\in\mathcal{U}$, then:
 
         \begin{align*}
-            \psi(x(t_1)) & = W(t_1,x(t_1)) = W(t,x(t)) + \int_t^{t_1}\frac{d}{ds}W(s,x(s)) \,ds \\
-            & = W(t,x(t)) + \int_t^{t_1} \frac{\partial}{\partial t}W(s,x(s)) + \dot{x}(s)\cdot D_xW(s,x(s)) \,ds \\
-            & = W(t,x(t)) + \int_t^{t_1} \frac{\partial}{\partial t}W(s,x(s)) + f(s,x(s),u(s))\cdot D_xW(s,x(s)) \,ds \\
-            & \overset{\circledast}{\geq} W(t,x(t)) - \int_t^{t_1} L(s,x(s),u(s)) \,ds  
+            \Psi(\tau,x(\tau)) & = W(\tau,x(\tau)) = W(t,x(t)) + \int_t^{\tau}\frac{d}{ds}W(s,x(s)) \,ds \\
+            & = W(t,x(t)) + \int_t^{\tau} \frac{\partial}{\partial t}W(s,x(s)) + \dot{x}(s)\cdot D_xW(s,x(s)) \,ds \\
+            & = W(t,x(t)) + \int_t^{\tau} \frac{\partial}{\partial t}W(s,x(s)) + f(s,x(s),u(s))\cdot D_xW(s,x(s)) \,ds \\
+            & \overset{\circledast}{\geq} W(t,x(t)) - \int_t^{\tau} L(s,x(s),u(s)) \,ds  
         \end{align*}
 
         Then:
@@ -135,21 +146,36 @@ Equation \ref{1-2-HJB1} turns out to be the main sufficient condition for the co
 
         \[W(t,x) = J(t,x;u^{\ast})\]
 
-        Which implies that $u^{\ast}$ is optimal and $W(t,x)=J(t,x;u^{\ast})=V(t,x)$. Conversely, if $u^{\ast}$ is optimal:
+        Which implies that $u^{\ast}$ is optimal and $W(t,x)=J(t,x;u^{\ast})=V(t,x)$. 
+        The converse will be proved in a more general setting. In particular, only differentiability is needed.
+        % Conversely, if $u^{\ast}$ is optimal:
 
-        \begin{align*}
-            - \int_t^{t_1} L(s,x(s),u^{\ast}(s)) \,ds & \leq \int_t^{t_1} \frac{\partial}{\partial t}W(s,x(s)) + f(s,x(s),u^{\ast}(s))\cdot D_xW(s,x(s)) \,ds \\
-            & = \int_t^{t_1} \frac{\partial}{\partial t}W(s,x(s)) + f(s,x(s),u(s))\cdot D_xW(s,x(s)) \,ds = 
-        \end{align*}
+        % \begin{align*}
+        %     \color{red}{\int_t^{\tau} \frac{\partial}{\partial t}W(s,x^{\ast}(s)) + f(s,x^{\ast}(s),u^{\ast}(s)) \cdot D_xW(s,x^{\ast}(s)) \,ds & \geq - \int_t^{\tau^{\ast}} L(s,x^{\ast}(s),u^{\ast}(s)) \,ds  \\
+        %     & \geq - \int_t^{\tau} L(s,x^{\ast}(s),u(s)) \,ds = }
+        %     \color{black}{}
+        % \end{align*}
     \end{proof} 
 \end{theorem}
 
 
-Theorem \ref{1-2-Verificationthe} is an important tool in determining the explicit form of and optimal control. 
-    Indeed, condition \ref{1-2-uoptim} can be restated as:
+Theorem \ref*{1-2-Verificationthe} is an important tool in determining the explicit form of and optimal control. 
+Indeed, condition \ref*{1-2-uoptim} can be restated as:
 
-    \begin{equation}\label{1-2-optimalityconditionu}
+\begin{equation}\label{1-2-optimalityconditionu}
         u^{\ast}(s) \in \argmin_{v\in U} \left\{ f(s,x^{\ast}(s),v) \cdot D_xW(s,x^{\ast}(s)) + L(s,x^{\ast}(s),v)\right\}
-    \end{equation}
+\end{equation}
 
-    For almost all $s\in[t,t_1]$.
+For almost all $s\in[t,t_1]$.
+
+I have to prove verification theorem in more general case ($O\neq\R^n$).
+
+We can express the optimality condition on $u$ \ref*{1-2-optimalityconditionu} in a differential inclusion form. 
+
+\begin{corollary}
+    A control $u^{\ast}$ is optimal if the corresponding state function $x^{\ast}$ satisfies:
+
+    \begin{equation}
+        x^{\ast} \in \left\{f(t,x,v) \,|\, v\in v^{\ast}(t,x)\right\}
+    \end{equation}
+\end{corollary}

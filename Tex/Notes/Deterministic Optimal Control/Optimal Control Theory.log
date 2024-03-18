@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  11 MAR 2024 22:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  18 MAR 2024 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1550,37 +1550,6 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 4.
 LaTeX Font Info:    Trying to load font information for U+esint on input line 4.
  (c:/texlive/2023/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
-)) [1{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-] (./Dynamic programming principle.tex [2]
-Overfull \hbox (7.99551pt too wide) detected at line 83
-[][][][] [] \U/matha/m/n/12 ^^P \OT1/cmr/m/n/12 0
- []
-
-[3]) [4] (./Optimal Control Theory.aux)
- ***********
-LaTeX2e <2023-11-01>
-L3 programming layer <2023-11-09>
- ***********
-Package rerunfilecheck Info: File `"Optimal Control Theory".out' has not changed.
-(rerunfilecheck)             Checksum: F393E304B2CCAB52EE60A87907FBE3DE;557.
-Package logreq Info: Writing requests to '"Optimal Control Theory".run.xml'.
-\openout1 = `"Optimal Control Theory.run.xml"'.
-
- ) 
-Here is how much of TeX's memory you used:
- 56593 strings out of 474267
- 1322708 string characters out of 5751465
- 2273495 words of memory out of 5000000
- 77887 multiletter control sequences out of 15000+600000
- 571815 words of font info for 117 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 102i,10n,107p,1674b,1946s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Optimal Control Theory.pdf" (4 pages, 176357 bytes).
-PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 16429 words of extra memory for PDF output out of 17280 (max. 10000000)
-
+)) [1{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+!pdfTeX error: pdflatex.exe (file c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map): fflush() failed (Invalid argument)
+ ==> Fatal error occurred, no output PDF file produced!

@@ -1,20 +1,18 @@
 # Fdb version 4
-["biber Optimal Control Theory"] 1710191067 "Optimal Control Theory.bcf" "Optimal Control Theory.bbl" "Optimal Control Theory" 1710191067 0
-  "Optimal Control Theory.bcf" 1710191066 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
+["biber Optimal Control Theory"] 1710779354 "Optimal Control Theory.bcf" "Optimal Control Theory.bbl" "Optimal Control Theory" 1710779359 0
+  "Optimal Control Theory.bcf" 1710779358 106198 5c6dbb71764c67f5c0798398a17800eb "pdflatex"
   "biblio.bib" 0 -1 0 ""
   (generated)
   "Optimal Control Theory.bbl"
   "Optimal Control Theory.blg"
   (rewritten before read)
-["pdflatex"] 1710191063 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex" "Optimal Control Theory.pdf" "Optimal Control Theory" 1710191067 0
-  "Dynamic programming principle.tex" 1710191047 8070 3ef7999c85dd50d1fdfd2e66ddf1ccf7 ""
+["pdflatex"] 1710779354 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex" "Optimal Control Theory.pdf" "Optimal Control Theory" 1710779359 2
   "Finite horizon.tex" 1710091240 3249 11fd441acea1af8050a3b6fafa4e7982 ""
-  "Optimal Control Theory.aux" 1710191066 2002 05ebab02f30ae30796e75dc6103fd4a9 "pdflatex"
+  "Optimal Control Theory.aux" 1710779358 243 c69c1f3040b8fc034ebcebe734daf29b "pdflatex"
   "Optimal Control Theory.bbl" 0 -1 0 "biber Optimal Control Theory"
-  "Optimal Control Theory.out" 1710191066 557 f393e304b2ccab52ee60a87907fbe3de "pdflatex"
-  "Optimal Control Theory.run.xml" 1710191066 2441 4c7cf1eeed9c080888d6657e73c6978b "pdflatex"
-  "Optimal Control Theory.tex" 1710185243 5401 5e77d4410b1fea173550502f473232c7 ""
-  "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex" 1710185243 5401 5e77d4410b1fea173550502f473232c7 ""
+  "Optimal Control Theory.out" 1710779358 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Optimal Control Theory.tex" 1710777548 5452 d4e2e2c294092162f38876d74f90f06a ""
+  "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex" 1710777548 5452 d4e2e2c294092162f38876d74f90f06a ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1702046692 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1702045120 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1702045120 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -54,23 +52,6 @@
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm" 1702049397 848 f478e0761563bbc369eca609a1741348 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/stmaryrd/stmary6.tfm" 1702049397 848 068dd119e13b75777e62821af7d4f2a6 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm" 1702049397 848 6125cdd3627e68d3db8013b98e587508 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1702045120 32080 340ef9bf63678554ee606688e7b5339d ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1702045120 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1702045120 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1702045120 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1702045120 32722 d7379af29a190c3f453aba36302ff5a9 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1702045120 32734 69e00a6b65cedb993666e42eedb3d48f ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1702045120 32726 39f0f9e62e84beb801509898a605dbd5 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb" 1702045120 34586 5a65dc15601f9c74fe3fb3f37b3b8b6f ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1702045120 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1702045120 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1702045120 36118 fad905eba93cff5bce1e185fe980a177 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1702045120 34694 870c211f62cb72718a00e353f14f254d ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb" 1702046432 34421 79309417cbb00a4641f92d2efa583bbd ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb" 1702047868 90183 cea72f31c14685e35798974e90bab6c2 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb" 1702047868 92536 59bbce08c17dea073398ee5053f31619 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb" 1702047868 88719 de39874dfb86c363155abfe3fea50777 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb" 1702047868 70423 4a4623dcfd6ff83fa8b359aa8621f0da ""
   "c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1702048098 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2023/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1702045231 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "c:/texlive/2023/texmf-dist/tex/generic/babel-english/english.ldf" 1702045278 7008 9ff5fdcc865b01beca2b0fe4a46231d4 ""
@@ -342,5 +323,4 @@
   "Optimal Control Theory.log"
   "Optimal Control Theory.out"
   "Optimal Control Theory.pdf"
-  "Optimal Control Theory.run.xml"
   (rewritten before read)
