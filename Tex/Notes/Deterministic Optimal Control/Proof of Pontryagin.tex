@@ -1,0 +1,196 @@
+\section{Proof of Pontryagin's principle}
+
+We will show the maximum Pontryagin's principle in the simple context of no running cost. 
+A cleaver reconstruction of the non-zero running cost problem as a zero running cost one 
+will enlarge the thesis to this situation. The first concept we will need is the variation 
+of a control.
+
+\begin{definition}
+    Given $u\in\mathcal{U}$. For $\epsilon,r>0$ such that $0<r-\epsilon<r$ and $a\in U$ 
+    we define the \textit{simple variation} $u_{\epsilon}\in\mathcal{U}$ such that:
+
+    \begin{equation}\label{1-proofpontry-defvar}
+        u_{\epsilon}(t) = \begin{cases}
+            a & s\in(r-\epsilon,r) \\
+            u(s) & s\notin(r-\epsilon,r)
+        \end{cases}
+    \end{equation}
+\end{definition}
+
+By defining the matrix $A:[0,+\infty)\rightarrow\R^{n\times n}: s\mapsto D_xf(s,x(s),u(s))$ we state 
+the following lemma.
+
+\begin{lemma}
+    Let $x_{\epsilon}$ be solution of:
+
+    \begin{equation}\label{1-proofpontry-dynamprob}
+        \begin{cases}
+            \dot{x}_{\epsilon}(s) = f(s,x_{\epsilon}(s),u_{\epsilon}(s)) & s\in[t,t_1] \\
+            x_{\epsilon}(t) = x
+        \end{cases}
+    \end{equation}
+
+    Then the solution is:
+
+    \begin{equation}\label{1-proofpontry-solvar}
+        x_{\epsilon}(s) = x(s) + \epsilon y(s) + o(\epsilon)\, \epsilon\to0
+    \end{equation}
+
+    Where $y\equiv0$ on $[t,r]$ and:
+
+    \begin{equation}
+        \begin{cases}
+            \dot{y}(s) = A(s)y(s) & s\in[r,t_1]\\
+            y(r) = y^r
+        \end{cases}
+    \end{equation}
+
+    With $y^r=f(x(r),a)-f(x(r),u(r))$.
+
+    \begin{proof}
+        Let us divide the proof in three cases.
+
+        \begin{itemize}
+            \item $s\in[t,r-\epsilon]$: then $y(t)=0$ and $u_{\epsilon}(t)=u(t)$, therefore:
+            
+            \[x_{\epsilon}(t)=x(t)=x(t)+\epsilon y(t)+o(\epsilon)\]
+
+            \item $s\in(r-\epsilon,r)$: then we have:
+            
+            \[x_{\epsilon}(s)-x(s) = \int_{r-\epsilon}^s f(w,x_{\epsilon}(w),u_{\epsilon}(w))-f(w,x(w),u(w)) \,dw + o(\epsilon)\]
+
+            Which is a little \textit{o} of $\epsilon$ (because $f$ is continuous). 
+
+            \item $s\in[r,t_1]$: from before if $s=r$ then:
+            
+            \begin{align}
+                x_{\epsilon}(r)-x(r) & = \int_{r-\epsilon}^r f(w,x_{\epsilon}(w),u_{\epsilon}(w))-f(w,x(w),u(w)) \,dw + o(\epsilon) \\
+                & = \lim_{w\to s}[f(w,x_{\epsilon}(w),u_{\epsilon}(w))-f(w,x(w),u(w))]\epsilon+ o(\epsilon) \\
+                & = y^s\epsilon + o(\epsilon)
+            \end{align}
+
+            \color{red}{If $s>r$ then:}
+
+
+        \end{itemize}
+    \end{proof}
+\end{lemma}
+
+Let us now prove Pontryagin's principle with no running cost. The payoff functional is:
+
+\begin{equation}\label{1-proofpontry-norunfunct}
+    J(t,x;u) = \psi(x(t_1))
+\end{equation}
+
+And therefore the Hamiltonian is:
+
+\begin{equation}\label{1-proofpontry-norunham}
+    H(s,x,u,p) = - f(s,x,u)\cdot p 
+\end{equation}
+
+\begin{theorem}\label{1-proofpontry-theo}
+    There exists a function $p^{\ast}:[t,t_1]\rightarrow \R^n$ such that:
+
+    \begin{equation}
+        \dot{p}^{\ast}(s) = -D_x H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s))\, s\in[t,t_1]
+    \end{equation}
+
+    together with the maximization:
+
+    \begin{equation}
+        H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s)) = \sup_{v\in U} H(s,x^{\ast}(s),v,p^{\ast}(s))
+    \end{equation}
+
+    and the trasversality condition:
+
+    \begin{equation}
+        p^{\ast}(t_1) = D\psi(x(t_1))
+    \end{equation}
+
+    \begin{proof}
+        Let us drop all the $^{\ast}$. Let $p$ be the unique solution of:
+
+        \begin{equation}
+            \begin{cases}
+                \dot{p}(s) = - A'(s)\cdot p(s) & s\in[t,t_1] \\
+                p(t_1) = D\psi(x(t_1))
+            \end{cases}
+        \end{equation}
+
+        It exists and is unique because the latter is a linear differential equation with integrable coefficient. 
+        We already satisfy the trasversality condition and the adjoint dynamics. We prove the 
+        maximization principle. Let $v\in U$. We define the variation $u_{\epsilon}$ for $\epsilon,r\in(t,t_1)$ as before.
+        Since $\epsilon\mapsto  J(t,x;u_{\epsilon})$ for $\epsilon\in[0,1]$ has a maximum in $\epsilon=0$ we have:
+        
+        \begin{equation}\label{1-proofpontry-dervar0}
+            \frac{d}{d\epsilon}J(t,x;u_{\epsilon})\leq0
+        \end{equation}
+
+        Computing the derivative, using \ref{1-proofpontry-defvar}:
+
+        \begin{align}
+            \frac{d}{d\epsilon}J(t,x;u_{\epsilon})\big|_{\epsilon=0} & = \frac{d}{d\epsilon}\psi(x_{\epsilon}(t_1))\big|_{\epsilon=0} \\
+            & = \frac{d}{d\epsilon}\psi(x(t_1) + \epsilon y(t_1) + o(\epsilon)) = D\psi(x(t_1))\cdot y(t_1) \\
+            & = p(t_1)\cdot y(t_1) = p(r)\cdot[f(r,x(r),a)-f(r,x(r),u(r))]
+        \end{align}
+
+        Where the last equality comes from:
+
+        \begin{align*}
+            \frac{d}{ds}\left(p(s)\cdot y(s)\right) & = \dot{p}(s)\cdot y(s) + p(s)\cdot \dot{y}(s) \\
+            & = -A'(s)\cdot p(s)\cdot y(s) + p(s) \cdot A(s)\cdot y(s) = 0
+        \end{align*}
+
+        Therefore, by plugging into \ref{1-proofpontrydervar0} we get:
+
+        \[0\geq p(r)\cdot[f(r,x(r),a)-f(r,x(r),u(r))]\]
+
+        Which implies:
+
+        \[H(r,x(r),v,p(r)) = f(r,x(r),v) \cdot p(r) \leq f(r,x(r),u(r)) \cdot p(r) = H(r,x(r),u(r),p(r))\]
+    \end{proof}
+\end{theorem}
+
+Given Pontryagin's principle for no running cost problems we can extend the result to the general case:
+
+\begin{equation}
+    J(t,x;u) = \int_t^{t_1} L(s,x(s),u(s)) \,ds + \psi(x(t_1))
+\end{equation}
+
+Where the Hamiltonian is:
+
+\begin{equation}
+    H(s,x,u,p) = f(s,x,u)\cdot p + L(s,x,u)
+\end{equation}
+
+Indeed, theorem \ref{1-proofpontry-theo} holds also under these conditions. We rewrite the problem as it has no 
+running cost and then apply the theorem. Let us define $x^{n+1}$ as:
+
+% \begin{equation}
+%     \begin{cases}
+%         \dot{x}^{n+1}(s) = L(s,x^{n+1}(s),u(s)) & s\in [t,t_1] \\
+%         x^{n+1}(0) = 0 
+%     \end{cases}
+% \end{equation}
+
+\begin{equation}
+    x^{n+1}(s) = \int_t^s L(w,x(w),u(w)) \,dw
+\end{equation}
+
+Then by defining $\overline{f}, \overline{g}, \overline{x},\overline{x}(s)$ as:
+
+\begin{equation}
+    \overline{f}(s,x,u)=\begin{bmatrix}
+        f(s,x,u) \\
+        L(s,x,u)
+    \end{bmatrix},\,\overline{x}=\begin{bmatrix}
+        x \\
+        0
+    \end{bmatrix},\,\overline{x}(s)=\begin{bmatrix}
+        x(s) \\
+        x^{n+1}(s)
+    \end{bmatrix},\,\overline{g}(\overline{x}(t_1)) = g(x(t_1)) + x^{n+1}(t_1)
+\end{equation}
+
+Thus, the problem has no running cost. We can apply the theorem and, noticing that 
+$p^{n+1}\equiv1$ we get the thesis.

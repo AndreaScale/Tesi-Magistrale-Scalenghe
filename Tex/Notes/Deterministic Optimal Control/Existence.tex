@@ -6,9 +6,7 @@ Furthermore, we impose convexity of $L$ in $v$. Under these assumptions a classi
 argument proves the optimal control existence.
 \begin{theorem}
     Let $U$ compact and convex, $f_1,f_2\in C^1(\overline{Q}\times U)$ such that $f(t,x,v)=f_1(t,x)+f_2(t,x)v$ and $\partial_xf_{1},\partial_xf_2,f_2$ bounded.
-    Let also $L\in C^1(\overline{Q}\times U)$ and $L(t,x,\cdot)$ be convex for all $(t,x)\in\overline{Q}$ and the temrinal cost $\phi\in C(\R^n)$.
-
-    Then there exist an optimal control $u^{\ast}(\cdot)$.
+    Let also $L\in C^1(\overline{Q}\times U)$ and $L(t,x,\cdot)$ be convex for all $(t,x)\in\overline{Q}$ and the temrinal cost $\phi\in C(\R^n)$. Then there exist an optimal control $u^{\ast}(\cdot)$.
 
     \begin{proof}
         Let $u_n$ a minimizing sequence such that:
@@ -43,7 +41,7 @@ argument proves the optimal control existence.
         \begin{align}
             \abs{x_n(s)} & \leq \abs{x_n(s)-x}+\abs{x} = \abs{x} + \int_t^s \frac{d}{dr}\abs{x_n(r)} \,dr \\
             & = \abs{x} + \int_t^s \abs{f_1(r,x_n(r)) + f_2(r,x_n(r))\cdot u_n(r)}\,dr \\
-            & \leq \abs{x} + \int_t^s \norm{\partial_xf_1}_{\infty}\abs{x_n(r)} + \norm{f_2}_{\infty}\abs{u_n} \,dr \\
+            & \color{red}{\leq} \abs{x} + \int_t^s \norm{\partial_xf_1}_{\infty}\abs{x_n(r)} + \norm{f_2}_{\infty}\abs{u_n} \,dr \\
             & \leq C + K\left( \int_t^s \abs{x_n(r)} \,dr \right)   
         \end{align}
 
@@ -53,14 +51,14 @@ argument proves the optimal control existence.
 
         \begin{align*}
                 x_n(s) & = x + \int_t^s\frac{d}{dr}x_n(r) \,dr\\
-                & = x + \underbrace{\int_t^sf_1(r,x_n(r)) + f_2(r,x_n(r))u^{\ast}(r) \,dr}_{A} + \underbrace{\int_t^s \left[f_2(r,x_n(r)) - f_2(r,x^{\ast}(r))\right]\left[u_n(r)-u^{\ast}(r)\right] \,dr}_{B} \\
-                & + \underbrace{\int_t^s f_2(r,x^{\ast}(r))\left[u_n(r)-u^{\ast}(r)\right] \,dr}_{C}
+                & = x + \underbrace{\int_t^sf_1(r,x_n(r)) + f_2(r,x_n(r))u^{\ast}(r) \,dr}_{A_n} + \underbrace{\int_t^s \left[f_2(r,x_n(r)) - f_2(r,x^{\ast}(r))\right]\left[u_n(r)-u^{\ast}(r)\right] \,dr}_{B_n} \\
+                & + \underbrace{\int_t^s f_2(r,x^{\ast}(r))\left[u_n(r)-u^{\ast}(r)\right] \,dr}_{C_n}
         \end{align*}
         
-        Letting $n\to+\infty$ we get $B$ (by weak convergence and boundedness of $f_2$) and $C$ (by weak convergence) going to $0$ 
+        Letting $n\to+\infty$ we get $B_n$ (by weak convergence and boundedness of $f_2$) and $C_n$ (by weak convergence) going to $0$ 
         while we obtain:
 
-        \[A\xrightarrow{n\to+\infty}\int_t^sf_1(r,x^{\ast}(r))+f_2(r,x^{\ast}(r))u^{\ast}(r)\,dr\]
+        \[A_n\xrightarrow{n\to+\infty}\int_t^sf_1(r,x^{\ast}(r))+f_2(r,x^{\ast}(r))u^{\ast}(r)\,dr\]
         
         And therefore the thesis.
     \end{proof}
@@ -75,3 +73,21 @@ argument proves the optimal control existence.
 
     Then by integrating and taking $\liminf_{n\to+\infty}$ we get the inequality (using weak convergence of $u_n$). 
 \end{remark}
+
+An existence result can also be proved in the context of $O\neq\R^n$, where the cost function
+to be minimized has the form:
+
+\begin{equation}
+    J(t,x;u)=\int_t^{\tau} L(s,x(s),u(s)) \,ds + \Psi(\tau,x(\tau))
+\end{equation}
+
+with dynamical system described by $f(s,x,u)=u$. Therefore, the value function is:
+
+\begin{equation}
+    V(t,x) = \inf_{u\in\mathcal{U}} \left\{\int_t^{\tau} L(s,x(s),\dot{x}(s)) \,ds + \Psi(\tau,x(\tau))\right\}
+\end{equation}
+
+Under technical assumptions an optimal control exists, and the proof follows
+the same procedure as before: we take a minimizing sequence, show its (weak) convergence
+and its corresponding state evolution (uniform) convergence, then we show 
+optimality, slightly modifying the proof because of convergence issues.

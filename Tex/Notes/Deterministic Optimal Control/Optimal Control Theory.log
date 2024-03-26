@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  18 MAR 2024 23:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  26 MAR 2024 09:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1562,48 +1562,29 @@ Overfull \hbox (18.52109pt too wide) detected at line 123
 [][][][]
  []
 
-[3]) (./Pontryagin.tex [4]) (./Existence.tex [5]
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/10'
-(microtype)             (new value: 10.0pt) on input line 35.
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/7'
-(microtype)             (new value: 7.0pt) on input line 35.
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/5'
-(microtype)             (new value: 5.0pt) on input line 35.
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/10'
-(microtype)             (new value: 10.0pt) on input line 35.
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/7'
-(microtype)             (new value: 7.0pt) on input line 35.
-Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/5'
-(microtype)             (new value: 5.0pt) on input line 35.
+[3]) (./Pontryagin.tex [4] [5] [6]
+Overfull \hbox (30.03976pt too wide) detected at line 170
+[][] [] [] [] []  \OML/cmm/m/it/12 dr
+ []
 
-Overfull \hbox (2.5663pt too wide) detected at line 58
+) (./Existence.tex [7]
+Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/10'
+(microtype)             (new value: 10.0pt) on input line 33.
+Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/7'
+(microtype)             (new value: 7.0pt) on input line 33.
+Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/5'
+(microtype)             (new value: 5.0pt) on input line 33.
+Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/10'
+(microtype)             (new value: 10.0pt) on input line 33.
+Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/7'
+(microtype)             (new value: 7.0pt) on input line 33.
+Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/5'
+(microtype)             (new value: 5.0pt) on input line 33.
+
+Overfull \hbox (2.5663pt too wide) detected at line 56
 []
  []
 
-) [6] (./Optimal Control Theory.aux)
- ***********
-LaTeX2e <2023-11-01>
-L3 programming layer <2023-11-09>
- ***********
-Package rerunfilecheck Info: File `"Optimal Control Theory".out' has not changed.
-(rerunfilecheck)             Checksum: 454FE96C71DA9DF0347124927698F594;805.
-Package logreq Info: Writing requests to '"Optimal Control Theory".run.xml'.
-\openout1 = `"Optimal Control Theory.run.xml"'.
-
- ) 
-Here is how much of TeX's memory you used:
- 56777 strings out of 474267
- 1325454 string characters out of 5751465
- 2273645 words of memory out of 5000000
- 77991 multiletter control sequences out of 15000+600000
- 580988 words of font info for 173 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 102i,16n,107p,1674b,1946s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Optimal Control Theory.pdf" (6 pages, 216242 bytes).
-PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
- 167 compressed objects within 2 object streams
- 48 named destinations out of 1000 (max. 500000)
- 26685 words of extra memory for PDF output out of 29859 (max. 10000000)
-
+[8]) (./Infinite horizon.tex) (./Proof of Pontryagin.tex [9] [10{
+!pdfTeX error: pdflatex.exe (file cm-super-ts1.enc): fflush() failed (Invalid argument)
+ ==> Fatal error occurred, no output PDF file produced!
