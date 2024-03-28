@@ -1,0 +1,129 @@
+\section{Markov diffusion process}
+
+I now recall some definitions, give new ones and set the notation. Let $\Sigma\subseteq\R^n$ and $\mathcal{B}(\Sigma)$ 
+the associated Borel $\sigma$-algebra. Let $(\Omega, \mathcal{F}, P)$ a general probability space. 
+Given $x(s,\omega)$ a $\Sigma$-valued random process from $I_0=[t_0,t_1)$ and $(\Omega,\mathcal{F})$, let us denote by:
+
+\[P(C\,|\,x(s_1),\dots,x(s_m)),\,C\in\mathcal{F}\]
+
+The conditional probability of $C$ given the sigma algebra $\bigvee_{i=1}^m\sigma(x(s_i))$.
+
+\begin{definition}\label{2-1-markovprocessdef}
+    A stochastic process $x$ satisfies the Markov property if there exists a function 
+    $p:I_0\times \Sigma\times I_0\times  \mathcal{B}(\Sigma)\rightarrow \R$ such that:
+
+    \begin{enumerate}
+        \item For all $t,s,B$ the function $x\mapsto p(t,x,s,B)$ is borel measurable on $\Sigma$
+        \item For all $t,x,s$ the function $A\mapsto p(t,x,s,B)$ is a probability measure on $(\Omega,\mathcal{F})$
+        \item The Chapman-Kolmogorov equation holds for all $s,t,r\in I_0$ such that $t<r<s$:
+        \begin{equation}\label{2-1-markovprocessdef-chapkol}
+            p(t,x,s,B) = \int_{\Sigma} p(r,y,s,B)\,p(t,x,r,dy)
+        \end{equation}
+    \end{enumerate}
+
+    And such that for all $r,s\in I_0$ where $r,s$ and for all $B\in\mathcal{B}(\Sigma)$ then:
+
+    \begin{equation}\label{2-1-markovprocessdef-condonp}
+        P(x(s)\in B\,|\,\mathcal{F}_r^x) = p(r,x(r),s,B)
+    \end{equation}
+
+    Where $\mathcal{F}_r^x=\sigma\left(x(l)\,:\,l\in[t_0,r]\right)$.
+\end{definition}
+
+Function $p$ is called \textit{Markov Transition Kernel}. We shall see a Markov transition kernel as 
+the probability that the system starting from $x$ at time $t$ will be in $B$ at time $s$. This heuristic interpretation 
+clarifies the following notation:
+
+\begin{equation}
+    E_{tx}\phi(x(s)) = \int_{\Sigma} \phi(y)\,p(t,x,s,dy) 
+    % p(t,x,s,B) = P(x(s)\in B\,|\,)
+\end{equation}
+
+For a real valued borel-measurable function $\phi$. Given a Markov process $x$ we can define a family of 
+linear operators associated to it. Let $t<s$, hereafter all time indices will always be in $I_0$, and define:
+
+\begin{equation}
+    T_{t,s}\phi(x) = \int_{\Sigma} \phi(y)\,p(t,x,s,dy) = E_{tx}\phi(x(s))
+\end{equation}
+
+Integrability assumptions on $\phi$ vary from case to case. For now, we can take $\phi$ to be bounded. 
+Because of Chapman-Kolmogorov equation \ref{2-1-markovprocessdef-chapkol} the family $(T_{t,s})_{t,s\in I_0}$ 
+satisfies the property:
+
+\begin{equation}\label{2-1-propT}
+    T_{tr}\left[T_{rs}\phi\right] = T_{ts}\phi
+\end{equation}
+
+For all $t<r<s$. This family of linear operators defines another operator, the \textit{backward evolution operator}.
+Let $A:\left\{\Phi:I_0\times\Sigma\rightarrow\R\right\}\rightarrow \R$:
+
+\begin{equation}\label{2-1-backwarddef}
+    A\Phi(t,x) = \lim_{h\to0+} \frac{E_{tx}\Phi(t+h,x(t+h))-\Phi(t,x)}{h}
+\end{equation}
+
+provided that the limit exists. We define $\mathcal{D}(A)$ the space of functions such that limit \ref{2-1-backwarddef} exists. 
+The following holds.
+
+\begin{proposition}
+    Let $A$ as before, then for all $\Phi\in\mathcal{A}$ the following hold:
+
+    \begin{enumerate}
+        \item $\Phi,\frac{\partial\Phi}{\partial t}$ and $A\Phi$ are continuous
+        \item For all $t,s\in\overline{I}_0$, $t<s$ then:
+        
+        \[E_{tx}\abs{\Phi(s,x(s))},E_{tx}\int_t^s\abs{A\Phi(r,x(r))}\,dr < +\infty\]
+        
+        \item Dynkin's formula holds for all $t<s$:
+        
+        \begin{equation}\label{2-1-dynkform}
+            E_{tx}\Phi(s,x(s)) - \Phi(t,x) = E_{tx}\int_t^s A\Phi(r,x(r)) \,dr
+        \end{equation}
+    \end{enumerate}
+
+    \begin{proof}
+        I prove Dynkin's formula in the case of $T_{ts}$ being a Feller semigroup. 
+        %Dynkin, E. B., Markov processes,  
+
+    \end{proof}
+\end{proposition}
+
+If the random process $x$ is autonomous (time-homogeneous) then the linear operator family is a 
+semigroup. Recall that a Markov process is homogeneous if for all $t<s$ in $I_0$ then:
+
+\[p(t,x,s,B) = p(0,x,s-t,B)\]
+
+If so, by calling $T_s=T_{0s}$ property \ref{2-1-propT} is:
+
+\begin{align}
+    T_{s+r}\phi(x) & = \int_{\Sigma} \phi(y)\,p(0,x,s+r,dy) \\
+    % & = \int_{\Sigma} \phi(y)\,p(r,x,s,dy) \\
+    & = \int_{\Sigma}\phi(y)\int_{\Sigma} p(r,z,r+s,dy)\,p(0,x,r,dz) \\
+    & = \int_{\Sigma}\int_{\Sigma} \phi(y) p(r,z,r+s,dy)\,p(0,x,r,dz) \\
+    & = \int_{\Sigma}\int_{\Sigma} \phi(y) p(0,z,s,dy)\,p(0,x,r,dz) \\
+    & = \int_{\Sigma} T_{s}\phi(z) \,p(0,x,r,dz) \\
+    & = T_r\left[T_s\phi(x)\right].
+\end{align}
+
+While the backward evolution operator analogous is called the \textit{generator} and is defined as:
+
+\begin{equation}
+    G\phi(x) = - \lim_{h\to0^+} \frac{T_h\phi(x) - \phi(x)}{h}
+\end{equation}
+
+With $D(G)$ as $\mathcal{D}(A)$ before. It is worth noting that, formally, the following equality holds:
+
+\begin{equation}
+    A\Phi = \frac{\partial \Phi}{\partial t} - G\Phi(t,\cdot)
+\end{equation}
+
+This relation links the two operators and the autonomous to the non-autonomous case. We now turn our attention to 
+a subset of Markov processes: diffusion processes. A diffusion process is a Markov process whose paths are continuous. 
+A diffusion process is completely determined by its infinitesimal mean and variance. 
+
+\begin{definition}
+    The \textit{infinitesimal mean} is:
+
+    \begin{equation}
+        
+    \end{equation}
+\end{definition}
