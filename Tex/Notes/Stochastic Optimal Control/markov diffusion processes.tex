@@ -71,7 +71,7 @@ The following holds.
         \item $\Phi,\frac{\partial\Phi}{\partial t}$ and $A\Phi$ are continuous
         \item For all $t,s\in\overline{I}_0$, $t<s$ then:
         
-        \[E_{tx}\abs{\Phi(s,x(s))},E_{tx}\int_t^s\abs{A\Phi(r,x(r))}\,dr < +\infty\]
+        \[E_{tx}\abs{\Phi(s,x(s))}< +\infty,E_{tx}\int_t^s\abs{A\Phi(r,x(r))}\,dr < +\infty\]
         
         \item Dynkin's formula holds for all $t<s$:
         
@@ -88,7 +88,7 @@ The following holds.
 \end{proposition}
 
 Dynkin's formula can be proved in different instances, subject to the nature of the random process. We will see 
-that it is a natural consequence of It\hat{o} formula for continuous state space processes.
+that it is a natural consequence of Ito formula for continuous state space processes.
 
 If the random process $x$ is autonomous (time-homogeneous) then the linear operator family is a 
 semigroup. Recall that a Markov process is homogeneous if for all $t<s$ in $I_0$ then:
@@ -160,13 +160,83 @@ Give the local drift and covariance $f,a$ of a diffusion process $x$ we claim th
 \end{equation}
 
 Clearly we have to impose further conditions of the stochastic differential equation's coefficients to ensure existence of a solution. 
-In particular, we want those coefficients to be Lipshitz and sub-linearly growing with respect to the second variable.
+In particular, we want those coefficients to be Lipshitz and sub-linearly growing with respect to the second variable. In equation \ref{2-1-SDEdef} 
+We define the square root of $a$ as a function $\sqrt{a}=\sigma$ such that:
 
-I HAVE TO SEARCH FOR A MORE GENERAL VERSION OF EXISTENCE THEOREM.
+\begin{equation}
+    \sigma(t,x)\cdot\sigma'(t,x) = a(t,x)
+\end{equation}
 
-THEN USE ITO FOR DEFINITION OF $A$ AND $G$. 
+We recall that under existence hypothesis for every $\Phi\in C^{1,2}(\overline{Q}_0)$ Ito's formula holds:
+
+\begin{equation}\label{2-1-itotox}
+    d\Phi(s,x(s)) = \Phi_s(s,x(s))ds + \sum_{i=1}^n \Phi_{x^i}(s,x(s)) dx^i(s) + \frac{1}{2}\sum_{i,j=1}^n \Phi_{x^ix^j}(s,x(s)) d[x,x]^{ij}(s)
+\end{equation}
+
+where $[x,y]$ is the covariation of process $x$ and $y$. Recall that this relation has always to be intended in integral form, that is:
+
+\begin{equation}
+    \Phi(s,x(s)) = \Phi(t,x) + \int_t^s\Phi_s(r,x(r))\,dr + \sum_{i=1}^n \int_t^s \Phi_{x^i}(r,x(r))\,dx^i(r) + \frac{1}{2}\sum_{i,j=1}^n \int_t^s\Phi_{x^ix^j}(r,x(r))\,d[x,x]^{ij}(r).
+\end{equation}
+
+Via this relation we can reconstruct Dynkin's formula in this setting. By defining the operator $A$ as in \ref{2-1-dynkform} we have:
+
+\begin{align}
+    \Phi(s,x(s)) & = \Phi(t,x) + \int_t^s\Phi_s(r,x(r))\,dr \\
+    & + \sum_{i=1}^n \left[\int_t^s \Phi_{x^i}(r,x(r))f_i(r,x(r))\,dr + \sum_{j=1}^n\int_t^s\Phi_{x^i}(r,x(r))\sigma_{ij}(r,x(r))\,dw^j(r)\right] \\
+    & + \frac{1}{2}\sum_{i,j=1}^n \sum_{l=1}^n\int_t^s\Phi_{x^ix^j}(r,x(r))\sigma_{il}(r,x(r))\sigma_{jl}(r,x(r))\,dr \\
+    & = \Phi(t,x) + \int_t^s \Phi_s(r,x(r)) + D_x\Phi\cdot f(r,x(r)) + \frac{1}{2}D^2_x\Phi\cdot a(r,x(r)) \,dr \\
+    & + \int_t^s D_x\Phi\cdot\sigma(r,x(r)) \,dw(r) \\
+    % & = \Phi(t,x) + \int_t^s A\Phi(r,x(r))\,dr + \int_t^s D_x\Phi\cdot\sigma(r,x(r)) \,dw(r)
+\end{align}
+
+but the last (stochastic) integral can be seen as a martingale. In particular, if we take $\Phi$ to have polynomial growth of some order $m$:
+
+\begin{equation}
+    \abs{\Phi(t,x)} \leq K(1+\abs{x}^m)\,\forall(t,x)\in\overline{Q}_0
+\end{equation}
+
+then $D_x\Phi\cdot\sigma\in\mathcal{L}^2(I_0)$, where:
+
+\[\mathcal{L}(I) = \left\{x:I\times\Omega\rightarrow\Sigma\,|\,E\int_Ix(s)\,ds<\infty\right\}\]
+
+and therefore its stochastic integral is a martingale (with respect to the canonical filtration associated to the Brownian motion $w$). 
+Therefore, if we take the (conditional) expectation:
+
+\begin{equation}
+    E_{tx}\Phi(s,x(s)) = \Phi(t,x) + E_{tx}\int_t^s \Phi_s(r,x(r)) + D_x\Phi\cdot f(r,x(r)) + \frac{1}{2}D^2_x\Phi\cdot a(r,x(r))\,dr.
+\end{equation}
+
+It is now natural to define the operator $A:C_p^{1,2}(\overline{Q}_0)\rightarrow\R$ as:
+
+\begin{equation}\label{2-1-newdefA}
+    A\Phi(r,x(r)) = \Phi_s(r,x(r)) + D_x\Phi\cdot f(r,x(r)) + \frac{1}{2}D^2_x\Phi\cdot a(r,x(r))
+\end{equation}
+
+where $C_p^{1,2}(I)$ is the family of functions $g$ from $I$ into $\R$ such that $g,g_s,g_{x_i},g_{x_ix_j}$ are continuous and with polynomial growth.
+
+\begin{remark}
+    Be careful that the stochastic integral:
+
+    \[\int_t^s D_x\Phi\cdot\sigma(r,x(r))\,dw(r)\]
+
+    is a martingale because $x$ satisfies:
+
+    \[E_{tx}\abs{x(r)}^m\leq C_m(1+\abs{x}^m)\,\forall r\in I_0\]
+
+    as it is solution of the SDE \ref{2-1-SDEdef}.\footnote{This is a standard result in SDE theory.}
+\end{remark}
+
+Consequently the generator $G$ of the time-homogeneous case is defined as:
+
+\begin{equation}
+    G\Phi(x) = -\frac{1}{2}\sum_{i,j=1}^n a_{ij}(x)\Phi_{x_ix_j}(x) - \sum_{i=1}^n f_i(x)\Phi_{x_i}(x)
+\end{equation}
+
 
 THEN CONTROLLED MARKOV PROCESSES.
+
+I HAVE TO SEARCH FOR A MORE GENERAL VERSION OF EXISTENCE THEOREM for markov control policies.
 
 THEN DYNAMIC PROGRAMMING APPROACH AND VERIFICATION THEOREM.
 
