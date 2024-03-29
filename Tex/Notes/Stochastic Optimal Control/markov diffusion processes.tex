@@ -80,12 +80,15 @@ The following holds.
         \end{equation}
     \end{enumerate}
 
-    \begin{proof}
-        I prove Dynkin's formula in the case of $T_{ts}$ being a Feller semigroup. 
-        %Dynkin, E. B., Markov processes,  
+    % \begin{proof}
+    %     I prove Dynkin's formula in the case of $T_{ts}$ being a Feller semigroup. 
+    %     %Dynkin, E. B., Markov processes,  
 
-    \end{proof}
+    % \end{proof}
 \end{proposition}
+
+Dynkin's formula can be proved in different instances, subject to the nature of the random process. We will see 
+that it is a natural consequence of It\hat{o} formula for continuous state space processes.
 
 If the random process $x$ is autonomous (time-homogeneous) then the linear operator family is a 
 semigroup. Recall that a Markov process is homogeneous if for all $t<s$ in $I_0$ then:
@@ -118,12 +121,55 @@ With $D(G)$ as $\mathcal{D}(A)$ before. It is worth noting that, formally, the f
 
 This relation links the two operators and the autonomous to the non-autonomous case. We now turn our attention to 
 a subset of Markov processes: diffusion processes. A diffusion process is a Markov process whose paths are continuous. 
-A diffusion process is completely determined by its infinitesimal mean and variance. 
+More formally. 
 
 \begin{definition}
-    The \textit{infinitesimal mean} is:
+    A diffusion process $x:\overline{I}_0\times\Omega\rightarrow\Sigma$ is a almost surely continuous Markov process with Markov transition kernel $p$ such that:
 
-    \begin{equation}
+    \begin{itemize}
+        \item For every $\epsilon>0$:
         
-    \end{equation}
+        \begin{equation}
+            \lim_{h\to0^+} \int_{\abs{x-y}>\epsilon} \,p(t,x,t+h,dy) = 0
+        \end{equation}
+
+        \item There exist functions $a_{ij}(t,x),f_{ij}(t,x)$ for $(t,x)\in\overline{Q}_0$ and $i,j=1,\dots,n$ such that for every $\epsilon>0$:
+        
+        \begin{equation}
+            \lim_{h\to0^+} \int_{\abs{x-y}\leq\epsilon} (y_i-x_i)\,p(t,x,t+h,dy) = f_i(t,x)
+        \end{equation}
+
+        And:
+
+        \begin{equation}
+            \lim_{h\to0^+} \int_{\abs{x-y}\leq\epsilon} (y_i-x_i)(y_j-x_j)\,p(t,x,t+h,dy) = a_{ij}(t,x).
+        \end{equation}
+    \end{itemize}
+
+    These limits are intended uniformly.
 \end{definition}
+
+Functions $f=(f_1,\dots,f_n)$ and $a=(a_{ij})_{ij}$ are respectively called local drift and local covariance coefficients.
+
+How does the backward evolution operator, and the generator in the autonomous case, adapt to this situation? 
+To answer this question we reduce our problem to a stochastic differential one by relying on the differential structure of a diffusion process. 
+Give the local drift and covariance $f,a$ of a diffusion process $x$ we claim that it satisfies:
+
+\begin{equation}\label{2-1-SDEdef}
+    dx(s) = f(s,x(s))ds + \sqrt{a}(s,x(s))dw(s) 
+\end{equation}
+
+Clearly we have to impose further conditions of the stochastic differential equation's coefficients to ensure existence of a solution. 
+In particular, we want those coefficients to be Lipshitz and sub-linearly growing with respect to the second variable.
+
+I HAVE TO SEARCH FOR A MORE GENERAL VERSION OF EXISTENCE THEOREM.
+
+THEN USE ITO FOR DEFINITION OF $A$ AND $G$. 
+
+THEN CONTROLLED MARKOV PROCESSES.
+
+THEN DYNAMIC PROGRAMMING APPROACH AND VERIFICATION THEOREM.
+
+THEN EXAMPLE IF TIME ALLOWS.
+
+THEN REREAD, REPEAT. I DONT THINK I'LL DO SLIDES. MAYBE THEY CAN BE A GOOD ASSET. LESS INFO, LESS THINGS TO KNOW PERFECTLY. BUT I HAVE TO KNOW EVERYTHING!!!
