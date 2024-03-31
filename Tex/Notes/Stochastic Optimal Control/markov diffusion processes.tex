@@ -1,4 +1,4 @@
-\section{Markov diffusion process}
+\section{Markov diffusion processes}
 
 I now recall some definitions, give new ones and set the notation. Let $\Sigma\subseteq\R^n$ and $\mathcal{B}(\Sigma)$ 
 the associated Borel $\sigma$-algebra. Let $(\Omega, \mathcal{F}, P)$ a general probability space. 
@@ -196,9 +196,9 @@ but the last (stochastic) integral can be seen as a martingale. In particular, i
     \abs{\Phi(t,x)} \leq K(1+\abs{x}^m)\,\forall(t,x)\in\overline{Q}_0
 \end{equation}
 
-then $D_x\Phi\cdot\sigma\in\mathcal{L}^2(I_0)$, where:
+then $D_x\Phi\cdot\sigma\in\mathbb{L}^2(I_0)$, where:
 
-\[\mathcal{L}(I) = \left\{x:I\times\Omega\rightarrow\Sigma\,|\,E\int_Ix(s)\,ds<\infty\right\}\]
+\[\mathbb{L}^2(I_0) = \left\{x:I\times\Omega\rightarrow\Sigma\,|\,E\int_I\abs{x(s)}^2\,ds<\infty\right\}\]
 
 and therefore its stochastic integral is a martingale (with respect to the canonical filtration associated to the Brownian motion $w$). 
 Therefore, if we take the (conditional) expectation:
@@ -207,7 +207,7 @@ Therefore, if we take the (conditional) expectation:
     E_{tx}\Phi(s,x(s)) = \Phi(t,x) + E_{tx}\int_t^s \Phi_s(r,x(r)) + D_x\Phi\cdot f(r,x(r)) + \frac{1}{2}D^2_x\Phi\cdot a(r,x(r))\,dr.
 \end{equation}
 
-It is now natural to define the operator $A:C_p^{1,2}(\overline{Q}_0)\rightarrow\R$ as:
+It is now coherent to define the operator $A:C_p^{1,2}(\overline{Q}_0)\rightarrow\R$ as:
 
 \begin{equation}\label{2-1-newdefA}
     A\Phi(r,x(r)) = \Phi_s(r,x(r)) + D_x\Phi\cdot f(r,x(r)) + \frac{1}{2}D^2_x\Phi\cdot a(r,x(r))
@@ -227,19 +227,8 @@ where $C_p^{1,2}(I)$ is the family of functions $g$ from $I$ into $\R$ such that
     as it is solution of the SDE \ref{2-1-SDEdef}.\footnote{This is a standard result in SDE theory.}
 \end{remark}
 
-Consequently the generator $G$ of the time-homogeneous case is defined as:
+Consequently, the generator $G$ of the time-homogeneous case is defined as:
 
 \begin{equation}
     G\Phi(x) = -\frac{1}{2}\sum_{i,j=1}^n a_{ij}(x)\Phi_{x_ix_j}(x) - \sum_{i=1}^n f_i(x)\Phi_{x_i}(x)
 \end{equation}
-
-
-THEN CONTROLLED MARKOV PROCESSES.
-
-I HAVE TO SEARCH FOR A MORE GENERAL VERSION OF EXISTENCE THEOREM for markov control policies.
-
-THEN DYNAMIC PROGRAMMING APPROACH AND VERIFICATION THEOREM.
-
-THEN EXAMPLE IF TIME ALLOWS.
-
-THEN REREAD, REPEAT. I DONT THINK I'LL DO SLIDES. MAYBE THEY CAN BE A GOOD ASSET. LESS INFO, LESS THINGS TO KNOW PERFECTLY. BUT I HAVE TO KNOW EVERYTHING!!!

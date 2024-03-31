@@ -2,3 +2,4 @@ Borel
 Chapman-Kolmogorov
 Integrability
 covariation
+optimality
