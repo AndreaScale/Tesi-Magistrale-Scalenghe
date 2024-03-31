@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber Intro"] 1711896608 "Intro.bcf" "Intro.bbl" "Intro" 1711896619 0
-  "Intro.bcf" 1711896618 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
+["biber Intro"] 1711896854 "Intro.bcf" "Intro.bbl" "Intro" 1711896870 0
+  "Intro.bcf" 1711896868 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
   "biblio.bib" 0 -1 0 ""
   (generated)
   "Intro.bbl"
   "Intro.blg"
   (rewritten before read)
-["pdflatex"] 1711896614 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Stochastic Optimal Control/Intro.tex" "Intro.pdf" "Intro" 1711896619 2
-  "Intro.aux" 1711896618 2045 5f3d09a85179ec11762a5d55de8c9daf "pdflatex"
+["pdflatex"] 1711896864 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Stochastic Optimal Control/Intro.tex" "Intro.pdf" "Intro" 1711896870 2
+  "Intro.aux" 1711896868 2045 5f3d09a85179ec11762a5d55de8c9daf "pdflatex"
   "Intro.bbl" 0 -1 0 "biber Intro"
-  "Intro.out" 1711896618 457 b899371f44f24725ccf1d6e7e960194a "pdflatex"
+  "Intro.out" 1711896868 457 b899371f44f24725ccf1d6e7e960194a "pdflatex"
   "Intro.tex" 1711815862 5063 4a75488edffcbbf21c0bb054a5ba402f ""
-  "Markov control processes.tex" 1711896607 9988 46405b7a7d43e1d868df3d7b90048fb0 ""
+  "Markov control processes.tex" 1711896853 9992 85c9ac9732137790485f09116564611c ""
   "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Stochastic Optimal Control/Intro.tex" 1711815862 5063 4a75488edffcbbf21c0bb054a5ba402f ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1702045797 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1702046692 3524 cb3e574dea2d1052e39280babc910dc8 ""
