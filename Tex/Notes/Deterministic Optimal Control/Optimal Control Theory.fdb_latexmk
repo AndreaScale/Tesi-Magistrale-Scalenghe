@@ -1,20 +1,20 @@
 # Fdb version 4
-["biber Optimal Control Theory"] 1711638354 "Optimal Control Theory.bcf" "Optimal Control Theory.bbl" "Optimal Control Theory" 1711638354 0
-  "Optimal Control Theory.bcf" 1711638352 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
+["biber Optimal Control Theory"] 1712047783 "Optimal Control Theory.bcf" "Optimal Control Theory.bbl" "Optimal Control Theory" 1712047783 0
+  "Optimal Control Theory.bcf" 1712047782 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
   "biblio.bib" 0 -1 0 ""
   (generated)
   "Optimal Control Theory.bbl"
   "Optimal Control Theory.blg"
   (rewritten before read)
-["pdflatex"] 1711638349 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex" "Optimal Control Theory.pdf" "Optimal Control Theory" 1711638354 0
+["pdflatex"] 1712047778 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Deterministic Optimal Control/Optimal Control Theory.tex" "Optimal Control Theory.pdf" "Optimal Control Theory" 1712047783 0
   "Dynamic programming principle.tex" 1710772951 9151 a0ed177dee97be38723dfc2928f25b72 ""
   "Existence.tex" 1711101731 5106 dfa0c82ae169109ee2801af5c5bd6309 ""
   "Finite horizon.tex" 1710797686 3251 c4731bbb7c68a644dee85805affa7c9d ""
   "Infinite horizon.tex" 1711383266 723 29273a91426f31294161d57c81e575ec ""
-  "Optimal Control Theory.aux" 1711638352 4099 45eece02befbcf89f65fb88c5222c608 "pdflatex"
+  "Optimal Control Theory.aux" 1712047782 4099 45eece02befbcf89f65fb88c5222c608 "pdflatex"
   "Optimal Control Theory.bbl" 0 -1 0 "biber Optimal Control Theory"
-  "Optimal Control Theory.out" 1711638352 1519 ccb864f8fff653f3c5f2f0448c3e819e "pdflatex"
-  "Optimal Control Theory.run.xml" 1711638352 2441 4c7cf1eeed9c080888d6657e73c6978b "pdflatex"
+  "Optimal Control Theory.out" 1712047782 1519 ccb864f8fff653f3c5f2f0448c3e819e "pdflatex"
+  "Optimal Control Theory.run.xml" 1712047782 2441 4c7cf1eeed9c080888d6657e73c6978b "pdflatex"
   "Optimal Control Theory.tex" 1711638326 5628 0aa60f302cbeba756cd0a1bbfb90dda3 ""
   "Pontryagin.tex" 1711388303 8593 090f143c073016b619006db68117a2f6 ""
   "Proof of Pontryagin.tex" 1711443321 6840 60200caad599ac28a541453e8d167c9f ""
