@@ -1,0 +1,138 @@
+\section{Stochastic Maximum Principle}
+
+The stochastic analogous of Pontryagin's principle is the stochastic maximum principle. It relies on the notion of 
+backward stochastic differential equation, whose solution will provide a necessary condition on the controlled system. 
+
+\subsection{Backward Stochastic Differential Equation}
+
+A backward stochastic differential equation is a SDE where the initial date is replaced by a final distribution. We 
+start by defining a formal concept of solution and provide a general result about existence and uniqueness. 
+
+We work with a filtered probability space $(\Omega,\mathcal{F}, P, \left\{\mathcal{F}_s\right\})$ and a Brownian motion $(w_s)$ adapted 
+to the space filtration. We assume that the filtration is the natural one associated to $w$. A BSDE has the form:
+
+\begin{equation}\label{2-1-defBSDE}
+    \begin{cases}
+        - dy_s = f(s,y_s,z_s)ds - z_sdw_s & \forall s\in[t,t_1]\\
+        y_{t_1} = \xi, 
+    \end{cases}
+\end{equation}
+
+where $f$ is real valued and $\xi$ a suitable random variable. Further conditions on $f$ and $\xi$ will be imposed 
+by the existence theorem. The above definitions has to be intended in integral form. To do so we have to specify some integrability conditions. Let us define the space:
+
+\begin{equation}\label{2-1-defS}
+    \mathbb{S}^2(t,t_1) = \left\{(X_s)_{t\in[t,t_1]}\,|\, X_s\in\R \text{ is progressively measurable},\, E\left[\sup_{s\in[t,t_1]}\abs{X_s}^2\right]<+\infty\right\}
+\end{equation}
+
+and:
+
+\begin{equation}\label{2-1-defH}
+    \mathbb{H}^2(t,t_1)^n = \left\{(X_s)_{t\in[t,t_1]}\,|\, X_s\in\R^n \text{ is progressively measurable},\, E\left[\int_t^{t_1} \abs{Y_s}^2\,ds\right]<+\infty\right\}.    
+\end{equation}
+
+We can now define the solution concept of \ref{2-1-defBSDE}.
+
+\begin{definition}
+    A solution of \ref{2-1-solBSDE} is a couple $(y,z)\in\mathbb{S}^2(t,t_1)\times\mathbb{H}^2(t,t_1)^n$ such that:
+    
+    \[y_s = \xi + \int_s^{t_1} f(r,y_r,z_r)\,dr - \int_s^{t_1} z_r\,dw_r\] 
+
+    holds for all $s\in[t,t_1]$. 
+\end{definition}
+
+Some measurability and integrability conditions are necessary for equation \ref{2-1-defBSDE} to make sense. Existence 
+of a solution will be obtained through a classical fixed point method, which will rise from Lipschitz condition on $f$. 
+We denote by $m$ the Lebesgue measure on $[t,t_1]$.
+
+\begin{theorem}
+    Let $f:\Omega\times[t,t_1]\times\R\times\R^n\rightarrow \R$ such that $f(\cdot,\cdot,y,z)$ is progressively measurable for all 
+    $(y,z)\in\R^{n+1}$, $f(\cdot,\cdot,0,0)\in\mathbb{H}^2(t,t_1)^1$ and there exists $C>0$ such that:
+
+    \begin{equation}
+        \abs{f(s,y_1,z_1)-f(s,y_2,z_2)} \leq C(\abs{y_1-y_2} + \abs{z_1-z_2}),\,\forall y_1,y_2,z_1,z_2,\, m\otimes P\,a.s.
+    \end{equation}
+
+    Then for every $\xi\in L^2$ the BSDE \ref{2-1-defBSDE} has a unique solution.
+
+    \begin{proof}
+        We use completeness of the space $(\mathbb{S}(t,t_1)\times\mathbb{H}^2(t,t_1)^n, \norm{\cdot}_{\beta})$ where:
+
+        \begin{equation}
+            \norm{(y,z)}_{\beta} = \left(E\left[\int_t^{t_1} e^{\beta s}\left(\abs{y_s}^2+\abs{z_s}^2\right)ds\right]\right).
+        \end{equation}
+
+        This result is proved in the appendix. We call the previous Banach space $(X,\norm{\cdot})$. We construct the map 
+        $\Phi:X\rightarrow X$ defined as $\Phi(u,v)=(y,z)$. The processes $y$ and $z$ are defined as follows. We define:
+
+        \begin{equation}
+            M_s = E\left[\xi + \int_0^{t_1} f(r,u_r,v_r)\,dr\,|\,\mathcal{F}_s\right].
+        \end{equation}
+
+        It is a square integrable martingale because:
+        
+        \begin{align}
+            E\left\{E^2\left[\xi + \int_t^{t_1} f(r,u_r,v_r)\,dr\,|\,\mathcal{F}_s\right]\right\} & 
+            % \leq C E^2\left\{E\left[\xi + \int_t^{t_1} f(r,u_r,v_r)\,dr\,|\,\mathcal{F_s}\right]\right\} \\
+            % & = C E^2\left[\xi + \int_t^{t_1} f(r,u_r,v_r)\,dr\right] \\
+             \leq C_0 E^2\xi + C_1E^2\int_t^{t_1} f(r,0,0)\,dr \\
+            & + C_2E^2\int_t^{t_1} f(r,u_r,v_r)-f(r,0,0)\,dr \\
+            & + C_3E\xi^2E\int_t^{t_1}f(r,0,0)^2\,dr \\
+            & + C_4E\xi^2E\int_t^{t_1}(f(r,u_r,v_r)-f(r,0,0))^2\,dr, 
+        \end{align}
+
+        which is finite because of the assumptions and given $(u,v)\in X$. It is a martingale. Therefore, by 
+        Ito's martingale representation theorem there exists a unique $z\in\mathbb{H}^2(t,t_1)^n$\footnote{Unique with respect to $\norm{\cdot}_{\mathbb{H}}$.} and $m_t\in L2$ such that:
+        
+        \begin{equation}
+            m_s = m_t + \int_t^{s} z_r\,dw_r.
+        \end{equation}
+
+        We define $(y,z)$ as $z$ being the unique process of the martingale representation of $m_s$ while $y$ to be:
+
+        \begin{equation}
+            y_s = E\left[\xi + \int_s^{t_1} f(r,u_r,v_r)\,dr\,|\,\mathcal{F}_s\right] = m_s - \int_t^s f(r,u_r,v_r)\,dr.
+        \end{equation}
+
+        We know that $z\in\mathbb{H}^2$. We show $y\in\mathbb{S}^2$:
+
+        \begin{align}
+            E\left[\sup_{s\in[t,t_1]}\abs{y_s}^2\right] & \leq C_0E\left[\sup_{s\in[t,t_1]}\abs{m_s}^2\right] + C_1E\left[\sup_{s\in[t,t_1]}\abs{\int_t^s f(r,u_r,v_r)\,dr}^2\right],
+        \end{align}
+
+        but as before the second addend converges while for the first one:
+
+        \[E\left[\sup_{s\in[t,t_1]}\abs{m_s}^2\right] \leq C_0 Em_t^2 + C_1E^{1/2}m_t^2E^{1/2}\sup_{s\in[t,t_1]}\left[\int_t^{s}z_r\,dw_r\right]^2+C_3E^{1/2}\sup_{s\in[t,t_1]}\left[\int_t^{s}z_r\,dw_r\right]^2\]
+
+        which converges beacuse Doob's inequality implies:
+
+        \[E\left[\sup_{s\in[t,t_1]}\int_t^sz_r\,dw_r\right]^2 \leq 4E\left[\int_t^{t_1}z_r^2\,dw_r\right]<+\infty.\]
+
+        If we prove $\Phi$ to be a strict contraction we'll have a unique (in $(X,\norm{\cdot})$) fixed point, therefore the thesis. 
+        
+        Let $(U_1,V_1),(U_2,V_2)\in X$, $(X_1,Y_1),(X_2,Y_2)$ their images and $\overline{U},\overline{V},\overline{X},\overline{Y},\overline{f}_t$ the differences between subscript $1$ and $2$. 
+        By Ito's formula we have:
+
+        \begin{align}
+            \abs{\overline{y_t}^2} & = -\int_t^{t_1} \frac{d}{dr}\left(e^{\beta r}\overline{y_r}^2\right) \,dr \\
+            & 
+        \end{align}
+    \end{proof}
+\end{theorem}
+
+A notable case is the one with a generator $f$ linear in $y$ and $z$. That is, there exists 
+$a,b$ bounded progressively measurable processes valued in $\R$ and $\R^n$ and $c\in\mathbb{H}(t,t_1)^1$ which define:
+
+\begin{equation}\label{2-1-defBSDE-linear}-dy_s = \left(a_sy_s + z_sb_s + c_s\right)ds - z_sdw_s,\,y_{t_1}=\xi.\end{equation}
+
+\begin{proposition}
+    The unique solution $(y,z)$ of \ref{2-1-defBSDE-linear} is:
+    
+    \begin{equation}\label{2-1-linearfsol}
+        \Gamma_sy_s = E\left[\Gamma_{t_1}\xi + \int_s^{t_1} \Gamma_rc_r\,dr\,|\,\mathcal{F}_s\right],
+    \end{equation}
+
+    and $z_s$ is defined via the Martingale representation of \ref{2-1-linearfsol}. The process $\Gamma$ is defined by:
+
+    \[d\Gamma_s = \Gamma_s\left(a_sds + b_sdw_s\right),\,\Gamma_0=1.\]
+\end{proposition}

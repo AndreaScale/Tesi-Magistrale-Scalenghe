@@ -3,3 +3,5 @@ Chapman-Kolmogorov
 Integrability
 covariation
 optimality
+measurability
+integrability

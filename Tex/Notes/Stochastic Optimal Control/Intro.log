@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  31 MAR 2024 15:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  10 APR 2024 19:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1382,7 +1382,11 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count502
 \@quotereset=\count503
-(./Intro.aux)
+(./Intro.aux
+
+LaTeX Warning: Label `2-1-opt' multiply defined.
+
+)
 \openout1 = `Intro.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 151.
@@ -1441,10 +1445,11 @@ LaTeX Font Info:    ... okay on input line 151.
 LaTeX Info: Command `\dddot' is already robust on input line 151.
 LaTeX Info: Command `\ddddot' is already robust on input line 151.
 Package hyperref Info: Link coloring OFF on input line 151.
+(./Intro.out) (./Intro.out)
 \@outlinefile=\write6
 \openout6 = `Intro.out'.
 
-(c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count504
 \scratchdimen=\dimen333
@@ -1549,38 +1554,17 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 3.
 LaTeX Font Info:    Trying to load font information for U+esint on input line 3.
  (c:/texlive/2023/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
-)
+) [1{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-LaTeX Warning: Reference `2-1-markovprocessdef-chapkol' on page 1 undefined on input line 50.
-
-
-LaTeX Warning: Reference `2-1-backwarddef' on page 1 undefined on input line 64.
-
-[1{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-]
-
-LaTeX Warning: Reference `2-1-propT' on page 2 undefined on input line 98.
-
-[2{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-
-LaTeX Warning: Reference `2-1-SDEdef' on page 3 undefined on input line 163.
-
-
+] [2{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 Overfull \hbox (4.05217pt too wide) detected at line 180
 [][][]\OT1/cmr/m/n/12 ^^H\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq ^^P \OT1/cmr/m/n/12 ^^H\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q ^^@ [][] \OT1/cmr/m/n/12 ^^H[]\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq \OML/cmm/m/it/12 dr \U/matha/m/n/12 ^^@ [] [][] \OT1/cmr/m/n/12 ^^H[]\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq \OML/cmm/m/it/12 dx[]\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q ^^@ [] [] [][] \OT1/cmr/m/n/12 ^^H[]\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq \OML/cmm/m/it/12 d\U/matha/m/n/12 r\OML/cmm/m/it/12 x; x\U/matha/m/n/12 s[]p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 :
  []
 
 
-LaTeX Warning: Reference `2-1-dynkform' on page 3 undefined on input line 182.
-
-
 Underfull \vbox (badness 2050) has occurred while \output is active []
 
  [3]
-
-LaTeX Warning: Reference `2-1-SDEdef' on page 4 undefined on input line 227.
-
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/10'
 (microtype)             (new value: 10.0pt) on input line 227.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/7'
@@ -1593,55 +1577,16 @@ Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/7'
 (microtype)             (new value: 7.0pt) on input line 227.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/5'
 (microtype)             (new value: 5.0pt) on input line 227.
-) (./Markov control processes.tex [4]
-
-LaTeX Warning: Reference `2-1-controlledSDE' on page 5 undefined on input line 31.
-
-
-LaTeX Warning: Reference `2-1-condoncontrol' on page 5 undefined on input line 62.
-
-[5]
-
-LaTeX Warning: Reference `2-1-systemopt' on page 6 undefined on input line 77.
-
-
-LaTeX Warning: Reference `2-1-defhamilt' on page 6 undefined on input line 123.
-
-[6]
-Overfull \hbox (22.25743pt too wide) detected at line 146
+) (./Markov control processes.tex [4] [5] [6]
+Overfull \hbox (22.25743pt too wide) detected at line 148
 [][][]\OML/cmm/m/it/12 u[]\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q P [] []
  []
 
+[7]) (./Stochastic maximum Principle.tex
 
-LaTeX Warning: Reference `2-1-hamilcond' on page 7 undefined on input line 156.
+LaTeX Warning: Reference `2-1-solBSDE' on page 8 undefined on input line 37.
 
-[7]
-./Markov control processes.tex:203: Undefined control sequence.
-<argument> ...{\rho }))}^{\alpha } & \leq KE_{\tx 
-                                                  }\left (1+\abs {x(\tau _{\...
-l.203         \end{align}
-                         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./Markov control processes.tex:203: Undefined control sequence.
-<argument> ...{\rho }))}^{\alpha } & \leq KE_{\tx 
-                                                  }\left (1+\abs {x(\tau _{\...
-l.203         \end{align}
-                         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-LaTeX Warning: Reference `2-1-proofver-keyeq' on page 8 undefined on input line 211.
-
-) [8] (./Intro.aux)
+[8] [9]) [10] (./Intro.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
@@ -1651,38 +1596,27 @@ L3 programming layer <2023-11-09>
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `Intro.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Intro.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  B899371F44F24725CCF1D6E7E960194A;457.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                Intro
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `Intro.out' has not changed.
+(rerunfilecheck)             Checksum: A3C392031C051B8E031D3BA2E8EC6E4F;923.
 Package logreq Info: Writing requests to 'Intro.run.xml'.
 \openout1 = `Intro.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56785 strings out of 474267
- 1325178 string characters out of 5751465
- 2270517 words of memory out of 5000000
- 77975 multiletter control sequences out of 15000+600000
- 579835 words of font info for 165 fonts, out of 8000000 for 9000
+ 56854 strings out of 474267
+ 1326187 string characters out of 5751465
+ 2272756 words of memory out of 5000000
+ 77994 multiletter control sequences out of 15000+600000
+ 580901 words of font info for 176 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,12n,107p,1654b,1946s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Intro.pdf (8 pages, 238661 bytes).
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Intro.pdf (10 pages, 274942 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
- 203 compressed objects within 3 object streams
- 96 named destinations out of 1000 (max. 500000)
- 24589 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 281 compressed objects within 3 object streams
+ 121 named destinations out of 1000 (max. 500000)
+ 28725 words of extra memory for PDF output out of 29859 (max. 10000000)
 
