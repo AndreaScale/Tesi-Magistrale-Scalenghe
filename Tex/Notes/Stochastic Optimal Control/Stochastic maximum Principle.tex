@@ -11,7 +11,7 @@ start by defining a formal concept of solution and provide a general result abou
 We work with a filtered probability space $(\Omega,\mathcal{F}, P, \left\{\mathcal{F}_s\right\})$ and a Brownian motion $(w_s)$ adapted 
 to the space filtration. We assume that the filtration is the natural one associated to $w$. A BSDE has the form:
 
-\begin{equation}\label{2-1-defBSDE}
+\begin{equation}\label{2-3-defBSDE}
     \begin{cases}
         - dy_s = f(s,y_s,z_s)ds - z_sdw_s & \forall s\in[t,t_1]\\
         y_{t_1} = \xi, 
@@ -21,27 +21,27 @@ to the space filtration. We assume that the filtration is the natural one associ
 where $f$ is real valued and $\xi$ a suitable random variable. Further conditions on $f$ and $\xi$ will be imposed 
 by the existence theorem. The above definitions has to be intended in integral form. To do so we have to specify some integrability conditions. Let us define the space:
 
-\begin{equation}\label{2-1-defS}
+\begin{equation}\label{2-3-defS}
     \mathbb{S}^2(t,t_1) = \left\{(X_s)_{t\in[t,t_1]}\,|\, X_s\in\R \text{ is progressively measurable},\, E\left[\sup_{s\in[t,t_1]}\abs{X_s}^2\right]<+\infty\right\}
 \end{equation}
 
 and:
 
-\begin{equation}\label{2-1-defH}
+\begin{equation}\label{2-3-defH}
     \mathbb{H}^2(t,t_1)^n = \left\{(X_s)_{t\in[t,t_1]}\,|\, X_s\in\R^n \text{ is progressively measurable},\, E\left[\int_t^{t_1} \abs{Y_s}^2\,ds\right]<+\infty\right\}.    
 \end{equation}
 
-We can now define the solution concept of \ref{2-1-defBSDE}.
+We can now define the solution concept of \ref{2-3-defBSDE}.
 
 \begin{definition}
-    A solution of \ref{2-1-solBSDE} is a couple $(y,z)\in\mathbb{S}^2(t,t_1)\times\mathbb{H}^2(t,t_1)^n$ such that:
+    A solution of \ref{2-3-solBSDE} is a couple $(y,z)\in\mathbb{S}^2(t,t_1)\times\mathbb{H}^2(t,t_1)^n$ such that:
     
     \[y_s = \xi + \int_s^{t_1} f(r,y_r,z_r)\,dr - \int_s^{t_1} z_r\,dw_r\] 
 
     holds for all $s\in[t,t_1]$. 
 \end{definition}
 
-Some measurability and integrability conditions are necessary for equation \ref{2-1-defBSDE} to make sense. Existence 
+Some measurability and integrability conditions are necessary for equation \ref{2-3-defBSDE} to make sense. Existence 
 of a solution will be obtained through a classical fixed point method, which will rise from Lipschitz condition on $f$. 
 We denote by $m$ the Lebesgue measure on $[t,t_1]$.
 
@@ -53,7 +53,7 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
         \abs{f(s,y_1,z_1)-f(s,y_2,z_2)} \leq C(\abs{y_1-y_2} + \abs{z_1-z_2}),\,\forall y_1,y_2,z_1,z_2,\, m\otimes P\,a.s.
     \end{equation}
 
-    Then for every $\xi\in L^2$ the BSDE \ref{2-1-defBSDE} has a unique solution.
+    Then for every $\xi\in L^2$ the BSDE \ref{2-3-defBSDE} has a unique solution.
 
     \begin{proof}
         We use completeness of the space $(\mathbb{S}(t,t_1)\times\mathbb{H}^2(t,t_1)^n, \norm{\cdot}_{\beta})$ where:
@@ -102,37 +102,160 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
 
         but as before the second addend converges while for the first one:
 
-        \[E\left[\sup_{s\in[t,t_1]}\abs{m_s}^2\right] \leq C_0 Em_t^2 + C_1E^{1/2}m_t^2E^{1/2}\sup_{s\in[t,t_1]}\left[\int_t^{s}z_r\,dw_r\right]^2+C_3E^{1/2}\sup_{s\in[t,t_1]}\left[\int_t^{s}z_r\,dw_r\right]^2\]
+        \[E\left[\sup_{s\in[t,t_1]}\abs{m_s}^2\right] \leq C_0 Em_t^2 + C_1E^{1/2}m_t^2E^{1/2}\sup_{s\in[t,t_1]}\left[\int_t^{s}z_r\,dw_r\right]^2+C_3E^{1/2}\sup_{s\in[t,t_1]}\left[\int_t^{s}z_r\,dw_r\right]^2,\]
 
         which converges beacuse Doob's inequality implies:
 
         \[E\left[\sup_{s\in[t,t_1]}\int_t^sz_r\,dw_r\right]^2 \leq 4E\left[\int_t^{t_1}z_r^2\,dw_r\right]<+\infty.\]
 
-        If we prove $\Phi$ to be a strict contraction we'll have a unique (in $(X,\norm{\cdot})$) fixed point, therefore the thesis. 
+        If we prove $\Phi$ to be a contraction we'll have a unique (in $(X,\norm{\cdot})$) fixed point, therefore the thesis. 
         
         Let $(U_1,V_1),(U_2,V_2)\in X$, $(X_1,Y_1),(X_2,Y_2)$ their images and $\overline{U},\overline{V},\overline{X},\overline{Y},\overline{f}_t$ the differences between subscript $1$ and $2$. 
         By Ito's formula we have:
 
-        \begin{align}
-            \abs{\overline{y_t}^2} & = -\int_t^{t_1} \frac{d}{dr}\left(e^{\beta r}\overline{y_r}^2\right) \,dr \\
-            & 
+        \begin{align}\label{2-3-derivat}
+            \abs{\overline{y_t}^2} & = -\int_t^{t_1} \frac{d}{dr}\left(e^{\beta r}\overline{y_r}^2\right) \,dr = - \int_t^{t_1} \beta e^{\beta r}\overline{y_r}^2 + e^{\beta r}\frac{d}{dr}\overline{y_r}^2 \,dr\\
+            & = - \int_t^{t_1} \beta e^{\beta r}\overline{y_r}^2 \,dr - \int_t^{t_1} e^{\beta r}\left(2\overline{y_r}\right)\,d\overline{y_r} - \int_t^{t_1} e^{\beta r}\,d[\overline{y},\overline{y}]_r \\
+            & = - \int_t^{t_1} \beta e^{\beta r}\overline{y_r}^2 \,dr + 2\int_t^{t_1} e^{\beta r}\overline{y_r}\overline{f}_r\,dr - 2\int_t^{t_1} e^{\beta r}\overline{y_r}\,dw_r - \int_t^{t_1} e^{\beta r}\overline{z}_r^2\,dr \\
+            & = - \int_t^{t_1} e^{\beta r}\left(\beta\overline{y}_r^2-2\overline{y}_r\overline{f}_r\right)\,dr - \int_t^{t_1}e^{\beta r}\overline{z}_r^2\,dr - 2\int_t^{t_1}e^{\beta r}\overline{y}_r\overline{z}_r\,dw_r.
         \end{align}
+
+        We show that $e^{\beta r}\overline{y}_r\overline{z}_r\in\mathbb{H}^2(t,t_1)^1$, which will guarantee the integral to vanish under expectation. We have:
+
+        \color{red}{\[E\left[\left(\int_t^{t_1} e^{2\beta r}\overline{y}_r^2\overline{z}_r^2\,dr\right)^{1/2}\right]\leq \frac{e^{\beta t_1}}{2}E\left[\sup_{s\in[t,t_1]\overline{y}_s^2 + \int_t^{t_1}\overline{z}_r^2}\,dr\right] <+\infty.\]}
+        
+        \color{black}{}
+        By taking the expectation on \ref{2-3-derivat}:
+        
+        \begin{align}
+            E\overline{y}_t^2 + E\left[\int_t^{t_1}e^{\beta r} \left(\beta\overline{y}_r^2+\overline{z}_r^2\right)\,dr\right] & = 2E\left[\int_t^{t_1}e^{\beta r}\overline{y}_r\overline{f}_r\,dr\right] \\
+            & \leq 2CE\left[\int_t^{t_1}e^{\beta r}\overline{y}_r\left(\overline{u}_r+\overline{v}_r\right)\,dr\right] \\
+            & \leq 2CE\left[\int_t^{t_1}e^{\beta r}\overline{y}_r^2\,dr\right] + CE\left[\int_t^{t_1}e^{\beta r}\left(\overline{u}_r^2+\overline{v}_r^2\right)\,dr\right], \\
+        \end{align}
+
+        which implies:
+
+        \[E\left[\int_t^{t_1}e^{\beta r} \left(\overline{y}_r^2+\overline{z}_r^2\right)\,dr\right] \leq E\left[\int_t^{t_1}e^{\beta r} \left(\overline{u}_r^2+\overline{v}_r^2\right)\,dr\right]\]
     \end{proof}
 \end{theorem}
+
+The previous proof used the concept of local martingale and the Burkholder-Davis-Gundy inequality, they are detailed in the appendix. In particular the fact that if $X\in\mathbb{H}^2$ then $\int X\,dw$ is a martingale uses these concepts.
 
 A notable case is the one with a generator $f$ linear in $y$ and $z$. That is, there exists 
 $a,b$ bounded progressively measurable processes valued in $\R$ and $\R^n$ and $c\in\mathbb{H}(t,t_1)^1$ which define:
 
-\begin{equation}\label{2-1-defBSDE-linear}-dy_s = \left(a_sy_s + z_sb_s + c_s\right)ds - z_sdw_s,\,y_{t_1}=\xi.\end{equation}
+\begin{equation}\label{2-3-defBSDE-linear}-dy_s = \left(a_sy_s + z_sb_s + c_s\right)ds - z_sdw_s,\,y_{t_1}=\xi.\end{equation}
 
 \begin{proposition}
-    The unique solution $(y,z)$ of \ref{2-1-defBSDE-linear} is:
+    The unique solution $(y,z)$ of \ref{2-3-defBSDE-linear} is:
     
-    \begin{equation}\label{2-1-linearfsol}
+    \begin{equation}\label{2-3-linearfsol}
         \Gamma_sy_s = E\left[\Gamma_{t_1}\xi + \int_s^{t_1} \Gamma_rc_r\,dr\,|\,\mathcal{F}_s\right],
     \end{equation}
 
-    and $z_s$ is defined via the Martingale representation of \ref{2-1-linearfsol}. The process $\Gamma$ is defined by:
+    and $z_s$ is defined via the Martingale representation of \ref{2-3-linearfsol}. The process $\Gamma$ is defined by:
 
-    \[d\Gamma_s = \Gamma_s\left(a_sds + b_sdw_s\right),\,\Gamma_0=1.\]
+    \[d\Gamma_s = \Gamma_s\left(a_sds + b_sdw_s\right),\,\Gamma_t=1.\]
 \end{proposition}
+
+\subsection{Stochastic Maximum Principle}
+
+The stochastic counterpart of Pontryagin's principle is the stochastic maximum principle. We consider the controlled diffusion process $x$ on $\R^n$ defined by:
+
+\begin{equation}
+    dx_s = f(r,x(r),u(r))dr + \sigma(r,x(r),u(r))dw(r)
+\end{equation}
+
+and let the functional to be maximized:
+
+\begin{equation}\label{2-3-newfunctmax}
+    J(t,x;u) = E_{tx}\left\{\int_t^{t_1}L(s,x(s),u(s))\,ds + \Phi(t_1,x(t_1))\right\},
+\end{equation}
+
+where the running and terminal cost satisfy the usual assumptions. We aim at maximizing functional $J$ over all 
+admissible systems, that is:
+
+\[\inf_{\nu}\inf_{u\in\mathcal{A}_{t\nu}} J(t,x;u).\]
+
+We consider again the value function related to this problem, that is a function $V$, with suitable smoothness conditions, such that:
+
+\begin{equation}
+    -\frac{\partial V}{\partial t} + \mathcal{H}(t,x,D_xV,D_x^2V) = 0,
+\end{equation}
+
+where:
+
+\begin{equation}
+    \mathcal{H}(s,x,v,p,A) = - f(s,x,v)\cdot p - \frac{1}{2}tr\left[\sigma\sigma'(s,x,v)\cdot A\right] - L(s,x,v).
+\end{equation}
+
+As in the determinist case, under the assumption of optimality the value function $V$ will define the solution 
+of a differential equation, more precisely a BSDE. The backward stochastic differential equation will be an 
+analogous of the deterministic adjoint equation:
+
+\[\begin{cases}
+    \dot{p}(s) = D_xH(s,x(s),u(s),p(s)) \\
+    p(t_1) = D\psi(x(t_1)),
+\end{cases}\]
+
+as stated in \ref{1-3-pontry}. In particular, we will need the functional:
+
+\begin{equation}\label{3-2-defG}\mathcal{G}(t,x,v,y,z) = f(s,x,v)\cdot y + tr\left[\sigma'(s,x,v)\cdot z\right] + L(s,x,v).\end{equation}
+
+This functional will define the BSDE in the next theorem.
+
+\begin{theorem}\label{2-3-stochmaxprinc}
+    Let $u^{\ast}$ be an optimal control and $x^{\ast}$ the corresponding diffusion process, and the value function 
+    $V\in C^{1,2}(O)\cap C(\overline{O})$. Then $V$ satisfies:
+    
+    \begin{equation}\label{2-3-maxcond}
+        \mathcal{H}(s,x_s^{\ast}, u_s^{\ast}, D_xV(s,x^{\ast}_s), D_x^2V(s,x^{\ast}_s)) = \sup_{v \in U}\mathcal{H}(s,x_s^{\ast}, v, D_xV(s,x^{\ast}_s), D_x^2V(s,x^{\ast}_s)),
+    \end{equation}
+
+    and the pair $(y_s,z_s)=\left(D_xV(s,x_s^{\ast}),D_x^2v(s,x_s^{\ast})\sigma(s,x_s^{\ast},u_s^{\ast})\right)$ solves the BSDE:
+
+    \begin{equation}\label{2-3-maxprinc-BSDE}
+        -dy_s = D_x\mathcal{G}(s,x_s^{\ast}, u_s^{\ast}, y_s, z_s)ds - z_sdw_s,
+    \end{equation}
+
+    with final condition:
+
+    \begin{equation}\label{2-3-maxprinc-finalcond}
+        y_{t_1} = D_x\Psi(t_1,x_{t_1}).
+    \end{equation}
+
+    \begin{proof}
+        We drop the $^{\ast}$. We consider the optimal system over which the control is defined. 
+        Since $u$ is optimal we have:
+
+        \begin{align}
+            V(s,x(s)) & = E_{sx(s)}\left[\int_s^{t_1} L(r,x(r),u(r))\,dr \Psi(t_1,x(t_1))\right] \\ 
+            & = E_{tx}\left[\int_t^{t_1} L(r,x(r),u(r))\,dr \Psi(t_1,x(t_1))\right] - \int_t^s L(r,x(r),u(r))\,dr.  
+        \end{align}
+
+        We then apply Ito's formula and get:
+
+        \begin{align}
+            \int_t^{t_1} \partial_sV(r,x(r)) + D_xV(r,x(r))f(r,x(r),u(r)) + \frac{1}{2}tr\left[\sigma\sigma'(r,x(r),u(r))D_xx^2V(r,x(r))\right] \,dr \\
+            + \int_t^{t_1} D_xV(r,x(r))\sigma(r,x(r),u(r))\,dw_r + V(t,x) \\
+            = \int_t^{t_1} -f(r,x(r),u(r))\,dr + \int_t^{t_1}\alpha_r\,dw_r + V(t,x)
+        \end{align}
+
+        where we used the integral representation of a martingale, which implies:
+
+        \begin{equation}\label{2-3-hjbinproof}
+            -\frac{\partial V}{\partial t} - \mathcal{H}(s,x(s),u(s),D_xV(s,x(s)),D_x^2V(s,x(s))) = 0.
+        \end{equation}
+
+        We then prove the BSDE using the continuity of triple spacial derivatives of the value functions and 
+        the fact that \ref{2-3-hjbinproof} at $s$ has maximum in $x(s)$, which implies:
+
+        \[\frac{\partial}{\partial x}\left(\frac{\partial V}{\partial t}(s,x) + \mathcal{H}(s,x,u(s),D_xV(s,x),D_x^2V(s,x))\right)\big|_{x=x(s)}=0.\]
+
+        We compute the derivative and get:
+
+        \begin{align}
+            miao.
+        \end{align}
+    \end{proof}
+\end{theorem}

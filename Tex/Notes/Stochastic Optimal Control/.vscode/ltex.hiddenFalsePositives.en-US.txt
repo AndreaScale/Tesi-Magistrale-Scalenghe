@@ -1,0 +1,2 @@
+{"rule":"ARTICLE_ADJECTIVE_OF","sentence":"^\\QThe backward stochastic differential equation will be an analogous of the adjoint\\E$"}
+{"rule":"ARTICLE_ADJECTIVE_OF","sentence":"^\\QThe backward stochastic differential equation will be an analogous of the deterministi adjoint equation:\\E$"}

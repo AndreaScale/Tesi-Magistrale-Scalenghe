@@ -5,3 +5,4 @@ covariation
 optimality
 measurability
 integrability
+Burkholder-Davis-Gundy
