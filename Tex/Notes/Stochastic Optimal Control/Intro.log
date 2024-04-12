@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  11 APR 2024 19:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  12 APR 2024 11:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1590,7 +1590,30 @@ LaTeX Warning: Reference `2-3-solBSDE' on page 8 undefined on input line 37.
 
 LaTeX Warning: Reference `1-3-pontry' on page 11 undefined on input line 201.
 
-[11]) [12] (./Intro.aux)
+[11]
+Overfull \hbox (36.87848pt too wide) detected at line 262
+[]
+ []
+
+
+./Stochastic maximum Principle.tex:269: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.269             \end{align*}
+                              
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (41.30522pt too wide) detected at line 278
+[]
+ []
+
+[12]) [13] (./Intro.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
@@ -1609,18 +1632,18 @@ Package logreq Info: Writing requests to 'Intro.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56897 strings out of 474267
- 1326780 string characters out of 5751465
- 2277064 words of memory out of 5000000
- 78004 multiletter control sequences out of 15000+600000
+ 56903 strings out of 474267
+ 1326913 string characters out of 5751465
+ 2277097 words of memory out of 5000000
+ 78009 multiletter control sequences out of 15000+600000
  581167 words of font info for 180 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,12n,107p,1654b,1946s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Intro.pdf (12 pages, 288213 bytes).
+Output written on Intro.pdf (13 pages, 290018 bytes).
 PDF statistics:
- 389 PDF objects out of 1000 (max. 8388607)
- 323 compressed objects within 4 object streams
- 146 named destinations out of 1000 (max. 500000)
+ 396 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
+ 147 named destinations out of 1000 (max. 500000)
  28733 words of extra memory for PDF output out of 29859 (max. 10000000)
 

@@ -200,7 +200,7 @@ analogous of the deterministic adjoint equation:
 
 as stated in \ref{1-3-pontry}. In particular, we will need the functional:
 
-\begin{equation}\label{3-2-defG}\mathcal{G}(t,x,v,y,z) = f(s,x,v)\cdot y + tr\left[\sigma'(s,x,v)\cdot z\right] + L(s,x,v).\end{equation}
+\begin{equation}\label{3-2-defG}\mathcal{G}(t,x,v,y,z) = -f(s,x,v)\cdot y - tr\left[\sigma'(s,x,v)\cdot z\right] - L(s,x,v).\end{equation}
 
 This functional will define the BSDE in the next theorem.
 
@@ -229,8 +229,8 @@ This functional will define the BSDE in the next theorem.
         Since $u$ is optimal we have:
 
         \begin{align}
-            V(s,x(s)) & = E_{sx(s)}\left[\int_s^{t_1} L(r,x(r),u(r))\,dr \Psi(t_1,x(t_1))\right] \\ 
-            & = E_{tx}\left[\int_t^{t_1} L(r,x(r),u(r))\,dr \Psi(t_1,x(t_1))\right] - \int_t^s L(r,x(r),u(r))\,dr.  
+            V(s,x(s)) & = E_{sx(s)}\left[\int_s^{t_1} L(r,x(r),u(r))\,dr + \Psi(t_1,x(t_1))\right] \\ 
+            & = E_{tx}\left[\int_t^{t_1} L(r,x(r),u(r))\,dr + \Psi(t_1,x(t_1))\right] - \int_t^s L(r,x(r),u(r))\,dr.  
         \end{align}
 
         We then apply Ito's formula and get:
@@ -244,18 +244,45 @@ This functional will define the BSDE in the next theorem.
         where we used the integral representation of a martingale, which implies:
 
         \begin{equation}\label{2-3-hjbinproof}
-            -\frac{\partial V}{\partial t} - \mathcal{H}(s,x(s),u(s),D_xV(s,x(s)),D_x^2V(s,x(s))) = 0.
+            -\frac{\partial V}{\partial t} + \mathcal{H}(s,x(s),u(s),D_xV(s,x(s)),D_x^2V(s,x(s))) = 0.
         \end{equation}
 
         We then prove the BSDE using the continuity of triple spacial derivatives of the value functions and 
         the fact that \ref{2-3-hjbinproof} at $s$ has maximum in $x(s)$, which implies:
 
-        \[\frac{\partial}{\partial x}\left(\frac{\partial V}{\partial t}(s,x) + \mathcal{H}(s,x,u(s),D_xV(s,x),D_x^2V(s,x))\right)\big|_{x=x(s)}=0.\]
+        \[\frac{\partial}{\partial x}\left(\frac{\partial V}{\partial t}(s,x) - \mathcal{H}(s,x,u(s),D_xV(s,x),D_x^2V(s,x))\right)|_{x=x(s)}=0.\]
 
         We compute the derivative and get:
 
-        \begin{align}
-            miao.
-        \end{align}
+        \begin{align*}
+            \frac{\partial^2V}{\partial x\partial t}(s,x(s)) + D_xf(s,x,u(s))|_{x=x(s)}D_xV(s,x(s)) + f(s,x(s),u(s))D_x^2V(s,x(s)) \\
+            + \frac{1}{2}tr\left[D_x(\sigma\sigma')(s,x,u(s))|_{x=x(s)}\cdot D_x^2V(s,x(s))\right] + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right] + D_xL(s,x(s),u(s)) \\
+            = \frac{\partial^2V}{\partial x\partial t}(s,x(s)) + f(s,x(s),u(s))D_x^2V(s,x(s)) + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right] \\
+            + f(s,x(s),u(s))D_xV(s,x(s)) + tr\left[D_x\sigma'(s,x(s),u(s))\cdot D_x^2V(s,x(s))\sigma(s,x(s),u(s))\right] + D_xL(s,x(s),u(s)),
+        \end{align*}
+
+        which implies:
+
+        \begin{equation}\label{2-3-relD3G}
+            \begin{align*}\frac{\partial^2V}{\partial x\partial t}(s,x(s)) + f(s,x(s),u(s))D_x^2V(s,x(s)) + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right] \\
+            = -D_x\left[\mathcal{G}(s,x(s),u(s),D_xV(s,x(s)),D_x^2V(s,x(s))\sigma(s,x(s),u(s)))\right].
+            \end{align*}
+        \end{equation}
+
+        Equation \ref{2-3-relD3G} implies that $y_s$ is the unique solution to the BSDE \ref{2-3-maxprinc-BSDE}:
+
+        \begin{align*}
+            -dy_s & = -d[D_xv(s,x(s))] =  -\frac{\partial^2V}{\partial x\partial t}(s,x(s))ds - f(s,x(s),u(s))D_x^2V(s,x(s))ds \\
+            & - D_x^2V(s,x(s))\sigma(s,x(s),u(s))dw_s + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right]ds \\
+            & = D_x\left[\mathcal{G}(s,x(s),u(s),D_xV(s,x(s)),D_x^2V(s,x(s))\sigma(s,x(s),u(s)))\right]ds - D_x^2V(s,x(s))\sigma(s,x(s),u(s))dw_s,
+        \end{align*}
+
+        and:
+
+        \[V(t_1,x(t_1)) = E_{t_1x(t_1)}\left[\int_{t_1}^{t_1} L(r,x(r),u(r))\,dr + \Psi(t_1,x(t_1))\right] = \Psi(t_1,x(t_1)), \]
+
+        which implies:
+
+        \[D_xV(t_1,x(t_1)) = D_x\Psi(t_1,x(t_1)).\]
     \end{proof}
 \end{theorem}
