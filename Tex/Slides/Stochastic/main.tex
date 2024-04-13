@@ -1,0 +1,340 @@
+%!TEX program = xelatex
+\documentclass[10pt, compress]{beamer}
+\usetheme[titleprogressbar]{m}
+\usepackage{booktabs}
+\usepackage[italian]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[scale=2]{ccicons}
+\usepackage[utf8]{inputenc}
+% \usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{pst-node}
+\usepackage[inline]{enumitem}
+% \usepackage{tikz}
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{sample.bib} %Import the bibliography file
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\usepackage{pst-node}
+%\uspackage{auto-pst-pdf}
+\usepackage{tikz-cd} 
+\usepackage{graphicx, animate}
+\usepackage{graphicx}
+\pgfplotsset{%
+    ,compat=1.12
+    ,every axis x label/.style={at={(current axis.right of origin)},anchor=north west}
+    ,every axis y label/.style={at={(current axis.above origin)},anchor=north east}
+    }
+\newlist{inlineroman}{enumerate*}{1}
+\setlist[inlineroman]{itemjoin*={{, and }},afterlabel=~,label=\Roman*.}
+
+\newcommand{\inlinerom}[1]{
+\begin{inlineroman}
+#1
+\end{inlineroman}
+}
+
+\renewcommand{\thefootnote}{[\arabic{footnote}]}% Modify footnote globally
+
+%%%simboli speciali
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\CO}{\mathcal{C}}
+
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\Ima}{Im}
+
+\DeclareMathOperator{\mcd}{MCD}
+\DeclareMathOperator{\mcm}{mcm}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\spanlin}{span}
+
+%\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+%\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+%Necessario per far si che la dimensione del valore assoluto e della norma si adatti all'aromento passato
+%\makeatletter
+%\let\oldabs\abs
+%\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+%\let\oldnorm\norm
+%\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+%\makeatother
+
+%rinomino il comando per il prodotto interno
+\let\pint\braket
+%comando per il prodotto scalare
+\newcommand{\pscal}[2]{\left\langle #1, #2 \right\rangle}
+
+%Spaziatura per i quantificatori
+\let\oldforall\forall
+\renewcommand{\forall}{\; \oldforall \;}
+\let\oldexists\exists
+\renewcommand{\exists}{\; \oldexists \;}
+
+%freccia per la convergenza debole
+\newcommand{\longrightharpoonup}{\xrightharpoonup{\phantom{AB}}}
+
+\newcommand{\warrow}{\xrightharpoonup{\:\, w \:\, }}
+\newcommand{\sarrow}{\overset{s}{\longrightarrow}}
+\newcommand{\wastarrow}{\xrightharpoonup{ w^* }}
+
+\newcommand{\ctikz}[1]{
+\begin{center}
+\begin{tikzpicture}
+\node{#1}
+\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\ctikzo}[1]{
+\begin{center}
+\begin{tikzpicture}
+\node[opacity=0]{#1}
+\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\tikzz}[1]{
+\begin{tikzpicture}
+\node{#1}
+\end{tikzpicture}
+}
+
+\newcommand{\tikzo}[1]{
+\begin{tikzpicture}
+\node[opacity=0]{#1}
+\end{tikzpicture}
+}
+
+\newcommand{\ctikzi}[1]{
+\begin{center}
+\begin{tikzpicture}
+\node[opacity=0.2]{#1}
+\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\tikzi}[1]{
+\begin{tikzpicture}
+\node[opacity=0.2]{#1}
+\end{tikzpicture}
+}
+
+\newcommand{\semitransp}[2][1]{\textcolor{#1}{#2}}
+
+\newcommand{\comment}[1]{}
+\usepgfplotslibrary{dateplot}
+
+\title{Optimal control via dynamic programming}
+\subtitle{Stochastic problem}
+\author{Andrea Scalenghe}
+\institute{Tesi magistrale}
+%\date{22 Luglio 2022}
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Stochastic Optimal Control}
+    What if the system evolves and is controlled stochastically? We enter the reign of stochastic optimal control. 
+
+    We will study controlled diffusion processes, which can be represented by:
+
+    \begin{equation}\label{SDE}
+        dx(r) = f(r,x(r),u(r))dr + \sigma(r,x(r),u(r))dw(r),\, r\in I_0
+    \end{equation}
+
+    where $I_0$ is a time interval and $f,\sigma$ are drift and volatility coefficients. The control $u$ is itself a random process.
+\end{frame}
+
+\begin{frame}{Markov Processes}
+    \begin{definition}\label{2-1-markovprocessdef}
+    A stochastic process $x$ satisfies the Markov property if there exists a function 
+    $p:I_0\times \Sigma\times I_0\times  \mathcal{B}(\Sigma)\rightarrow \R$ such that:
+
+
+        - For all $t,s,B$ the function $x\mapsto p(t,x,s,B)$ is Borel measurable on $\Sigma$ and for all $t,x,s$ the function $A\mapsto p(t,x,s,B)$ is a probability measure on $(\Omega,\mathcal{F})$. The Chapman-Kolmogorov equation holds for all $s,t,r\in I_0$ such that $t<r<s$:
+        \begin{equation}\label{2-1-markovprocessdef-chapkol}
+            p(t,x,s,B) = \int_{\Sigma} p(r,y,s,B)\,p(t,x,r,dy)
+        \end{equation}
+
+
+    And such that for all $r,s\in I_0$ where $r,s$ and for all $B\in\mathcal{B}(\Sigma)$ then:
+
+    \begin{equation}\label{2-1-markovprocessdef-condonp}
+        P(x(s)\in B\,|\,\mathcal{F}_r^x) = p(r,x(r),s,B)
+    \end{equation}
+
+    Where $\mathcal{F}_r^x=\sigma\left(x(l)\,:\,l\in[t_0,r]\right)$.
+\end{definition}
+
+% Function $p$ is called \textit{Markov Transition Kernel}
+\end{frame}
+
+% \begin{frame}{Markov Property}
+%     A process $x$ exhibits the Markov property if:
+%     \begin{itemize}
+%         \item $x \mapsto p(t,x,s,B)$ is Borel measurable.
+%         \item $A \mapsto p(t,x,s,B)$ is a probability measure.
+%         \item Chapman-Kolmogorov equation is satisfied for all $s,t,r \in I_0$ with $t<r<s$.
+%     \end{itemize}
+%     This function $p$ is known as the Markov Transition Kernel.
+% \end{frame}
+
+\begin{frame}{Markov Transition Kernel}
+    Heuristically, the Markov probability kernel gives the probability that the system starting from $x$ at time $t$ will be in $B$ at time $s$. We define the expected value of a function of the process given the initial data $(t,x)$ as:
+    \[E_{tx}\phi(x(s)) = \int_{\Sigma} \phi(y)\,p(t,x,s,dy)\]
+    for a real-valued Borel-measurable function $\phi$.
+
+    This gives rise to a linear operator over (somehow integrable) functions:
+
+    \[T_{t,s}\phi(x) = E_{tx}\phi(x(s))\]
+\end{frame}
+
+\begin{frame}{Diffusion Processes}
+    Generally, a diffusion process $x$ is a Markov process with continuous paths. We also impose the existence of the following functions $a_{ij}(t,x),f_{ij}(t,x)$ and limits:
+
+    \begin{equation}
+            \lim_{h\to0^+} \int_{\abs{x-y}>\epsilon} \,p(t,x,t+h,dy) = 0
+    \end{equation}
+
+        \begin{equation}
+            \lim_{h\to0^+} \int_{\abs{x-y}\leq\epsilon} (y_i-x_i)\,p(t,x,t+h,dy) = f_i(t,x)
+        \end{equation}
+
+        \begin{equation}
+            \lim_{h\to0^+} \int_{\abs{x-y}\leq\epsilon} (y_i-x_i)(y_j-x_j)\,p(t,x,t+h,dy) = a_{ij}(t,x).
+        \end{equation}
+
+        Under stricter conditions on $f,a$ a diffusion process is described by \ref{SDE}.
+    
+    % It is completely characterized by its local drift $f$ and local covariance $a$ functions. It is described by the stochastic differential equation:
+    % \[dx(s) = f(s,x(s))ds + \sqrt{a}(s,x(s))dw(s)\]
+\end{frame}
+
+% \begin{frame}{Linear Operators in Markov Processes}
+%     The linear operator $T_{t,s}$ associated with a Markov process is given by:
+%     \[T_{t,s}\phi(x) = E_{tx}\phi(x(s))\]
+%     It represents the expected value of $\phi$ at time $s$, starting from $x$ at time $t$.
+% \end{frame}
+
+\begin{frame}{Backward Evolution Operator}
+    The backward evolution operator $A$ is defined for measurable functions $\Phi$ as:
+    \begin{equation}A\Phi(t,x) = \lim_{h\to0+} \frac{E_{tx}\Phi(t+h,x(t+h))-\Phi(t,x)}{h}\end{equation}
+    % It plays a crucial role in connecting the dynamics of Markov processes with differential equations.
+    We denote $\mathcal{D}(A)$ for the space of function such that the limit exists. In various contexts, Dynkin's formula holds:
+
+    \begin{equation}\label{2-1-dynkform}
+            E_{tx}\Phi(s,x(s)) - \Phi(t,x) = E_{tx}\int_t^s A\Phi(r,x(r)) \,dr
+        \end{equation}
+\end{frame}
+
+\begin{frame}{Dynkin's Formula for diffusion processes}
+    We get Dynkin by taking $E_{tx}$ over:
+    \begin{align}\label{dynk-deriv}
+    \Phi(s,x(s)) & = \Phi(t,x) + \int_t^s\Phi_s(r,x(r))\,dr \\
+    % & + \sum_{i=1}^n \left[\int_t^s \Phi_{x^i}(r,x(r))f_i(r,x(r))\,dr + \sum_{j=1}^n\int_t^s\Phi_{x^i}(r,x(r))\sigma_{ij}(r,x(r))\,dw^j(r)\right] \\
+    % & + \frac{1}{2}\sum_{i,j=1}^n \sum_{l=1}^n\int_t^s\Phi_{x^ix^j}(r,x(r))\sigma_{il}(r,x(r))\sigma_{jl}(r,x(r))\,dr \\
+    % & = \Phi(t,x) + \int_t^s \Phi_s(r,x(r)) + D_x\Phi\cdot f(r,x(r)) \\
+    % & +\int_t^s \frac{1}{2}D^2_x\Phi\cdot a(r,x(r)) \,dr +  D_x\Phi\cdot\sigma(r,x(r)) \,dw(r) \\
+    & = \Phi(t,x) + \int_t^s A\Phi(r,x(r))\,dr \\
+    & +\int_t^s D_x\Phi\cdot\sigma(r,x(r)) \,dw(r),
+    % & = \Phi(t,x) + \int_t^s A\Phi(r,x(r))\,dr + \int_t^s D_x\Phi\cdot\sigma(r,x(r)) \,dw(r)
+\end{align}
+
+where the last (stochastic) integral can be seen as a martingale. In particular, if we take $\Phi$ to have polynomial growth then $D_x\Phi\cdot\sigma\in\mathbb{L}^2(I_0)$\footnote{using estimates on SDE solutions.}.
+
+
+\end{frame}
+
+\begin{frame}{Markov Control Processes}
+    Moving to controlled dynamics, the controlled SDE becomes:
+    \[dx(r) = f(r,x(r),u(r))dr + \sigma(r,x(r),u(r))dw(r),\, r\in I_0\]
+    
+    The objective is to minimize a cost criterion involving a running cost $L$ and terminal cost $\Psi$.
+    
+    \[J(t,x;u) = E_{tx}\left\{\int_t^{\tau} L(s,x(s),u(s))\,ds + \Psi(\tau,x(\tau))\right\}\]
+
+    The operator $A$ is defined for $\Phi\in C^{1,2}_p(\overline{Q}_0)$ as:
+
+    \begin{equation}\label{2-1-defAwithv}
+    A^{v}\Phi = \Phi_t + \sum_{i=1}^nf_i(t,x,v)\Phi_{x_i} + \frac{1}{2}\sum_{i,j=1}^n a_{ij}(t,x,v)\Phi_{x_ix_j}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Optimality}
+    \begin{definition}
+    A reference probability system is a tuple $(\Omega,\{\mathcal{F}_s\},P,\omega)$ such that $\nu=(\Omega,\mathcal{F}_{t_1},P)$ is a probability space, $\{\mathcal{F}_s\}$ is a filtration on $\Omega$, $w$ is an $\mathcal{F}$-adapted Brownian motion on $[t,t_1]$.
+
+    We denote with $\mathcal{A}_{t\nu}$ progressively measurable admissible controls $u$. We define:
+
+    \begin{equation}\label{2-1-systemopt}
+        V_{\nu} = \inf_{u\in\mathcal{A}_{t\nu}} J(t,x;u)
+    \end{equation}
+
+    \begin{equation}\label{2-1-oprt}
+        V_{PM} = \inf_{\nu} V_{\nu}.
+    \end{equation}
+
+    Equation \ref{2-1-systemopt} and \label{2-1-oprt} respectively define $\nu$-\textit{optimality} and \textit{optimality}    \end{definition}
+\end{frame}
+
+% \begin{frame}{Objective and Hamiltonian}
+%     The cost to minimize is:
+    
+%     The Hamiltonian for this optimization problem integrates the running cost, terminal cost, and the dynamics of the process.
+% \end{frame}
+
+\begin{frame}{HJB equation derivation}
+    Let us suppose that $O=\R^n$, then by the dynamic programming principle for every $h<t_1-t$:
+    \[V(t,x) = \inf_{u\in\mathcal{A}}E_{tx}\left\{\int_t^{t+h} L(s,x(s),u(s))\,ds + V(t+h,x(t+h))\right\}.\]
+    If we take the constant control $u\equiv v$ then by Dynkin's formula we get:
+    \[
+        0 \leq E_{tx}\int_t^{t+h} A^vV(s,x(s))\,ds + E_{tx}\int_t^{t+h} L(s,x(s),v)\,ds,
+    \]
+    dividing by $h$ and taking the limit for $h\to0^+$:
+    \[0 \leq A^vV(t,x) + L(t,x,v).\]
+\end{frame}
+
+\begin{frame}{Hamiltonian and HJB equation}
+    The Hamiltonian $\mathcal{H}$ is defined as:
+    \[\mathcal{H}(t,x,p,A) = \sup_{v\in U}\left\{-f\cdot p - \frac{1}{2}\text{tr}\left[a\cdot A\right] - L\right\}\]
+    The verification theorem uses this Hamiltonian to provide conditions under which a control is optimal. We'll impose the optimality condition:
+
+    \[A^vW = 0 \Rightarrow -\frac{\partial W}{\partial t} + \mathcal{H}(t,x,D_xW,D_x^2W) = 0\]
+\end{frame}
+
+\begin{frame}{Verification Theorem}
+    \begin{theorem}
+    Let $W\in C^{1,2}(Q)\cap C_p(\overline{Q})$ such that:
+    \begin{equation}\label{systverstoch}\begin{cases}
+        -\frac{\partial W}{\partial t} + \mathcal{H}(t,x,D_xW,D_x^2W) = 0, & \forall(t,x)\in Q \\
+        V(t,x) = \Psi(t,x), & \forall(t,x)\in\partial Q.
+    \end{cases}\end{equation}
+    Then, for any system $\nu$, initial condition $(t,x)\in Q$ and any $u\in \mathcal{A}_{t\nu}$ we have $W(t,x)\leq J(t,x;u)$. If there exists a system $\nu^{\ast}$ and a control $u^{\ast}$ which realizes the Hamiltonian's minimum, then:
+        \begin{equation}
+            V_{PM}(t,x) = J(t,x;u^{\ast}).
+        \end{equation}
+    \end{theorem}
+\end{frame}
+% \begin{frame}{Conclusion}
+%     Markov diffusion and control processes provide a rich framework for modeling and optimizing stochastic systems. Through the lens of Markov properties, transition kernels, and associated operators, we gain powerful tools for analysis and control of such systems.
+% \end{frame}
+
+\begin{frame}{Proof Idea}
+    For $O$ bounded and $W\in C^{1,2}(\overline{Q})$ we can apply Ito and get the thesis as we did in Dynkin \ref{dynk-deriv}.
+
+    In $O$ is unbounded we define:
+
+    \[O_{\rho} = O\cap\left\{\abs{x}<\rho\,|\,d(x,\partial O)>\frac{1}{\rho}\right\},\, Q_{\rho} = [t_0,t_1-\rho^{-1}]\times O_{\rho},\]
+
+    get thesis for all $\rho^{-1}<t_1-t_0$ and pass to the limit showing uniform integrability of both addenda, which together with convergence in probability implies $L^1$ convergence.
+\end{frame}
+
+\end{document}

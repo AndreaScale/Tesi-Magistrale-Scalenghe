@@ -1,0 +1,380 @@
+%!TEX program = xelatex
+\documentclass[10pt, compress]{beamer}
+\usetheme[titleprogressbar]{m}
+\usepackage{booktabs}
+\usepackage[italian]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[scale=2]{ccicons}
+\usepackage[utf8]{inputenc}
+% \usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{pst-node}
+\usepackage[inline]{enumitem}
+% \usepackage{tikz}
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{sample.bib} %Import the bibliography file
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\usepackage{pst-node}
+%\uspackage{auto-pst-pdf}
+\usepackage{tikz-cd} 
+\usepackage{graphicx, animate}
+\usepackage{graphicx}
+\pgfplotsset{%
+    ,compat=1.12
+    ,every axis x label/.style={at={(current axis.right of origin)},anchor=north west}
+    ,every axis y label/.style={at={(current axis.above origin)},anchor=north east}
+    }
+\newlist{inlineroman}{enumerate*}{1}
+\setlist[inlineroman]{itemjoin*={{, and }},afterlabel=~,label=\Roman*.}
+
+\newcommand{\inlinerom}[1]{
+\begin{inlineroman}
+#1
+\end{inlineroman}
+}
+
+\renewcommand{\thefootnote}{[\arabic{footnote}]}% Modify footnote globally
+
+%%%simboli speciali
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\CO}{\mathcal{C}}
+
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\Ima}{Im}
+
+\DeclareMathOperator{\mcd}{MCD}
+\DeclareMathOperator{\mcm}{mcm}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\spanlin}{span}
+
+%\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+%\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+%Necessario per far si che la dimensione del valore assoluto e della norma si adatti all'aromento passato
+%\makeatletter
+%\let\oldabs\abs
+%\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+%\let\oldnorm\norm
+%\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+%\makeatother
+
+%rinomino il comando per il prodotto interno
+\let\pint\braket
+%comando per il prodotto scalare
+\newcommand{\pscal}[2]{\left\langle #1, #2 \right\rangle}
+
+%Spaziatura per i quantificatori
+\let\oldforall\forall
+\renewcommand{\forall}{\; \oldforall \;}
+\let\oldexists\exists
+\renewcommand{\exists}{\; \oldexists \;}
+
+%freccia per la convergenza debole
+\newcommand{\longrightharpoonup}{\xrightharpoonup{\phantom{AB}}}
+
+\newcommand{\warrow}{\xrightharpoonup{\:\, w \:\, }}
+\newcommand{\sarrow}{\overset{s}{\longrightarrow}}
+\newcommand{\wastarrow}{\xrightharpoonup{ w^* }}
+
+\newcommand{\ctikz}[1]{
+\begin{center}
+\begin{tikzpicture}
+\node{#1}
+\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\ctikzo}[1]{
+\begin{center}
+\begin{tikzpicture}
+\node[opacity=0]{#1}
+\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\tikzz}[1]{
+\begin{tikzpicture}
+\node{#1}
+\end{tikzpicture}
+}
+
+\newcommand{\tikzo}[1]{
+\begin{tikzpicture}
+\node[opacity=0]{#1}
+\end{tikzpicture}
+}
+
+\newcommand{\ctikzi}[1]{
+\begin{center}
+\begin{tikzpicture}
+\node[opacity=0.2]{#1}
+\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\tikzi}[1]{
+\begin{tikzpicture}
+\node[opacity=0.2]{#1}
+\end{tikzpicture}
+}
+
+\newcommand{\semitransp}[2][1]{\textcolor{#1}{#2}}
+
+\newcommand{\comment}[1]{}
+\usepgfplotslibrary{dateplot}
+
+\title{Optimal control via dynamic programming}
+\subtitle{Deterministic approach}
+\author{Andrea Scalenghe}
+\institute{Tesi magistrale}
+%\date{22 Luglio 2022}
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Introduction Optimal Control Problems}
+    Notably, a dynamical system (physical, social, biological, etc.) can be described by its derivatives. Control theory assumes the derivative to be influenced by external factors, by controls. 
+
+    It aims at finding the "best" system behavior under a control. Optimality will be in the form of minimizing a cost function.
+    
+    % The system dynamics are governed by the following differential equation:
+    % \[
+    %     \dot{x}(s) = f(s,x(s),u(s)), \quad s\in I, \quad x(t) = x.
+    % \]
+\end{frame}
+
+\begin{frame}{Control Problem Formulation}
+    Consider a finite interval \(I=[t,t_1]\subset\R\) as the operating time of a system, where at any time \(s\in I\), the system is described by \(x(s)\in O\subseteq \R^m\) and controlled by \(u(s)\in U\subseteq\R^n\), known as control and the control space. The system is defined by:
+    \begin{equation*}
+        \begin{cases}
+            \dot{x}(s) = f(s,x(s),u(s)), & s\in I \\
+            x(t) = x
+        \end{cases}
+    \end{equation*}
+    With \(f\) satisfying the Lipschitz condition to ensure a unique solution. Controls \(u(\cdot)\) are IN \(L^{\infty}\left([t,t_1];U\right)\).
+\end{frame}
+
+\begin{frame}{Optimality}
+    Optimality is measured by a payoff \(J\), incorporating continuoud running cost \(L\) and terminal cost \(\Psi\), defined as:
+    \[
+        J(t,x;u) = \int_t^{\tau}L(s,x(s),u(s)) \,ds + \Psi(\tau, x(\tau)),
+    \]
+
+    where $\tau$ is the exit time of $(s,x(s))$ from $Q=[t,t_1]\times O$. The terminal cost $\Psi$ has the form:
+    
+    \[\Psi(t,x) = \begin{cases}
+        g(t,x) & \text{if } (t,x)\in [t,t_1)\times O \\
+        \psi(x) & \text{if } (t,x)\in \{t_1\}\times O  
+    \end{cases}\] 
+
+    Optimal control theory aims at minimizing \(J\) across admissible controls.
+\end{frame}
+
+\begin{frame}{Dynamic Programming}
+    The value function \(V\) encapsulates the essence of dynamic programming:
+    \[
+        V(t,x)=\inf_{u\in \mathcal{U}(t,x)}J(t,x;u).
+    \]
+    This framework enables the subdivision of the control problem into smaller, more manageable problems, leading to the Hamilton-Jacobi-Bellman (HJB) equation as a crucial tool for finding \(V\).
+\end{frame}
+
+\begin{frame}{Dynamic Programming Principle}
+    The dynamic programming principle enables the just cited subdivision. Indeed the following holds true.
+
+    \begin{theorem}
+        For any $(t,x)\in\overline{Q}$ and any $r\in I$ then:
+
+    \begin{equation}\label{1-2-riformulationvalue}
+        V(t,x)=\inf_{u\in\mathcal{U}(t,x)}\left\{\int_t^{r\land\tau}L(s,x(s),u(s))\,ds+g(\tau,x(\tau))\chi_{\tau<r}+V(r,x(r))\chi_{r\leq\tau}\right\}
+    \end{equation}
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{Dynamic Programming Equation}
+    From the dynamic programming principle, we get a necessary condition for a value function to be optimal. Formally, we take $h>0$ and rewrite \ref{1-2-riformulationvalue} as:
+
+    \begin{align*}
+        \inf_{u\in\mathcal{U}}\{\frac{1}{h}\int_t^{(t+h)\land\tau} L(s,x(s),u(s))\,ds + \frac{1}{h}g(\tau,x(\tau))\chi_{\tau<t+h} \\
+        + \frac{1}{h}\left[V(t+h,x(t+h))\chi_{\tau\geq t+h} - V(t,x)\right]\} & = 0.
+    \end{align*}
+
+    Then letting $h\to0^+$:
+
+    \begin{equation}\label{dynprogreqbad}
+        \inf_{u\in\mathcal{U}}\left\{L(t,x(t),u(t)) + \partial_tV(t,x(t)) + D_xV(t,x(t))\cdot f(t,x(t),u(t))\right\}=0
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Dynamic Programming Equation}
+    We can generally define:
+
+    \begin{equation}\label{1-2-HJB1}
+    -\frac{\partial}{\partial t}V(t,x) + H(t,x,D_xV(t,x))=0
+    \end{equation}
+
+    Where for $(t,x,p)\in \overline{Q}\times\R^n$ the Hamiltonian is defined as:
+
+    \begin{equation}\label{1-2-Hamiltonian1}
+        H(t,x,p) = \sup_{v\in\R^n}\left\{-p\cdot f(t,x,v) - L(t,x,v)\right\}.
+    \end{equation}
+
+    Equation \ref{1-2-HJB1} turns out to be the main sufficient condition for the value function to be optimal.
+\end{frame}
+
+\begin{frame}{Verification Theorem}
+    \begin{theorem}[Verification Theorem]\label{1-2-Verificationthe}
+    Let $W\in C^1(\overline{Q})$ satisfy \ref{1-2-HJB1} and the boundary conditions then:
+
+    \[W(t,x)\leq V(t,x) \, \forall (t,x)\in\overline{Q}\]
+
+    Moreover, there exists $u^{\ast}\in\mathcal{U}$ such that:
+
+    \begin{equation}\label{1-2-uoptim}
+        \begin{cases}
+            L(s,x^{\ast}(s),u^{\ast}(s)) + f(s,x^{\ast},u^{\ast}(s))\cdot D_xW(s,x^{\ast}(s)) = - H(s,x^{\ast}(s),D_xW(s,x^{\ast}(s))) & \text{a.s. for } s\in[t,\tau^{\ast}] \\
+            W(\tau^{\ast},x^{\ast}(\tau^{\ast})) = g(\tau^{\ast},x^{\ast}(\tau^{\ast})) & \text{if } \tau^{\ast}<t_1
+        \end{cases}    
+    \end{equation}
+
+    if and only if $u^{\ast}$ is optimal and $W=V$.
+    \end{theorem}
+\end{frame}
+
+
+% \begin{frame}{Introduction to Pontryagin's Principle}
+%     Pontryagin's Principle offers a distinct perspective on solving optimal control problems by setting necessary conditions for a control function to be deemed optimal. This method provides an explicit formulation of optimal controls through the use of a control state Hamiltonian and the introduction of the costate variable.
+% \end{frame}
+
+\begin{frame}{Pontryagin's Principle}
+    % \frametitle{Pontryagin's Principle}
+    % Pontryagin's Principle is founded on the control system defined by:
+    % \begin{equation*}
+    %     \dot{x}(s) = f(s, x(s), u(s)), \quad s \in [t, t_1], \quad x(t) = x,
+    % \end{equation*}
+    % where \(u\) is bounded and measurable into \(U \subset \mathbb{R}^m\), and \(O = \mathbb{R}^n\). 
+    Porntryagin's principle gives another perspective on the problem. It asserts the existence of a \textit{costate} variable that satisfies certain, similar, conditions under optimality of the value function.
+
+    The \textit{control state Hamiltonian} is defined as:
+    \begin{equation*}
+        H(s, x, u, p) = - p \cdot f(s, x, u) - L(s, x, u),
+    \end{equation*}
+    with \(p\) representing the system's \textit{costate}.
+\end{frame}
+
+\begin{frame}{Pontryagin's Principle}
+    \begin{theorem}\label{1-3-pontry}
+    Let $u^{\ast}$ be an optimal control and $x^{\ast}$ its corresponding trajectory. 
+    Then there exists a function $p^{\ast}:[t,t_1]\rightarrow O$ such that:
+
+    \begin{equation}\label{1-3-pontry-x}
+        \dot{x}^{\ast}(s) = D_p H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s)) 
+    \end{equation}
+
+    \begin{equation}\label{1-3-pontry-p}
+        \dot{p}^{\ast}(s) =  - D_x H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s)) 
+    \end{equation}
+
+    And also:
+
+    \begin{equation}\label{1-3-pontry-maxH}
+        H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s)) = \sup_{v\in U} H(s,x^{\ast}(s),v,p^{\ast}(s))
+    \end{equation}
+
+    With:
+
+    \begin{equation}\label{1-3-pontry-tras}
+        p^{\ast}(t_1) = D \psi(x^{\ast}(t_1))
+    \end{equation}
+    \end{theorem}
+    
+    % Given an optimal control \(u^\ast\) and its corresponding trajectory \(x^\ast\), Pontryagin's Principle asserts the existence of a costate function \(p^\ast:[t, t_1] \rightarrow O\) such that:
+    % \begin{align*}
+    %     \dot{x}^\ast(s) &= D_p H(s, x^\ast(s), u^\ast(s), p^\ast(s)), \\
+    %     \dot{p}^\ast(s) &= -D_x H(s, x^\ast(s), u^\ast(s), p^\ast(s)), \\
+    %     H(s, x^\ast(s), u^\ast(s), p^\ast(s)) &= \sup_{v \in U} H(s, x^\ast(s), v, p^\ast(s)), \\
+    %     p^\ast(t_1) &= D \psi(x^\ast(t_1)).
+    % \end{align*}
+    % These conditions collectively characterize the optimal control and trajectory.
+\end{frame}
+
+\begin{frame}{Proof Idea}
+    General form can be seen as no running cost ($L\equiv0$), it is proved in this setting. The costate is set to be the solution of the Adjoint dynamic \ref{1-3-pontry-p} with transversality condition \ref{1-3-pontry-tras}. To show maximality \ref{1-3-pontry-x} we set $v\in U$ and take small "variation" $u_{\epsilon}$ of the optimal control such that $u_{\epsilon}(r)=v$ for some $r>0$. Then:
+
+    \begin{align}
+            0 & \leq \frac{d}{d\epsilon}J(t,x;u_{\epsilon})\big|_{\epsilon=0} = \frac{d}{d\epsilon}\psi(x_{\epsilon}(t_1))\big|_{\epsilon=0} \\
+            & = \frac{d}{d\epsilon}\psi(x(t_1) + \epsilon y(t_1) + o(\epsilon)) = D\psi(x(t_1))\cdot y(t_1) \\
+            & = p(t_1)\cdot y(t_1) = p(r)\cdot[f(r,x(r),v)-f(r,x(r),u(r))]
+    \end{align}
+
+    where $y$ is a suitable path, governed by the adjoint dynamic. 
+\end{frame}
+
+\begin{frame}{Connection to Dynamic Programming}
+    Pontryagin's Principle and dynamic programming, though seemingly different, are closely linked.
+
+    \begin{theorem}\label{1-3-pontrydyn}
+    Let $u^{\ast}$ be an optimal right-continuous control and $x^{\ast}$ its corresponding trajectory. 
+    Assume that the value function $V$ is differentiable at $(s,x^{\ast}(s))$ for $s\in[t,t_1)$. If we define:
+
+    \begin{equation}\label{1-3-pontrydyn-defP}
+        p(s) = D_x V(s,x^{\ast}(s)) 
+    \end{equation}
+
+    Then $p(s)$ satisfies \ref{1-3-pontry-p}, \ref{1-3-pontry-maxH} and \ref{1-3-pontry-tras}.
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{Existence Theorem for Optimal Controls}
+    % Under certain conditions, including the compactness and convexity of \(U\), linearity of \(f\) in \(v\), and convexity of \(L\) in \(v\), an optimal control \(u^\ast(\cdot)\) exists. These conditions facilitate the application of variational arguments to prove the existence of an optimal control within the fixed time interval case.
+
+    We now prove an existence theorem for optimal controls.
+We study the fixed time interval case with $O=\R^n$ and the function $f$ linear in $v$.
+Furthermore, we impose convexity of $L$ in $v$. Under these assumptions a classical variational
+argument proves the optimal control existence.
+\begin{theorem}
+    Let $U$ compact and convex, $f_1,f_2\in C^1(\overline{Q}\times U)$ such that $f(t,x,v)=f_1(t,x)+f_2(t,x)v$ and $\partial_xf_{1},\partial_xf_2,f_2$ bounded.
+    Let also $L\in C^1(\overline{Q}\times U)$ and $L(t,x,\cdot)$ be convex for all $(t,x)\in\overline{Q}$ and the temrinal cost $\phi\in C(\R^n)$. Then there exist an optimal control $u^{\ast}(\cdot)$.
+\end{theorem}
+\end{frame}
+
+\begin{frame}{Proof idea}
+        Proof Strategy:
+               \newline
+               -  Start with a minimizing sequence \(u_n\) such that:
+            \[\lim J(t,x;u_n) = V(t,x).\]
+               \newline
+               -  Show weak convergence of \(u_n\) and uniform convergence ($U$ compact and convex) of the state trajectories \(x_n\) (via Ascoli-Arzela).
+            % \item Apply Ascoli-Arzela theorem for uniform convergence.
+               \newline
+               -  Show $x^{\ast}$ to be solution of the control problem defined by $f$ and $u^{\ast}$.
+               \newline
+               -  Show \(u^{\ast}\) to be an optimal control.
+\end{frame}
+
+% \begin{frame}{Proof of Pontryagin's Principle}
+%     The proof of Pontryagin's Principle, particularly for problems without a running cost, leverages the concept of simple variation and the properties of the control state Hamiltonian. By defining variations in control and analyzing their effects on the system's trajectory, the principle's conditions emerge, establishing the foundation for determining optimal control.
+% \end{frame}
+
+% \begin{frame}{Proof of Pontryagin's Principle - Introduction}
+%     Introduction to the proof environment:
+%     \begin{itemize}
+%         \item No running cost scenario with payoff \(J(t,x;u) = \psi(x(t_1))\).
+%         \item Definition of the Hamiltonian \(H(s,x,u,p) = -p \cdot f(s,x,u)\) for this context.
+%         \item Role of simple variation \(u_\epsilon\) to explore optimality conditions.
+%     \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Generalization to Running Cost Problems}
+%     Pontryagin's Principle extends to problems with running costs by redefining the problem to eliminate the running cost component, thereby applying the principle as if the problem had no running cost. This approach confirms the principle's applicability to a broader class of optimal control problems, emphasizing its versatility and power in solving complex control scenarios.
+% \end{frame}
+
+\end{document}
