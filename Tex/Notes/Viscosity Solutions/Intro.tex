@@ -1,0 +1,81 @@
+\section{Introduction}
+
+As previously mentioned, in many instances the value function arising from an optimal control problem may fail to be continuously 
+differentiable. If that happens the derivation of the Hamilton-Jacobi equation is no longer valid, but more importantly 
+the notion of classical solution to it does hold anymore. Therefore, we have to weaken the notion of solution in order to get 
+a consistent and unique solution to the dynamic programming equation for non-differentiable value functions. The \textit{viscosity solution} 
+is exactly what we are searching for. It arises from a standard procedure called vanishing viscosity, which allows us to compute the 
+solution of a fully non-linear first order PDE as the limiting solution of quasilinear parabolic PDEs, obtained via infinitesimal 
+perturbations of second order derivatives. 
+
+\subsection{Non-differentiable value functions}
+
+Let us consider the calculus of variation problem:
+
+\begin{equation}
+    \inf_{x\in Lip([0,1];[-1,1])} \int_t^{t_1} 1 + \frac{1}{4}(\dot{x}(s))^2 \,ds,
+\end{equation}
+
+where $Lip(I;U)$ is the collection of Lipschitz continuous functions from $I$ to $U$. The Hamiltonian related to 
+this problem is:
+
+\[H(t,x,p) = \max_{v\in [-1,1]} \left\{-v\cdot p - 1 - \frac{1}{4}v^2\right\}.\]
+
+We can explicitly compute the Hamiltonian and get:
+
+\[H(t,x,p)=p^2-1.\]
+
+Then the Hamilton-Jacobi equations read:
+
+\[\begin{cases}
+    \dot{x}^{\ast}(s) = -H_p(s,x^{\ast}(s),p^{\ast}(s)) =  2p^{\ast}(s)\\
+    \dot{p}^{\ast}(s) = H_x(s,x^{\ast}(s),p^{\ast}(s)) = 0,
+\end{cases}\]
+
+therefore, we get:
+
+\[\dot{x}(s)^{\ast} = 2p^{\ast},\,s\in[0,1],\]
+
+for some $p^{\ast}\in\R$. We now compute the exit time of $(s,x(s))=(s,2(s-t)p^{\ast}+x)$ with initial data $(t,x)$. If $p=0$ then:
+
+\[\tau=1,\,\abs{x}<1.\]
+
+If $p>0$ then $x(s)=2(s-t)p+x$ is increasing, which implies that the system is going to exit from the right boundary, that is from $x(s)=1$, and if 
+that happens before time $s=1$ the exit time will be determined by:
+
+\[2(s-t)p+x=1\Rightarrow s=t+\frac{1-x}{2p}.\]
+
+$x(s)=1$ for $s<1$ if:
+
+\[2(1-t)p+x\geq1\Rightarrow p\geq t+\frac{1-x}{2p},\]
+
+therefore:
+
+\[\tau=\begin{cases}
+    1 & p\geq t+\frac{1-x}{2p} \\
+    t+\frac{1-x}{2p} & p> t+\frac{1-x}{2p}.
+\end{cases}\]
+
+Analogously, if $p<0$:
+
+\[\tau=\begin{cases}
+    1 & p\leq t-\frac{1+x}{2p} \\
+    t-\frac{1+x}{2p} & p< t-\frac{1+x}{2p}.
+\end{cases}.\]
+
+We now solve:
+
+\[\inf_{p\in\R} \int_t^{\tau}1+p^2\,ds=\inf_{p\in\R}(1+p^2)(\tau-t)=\begin{cases}
+    (1+p^2)(1-t), & p=0\text{ or }p>0\land p\geq \frac{1-x}{2(1-t)}\text{ or }p<0\land p\leq\frac{-1-x}{2(1-t)}\\
+    (1+p^2)\frac{1-x}{2p}, & p>0\land p\geq \frac{1-x}{2(1-t)} \\
+    -(1+p^2)\frac{1+x}{2p}, & p\leq\frac{-1-x}{2(1-t)},
+\end{cases}\]
+
+which is solved as follows:
+
+\[V(t,x)=\begin{cases}
+    1-t & \abs{x}\leq t \\
+    1-t& \abs{x}\geq t,
+\end{cases}\]
+
+which is continuous on the whole space, but clearly no differentiable in $\abs{x}=t$.
