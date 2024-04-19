@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  18 APR 2024 20:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  19 APR 2024 11:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1557,30 +1557,41 @@ Overfull \hbox (20.88606pt too wide) detected at line 72
 [] [][] \OT1/cmr/m/n/12 1 \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12 p[] ds \U/matha/m/n/12 ^^P []p\OT1/cmr/m/n/12 1 \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12 p[]\U/matha/m/n/12 qp\OML/cmm/m/it/12 ^^\ \U/matha/m/n/12 ^^A \OML/cmm/m/it/12 t\U/matha/m/n/12 q ^^P []
  []
 
-) [2] (./Viscosity solutions.aux)
+[2] [3]
+
+LaTeX Warning: Reference `4-1-valuefunctreform' on page 4 undefined on input line 193.
+
+
+LaTeX Warning: Reference `4-1-defofT_dynam' on page 4 undefined on input line 199.
+
+) [4] (./Viscosity solutions.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `"Viscosity solutions".out' has not changed.
-(rerunfilecheck)             Checksum: 6F5E52109EE72516163BBC72F310DCD8;342.
+(rerunfilecheck)             Checksum: 9F3E12D8048A845A2978016575D307C7;708.
 Package logreq Info: Writing requests to '"Viscosity solutions".run.xml'.
 \openout1 = `"Viscosity solutions.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56505 strings out of 474267
- 1320994 string characters out of 5751465
- 2265692 words of memory out of 5000000
- 77845 multiletter control sequences out of 15000+600000
- 571334 words of font info for 107 fonts, out of 8000000 for 9000
+ 56589 strings out of 474267
+ 1322191 string characters out of 5751465
+ 2266907 words of memory out of 5000000
+ 77871 multiletter control sequences out of 15000+600000
+ 573365 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,9n,107p,1661b,1946s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Viscosity solutions.pdf" (2 pages, 128765 bytes).
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Viscosity solutions.pdf" (4 pages, 174276 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 18461 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 151 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 24621 words of extra memory for PDF output out of 24883 (max. 10000000)
 

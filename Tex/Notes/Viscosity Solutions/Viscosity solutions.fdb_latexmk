@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber Viscosity solutions"] 1713464700 "Viscosity solutions.bcf" "Viscosity solutions.bbl" "Viscosity solutions" 1713464700 0
-  "Viscosity solutions.bcf" 1713464698 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
+["biber Viscosity solutions"] 1713519900 "Viscosity solutions.bcf" "Viscosity solutions.bbl" "Viscosity solutions" 1713519900 0
+  "Viscosity solutions.bcf" 1713519899 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
   "biblio.bib" 0 -1 0 ""
   (generated)
   "Viscosity solutions.bbl"
   "Viscosity solutions.blg"
   (rewritten before read)
-["pdflatex"] 1713464694 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Viscosity Solutions/Viscosity solutions.tex" "Viscosity solutions.pdf" "Viscosity solutions" 1713464700 0
-  "Intro.tex" 1713464674 3033 11ee88aa5c93ecb2ab3503e9ac6c1b5a ""
-  "Viscosity solutions.aux" 1713464698 608 77828220ae68adf985ceade40152835e "pdflatex"
+["pdflatex"] 1713519895 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Viscosity Solutions/Viscosity solutions.tex" "Viscosity solutions.pdf" "Viscosity solutions" 1713519900 0
+  "Intro.tex" 1713519879 10304 fcd619c3986c342a681c6152690491d7 ""
+  "Viscosity solutions.aux" 1713519899 1189 772cd1bc26778319b6a4bdcf08aa6bac "pdflatex"
   "Viscosity solutions.bbl" 0 -1 0 "biber Viscosity solutions"
-  "Viscosity solutions.out" 1713464698 342 6f5e52109ee72516163bbc72f310dcd8 "pdflatex"
-  "Viscosity solutions.run.xml" 1713464698 2420 57e76bdfc34f9869c9e0476cde832124 "pdflatex"
+  "Viscosity solutions.out" 1713519899 708 9f3e12d8048a845a2978016575d307c7 "pdflatex"
+  "Viscosity solutions.run.xml" 1713519899 2420 57e76bdfc34f9869c9e0476cde832124 "pdflatex"
   "Viscosity solutions.tex" 1713451781 4641 dbd8f18e8848981b54880c8159438340 ""
   "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Viscosity Solutions/Viscosity solutions.tex" 1713451781 4641 dbd8f18e8848981b54880c8159438340 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1702046692 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -22,6 +22,8 @@
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1702045120 908 2921f8a10601f252058503cc6570e581 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1702045120 940 228d6584342e91276bf566bcf9716b83 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1702045788 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm" 1702045788 1344 8a0be4fe4d376203000810ad4dc81558 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1702045788 1332 1fde11373e221473104d6cc5993f046e ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1702045788 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1702045788 1524 4414a8315f39513458b80dfc63bff03a ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1702045788 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -55,12 +57,14 @@
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm" 1702049397 848 6125cdd3627e68d3db8013b98e587508 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1702045120 32080 340ef9bf63678554ee606688e7b5339d ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1702045120 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
+  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1702045120 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1702045120 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1702045120 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1702045120 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1702045120 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb" 1702045120 34586 5a65dc15601f9c74fe3fb3f37b3b8b6f ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1702045120 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1702045120 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1702045120 36118 fad905eba93cff5bce1e185fe980a177 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1702045120 34694 870c211f62cb72718a00e353f14f254d ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb" 1702046432 34421 79309417cbb00a4641f92d2efa583bbd ""

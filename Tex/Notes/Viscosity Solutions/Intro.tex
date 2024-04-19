@@ -79,3 +79,142 @@ which is solved as follows:
 \end{cases}\]
 
 which is continuous on the whole space, but clearly no differentiable in $\abs{x}=t$.
+
+\subsection{Vanishing viscosity}
+
+We now euristichally expose a technique called vanishing viscosity, which is widely used in 
+calculus of variations problems and will show us one of the origins of the viscosity 
+solution notion. Let us consider the initial value problem:
+
+\begin{equation}\label{4-1-fullynonlinear}
+    \begin{cases}
+        u_t + H(u,Du) = 0,& \R^n\times(0,+\infty) \\
+        u = g,& \R^n\times\{t=0\}.
+    \end{cases}
+\end{equation}
+
+The method of characteristics shows that there cannot be a smooth solution of the above problem over the whole positive 
+real line. Indeed, a weaker notion of solution is needed. One approach is to use Hopf-Lax solution concept. We are not 
+interested in it, instead we start by perturbing the system as:
+
+\begin{equation}
+    \begin{cases}
+        u^{\epsilon}_t + H(u^{\epsilon},Du^{\epsilon}) -\epsilon\Delta u^{\epsilon}= 0,& \R^n\times(0,+\infty) \\
+        u^{\epsilon} = g,& \R^n\times\{t=0\},
+    \end{cases}
+\end{equation}
+
+so that the fully non-linear system in \ref{4-1-fullynonlinear} becomes a semilinear one, which turn out to have a smooth solution. 
+Then, we take $\epsilon\to0$. We expect the solution $u^{\epsilon}$ to lose the bounds on the derivatives, as they strongly depend on the 
+regularization effect of $\epsilon\Lambda$. Turns out that many times Ascoli-Arzela theorem's hypotheses are satisfied, that is $(u^{\epsilon})_{\epsilon}$ 
+is uniformly bounded and equicontinuous, then we have local uniform convergence along a subsequence $u^{\epsilon_j}$. We now use the limit
+$u\xleftarrow{j\to+\infty}u^{\epsilon_j}$ as a solution. 
+We now it to be continuous but we lack information about its derivatives. We will then verify these information using test functions. 
+Unlike the classical variational weak solution concept, where integration by part play the central role, we will use the maximum principle 
+to translate the derivates of $u$ onto the test functions. 
+
+Let us take $v\in C^{\infty}(\R^n\times(0,+\infty))$ and suppose that $u-v$ has a strict local maximum at $(x_0,t_0)$, then:
+
+\[(u-v)(x_0,t_0) > (u-v)(x,t),\]
+
+for all $(t,x)$ sufficiently close to $(x_0,t_0)$. It can be shown that it implies that there exists $J>0$ such that for all 
+$j>J$ there exists $(x_{\epsilon_j},t_{\epsilon_j})$ such that:
+
+\[(u^{\epsilon}-v)(x_{\epsilon_j},t_{\epsilon_j}) \geq (u^{\epsilon}-v)(x,t),\]
+
+for $(x,t)$ sufficiently close to $(x_{\epsilon_j},t_{\epsilon_j})$ and such that:
+
+\[(x_{\epsilon_j},t_{\epsilon_j})\xrightarrow{j\to+\infty}(x_0,t_0).\]
+
+Because $(u^{\epsilon}-v)$ has a local maximum at $(x_{\epsilon_j},t_{\epsilon_j})$:
+
+\[Du^{\epsilon_j}(x_{\epsilon_j},t_{\epsilon_j})=Dv(x_{\epsilon_j},t_{\epsilon_j}),\,u^{\epsilon_j}_t(x_{\epsilon_j},t_{\epsilon_j}) =v(x_{\epsilon_j},t_{\epsilon_j}),\]
+
+and:
+
+\[-\Lambda u^{\epsilon_j}(x_{\epsilon_j},t_{\epsilon_j}) \geq -\Lambda v(x_{\epsilon_j},t_{\epsilon_j}) \].
+
+Therefore, we get:
+
+\[v_t(x_{\epsilon_j},t_{\epsilon_j}) +H(Dv(x_{\epsilon_j},t_{\epsilon_j}) ,x_{\epsilon_j})\leq \Lambda v(x_{\epsilon_j},t_{\epsilon_j}) \xrightarrow{j\to+\infty}0\]
+
+Analogous computations can be done for local minimum of $u-v$, obtaining the opposite inequality above.
+
+We can now grasp the intuition behind the following definition.
+
+\begin{definition}
+    A viscosity solution of \ref{4-1-fullynonlinear} is a function $u$ bounded and uniformly continuous on $\R^n\times[0,T]$ for all $T>0$ such that 
+    for all $v\in C^{+\infty}(\R^n\times(0,+\infty))$:
+
+    \[v_t(x,t)+H(Dv(x,t),x)\leq0\]
+
+    for all $(x,t)\in\arg \max\{u-v\}$ and:
+
+    \[v_t(x,t)+H(Dv(x,t),x)\geq0\]
+
+    for all $(x,t)\in\arg \min\{u-v\}$. Furthermore, $u\equiv g$ for $t=0$. 
+\end{definition}
+
+\subsection{Abstract dynamic programming}
+
+We now present an abstraction of the dynamic programming principle, which will allow us to define the viscosity solutions of the dynamic programming 
+equation. Let $\Sigma$ be a closed subset of a Banach space and $\mathcal{C}$ a collection of functions on $\Sigma$, closed under addition:
+
+\[\phi,\psi\in\mathcal{C}\Rightarrow \phi+\psi\in\mathcal{C}.\]
+
+We consider the family of operators $\{\mathcal{T}_{tr}\}_{t_0\leq t\leq r\leq t_1}$ such that: 
+
+\begin{equation}\label{4-1-identityofT}
+    \mathcal{T}_{tt}\phi = \phi,\, \forall\phi\in\mathcal{C},
+\end{equation}
+
+\begin{equation}\label{4-1-leqT}
+    \mathcal{T}_{tr}\phi\leq\mathcal{T}_{ts}\psi \text{ if } \phi\leq \mathcal{T}_{rs}\psi,
+\end{equation}
+
+and:
+
+\begin{equation}\label{4-1-geqT}
+    \mathcal{T}_{tr}\phi\geq\mathcal{T}_{ts}\psi \text{ if } \phi\geq \mathcal{T}_{rs}\psi.
+\end{equation}
+
+Conditions \ref{4-1-leqT} and \ref{4-1-geqT} are a weaker version of monotonicity; they imply it together with \ref{4-1-identityofT}. 
+Moreover, they also imply the semigroup property, provided that $\mathcal{T}_{rt}:\mathcal{C}\rightarrow\mathcal{C}$. Under this assumption,
+the two conditions are equivalent to monotonicity. The semigroup property:
+
+\begin{equation}
+    \mathcal{T}_{tr}\left(\mathcal{T}_{rs}\psi\right)=\mathcal{T}_{ts}\psi,\,\mathcal{T}_{rs}\psi\in\mathcal{C},
+\end{equation}
+
+is going to be the dynamic programming principle. Indeed, let us consider the classical optimal control problem defined on a bounded set 
+$O\subset\R^n$, which we set to be $\Sigma=\overline{O}$ and $\mathcal{C}=\mathcal{M}(\Sigma)$, the collection of measurable functions bounded by below. Then as in chapter 1 we aim at minimize a functional, 
+we set this functional to be the operator $\mathcal{T}$. Let us define:
+
+\begin{equation}\ref{4-1-valuefunctreform}
+    \mathcal{T}_{t,r;u}\psi(x) = \int_t^{\tau\wedge r}L(s,x(s),u(s)),\,ds + g(\tau,x(\tau))\chi_{\tau<r} + \psi(x(r))\chi_{\tau\geq r}, 
+\end{equation}
+
+which gives:
+
+\begin{equation}\ref{4-1-defofT_dynam}
+    \mathcal{T}_{tr}\psi = \inf_{u\in\mathcal{U}(t,x)} \mathcal{T}_{t,r;u}\psi.
+\end{equation}
+
+Under the usual assumption on the running and terminal costs, as well as on the control space $U$ we now that the value function defined in ref{4-1-valuefunctreform} 
+is measurable and bounded by below. Therefore, $\mathcal{T}_{rt}:\mathcal{C}\rightarrow\mathcal{C}$ and we can formulate the semigroup property just by asking $\psi\in\mathcal{C}$. 
+It is clear by its definition that the dynamic programming principle is translated as:
+
+\[\mathcal{T}_{tt_1}\psi(x)=\mathcal{T}_{tr}\left(\mathcal{T}_{rt_1}\psi\right)(x),\]
+
+for $(t,x)\in\overline{Q}$ and $\psi\in\mathcal{C}$. We now derive the abstract dynamic programming equation. The same procedure as in chapter 1 gives:
+
+\[-\frac{1}{h}\left[\mathcal{T}_{tt+h}V(t+h,\cdot)(x)-V(t,x)\right]=0.\]
+
+What happens if we let $h\to0$? We ask for the existence of a family of non-linear operators which will play the role of the Hamiltonian. 
+Let $\Sigma'\subset\Sigma$ and $\mathcal{D}\subset C([t_0,t_1)\times\Sigma')$ and $\{\mathcal{G}_t\}_{t\in[t_0,t_1]}$ functions on $\Sigma$ such that:
+
+\begin{equation}
+    \lim_{h\to 0}\frac{1}{h}\left[\mathcal{T}_{tt+h}V(t+h,\cdot)(x)-V(t,x)\right] = \frac{\partial}{\partial t}w(t,x) - (\mathcal{G}_tw(t,\cdot))(x)
+\end{equation}
+
+for all $w\in\mathcal{D},(t,x)\in Q$. 
