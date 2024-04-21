@@ -155,7 +155,7 @@ We can now grasp the intuition behind the following definition.
     for all $(x,t)\in\arg \min\{u-v\}$. Furthermore, $u\equiv g$ for $t=0$. 
 \end{definition}
 
-\subsection{Abstract dynamic programming}
+\subsection{Abstract dynamic programming and viscosity solutions}
 
 We now present an abstraction of the dynamic programming principle, which will allow us to define the viscosity solutions of the dynamic programming 
 equation. Let $\Sigma$ be a closed subset of a Banach space and $\mathcal{C}$ a collection of functions on $\Sigma$, closed under addition:
@@ -190,13 +190,13 @@ is going to be the dynamic programming principle. Indeed, let us consider the cl
 $O\subset\R^n$, which we set to be $\Sigma=\overline{O}$ and $\mathcal{C}=\mathcal{M}(\Sigma)$, the collection of measurable functions bounded by below. Then as in chapter 1 we aim at minimize a functional, 
 we set this functional to be the operator $\mathcal{T}$. Let us define:
 
-\begin{equation}\ref{4-1-valuefunctreform}
+\begin{equation}\label{4-1-valuefunctreform}
     \mathcal{T}_{t,r;u}\psi(x) = \int_t^{\tau\wedge r}L(s,x(s),u(s)),\,ds + g(\tau,x(\tau))\chi_{\tau<r} + \psi(x(r))\chi_{\tau\geq r}, 
 \end{equation}
 
 which gives:
 
-\begin{equation}\ref{4-1-defofT_dynam}
+\begin{equation}\label{4-1-defofT_dynam}
     \mathcal{T}_{tr}\psi = \inf_{u\in\mathcal{U}(t,x)} \mathcal{T}_{t,r;u}\psi.
 \end{equation}
 
@@ -213,8 +213,132 @@ for $(t,x)\in\overline{Q}$ and $\psi\in\mathcal{C}$. We now derive the abstract 
 What happens if we let $h\to0$? We ask for the existence of a family of non-linear operators which will play the role of the Hamiltonian. 
 Let $\Sigma'\subset\Sigma$ and $\mathcal{D}\subset C([t_0,t_1)\times\Sigma')$ and $\{\mathcal{G}_t\}_{t\in[t_0,t_1]}$ functions on $\Sigma$ such that:
 
-\begin{equation}
+\begin{equation}\label{4-1-conditiononG_t}
     \lim_{h\to 0}\frac{1}{h}\left[\mathcal{T}_{tt+h}V(t+h,\cdot)(x)-V(t,x)\right] = \frac{\partial}{\partial t}w(t,x) - (\mathcal{G}_tw(t,\cdot))(x)
 \end{equation}
 
-for all $w\in\mathcal{D},(t,x)\in Q$. 
+for all $w\in\mathcal{D},(t,x)\in Q=[t_0,t_1)\times\Sigma'$. The space $\mathcal{D}$ is such that:
+
+\begin{equation}\label{4-1-conditiononD}
+    \text{For every $w\in\mathcal{D}$ the functions $\frac{\partial w}{\partial t}$ and $\mathcal{G}_tw(t,\cdot)$ are continuous on $Q$ and $w(t,\cdot)\in\mathcal{C}$ for 
+    all $t\in[t_0,t_1]$,} 
+\end{equation}
+
+and $\mathcal{D}$ is a vector space:
+
+\begin{equation}
+    w,\tilde{w}\in\mathcal{D} \Rightarrow w+\tilde{w}\in\mathcal{D},\,\lambda w\in\mathcal{D}.
+\end{equation}
+
+The elements of $\mathcal{D}$ are called test functions and $\mathcal{G}_t$ the infinitesimal generator of $\mathcal{T}_{tr}$. Explicit choices of $\mathcal{C}$ and 
+$\mathcal{D}$ will vary from case to case, usually they are chosen to satisfy certain integrability conditions on the functions. 
+
+If we require the existence of a test function space and an infinitesimal generator of the semigroup given by the value function, the 
+dynamic programming equation becomes:
+
+\begin{equation}\label{4-1-newprogreq}
+    -\frac{\partial }{\partial t}V(t,x) + (\mathcal{G}_tV(t,\cdot))(x) = 0,\,(t,x)\in Q.
+\end{equation}
+
+Then if a function $V\in\mathcal{D}$ satisfies \ref{4-1-newprogreq} point wise it is called a classical solution of it. Thanks to this reformulation we will be able 
+to weaken this notion of solution and finally get the viscosity solution of the dynamic programming equation.
+
+We point out that in the canonical deterministic optimal control studied in chapter 1, the infinitesimal generator has the form:
+
+\[(\mathcal{G}_t\phi)(x) = H(t,x,D\phi(x)) = \sup_{v \in U}\left\{-f(t,x,v)\cdot D\phi(x) - L(t,x,v)\right\},\]
+
+with test functions space $\mathcal{D}= C^1(Q)\cap \mathcal{M}(\overline{Q})$ and $\Sigma'=O$.
+
+In view of what we saw in previous sections, we give the definition of viscosity solution. 
+
+\begin{definition}
+    Let $W\in C([t_0,t_1]\times\Sigma)$. Then:
+    \begin{enumerate}
+        \item $W$ is a \textit{viscosity subsolution} of \ref{4-1-newprogreq} in $Q$ if for every $w\in\mathcal{D}$:
+        \begin{equation}\label{4-1-defsubsolution}
+            -\frac{\partial}{\partial t}w\left(\overline{t},\overline{x}\right) + \left(\mathcal{G}_{\overline{t}}w\left(\overline{t},\cdot\right)\right)\left(\overline{x}\right) \leq 0,
+        \end{equation} 
+        at every:
+        \[\left(\overline{t},\overline{x}\right)\in \arg \max_{(t,x)\in Q}\left\{(W-w)(t,x)\right\},\]
+
+        and $W\left(\overline{t},\overline{x}\right)=w\left(\overline{t},\overline{x}\right)$.
+        \item $W$ is a \textit{viscosity supersolution} of \ref{4-1-newprogreq} in $Q$ if for every $w\in\mathcal{D}$:
+        \begin{equation}\label{4-1-defsupersolution}
+            -\frac{\partial}{\partial t}w\left(\overline{t},\overline{x}\right) + \left(\mathcal{G}_{\overline{t}}w\left(\overline{t},\cdot\right)\right)\left(\overline{x}\right) \geq 0,
+        \end{equation} 
+        at every:
+        \[\left(\overline{t},\overline{x}\right)\in \arg \min_{(t,x)\in Q}\left\{(W-w)(t,x)\right\},\]
+
+        and $W\left(\overline{t},\overline{x}\right)=w\left(\overline{t},\overline{x}\right)$.
+        \item $W$ is a \textit{viscosity solution} if it is both a subsolution and a supersolution.
+    \end{enumerate}
+\end{definition}
+
+As a first step after the definition of viscosity solutions, we prove its consistency with the classical notion. To do so we require the 
+operator to satisfy a maximum principle, that is if $\mathcal{G}_t$ is a general 
+operator and:
+
+\[\mathcal{D}=\left\{W\in C([t_0,t_1]\times\Sigma)\,|\,W_t(t,x),(\mathcal{G}_tW(t,\cdot))(x)\in C(Q)\right\},\]
+
+then $\mathcal{G}_t$ satisfies the \textit{maximum principle} if:
+
+\[\mathcal{G}_t\phi(\overline{x})\geq\mathcal{G}_t\psi(\overline{x})\]
+
+for every $\overline{x}\in\arg \max \{(\phi-\psi)(x)\,|\,x\in\Sigma\}\cap\Sigma'$ with $\phi(\overline{x})=\psi(\overline{x})$. Now,
+if $W$ is a classical solution of \ref{4-1-newprogreq}, then for a $w\in\mathcal{D}$ and $\left(\overline{t},\overline{x}\right) \in \arg \max_{(t,x)\in Q}\left\{(W-w)(t,x)\right\}$ 
+and $W\left(\overline{t},\overline{x}\right)=w\left(\overline{t},\overline{x}\right)$ then:
+
+\begin{align}
+    -\frac{\partial}{\partial t}w\left(\overline{t},\overline{x}\right) + \left(\mathcal{G}_{\overline{t}}w\left(\overline{t},\cdot\right)\right)\left(\overline{x}\right) \leq -\frac{\partial}{\partial t}W\left(\overline{t},\overline{x}\right) + \left(\mathcal{G}_{\overline{t}}W\left(\overline{t},\cdot\right)\right)\left(\overline{x}\right) = 0,
+\end{align}
+
+since we asked continuity of time derivatives. For the supersolution recall that:
+
+\[ \max \{(\phi-\psi)(x)\,|\,x\in \Sigma\} = \min \{-(\phi-\psi)(x)\,|\,x\in \Sigma\}.\]
+
+If $mathcal{G}_t$ is the infinitesimal generator of a two-parameter semigroup the connection between classical and viscosity solutions is even stronger.
+
+\begin{proposition}
+    Let $W\in\mathcal{D}$. Then $W$ is a classical solution of \ref{4-1-newprogreq} if and only if it is a viscosity solution of \ref{4-1-newprogreq} in $Q$.
+
+    \begin{proof}
+        If $W$ is a viscosity solution, since it is also a test function then \ref{4-1-subsolution} and \ref{4-1-supersolution} hold for every point $(t,x)\in Q$, 
+        which implies that:
+        \[-\frac{\partial}{\partial t}w(t,x) + \left(\mathcal{G}_tw(t,\cdot)\right)(x) = 0,\,\forall(t,x)\in Q.\] 
+
+        If $W$ is a classical solution and prove the subsolution property. Let $w\in\mathcal{D}$ and $(t,x)$ as usual. Since $w\geq W$:
+
+        \begin{align}
+            -\frac{\partial}{\partial t}w(t,x) + (\mathcal{G}_tw(t,\cdot))(x) & = - \lim_{h\to0} \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right] \\
+            & \leq - \lim_{h\to0} \frac{1}{h}\left[(\mathcal{T}_{tt+h}W(t+h,\cdot))(x)-W(t,x)\right]
+            & = -\frac{\partial}{\partial t}W(t,x) + (\mathcal{G}_tW(t,\cdot))(x) = 0.
+        \end{align}
+
+        The supersolution property is proven similarly.
+    \end{proof}
+\end{proposition}
+
+We now prove that the family of linear operators $\mathcal{T}_{tt_1}$ defined in \ref{4-1-defofT_dynam} defines viscosity solution of the dynamic programming 
+equation \ref{4-1-newprogreq}.
+
+\begin{theorem}
+    Let $\{\mathcal{T}_{tr}\}_{t_0\leq t\leq r\leq t_1}$ such that \ref{4-1-identityofT},\ref{4-1-geqT},\ref{4-1-leqT} and also there exists a vector space 
+    $\mathcal{D}$ and another family of operator $\{\mathcal{G}_t\}_{t\in[t_0,t_1]}$ such that \ref{4-1-conditiononD} and \ref{4-1-conditiononG_t} hold. Let:
+    
+    \[V(t,x)=\left(\mathcal{T}_{tt_1}\psi\right)(x).\]
+
+    If $V\in C(Q)$ then it is a viscosity solution of \ref{4-1-newprogreq}.
+
+    \begin{proof}
+        Let us prove the subsolution condition. Let $w\in\mathcal{D}$ and $(t,x)$ maximizer of $V-w$ in $\overline{Q}$ and $V(t,x)=w(t,x)$. Then $V\leq w$ on 
+        $Q$, which implies by \ref{4-1-geqT} that we have:
+        
+        \begin{equation}\label{4-1-proof1-firsstineq}(\mathcal{T}_{tr}w(r,\cdot))(x) \geq (\mathcal{T}_{tt_1}\psi)(x) = V(t,x) = w(t,x).\end{equation}
+
+        Now, because of \ref{4-1-conditiononD} and \ref{4-1-conditiononG_t} we can compute:
+        
+        \[-\frac{\partial}{\partial t}w(t,x) + (\mathcal{G}_tw(t,\cdot))(x) = - \lim_{h\to0} \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right]\leq0\]
+
+        because of \ref{4-1-proof1-firsstineq}. The supersolution condition is proven analogously.
+    \end{proof}
+\end{theorem}

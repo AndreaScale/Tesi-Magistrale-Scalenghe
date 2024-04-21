@@ -1,1 +1,4 @@
 monotonicity
+integrability
+subsolution
+supersolution

@@ -571,8 +571,18 @@ INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsl12.tfm
 INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/fge/fgerm10.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/fge/fgeit10.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esvect/vect5.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/stmaryrd/stmary5.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/mathabx/matha5.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/mathabx/mathb5.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/mathabx/mathx10.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT Viscosity solutions.aux
 INPUT ./Viscosity solutions.out
 INPUT ./Viscosity solutions.out
