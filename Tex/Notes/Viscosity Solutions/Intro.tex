@@ -308,11 +308,11 @@ If $mathcal{G}_t$ is the infinitesimal generator of a two-parameter semigroup th
 
         If $W$ is a classical solution and prove the subsolution property. Let $w\in\mathcal{D}$ and $(t,x)$ as usual. Since $w\geq W$:
 
-        \begin{align}
+        \begin{align*}
             -\frac{\partial}{\partial t}w(t,x) + (\mathcal{G}_tw(t,\cdot))(x) & = - \lim_{h\to0} \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right] \\
-            & \leq - \lim_{h\to0} \frac{1}{h}\left[(\mathcal{T}_{tt+h}W(t+h,\cdot))(x)-W(t,x)\right]
+            & \leq - \lim_{h\to0} \frac{1}{h}\left[(\mathcal{T}_{tt+h}W(t+h,\cdot))(x)-W(t,x)\right] \\
             & = -\frac{\partial}{\partial t}W(t,x) + (\mathcal{G}_tW(t,\cdot))(x) = 0.
-        \end{align}
+        \end{align*}
 
         The supersolution property is proven similarly.
     \end{proof}
