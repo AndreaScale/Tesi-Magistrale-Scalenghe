@@ -132,7 +132,7 @@ Because $(u^{\epsilon}-v)$ has a local maximum at $(x_{\epsilon_j},t_{\epsilon_j
 
 and:
 
-\[-\Lambda u^{\epsilon_j}(x_{\epsilon_j},t_{\epsilon_j}) \geq -\Lambda v(x_{\epsilon_j},t_{\epsilon_j}) \].
+\[-\Lambda u^{\epsilon_j}(x_{\epsilon_j},t_{\epsilon_j}) \geq -\Lambda v(x_{\epsilon_j},t_{\epsilon_j}).\]
 
 Therefore, we get:
 
@@ -250,7 +250,7 @@ with test functions space $\mathcal{D}= C^1(Q)\cap \mathcal{M}(\overline{Q})$ an
 
 In view of what we saw in previous sections, we give the definition of viscosity solution. 
 
-\begin{definition}
+\begin{definition}\label{4-1-defviscsol}
     Let $W\in C([t_0,t_1]\times\Sigma)$. Then:
     \begin{enumerate}
         \item $W$ is a \textit{viscosity subsolution} of \ref{4-1-newprogreq} in $Q$ if for every $w\in\mathcal{D}$:
@@ -320,7 +320,7 @@ If $\mathcal{G}_t$ is the infinitesimal generator of a two-parameter semigroup t
 We now prove that the family of linear operators $\mathcal{T}_{tt_1}$ defined in \ref{4-1-defofT_dynam} defines viscosity solution of the dynamic programming 
 equation \ref{4-1-newprogreq}.
 
-\begin{theorem}
+\begin{theorem}\label{4-1-thm:Vtoviscosity}
     Let $\{\mathcal{T}_{tr}\}_{t_0\leq t\leq r\leq t_1}$ such that \ref{4-1-identityofT},\ref{4-1-geqT},\ref{4-1-leqT} and also there exists a vector space 
     $\mathcal{D}$ and another family of operator $\{\mathcal{G}_t\}_{t\in[t_0,t_1]}$ such that \ref{4-1-conditiononD} and \ref{4-1-conditiononG_t} hold. Let:
     
@@ -347,6 +347,212 @@ equation \ref{4-1-newprogreq}.
 We have talked about \textit{viscosity solutions} for $\mathcal{G}_t$ that are infinitesimal generators of semigroups. Historically the notion of viscosity solution was introduced 
 for partial differential equations, that is when $\mathcal{G}_t$ is a partial differential operator. In this section we will introduce this classical notion and provide some properties, 
 establishing as well the relevant links to the already proven theory. 
+
+Let $\mathcal{G}_t$ be a partial differential operator defined As
+
+\begin{equation}\label{4-1-GPDEop}
+    (\mathcal{G}_t\phi)(x) = F(t,x,D\phi(x), D^2\phi(x), \phi(x)),
+\end{equation}
+
+where $F$ is taken to be continuous. We assume that $\sigma'=O\subset\R^n$ open and $\sigma$ to be its closure. 
+Furthermore, we assume that test functions $\mathcal{C}$ and $\mathcal{D}$ are such that
+
+\begin{equation}\label{4-1-condonCandD}
+    C_p(\overline{O})\cap\mathcal{M}(\overline{O}) \subset \mathcal{C},\,C_p^{\infty}(\overline{Q})\cap\mathcal{M}(\overline{Q}) \subset \mathcal{D},
+\end{equation}
+
+where $Q=[t_0,t_1)\times O$ as usual. A useful result is the following.
+
+\begin{lemma}
+    The operator $\mathcal{G}_t$ obeys the maximum principle if and only if $F$ is elliptic.
+
+    \begin{proof}
+        Recall that $F$ is elliptic If
+
+        \begin{equation}\label{4-1-defelliptic}
+            F(t,x,p,A+B,V) \leq F(t,x,p,A,V)
+        \end{equation}
+
+        for all $(t,x,p,V)\in Q\times\R^n\times\R$ and all $A,B\in Sym(\R^{n\times n})$ with $B\geq0$.
+
+        Let us assume that $F$ is elliptic, then for generic $\phi,\psi\in C^2(O)$ and $\overline{x}\in\arg \max\{(\phi-\psi)(x)|x\in\overline{O}\}\cap O$ 
+        with $\phi(\overline{x})=\psi(\overline{x})$ we have that $D\phi(\overline{x})=D\psi(\overline{x})$ and $D^2\phi(\overleftarrow{x})\leq D^2\psi(\overleftarrow{x})$, 
+        therefore
+
+        \[F(t,\overline{x}, D\phi(\overline{x}), D^2\phi(\overline{x}),\phi(\overline{x}))\geq F(t,\overline{x}, D\psi(\overline{x}), D^2\psi(\overline{x}),\psi(\overline{x})),\]
+
+        just by using \ref{4-1-defelliptic} with $B=D^\psi(\overline{x})-D^2\phi(\overline{x})\geq0$. If $F$ is not elliptic 
+        for some $(t,\overline{x},p,A,V)$ then the functions
+
+        \[\psi(x) = V+p\cdot(x-\overline{x}) + \frac{1}{2}(A+B)(x-\overline{x})\cdot(x-\overline{x}),\]
+
+        \[\phi(x) = V+p\cdot(x-\overline{x}) + \frac{1}{2}A(x-\overline{x})\cdot(x-\overline{x}),\]
+
+        for $x\in\overline{O}$ are such that $\overline{x}$ maximizes the distance between them, they coincide over it, but 
+        the value of $F$ in $\overline{x}$ and $\phi,\psi$ does not satisfy the maximum principle, since \ref{4-1-defelliptic} 
+        does not hold.
+    \end{proof}
+\end{lemma}
+
+I this context we give the following definition.
+
+\begin{definition}\label{4-1-defviscforW}
+    Given a function $W\in C(\overline{O})$ we define the equation
+    \begin{equation}\label{4-1-PDEwithW}
+        -\frac{\partial}{\partial t}W(t,x) + F(t,x,D_xW(t,x),D_x^2W(t,x),W(t,x))=0
+    \end{equation}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item $W$ is a \textit{viscosity subsolution} of \ref{4-1-PDEwithW} in $Q$ if for each $w\in C^{\infty}(Q)$ then 
+        
+        \begin{equation}
+            -\frac{\partial}{\partial t}w(t,x) + F(t,x,D_xw(t,x),D_x^2w(t,x),w(t,x))\leq0
+        \end{equation}
+
+        at every $(t,x)\in Q$ which locally maximizes $W-w$ yielding $0$.
+        
+        \item $W$ is a \textit{viscosity supersolution} of \ref{4-1-PDEwithW} in $Q$ if for each $w\in C^{\infty}(Q)$ then 
+        
+        \begin{equation}
+            -\frac{\partial}{\partial t}w(t,x) + F(t,x,D_xw(t,x),D_x^2w(t,x),w(t,x))\geq0
+        \end{equation}
+
+        at every $(t,x)\in Q$ which locally minimizes $W-w$ yielding $0$.
+
+        \item $W$ is a \textit{viscosity solution} if it is both a viscosity subsolution and supersolution.
+    \end{enumerate}
+\end{definition}
+
+We will prove that definitions \ref{4-1-defviscsol} and \ref{4-1-defviscforW} are equivalent for partial differential operators 
+of the form \ref{4-1-GPDEop}, provided that the function has sub-polynomial growth and is measurable.
+
+An handy way of verifying both the definitions is the following.
+
+\begin{lemma}
+    If the conditions in the definitions \ref{4-1-defviscsol}, \ref{4-1-defviscforW} is satisfied only at strict extrema 
+    then it is satisfied at every extrema.
+
+    \begin{proof}
+        We prove it for the minimum of definition \ref{4-1-defviscforW}, the other assertions are proved similarly. Let 
+        $(t,x)$ be a non strict minimum of $W-w$ such that $W(t,x)=w(t,x)$. Let $\epsilon>0$ and deifne $w^{\epsilon}=w+\epsilon\xi$ where
+        
+        \[\xi(s,y)=e^{-(\abs{s-t}^2+\abs{y-x}^2)}-1\]
+
+        defined over $\overline{Q}$. Since $\mathcal{D}$ is a vector space and $\epsilon\xi\in\mathcal{D}$ by \ref{4-1-condonCandD}, then 
+        $w^{\epsilon}\in\mathcal{D}$. Then for every $\epsilon>0$ the function $W-w^{\epsilon}$ has a strict minimum at $(t,x)$ with $W(t,x)=w^{\epsilon}(t,x)$ which 
+        implies that
+        
+        \[-\frac{\partial}{\partial t}w^{\epsilon}(t,x) + F(t,x,D_xw^{\epsilon}(t,x),D_x^2w^{\epsilon}(t,x),w^{\epsilon}(t,x))\leq0.\]
+
+        By continuity of $F$ and smoothness of $w^{\epsilon}$ we let $\epsilon\to0$ and get the wanted inequality.
+    \end{proof}
+\end{lemma}
+
+
+Finally, we prove the equivalence of these definitions. 
+
+\begin{theorem}
+    Let all the previous assumptions and $W\in C_p(\overline{Q})\cap\mathcal{M}(\overline{Q})$ and $\mathcal{D}\subset C^{1,2}(Q)$. Then $W$ is a subsolution (supersolution) 
+    of \ref{4-1-PDEwithW} as defined by \ref{4-1-defviscsol} if and only if it is a subsolution (supersolution) as defined by \ref{4-1-defviscforW}. 
+
+    \begin{proof}
+        Let $W$ be a supersolution as in \ref{4-1-defviscsol}. We just prove the supersolution property, since if we have $W$ subsolution we can see it as 
+        a supersolution. Let $W$ a subsolution and $(t,x)$ a strict maximum of $W-w$ and $W(t,x)=w(t,x)$, then we can find an open set $A$ such that $w>W$ over 
+        $A\cap Q$. By sub-polynomial growth there exists a constant $K$ such that 
+
+        \[\abs{W(s,y)} \leq K(1+\abs{y}^{2m}),\,\forall (s,y)\in\overline{Q}\]
+
+        for some $m>0$. Then for some $\xi$ given by Urysohn’s lemma we can define 
+
+        \[\overline{w}(s,y)= \xi(s,y)w(s,y) - (1-\xi(s,y))K(1+\abs{y}^{2m}),\]
+
+        and get a minimum for $W-\overline{w}$ in $(t,x)$. Then we are in the supersolution case.
+
+        Let $w\in C^{\infty}(Q)$ and $(t,x)$ a local minimum of $W-w$ where it is null. There exists an open subset $\mathcal{N}$ of $\R^n$ such that 
+        $W\geq w$ over $\mathcal{N}\cap\overline{Q}$, and by Urysohn’s lemma there exists a function $\xi\in C^{\infty}(\overline{Q})$ taking values in $[0,1]$, 
+        constantly $1$ in a neighborhood $\tilde{\mathcal{N}}$ of $(t,x)$ and zero outside $\mathcal{N}$. Since $W$ is bounded below we define 
+        
+        \begin{equation}
+            \tilde{w}(s,y) = \xi(s,y)w(s,y) - (1-\xi(s,y))K,
+        \end{equation}
+
+        where $-K$ is the lower bound of $W$. Then, by hypotheses on $W$, $w$, and $\xi$ we have
+
+        \[W = \xi W  + (1-\xi) W \geq \xi w + (1-\xi)W\geq\xi w-(1-\xi)K=\overline{w}.\]
+
+        Furthermore, $\overline{w}\in\mathcal{D}$ since \ref{4-1-condonCandD} holds, $(t,x)$ is a minimum of $W-\overline{w}$, and $W(t,x)=\overline{w}(t,x)$ 
+        then 
+        
+        \[-\frac{\partial}{\partial t}\overline{w}(t,x) + F(t,x,D_y\overline{w}(t,x),D_y^2\overline{w}(t,x),\overline{w}(t,x))\geq0,\]
+
+        but $\overline{w}$ and $w$ have same derivative in $(t,x)$, since $\xi$ is constantly unitary in a neighborhood of it. Then we get
+
+        \[-\frac{\partial}{\partial t}w(t,x) + F(t,x,D_yw(t,x),D_y^2w(t,x),w(t,x))\geq0.\]
+
+        Let us suppose that $W$ is a subsolution for \ref{4-1-defviscforW}. Let $w\in\mathcal{D}$ and $(t,x)$ a strict maximum of $W-w$ such that $(W-w)(t,x)=0$. 
+        Since $\mathcal{D}\subset C^{1,2}(Q)$ we can find an open set $Q^{\ast}$ over which $w$ is $C^{1,2}$ and then extend it to be null over $\R^{n+1}\setminus Q^{\ast}$. 
+        Let us define a sequence of mollifications of $w$ defined as $w^n$ such that $w^n,w_t^n,w_{x_i}^n,w_{x_ix_j}^n$ converge to their respective of $w$. 
+        Since the convergence of $w^n$ to $w$ is uniform there must be a subsequence $(t_n,x_n)$ converging to $(t,x)$, such that $W-w^n$ has a maximum. If we set 
+        $\overline{w}^n=w^n-w^n(t_n,x_n)+W(t_n,x_n)$ we still have a maximum in $(t_n,x_n)$ for $W-\overline{w}^n$ and $W(t_n,x_n)=\overline{w}^n(t_n,x_n)$. Then 
+
+        \[-\frac{\partial}{\partial t}\overline{w}^n(t_n,x_n) + F(t_n,x_n,D_x\overline{w}^n(t_n,x_n), D_x^2\overline{w}^n(t_n,x_n), \overline{w}^n(t_n,x_n))\leq0.\]
+
+        Because of continuity of $F$ and smoothness of $\overline{w}^n$ we get
+        
+        \[-\frac{\partial}{\partial t}w(t,x) + F(t,x,D_yw(t,x),D_y^2w(t,x),w(t,x))\leq0.\]
+    \end{proof}
+\end{theorem}
+
+\subsection{Value Function as Viscosity Solution}
+
+In the first section we proved that the value function of a dynamic programming problem is the classical solution of the dynamic programming equation, under differentiability 
+assumptions. We now prove that it is a viscosity solution of the dynamic programming equation given two sets of assumptions.
+
+\begin{theorem}\label{4-1-viscodynamiceq}
+    Let $U$ be a bounded space of control and $f\in C(\overline{Q}\times U)$ such that $\abs{f(t,x,v)}\leq K(1+\abs{x})$. The for every $w\in C^1(Q)\cap \mathcal{M}(\overline{Q})$ 
+
+    \begin{equation}
+        \lim_{h\to 0} \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right] = \frac{\partial}{\partial t}w(t,x) - H(t,x,D_xw(t,x)), \,\forall(t,x)\in\overline{Q}.
+    \end{equation}
+\end{theorem}
+
+\vspace{5mm}
+
+
+Note that equation \ref{4-1-viscodynamiceq} implies that $V$ is a viscosity solution of \ref{1-2-HJB1} via theorem \ref{4-1-thm:Vtoviscosity}. Indeed, 
+there exists an admissible control $u(\cdot)\in \mathcal{U}(t,x)$ such that $\lim_{s\to t}u(s)=v$. Let $x(\cdot)$ be the state solution of the Cauchy problem associated 
+to the control $u(\cdot)$ such that $x(t)=x$. Let also $\tau$ the exit time of $(s,x(s))$ from $Q$. If we take a sufficiently small $h>0$ we can compute
+
+\begin{align*}
+    \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right] & \leq \frac{1}{h}\int_t^{t+h}L(s,x(s),u(s))\,ds + \frac{1}{h}\left[w(t+h,x(t+h))-w(t,x)\right] \\
+    & =  \frac{1}{h}\int_t^{t+h}\bigg[L(s,x(s),u(s)) \\ 
+    & \quad + \frac{\partial}{\partial t}w(s,x(s)) + f(s,x(s),u(s))\cdot D_xw(s,x(s))\bigg]\,ds.
+\end{align*}
+
+Then 
+
+\[\limsup_{h\to0}\frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right]\leq\frac{\partial}{\partial t}w(t,x) - H(t,x,D_xw(t,x)).\]
+
+\vspace{5mm}
+
+\begin{proof}
+
+    Let $(t,x)\in Q$ and $u(\cdot)\in\mathcal{U}(t,x)$ then using $\abs{f(t,x,v)}\leq K(1+\abs{x})$
+
+    \begin{align*}
+        \abs{x(r)-x} & \leq \int_r^t \abs{f(s,x(s),u(s))} \,ds \\
+        & \leq K(r-t) + K\int_t^r \abs{x}(s)\,ds \\
+        & \leq K(r-t)(1+\abs{x}) + K\int_t^r \abs{x(s)-x}\,ds,
+    \end{align*}
+
+    which implies by Gronwall's inequality 
+
+    \[\abs{x(r)-x} \leq (1+\abs{x})e^{K(t-r)-1},\,\forall r\geq t.\]
+
+    Then for suitably small $r$ that $\tau\geq r\wedge t_1$ for all $u(\cdot)\in\mathcal{U}(t,x)$. Then for $n$ sufficiently large
+\end{proof}
+
+
 
 FARE di II.6 tutto fino a p.76. Poi fare II.7, in particolare theorem 7.1 bene. Anche 7.2. (tutto insomma)
 
