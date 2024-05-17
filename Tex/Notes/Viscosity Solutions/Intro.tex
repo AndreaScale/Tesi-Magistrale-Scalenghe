@@ -519,25 +519,33 @@ assumptions. We now prove that it is a viscosity solution of the dynamic program
 \vspace{5mm}
 
 
-Note that equation \ref{4-1-viscodynamiceq} implies that $V$ is a viscosity solution of \ref{1-2-HJB1} via theorem \ref{4-1-thm:Vtoviscosity}. Indeed, 
-there exists an admissible control $u(\cdot)\in \mathcal{U}(t,x)$ such that $\lim_{s\to t}u(s)=v$. Let $x(\cdot)$ be the state solution of the Cauchy problem associated 
-to the control $u(\cdot)$ such that $x(t)=x$. Let also $\tau$ the exit time of $(s,x(s))$ from $Q$. If we take a sufficiently small $h>0$ we can compute
-
-\begin{align*}
-    \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right] & \leq \frac{1}{h}\int_t^{t+h}L(s,x(s),u(s))\,ds + \frac{1}{h}\left[w(t+h,x(t+h))-w(t,x)\right] \\
-    & =  \frac{1}{h}\int_t^{t+h}\bigg[L(s,x(s),u(s)) \\ 
-    & \quad + \frac{\partial}{\partial t}w(s,x(s)) + f(s,x(s),u(s))\cdot D_xw(s,x(s))\bigg]\,ds.
-\end{align*}
-
-Then 
-
-\[\limsup_{h\to0}\frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right]\leq\frac{\partial}{\partial t}w(t,x) - H(t,x,D_xw(t,x)).\]
+Note that equation \ref{4-1-viscodynamiceq} implies that $V$ is a viscosity solution of \ref{1-2-HJB1} via theorem \ref{4-1-thm:Vtoviscosity}.
 
 \vspace{5mm}
 
 \begin{proof}
 
-    Let $(t,x)\in Q$ and $u(\cdot)\in\mathcal{U}(t,x)$ then using $\abs{f(t,x,v)}\leq K(1+\abs{x})$
+    Let $(t,x)\in Q$, $v\in U$ and $w\in C^1(Q)\cap\mathcal{M}(\overline{Q})$. We prove that
+    
+    \begin{equation}\label{4-1-inproof:limsup}\limsup_{h\to0}\frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right]\leq\frac{\partial}{\partial t}w(t,x) - H(t,x,D_xw(t,x)),\end{equation}
+
+    and 
+
+    \begin{equation}\label{4-1-inproof:liminf}\liminf_{h\to0}\frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right]\geq\frac{\partial}{\partial t}w(t,x) - H(t,x,D_xw(t,x)).\end{equation}
+    
+    Equation \ref{4-1-inproof:limsup} can be proven without assuming boundedness of the control space $U$ and sub-linearity of the flow $f$. Indeed, there exists an admissible control $u(\cdot)\in \mathcal{U}(t,x)$ 
+    such that $\lim_{s\to t}u(s)=v$. Let $x(\cdot)$ be the state solution of the Cauchy problem associated 
+    to the control $u(\cdot)$ such that $x(t)=x$. Let also $\tau$ the exit time of $(s,x(s))$ from $Q$. If we take a sufficiently small $h>0$ we can compute
+    
+    \begin{align*}
+        \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right] & \leq \frac{1}{h}\int_t^{t+h}L(s,x(s),u(s))\,ds + \frac{1}{h}\left[w(t+h,x(t+h))-w(t,x)\right] \\
+        & =  \frac{1}{h}\int_t^{t+h}\bigg[L(s,x(s),u(s)) \\ 
+        & \quad + \frac{\partial}{\partial t}w(s,x(s)) + f(s,x(s),u(s))\cdot D_xw(s,x(s))\bigg]\,ds.
+    \end{align*}
+    
+    Then \ref{4-1-inproof:limsup} holds true. 
+    
+    Let us prove \ref{4-1-inproof:liminf}. Using $\abs{f(t,x,v)}\leq K(1+\abs{x})$ we get
 
     \begin{align*}
         \abs{x(r)-x} & \leq \int_r^t \abs{f(s,x(s),u(s))} \,ds \\
@@ -549,12 +557,75 @@ Then
 
     \[\abs{x(r)-x} \leq (1+\abs{x})e^{K(t-r)-1},\,\forall r\geq t.\]
 
-    Then for suitably small $r$ that $\tau\geq r\wedge t_1$ for all $u(\cdot)\in\mathcal{U}(t,x)$. Then for $n$ sufficiently large
+    Then for suitably small $r$ that $\tau\geq r\wedge t_1$ for all $u(\cdot)\in\mathcal{U}(t,x)$. Then for $n$ sufficiently large by definition of $\mathcal{T}_{tr}$ we can find a control $u^n(\cdot)$ such that
+    
+    \begin{align*}
+        \left(\mathcal{T}_{tt+\frac{1}{n}}w\left(t+\frac{1}{n}\right)\right)(x) \geq \int_t^{t+1/n} L(s,x(s),u(s)) \,ds + w\left(t+\frac{1}{n},x^n\left(t+\frac{1}{n}\right)\right) - \frac{1}{n^2},
+    \end{align*}
+
+    which implies that 
+
+    \begin{equation}\label{4-1-inproof:geq}
+        \begin{aligned}
+            n\left[\left(\mathcal{T}_{tt+\frac{1}{n}}w\left(t+\frac{1}{n}\right)\right)(x) - w(t,x)\right] & \geq \frac{\partial}{\partial t}w(t,x) + n\int_t^{t+1/n} L(s,x(s),u^n(s))\,ds \\ 
+            & + n\int_t^{t+1/n} f(t,x,u^n(s))\,ds \cdot D_xw(t,x) + e(n),
+        \end{aligned}        
+    \end{equation}
+    
+    where 
+
+    \begin{equation}
+        \begin{aligned}
+            e(n) = & -\frac{1}{n} +n\int_t^{t+1/n} \frac{\partial}{\partial t}\big(w(s,x^n(s)) - w(t,x)\big)\,ds \\
+            & + n\int_t^{t+1/n} L((s,x^n(s),u^n(s))) - L(t,x,u^n(s))\,ds \\
+            & + n\int_t^{t+1/n} f(s,x^n(s),u^n(s))\cdot D_xw(s,x^n(s)) - f(t,x,u^n(s))\cdot D_xw(t,x) \,ds.
+        \end{aligned}
+    \end{equation}
+
+    Because of the continuity of $L$, of $f$ and smoothness of $w$ we have that $\lim_{n\to+\infty}e(n)=0$. If we prove that
+
+    \begin{equation}\label{miao}
+        n\int_t^{t+1/n} L(s,x(s),u^n(s))\,ds + n\int_t^{t+1/n} f(t,x,u^n(s))\,ds \cdot D_x w(t,x) \leq \sup_{v\in U}\left\{f(t,x,v)\cdot p + L(t,x,v)\right\},
+    \end{equation}  
+
+    then from \ref{4-1-inproof:geq} we get
+
+    \[\liminf_{h\to0}\frac{1}{h}\left[\left(\mathcal{T}_{tt+h}w\left(t+h\right)\right)(x) - w(t,x)\right] \geq \frac{\partial}{\partial t}w(t,x) - H(t,x,D_x w(t,x)).\]
+ 
+    \color{red}{PROVE THAT \ref{miao} VIA CONVEXHULL STUFF.}\color{black}{}
 \end{proof}
 
+It is important to notice that the previous result holds under quite stringent hypotheses. We both require the space control to be bounded and the flow $f$ to have sublinear growth in its state variable. We can relax these assumptions 
+and get a similar result, but we need to require the existence of an optimal control.\
+
+\begin{theorem}
+    If for each $(t,x)\in Q$ there exists a $u^{\ast}\mathcal{U}(t,x)$ be an optimal control, then a continuous value function is a viscosity solution of its dynamic programming equation.
+    
+    \begin{proof}
+        Let us drop the $^{\ast}$. As we did before in theorem \ref{4-1-viscodynamiceq}, for every $w\in C^{\infty}(Q)$ we have
+
+        \[\limsup_{h\to0}\frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right]\leq\frac{\partial}{\partial t}w(t,x) - H(t,x,D_xw(t,x)).\]
+
+        If $V-w$ has a maximum at $(t,x)$ and $V(t,x)=w(t,x)$ then 
+
+        \[\limsup_{h\to0}\frac{1}{h}\left[\underbrace{\int_t^{t_1} L(s,x(s),u(s))\,ds}_{=V(t,x)-w(t,x)=0} + w(t+h,x) - V(t+h,x)\right]=0,\]
+
+        which proves subsolution. Let the subsolution hypotheses hold, then from the dynamic programming principle we get
+
+        \begin{align*}
+            0 & \geq \int_t^{t+h} L(s,x(s),u(s)) \,ds + w(t+h,x(t+h)) - w(t,x)\\ 
+            & \geq  \int_t^{t+h} L(s,x(s),u(s)) + \frac{\partial}{\partial t}w(s,x(s)) + f(s,x(s),u(s))\cdot D_x w(s,x(s)) \,ds \\
+            & \geq \int_t^{t+h} L(s,x(s),u(s)) - H(s,x(s),D_x w(s,x(s))) \,ds.
+        \end{align*} 
+
+        Finally, if we let $h\to0$ we get
+
+        \[-\frac{\partial }{\partial t} w(t,x) + H(t,x,D_xw(t,x)) \geq 0.\]
+
+    \end{proof}
+\end{theorem}
 
 
-FARE di II.6 tutto fino a p.76. Poi fare II.7, in particolare theorem 7.1 bene. Anche 7.2. (tutto insomma)
 
 Poi II.8-II.9 da fare con criterio. Lemmi super tecnici dati per buoni. Fare bene unicità (molto lunga).
 
