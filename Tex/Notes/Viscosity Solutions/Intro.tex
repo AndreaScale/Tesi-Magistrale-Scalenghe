@@ -364,7 +364,7 @@ Furthermore, we assume that test functions $\mathcal{C}$ and $\mathcal{D}$ are s
 where $Q=[t_0,t_1)\times O$ as usual. A useful result is the following.
 
 \begin{lemma}
-    The operator $\mathcal{G}_t$ obeys the maximum principle if and only if $F$ is elliptic.
+    The operator $\mathcal{G}_t$ obeys to the maximum principle if and only if $F$ is elliptic.
 
     \begin{proof}
         Recall that $F$ is elliptic If
@@ -625,7 +625,57 @@ and get a similar result, but we need to require the existence of an optimal con
     \end{proof}
 \end{theorem}
 
+We now turn our attention to uniqueness property of viscosity solution to the dynamic programming equation. Let us consider the dynamic programming equation 
+in a more general form
 
+\begin{equation}\label{4-2-firstordereq}
+    -\frac{\partial}{\partial t}V(t,x) + H(t,x,D_xV(t,x)) = 0,\,(t,x)\in Q.
+\end{equation}
+
+We will show that under technical assumptions on $H$, which are satisfied by the Hamiltonian, the supremum norm of the difference between two viscosity solution 
+can be computed only on the frontier. Therefore, if we impose boundary conditions we get uniqueness of the viscosity solution. 
+The assumptions on $H$ are
+
+\begin{itemize}\label{4-2-Hassumptions}
+    \item There exists $K\in\R$ and $h\in C([0,\infty))$ with $h(0)=0$ such that $\forall (t,x),(s,y)\in\overline{Q}$ and $\forall p,p'\in\R^n$ we have
+    
+    \[H(t,x,p)-H(s,y,p')\leq h(\abs{t-s}+\abs{x-y})+h(\abs{t-s})\abs{p}+K\abs{x-y}\abs{p} + K\abs{p-p'}.\]
+    
+    \item There exists $K'\in\R$ such that
+    
+    \[\abs{H_t}+\abs{H_x}\leq K'(1+\abs{p}),\]
+
+    and
+
+    \[\abs{H_p}\leq K'.\]
+\end{itemize}
+
+Under this hypotheses we can state the following theorem.
+
+\begin{theorem}\label{4-2-Theo:Suponbound}
+    Let $W$ and $V$ viscosity subsolution and supersolution of \ref{4-2-firstordereq} in $Q$, respectively. If $Q$ is unbounded we assume $W$, $V$ to be bounded and 
+    uniformly continuous on its closure. Then
+    
+    \[\sup_{\overline{Q}}[W-V] = \sup_{\partial^{\ast}Q}[W-V].\]
+\end{theorem}
+
+This Theorem implies that if $V$ and $W$ are two viscosity solution of \ref{4-2-firstordereq} satisfying the boundary conditions
+
+\begin{equation}
+    \begin{aligned}
+        V(t,x) = g(t,x),&\forall(t,x)\in[T_0,t_1)\times O, \\
+        V(t_1,x) = \psi(x),&x\in\overline{O},
+    \end{aligned}
+\end{equation}
+
+then, if the assumption of theorem \ref{4-2-Theo:Suponbound} are satisfied, we get
+
+\[\norm{W-V}_{\infty} = \sup_{\overline{Q}}[W-V]=\sup_{\partial^{\ast}Q}[W-V] = 0.\]
+
+
+\begin{proof}
+    \dots
+\end{proof}
 
 Poi II.8-II.9 da fare con criterio. Lemmi super tecnici dati per buoni. Fare bene unicità (molto lunga).
 
