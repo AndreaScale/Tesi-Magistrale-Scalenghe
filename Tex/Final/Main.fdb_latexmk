@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber Main"] 1709911895 "Main.bcf" "Main.bbl" "Main" 1709911895 0
-  "Main.bcf" 1709911894 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
+["biber Main"] 1716125926 "Main.bcf" "Main.bbl" "Main" 1716125926 0
+  "Main.bcf" 1716125925 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
   "biblio.bib" 0 -1 0 ""
   (generated)
   "Main.bbl"
   "Main.blg"
   (rewritten before read)
-["pdflatex"] 1709911891 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" "Main.pdf" "Main" 1709911895 0
-  "Main.aux" 1709911894 350 50aafb7f1760cbbd69f4ddaf7d2fd7b3 "pdflatex"
+["pdflatex"] 1716125922 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" "Main.pdf" "Main" 1716125926 0
+  "Main.aux" 1716125925 350 50aafb7f1760cbbd69f4ddaf7d2fd7b3 "pdflatex"
   "Main.bbl" 0 -1 0 "biber Main"
-  "Main.out" 1709911894 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Main.run.xml" 1709911894 2301 d89fa02e074060a6144aef92b63e02fe "pdflatex"
-  "Main.tex" 1709911872 5426 0b2e0b15e99173e7b6e4db416fbd0216 ""
-  "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" 1709911872 5426 0b2e0b15e99173e7b6e4db416fbd0216 ""
+  "Main.out" 1716125925 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Main.run.xml" 1716125925 2301 d89fa02e074060a6144aef92b63e02fe "pdflatex"
+  "Main.tex" 1716125905 5542 0b7b5c023c4f7d0b6ee51385bb6e8d05 ""
+  "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" 1716125905 5542 0b7b5c023c4f7d0b6ee51385bb6e8d05 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1702046692 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1702045788 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm" 1702045788 1300 63a6111ee6274895728663cf4b4e7e81 ""
@@ -200,6 +200,9 @@
   "c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx" 1702045429 39965 48ce9ce3350aba9457f1020b1deba5cf ""
   "c:/texlive/2023/texmf-dist/tex/latex/caption/caption.sty" 1702045628 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
   "c:/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty" 1702045628 72619 ee90b6612147680fd73c3b1406a74245 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg" 1702046002 7068 06f8d141725d114847527a66439066b6 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def" 1702046002 21994 2bc2a882df92d97dbce35c06bb1d3541 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty" 1702046002 62761 3c92d495a9e03d7254b9a3266aa17164 ""
   "c:/texlive/2023/texmf-dist/tex/latex/elocalloc/elocalloc.sty" 1702046346 1428 7d469063535b93044f827bfdb1b0a130 ""
   "c:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty" 1702046383 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "c:/texlive/2023/texmf-dist/tex/latex/environ/environ.sty" 1702046386 4378 f429f0da968c278653359293040a8f52 ""
@@ -215,6 +218,7 @@
   "c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1702046910 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1702046910 1224 978390e9c2234eab29404bc21b268d1e ""
   "c:/texlive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def" 1702046911 19448 1e988b341dda20961a6b931bcde55519 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/graphics/color.sty" 1702046909 7233 e46ce9241d2b2ca2a78155475fdd557a ""
   "c:/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty" 1702046909 18387 8f900a490197ebaf93c02ae9476d4b09 ""
   "c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty" 1702046909 8010 a8d949cbdbc5c983593827c9eec252e1 ""
   "c:/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty" 1702046909 2671 7e67d78d9b88c845599a85b2d41f2e39 ""

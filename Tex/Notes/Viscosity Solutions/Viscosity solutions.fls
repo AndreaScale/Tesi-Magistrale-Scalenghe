@@ -57,6 +57,20 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/mathtools/mhsetup.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/base/makeidx.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/base/makeidx.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/faktor/faktor.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/faktor/faktor.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg
 INPUT c:/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty
@@ -85,8 +99,6 @@ INPUT c:/texlive/2023/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT c:/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT c:/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
@@ -114,10 +126,6 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/base/makeidx.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/base/makeidx.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/faktor/faktor.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/faktor/faktor.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -463,6 +471,7 @@ INPUT ./Viscosity solutions.aux
 INPUT ./Viscosity solutions.aux
 INPUT Viscosity solutions.aux
 OUTPUT Viscosity solutions.aux
+INPUT c:/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
 INPUT ./Viscosity solutions.out
 INPUT ./Viscosity solutions.out
 INPUT Viscosity solutions.out

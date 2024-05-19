@@ -114,6 +114,14 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/makeidx.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/makeidx.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/faktor/faktor.sty
@@ -463,6 +471,7 @@ INPUT ./Main.aux
 INPUT ./Main.aux
 INPUT Main.aux
 OUTPUT Main.aux
+INPUT c:/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
 INPUT ./Main.out
 INPUT ./Main.out
 INPUT Main.out

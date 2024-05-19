@@ -672,9 +672,137 @@ then, if the assumption of theorem \ref{4-2-Theo:Suponbound} are satisfied, we g
 
 \[\norm{W-V}_{\infty} = \sup_{\overline{Q}}[W-V]=\sup_{\partial^{\ast}Q}[W-V] = 0.\]
 
+The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove the $\overline{Q}$ bounded case and then the unbounded one.
 
 \begin{proof}
-    \dots
+    Let $\epsilon, \delta, \beta >0$ define
+    
+    \begin{equation}\label{4-2-InProofSup:phi}
+        \Phi(t,x,s,y) = W(t,x) - V(s,y) - \frac{1}{2\epsilon} \abs{x-y}^2 -\frac{1}{2\delta} \abs{t-s}^2 + \beta(s-t_1).   
+    \end{equation}
+
+    Since $\overline{Q}$ is bounded the function $\Phi$ achieves its supremum at $(t',x'),(s',y')\in\overline{Q}\times\overline{Q}$. We will essentially prove 
+    that $\Phi$ divides $W-V$ from its supremum over the boundary in an inequality chain.
+    
+    \begin{enumerate}
+        \item Let $\rho>$ and define
+        
+        \begin{equation}\label{4-2-InProofSup:Drho}
+            D_{\rho} = \left\{(t,x),(s,y)\in\overline{Q}\times\overline{Q}\,|\,\abs{t-s}^2+\abs{x-y}^2\leq\rho\right\},
+        \end{equation}
+
+        and 
+
+        \[m_W(\rho)=2\left\{\abs{W(t,x)-W(s,y)}:\,((t,x),(s,y))\in D_{\rho}\right\},\]
+
+        \[m_V(\rho)=2\left\{\abs{V(t,x)-V(s,y)}:\,((t,x),(s,y))\in D_{\rho}\right\},\]
+
+        and 
+
+        \[K_1 = \sup\{m_w(\rho):\,\rho\geq0\}.\]
+
+        Since $\overline{Q}$ is compact and $W$,$V$ are continuous they are uniformly continuous, therefore $m_W,m_V\in C([0,\infty))$. Clearly 
+        $m_W(0)=m_V(0)=0$. We now claim two estimates on $\abs{x-y}$ and $\abs{t-s}$:
+
+        \begin{equation}
+            \begin{aligned}
+                \abs{t'-s'}\leq\sqrt{K_1\delta} \\
+                \abs{x'-y'}\leq \sqrt{\epsilon m_W(K_1[\epsilon+\delta])}.
+            \end{aligned}
+        \end{equation}
+
+        From the maximum in $((t',x'),(s',y'))$ we have
+
+        \[\Phi(t',x',s',y') \leq \Phi(s',y',s',y'),\]
+
+        implies
+
+        \[\frac{1}{\epsilon}\abs{x'-y'}^2 + \frac{1}{\delta}\abs{t'-s'}^2\leq 2(W(t',x')-W(s',y')) \leq m_W(\abs{t'-s'}+\abs{x'-y'}).\]
+
+        Then we have
+
+        \[\frac{1}{\delta}\abs{t'-s'}^2\leq K_1,\,\frac{1}{\epsilon}\abs{x'-y'}^2\leq K_1,\]
+
+        which also imply
+
+        \[\frac{1}{\epsilon}\abs{x'-y'}^2\leq m_w(K_1[\epsilon+\delta]).\]
+
+        \item We now show that if $(t',x')\in\partial^{\ast}Q$ or $(s',y')\in\partial^{\ast}Q$ we have
+        
+        \begin{equation}\label{4-2-InProofSup:phiestim1}
+            \Phi(t',x',s',y') \leq\frac{1}{2}m_V(K_1(\epsilon+\delta)) + \sup_{\partial^{\ast}Q}[W-V],
+        \end{equation}
+
+        or 
+
+        \begin{equation}\label{4-2-InProofSup:phiestim2}
+            \Phi(t',x',s',y') \leq\frac{1}{2}m_W(K_1(\epsilon+\delta)) + \sup_{\partial^{\ast}Q}[W-V],
+        \end{equation}
+
+        respectively. Indeed, in the first case, we have
+
+        \begin{align*}\Phi(t',x',s',y')&\leq W(t',x') - W(s',y') \\ & \leq  V(t',x') - V(s',y') + \sup_{\partial^{\ast}Q}[W-V] \\
+        & \leq \frac{1}{2}m_W(\abs{t'-s'}^2+\abs{x'-y'}^2) +  \sup_{\partial^{\ast}Q}[W-V]. \end{align*}
+
+        Same reasoning for the latter.
+
+        \item We now construct an estimate over the parameter $\beta$ if $(t',x'),(s',y')\in Q$. Let us consider the test function
+        
+        \[w(t,x) = \frac{1}{2\delta}\abs{t-s'}^2 + \frac{1}{2\epsilon}\abs{x-y'}^2,\]
+
+        then $(t',x')$ is where $W-w$ is maximized and $W(t',x')=w(t',x')$, then
+
+        \begin{equation}\label{4-2-InProofSup:qandp1}-\underbrace{\frac{1}{\delta}(t'-s')}_{\overset{def}{=}q_{\delta}} + H(t',x',\underbrace{\frac{1}{\epsilon}(x'-y')}_{\overset{def}{=}p_{\epsilon}})\leq0.\end{equation}
+
+        Analogously, defining 
+
+        \[w(s,y) = -\frac{1}{2\delta}\abs{t'-s}^2 - \frac{1}{2\epsilon}\abs{x'-y}^2 + \beta(s-t_1),\]
+
+        we get:
+
+        \begin{equation}\label{4-2-InProofSup:qandp2}
+            -\beta-q_{\delta}+H(s',y',p_{\epsilon})\geq0.
+        \end{equation}
+
+        Combining \ref{4-2-InProofSup:qandp1} and \ref{4-2-InProofSup:qandp2} we get
+
+        \begin{align*}
+            \beta & \leq H(s',y',p_{\epsilon}) - H(t',x',p_{\epsilon}) \\
+            & \leq h(\abs{t'-s'} + \abs{x'-y'}) + h(\abs{t'-s'})\abs{p_{\epsilon}} + K\abs{x'-y'}\abs{p_{\epsilon}} \\
+            & \leq h(\sqrt{K_1\epsilon} + \sqrt{K_1\delta}) + h(\sqrt{K_1\delta})\frac{1}{\epsilon}\sqrt{K_1\epsilon} + K\frac{\abs{x'-y'}^2}{\epsilon} \\
+            & \leq h(\sqrt{K_1\epsilon} + \sqrt{K_1\delta}) + h(\sqrt{K_1\delta})\sqrt{\frac{K_1\epsilon}{\epsilon}} + Km_W(K_1[\epsilon+\delta]).
+        \end{align*}
+        
+        \item We denote
+        
+        \begin{equation}\label{4-2-inproofSup:k}
+            k(\epsilon,\delta) = h(\sqrt{K_1\epsilon} + \sqrt{K_1\delta}) + h(\sqrt{K_1\delta})\sqrt{\frac{K_1\epsilon}{\epsilon}} + Km_W(K_1[\epsilon+\delta]),
+        \end{equation}
+
+        then
+
+        \[\lim_{\epsilon\to0}\lim_{\delta\to0} k(\epsilon,\delta) = 0.\]
+
+        Then for suitably small $\epsilon$ and $\delta$ we have
+
+        \[k(\epsilon,\delta) < \beta,\]
+
+        which implies that either $(t',x')$ or $(s',y')$ is in $\partial^{\ast}Q$. Then by \ref{4-2-InProofSup:phiestim1} 
+        or \ref{4-2-InProofSup:phiestim2} we have
+
+        \begin{equation}\label{4-2-InProofSup:limsuplimsup}
+            \limsup_{\epsilon\to0}\limsup_{\delta\to0} \Phi(t',x',s',y') \leq \sup_{\partial^{\ast}Q}[W-V],
+        \end{equation}
+
+        for every $\beta>0$. Finally, we have
+
+        \[W(t,x) - V(s,y) + \beta(t-t_1) = \Phi(t,x,t,x) \leq \Phi(t',x',s',y'),\]
+
+        then by \ref{4-2-InProofSup:limsuplimsup} we get
+
+        \[W(t,x) - V(s,y) = \lim_{\beta\to0}W(t,x) - V(s,y) + \beta(t-t_1)\leq \lim_{\beta\to0}\Phi(t',x',s',y')\leq \sup_{\partial^{\ast}Q}[W-V].\]
+
+    \end{enumerate}
 \end{proof}
 
 Poi II.8-II.9 da fare con criterio. Lemmi super tecnici dati per buoni. Fare bene unicità (molto lunga).
