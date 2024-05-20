@@ -817,7 +817,64 @@ The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove th
         \Phi_{\gamma}(t,x,s,y) = \Phi(t,x,s,y) - \frac{\gamma}{2}\left[\abs{t-t_{\gamma}}^2+\abs{s-s_{\gamma}}^2 + \abs{x-x_{\gamma}}^2 + \abs{y-y_{\gamma}}^2\right],
     \end{equation}
 
-    for $(t,x),(s,y)\in \overline{Q}$.
+    for $(t,x),(s,y)\in \overline{Q}$. 
+    
+    We now follow a similar procedure to the one used in the bounded case.
+
+    \begin{enumerate}
+        \item Let the moduli of continuity $m_W,m_V$ and the bound $K_1$ as before. Since we assume the value functions to be bounded and 
+        absolutely continuous we have, as before, that
+        
+        \[m_W,m_V\in C([0,\infty)),\, m_W(0)=m_V(0)=0,\, K_1=\sup\{m_W(\rho):\,\rho\geq0\}<+\infty.\]
+
+        Let us note that for $(t,x),(s,y)\in\overline{Q}\times\overline{Q}$ such that 
+
+        \[\abs{t-t_{\gamma}}^2+\abs{s-s_{\gamma}}^2 + \abs{x-x_{\gamma}}^2 + \abs{y-y_{\gamma}}^2>2,\]
+
+        then
+
+        \[\Phi_{\gamma}(t,x,s,y) \leq \Phi(t,x,s,y) - \gamma \leq \Phi(t_{\gamma},x_{\gamma},s_{\gamma},y_{\gamma}) = \Phi_{\gamma}\Phi(t_{\gamma},x_{\gamma},s_{\gamma},y_{\gamma}).\]
+
+        The supremum of $\Phi_{\gamma}$ is achieved since $\Phi_{\gamma}$ is bounded by $\Phi(t_{\gamma},x_{\gamma},s_{\gamma},y_{\gamma})$. It is achieved at $(t',x'),(s',y')$. Then
+
+        \begin{equation}
+            \abs{t-t_{\gamma}}^2+\abs{s-s_{\gamma}}^2 + \abs{x-x_{\gamma}}^2 + \abs{y-y_{\gamma}}^2\leq2.
+        \end{equation}
+
+        We now claim two estimates on the distance between the time variables and space variables. For $\gamma,\delta,\epsilon\leq\frac{1}{2}$ we have
+
+        \begin{equation}\label{4-2-inproofSup:unboundedCLAIMS}
+            \abs{t'-s'} \leq \sqrt{2(K_1+1)\delta},\,\abs{x'-y'}\leq\sqrt{2\epsilon(2\gamma + m_W(2\epsilon(K_1+1)))}.
+        \end{equation}
+
+        Indeed, $\Phi_{\gamma}(t',x',s',y')\geq\Phi_{\gamma}(s',x',s',y')$ implies
+
+        \begin{align*}
+            \frac{1}{2\delta}\abs{t'-s'}^2 & \leq W(t',x')-W(s',x') + \frac{\gamma}{2}[\abs{s'-t_{\gamma}}^2-\abs{t'-t_{\gamma}}^2] \\
+            & \leq \frac{1}{2}K_1 + \gamma\abs{t'-s'}^2 + \frac{\gamma}{2}\abs{t'-t_{\gamma}}^2 \\
+            & \leq \frac{1}{2}K_1 + \gamma\abs{t'-s'}^2 + \gamma,
+        \end{align*}
+
+        which implies, recalling the bound on $\delta$ and $\gamma$, that 
+
+        \[\left(\frac{1}{4\delta}\right)\abs{t'-s'}^2\leq\left(\frac{1-\delta}{2\delta}\right)\abs{t'-s'}^2\leq\left(\frac{1}{2\delta}-\gamma\right)\abs{t'-s'}^2\leq \frac{1}{2}K_1 + \frac{1}{2}.\]
+
+        From $\Phi_{\gamma}(t',x',s',y')\geq\Phi_{\gamma}(t',y',s',y')$ we get
+
+        \begin{align*}
+            \frac{1}{2\epsilon}\abs{x'-y'}^2 & \leq W(t',x')-W(t',x') + \frac{\gamma}{2}[\abs{y'-x_{\gamma}}^2-\abs{x'-x_{\gamma}}^2] \\
+            & \leq \frac{1}{2}m_W(\abs{x'-y'}^2) + \gamma\abs{x'-y'}^2 + \frac{\gamma}{2}\abs{x'-x_{\gamma}}^2 \\
+            & \leq \frac{1}{2}m_W(\abs{x'-y'}^2) + \gamma\abs{x'-y'}^2 + \gamma,
+        \end{align*}
+
+        which implies
+
+        \[\frac{1}{4\epsilon}\abs{x'-y'}^2\leq \frac{1}{2}m_W(\abs{x'-y'}^2)+\gamma.\]
+
+        Therefore, we get
+
+        \dots
+    \end{enumerate}
 \end{proof}
 
 Poi II.8-II.9 da fare con criterio. Lemmi super tecnici dati per buoni. Fare bene unicità (molto lunga).

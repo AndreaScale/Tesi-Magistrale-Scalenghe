@@ -6,10 +6,7 @@
 \selectlanguage{english}
 \usepackage{amsmath,amsthm,amssymb,fge,mathrsfs}
 \usepackage{mathtools}
-% \usepackage{hyperref}
-\usepackage[hidelinks, colorlinks = true, linkcolor = gray, citecolor = gray]{hyperref}
-\usepackage{csquotes}
-
+\usepackage{hyperref}
 \usepackage{makeidx} %per fare l'indice
 \usepackage{faktor} %per i quozienti
 
@@ -60,15 +57,11 @@
 \usepackage{subfiles} %meglio caricarla per ultima
 
 \usepackage{biblatex}
-% \addbibresource{Bibliography.bib}
-\addbibresource{Bibliography.bib}
-
-
-% \addbibresource{biblio.bib}
+\addbibresource{biblio.bib}
 %usiamo paragraph come nuova sottosottosottosezione 
 \makeatletter
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-            {-2.5ex\@plus-1ex \@minus -.25ex}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
             {1.25ex \@plus .25ex}%
             {\normalfont\normalsize\bfseries}}
 \makeatother
@@ -145,6 +138,8 @@
 \newcommand{\sarrow}{\overset{s}{\longrightarrow}}
 \newcommand{\wastarrow}{\xrightharpoonup{ w^* }}
 
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
 
 \setlength{\parindent}{0in} 
 \title{Title}
@@ -154,112 +149,39 @@
 
 
 \begin{document}
-\thispagestyle{empty}
 
-\centerline {\Large{\textsc{ UNIVERSIT\`A DEGLI STUDI DI TORINO}}}
-\vskip 20 pt
+%I want to understand how to proceed also in view of stochastics
 
-\centerline {\Large{\textsc DIPARTIMENTO DI MATEMATICA GIUSEPPE PEANO}}
+\section{Introduction}
 
-\vskip 20 pt
-
-\centerline {{\textsc SCUOLA DI SCIENZE DELLA NATURA}}
-
-\vskip 20 pt
-
-\centerline {\Large{\textsc Corso di Laurea Magistrale in Matematica}}
-\vskip 60 pt
-
-
-
-
-
-%\begin{tabular}{ccc}
-\centerline {\includegraphics[width=4cm]{logo_new_2022.png}}
-%   \end{tabular}
-
-\vskip 1.2cm
-
-\centerline {\normalsize {Tesi di Laurea  Magistrale}} 
-
-\vskip 0.7cm
-
-\centerline {\Large {\bf TITOLO}}
-
-\vskip 1.7cm
-
-\noindent Relatrice: Susanna Terracini
-\hfill  {Candidato: Andrea Scalenghe}
-
-\noindent Co-relatrice: Elena Issoglio
-
-
-\vskip 2.7cm
-
-
-\centerline{ANNO ACCADEMICO 2023-2024}
-
-
-\newpage
-
-\tableofcontents
-
-\newpage
-
-\chapter{Introduction}
-
-\newpage
-
-\chapter{Deterministic Optimal Control}
-
-We now study deterministic optimal control. The system we aim to control is governed by differential equations. 
+We start our dissertation by studying deterministic optimal control. The system we aim to control is governed by ordinary differential equations. 
 
 Short description of what is done in this chapter.
 
-\input{Finite horizon.tex}
+% \section{Motivating example, discounted cost infinite horizon} %the idea is to use a working example that we borrow all over the dissertation. Starting deterministic we get stochastic and generalize it
+
+
+
+
+\input{Finite horizon.tex} %Finite Horizon problem
 
 \input{Dynamic programming principle.tex}
 
+% Necessary condition
 \input{Pontryagin.tex}
 
+% Sufficient Condition
 \input{Existence.tex}
+
+% \input{LQRP.tex}
 
 \input{Infinite horizon.tex}
 
 \input{Proof of Pontryagin.tex}
+% \section{Pontryagin} %Maybe in dynamic programming?
 
-\newpage
+% \section{Dynamic programming}
 
-\chapter{Stochastic Optimal Control}
-
-We now study stochastic optimal control. The system we aim to control is governed by stochastic differential equations. 
-
-Short description of what is done in this chapter.
-
-\input{markov diffusion processes.tex}\
-
-\input{Markov control processes.tex}
-
-\input{Stochastic maximum Principle.tex}
-
-\newpage
-
-\chapter{Viscosity Solutions}
-
-We now study viscosity solutions and their relation with optimal control.
-
-\input{Intro - Visco.tex}
-
-\newpage
-
-\nocite{*}
-\bibstyle{numeric}
-\printbibliography
-\addcontentsline{toc}{chapter}{Bibliography}
-
-% % Run this to get table of contents
-% biber Main
-% pdflatex Main
-
+% \section{Existence theorem}
 
 \end{document}

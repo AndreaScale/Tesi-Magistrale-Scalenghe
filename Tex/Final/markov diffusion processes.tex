@@ -1,0 +1,234 @@
+\section{Markov diffusion processes}
+
+I now recall some definitions, give new ones and set the notation. Let $\Sigma\subseteq\R^n$ and $\mathcal{B}(\Sigma)$ 
+the associated Borel $\sigma$-algebra. Let $(\Omega, \mathcal{F}, P)$ a general probability space. 
+Given $x(s,\omega)$ a $\Sigma$-valued random process from $I_0=[t_0,t_1)$ and $(\Omega,\mathcal{F})$, let us denote by:
+
+\[P(C\,|\,x(s_1),\dots,x(s_m)),\,C\in\mathcal{F}\]
+
+The conditional probability of $C$ given the sigma algebra $\bigvee_{i=1}^m\sigma(x(s_i))$.
+
+\begin{definition}\label{2-1-markovprocessdef}
+    A stochastic process $x$ satisfies the Markov property if there exists a function 
+    $p:I_0\times \Sigma\times I_0\times  \mathcal{B}(\Sigma)\rightarrow \R$ such that:
+
+    \begin{enumerate}
+        \item For all $t,s,B$ the function $x\mapsto p(t,x,s,B)$ is borel measurable on $\Sigma$
+        \item For all $t,x,s$ the function $A\mapsto p(t,x,s,B)$ is a probability measure on $(\Omega,\mathcal{F})$
+        \item The Chapman-Kolmogorov equation holds for all $s,t,r\in I_0$ such that $t<r<s$:
+        \begin{equation}\label{2-1-markovprocessdef-chapkol}
+            p(t,x,s,B) = \int_{\Sigma} p(r,y,s,B)\,p(t,x,r,dy)
+        \end{equation}
+    \end{enumerate}
+
+    And such that for all $r,s\in I_0$ where $r,s$ and for all $B\in\mathcal{B}(\Sigma)$ then:
+
+    \begin{equation}\label{2-1-markovprocessdef-condonp}
+        P(x(s)\in B\,|\,\mathcal{F}_r^x) = p(r,x(r),s,B)
+    \end{equation}
+
+    Where $\mathcal{F}_r^x=\sigma\left(x(l)\,:\,l\in[t_0,r]\right)$.
+\end{definition}
+
+Function $p$ is called \textit{Markov Transition Kernel}. We shall see a Markov transition kernel as 
+the probability that the system starting from $x$ at time $t$ will be in $B$ at time $s$. This heuristic interpretation 
+clarifies the following notation:
+
+\begin{equation}
+    E_{tx}\phi(x(s)) = \int_{\Sigma} \phi(y)\,p(t,x,s,dy) 
+    % p(t,x,s,B) = P(x(s)\in B\,|\,)
+\end{equation}
+
+For a real valued borel-measurable function $\phi$. Given a Markov process $x$ we can define a family of 
+linear operators associated to it. Let $t<s$, hereafter all time indices will always be in $I_0$, and define:
+
+\begin{equation}
+    T_{t,s}\phi(x) = \int_{\Sigma} \phi(y)\,p(t,x,s,dy) = E_{tx}\phi(x(s))
+\end{equation}
+
+Integrability assumptions on $\phi$ vary from case to case. For now, we can take $\phi$ to be bounded. 
+Because of Chapman-Kolmogorov equation \ref{2-1-markovprocessdef-chapkol} the family $(T_{t,s})_{t,s\in I_0}$ 
+satisfies the property:
+
+\begin{equation}\label{2-1-propT}
+    T_{tr}\left[T_{rs}\phi\right] = T_{ts}\phi
+\end{equation}
+
+For all $t<r<s$. This family of linear operators defines another operator, the \textit{backward evolution operator}.
+Let $A:\left\{\Phi:I_0\times\Sigma\rightarrow\R\right\}\rightarrow \R$:
+
+\begin{equation}\label{2-1-backwarddef}
+    A\Phi(t,x) = \lim_{h\to0+} \frac{E_{tx}\Phi(t+h,x(t+h))-\Phi(t,x)}{h}
+\end{equation}
+
+provided that the limit exists. We define $\mathcal{D}(A)$ the space of functions such that limit \ref{2-1-backwarddef} exists. 
+The following holds.
+
+\begin{proposition}
+    Let $A$ as before, then for all $\Phi\in\mathcal{A}$ the following hold:
+
+    \begin{enumerate}
+        \item $\Phi,\frac{\partial\Phi}{\partial t}$ and $A\Phi$ are continuous
+        \item For all $t,s\in\overline{I}_0$, $t<s$ then:
+        
+        \[E_{tx}\abs{\Phi(s,x(s))}< +\infty,E_{tx}\int_t^s\abs{A\Phi(r,x(r))}\,dr < +\infty\]
+        
+        \item Dynkin's formula holds for all $t<s$:
+        
+        \begin{equation}\label{2-1-dynkform}
+            E_{tx}\Phi(s,x(s)) - \Phi(t,x) = E_{tx}\int_t^s A\Phi(r,x(r)) \,dr
+        \end{equation}
+    \end{enumerate}
+
+    % \begin{proof}
+    %     I prove Dynkin's formula in the case of $T_{ts}$ being a Feller semigroup. 
+    %     %Dynkin, E. B., Markov processes,  
+
+    % \end{proof}
+\end{proposition}
+
+Dynkin's formula can be proved in different instances, subject to the nature of the random process. We will see 
+that it is a natural consequence of Ito formula for continuous state space processes.
+
+If the random process $x$ is autonomous (time-homogeneous) then the linear operator family is a 
+semigroup. Recall that a Markov process is homogeneous if for all $t<s$ in $I_0$ then:
+
+\[p(t,x,s,B) = p(0,x,s-t,B)\]
+
+If so, by calling $T_s=T_{0s}$ property \ref{2-1-propT} is:
+
+\begin{align}
+    T_{s+r}\phi(x) & = \int_{\Sigma} \phi(y)\,p(0,x,s+r,dy) \\
+    % & = \int_{\Sigma} \phi(y)\,p(r,x,s,dy) \\
+    & = \int_{\Sigma}\phi(y)\int_{\Sigma} p(r,z,r+s,dy)\,p(0,x,r,dz) \\
+    & = \int_{\Sigma}\int_{\Sigma} \phi(y) p(r,z,r+s,dy)\,p(0,x,r,dz) \\
+    & = \int_{\Sigma}\int_{\Sigma} \phi(y) p(0,z,s,dy)\,p(0,x,r,dz) \\
+    & = \int_{\Sigma} T_{s}\phi(z) \,p(0,x,r,dz) \\
+    & = T_r\left[T_s\phi(x)\right].
+\end{align}
+
+While the backward evolution operator analogous is called the \textit{generator} and is defined as:
+
+\begin{equation}
+    G\phi(x) = - \lim_{h\to0^+} \frac{T_h\phi(x) - \phi(x)}{h}
+\end{equation}
+
+With $D(G)$ as $\mathcal{D}(A)$ before. It is worth noting that, formally, the following equality holds:
+
+\begin{equation}
+    A\Phi = \frac{\partial \Phi}{\partial t} - G\Phi(t,\cdot)
+\end{equation}
+
+This relation links the two operators and the autonomous to the non-autonomous case. We now turn our attention to 
+a subset of Markov processes: diffusion processes. A diffusion process is a Markov process whose paths are continuous. 
+More formally. 
+
+\begin{definition}
+    A diffusion process $x:\overline{I}_0\times\Omega\rightarrow\Sigma$ is a almost surely continuous Markov process with Markov transition kernel $p$ such that:
+
+    \begin{itemize}
+        \item For every $\epsilon>0$:
+        
+        \begin{equation}
+            \lim_{h\to0^+} \int_{\abs{x-y}>\epsilon} \,p(t,x,t+h,dy) = 0
+        \end{equation}
+
+        \item There exist functions $a_{ij}(t,x),f_{ij}(t,x)$ for $(t,x)\in\overline{Q}_0$ and $i,j=1,\dots,n$ such that for every $\epsilon>0$:
+        
+        \begin{equation}
+            \lim_{h\to0^+} \int_{\abs{x-y}\leq\epsilon} (y_i-x_i)\,p(t,x,t+h,dy) = f_i(t,x)
+        \end{equation}
+
+        And:
+
+        \begin{equation}
+            \lim_{h\to0^+} \int_{\abs{x-y}\leq\epsilon} (y_i-x_i)(y_j-x_j)\,p(t,x,t+h,dy) = a_{ij}(t,x).
+        \end{equation}
+    \end{itemize}
+
+    These limits are intended uniformly.
+\end{definition}
+
+Functions $f=(f_1,\dots,f_n)$ and $a=(a_{ij})_{ij}$ are respectively called local drift and local covariance coefficients.
+
+How does the backward evolution operator, and the generator in the autonomous case, adapt to this situation? 
+To answer this question we reduce our problem to a stochastic differential one by relying on the differential structure of a diffusion process. 
+Give the local drift and covariance $f,a$ of a diffusion process $x$ we claim that it satisfies:
+
+\begin{equation}\label{2-1-SDEdef}
+    dx(s) = f(s,x(s))ds + \sqrt{a}(s,x(s))dw(s) 
+\end{equation}
+
+Clearly we have to impose further conditions of the stochastic differential equation's coefficients to ensure existence of a solution. 
+In particular, we want those coefficients to be Lipshitz and sub-linearly growing with respect to the second variable. In equation \ref{2-1-SDEdef} 
+We define the square root of $a$ as a function $\sqrt{a}=\sigma$ such that:
+
+\begin{equation}
+    \sigma(t,x)\cdot\sigma'(t,x) = a(t,x)
+\end{equation}
+
+We recall that under existence hypothesis for every $\Phi\in C^{1,2}(\overline{Q}_0)$ Ito's formula holds:
+
+\begin{equation}\label{2-1-itotox}
+    d\Phi(s,x(s)) = \Phi_s(s,x(s))ds + \sum_{i=1}^n \Phi_{x^i}(s,x(s)) dx^i(s) + \frac{1}{2}\sum_{i,j=1}^n \Phi_{x^ix^j}(s,x(s)) d[x,x]^{ij}(s)
+\end{equation}
+
+where $[x,y]$ is the covariation of process $x$ and $y$. Recall that this relation has always to be intended in integral form, that is:
+
+\begin{equation}
+    \Phi(s,x(s)) = \Phi(t,x) + \int_t^s\Phi_s(r,x(r))\,dr + \sum_{i=1}^n \int_t^s \Phi_{x^i}(r,x(r))\,dx^i(r) + \frac{1}{2}\sum_{i,j=1}^n \int_t^s\Phi_{x^ix^j}(r,x(r))\,d[x,x]^{ij}(r).
+\end{equation}
+
+Via this relation we can reconstruct Dynkin's formula in this setting. By defining the operator $A$ as in \ref{2-1-dynkform} we have:
+
+\begin{align}
+    \Phi(s,x(s)) & = \Phi(t,x) + \int_t^s\Phi_s(r,x(r))\,dr \\
+    & + \sum_{i=1}^n \left[\int_t^s \Phi_{x^i}(r,x(r))f_i(r,x(r))\,dr + \sum_{j=1}^n\int_t^s\Phi_{x^i}(r,x(r))\sigma_{ij}(r,x(r))\,dw^j(r)\right] \\
+    & + \frac{1}{2}\sum_{i,j=1}^n \sum_{l=1}^n\int_t^s\Phi_{x^ix^j}(r,x(r))\sigma_{il}(r,x(r))\sigma_{jl}(r,x(r))\,dr \\
+    & = \Phi(t,x) + \int_t^s \Phi_s(r,x(r)) + D_x\Phi\cdot f(r,x(r)) + \frac{1}{2}D^2_x\Phi\cdot a(r,x(r)) \,dr \\
+    & + \int_t^s D_x\Phi\cdot\sigma(r,x(r)) \,dw(r) \\
+    % & = \Phi(t,x) + \int_t^s A\Phi(r,x(r))\,dr + \int_t^s D_x\Phi\cdot\sigma(r,x(r)) \,dw(r)
+\end{align}
+
+but the last (stochastic) integral can be seen as a martingale. In particular, if we take $\Phi$ to have polynomial growth of some order $m$:
+
+\begin{equation}
+    \abs{\Phi(t,x)} \leq K(1+\abs{x}^m)\,\forall(t,x)\in\overline{Q}_0
+\end{equation}
+
+then $D_x\Phi\cdot\sigma\in\mathbb{L}^2(I_0)$, where:
+
+\[\mathbb{L}^2(I_0) = \left\{x:I\times\Omega\rightarrow\Sigma\,|\,E\int_I\abs{x(s)}^2\,ds<\infty\right\}\]
+
+and therefore its stochastic integral is a martingale (with respect to the canonical filtration associated to the Brownian motion $w$). 
+Therefore, if we take the (conditional) expectation:
+
+\begin{equation}
+    E_{tx}\Phi(s,x(s)) = \Phi(t,x) + E_{tx}\int_t^s \Phi_s(r,x(r)) + D_x\Phi\cdot f(r,x(r)) + \frac{1}{2}D^2_x\Phi\cdot a(r,x(r))\,dr.
+\end{equation}
+
+It is now coherent to define the operator $A:C_p^{1,2}(\overline{Q}_0)\rightarrow\R$ as:
+
+\begin{equation}\label{2-1-newdefA}
+    A\Phi(r,x(r)) = \Phi_s(r,x(r)) + D_x\Phi\cdot f(r,x(r)) + \frac{1}{2}D^2_x\Phi\cdot a(r,x(r))
+\end{equation}
+
+where $C_p^{1,2}(I)$ is the family of functions $g$ from $I$ into $\R$ such that $g,g_s,g_{x_i},g_{x_ix_j}$ are continuous and with polynomial growth.
+
+\begin{remark}
+    Be careful that the stochastic integral:
+
+    \[\int_t^s D_x\Phi\cdot\sigma(r,x(r))\,dw(r)\]
+
+    is a martingale because $x$ satisfies:
+
+    \[E_{tx}\abs{x(r)}^m\leq C_m(1+\abs{x}^m)\,\forall r\in I_0\]
+
+    as it is solution of the SDE \ref{2-1-SDEdef}.\footnote{This is a standard result in SDE theory.}
+\end{remark}
+
+Consequently, the generator $G$ of the time-homogeneous case is defined as:
+
+\begin{equation}
+    G\Phi(x) = -\frac{1}{2}\sum_{i,j=1}^n a_{ij}(x)\Phi_{x_ix_j}(x) - \sum_{i=1}^n f_i(x)\Phi_{x_i}(x)
+\end{equation}

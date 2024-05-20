@@ -1,0 +1,20 @@
+\section{Infinite horizon}
+
+A particularly interesting version of the maximization problem arising from optimal 
+control is with infinite horizon. Let us consider the usual Cauchy' problem:
+
+\begin{equation}
+    \begin{cases}
+        \dot{x}(s) = f(s,x(s),u(s)) & s\in[t,t_1] \\
+        x(t) = x
+    \end{cases}
+\end{equation}
+
+If we set $t_1=+\infty$ we get an infinite horizon problem. Thus, the maximization 
+problem becomes:
+
+\begin{equation}
+    \inf_{u\in\mathcal{U}} \int_t^{\tau} L(s,x(s),u(s)) \, ds + g(\tau,x(\tau))\chi_{\tau<+\infty}
+\end{equation}
+
+Where $\tau$ is the exit time of $x(\cdot)$ from $\overline{O}$.\footnote{More precisely, is the exit time of $(s,x(s))$ from $\overline{Q}$.}

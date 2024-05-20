@@ -1,0 +1,180 @@
+\section{Pontryagin's principle and dynamic programming}
+
+In the previous section we tackled the optimal control problem via dynamic programming.
+As mentioned earlier this approach is of wide applicability and provides an implicit 
+characterization of an optimal control. We now present another technique: the Pontryagin's principle.
+As before, it will give rise to necessary condition on a control function 
+to be optimal, but they'll come from a completely different perspective. We now present Pontryagin's 
+principle in its full generality, and then we will see how it is connected with 
+the dynamic programming approach. 
+
+\subsection{Pontryagin's principle}
+
+Pontryagin gives us an elegant and unintuitive way of solving problems of the kind:
+
+\begin{equation}\label{1-3-problempon}
+    \begin{cases}
+        \dot{x}(s) = f(s,x(s),u(s)) & s\in [t,t_1] \\
+        x(t) = x
+    \end{cases}
+\end{equation}
+
+Where $u$ is bounded measurable into $U\subset\R^m$ and $O=\R^n$. Having defined the 
+functional $J(t,x;u)$ as usual we define the \textit{control state Hamiltonian} 
+as follows.
+
+\begin{definition}
+    The control state Hamiltonian of system \ref{1-3-problempon} is:
+
+    \begin{equation}\label{1-3-hamiltonian}
+        H(s,x,u,p) = - p \cdot f(s,x,u) - L(s,x,u)
+    \end{equation}
+
+    For all $s\in[t,t_1],\,x,p\in O,\,u\in U$.
+\end{definition}
+
+The variable $p$ is called \textit{costate} of the system. Pontryagin's principle 
+gives us information about the costate under an optimal trajectory, which in turn will 
+characterize the optimal control. 
+
+\begin{theorem}\label{1-3-pontry}
+    Let $u^{\ast}$ be an optimal control and $x^{\ast}$ its corresponding trajectory. 
+    Then there exists a function $p^{\ast}:[t,t_1]\rightarrow O$ such that:
+
+    \begin{equation}\label{1-3-pontry-x}
+        \dot{x}^{\ast}(s) = D_p H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s)) 
+    \end{equation}
+
+    \begin{equation}\label{1-3-pontry-p}
+        \dot{p}^{\ast}(s) =  - D_x H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s)) 
+    \end{equation}
+
+    And also:
+
+    \begin{equation}\label{1-3-pontry-maxH}
+        H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s)) = \sup_{v\in U} H(s,x^{\ast}(s),v,p^{\ast}(s))
+    \end{equation}
+
+    With:
+
+    \begin{equation}\label{1-3-pontry-tras}
+        p^{\ast}(t_1) = D \psi(x^{\ast}(t_1))
+    \end{equation}
+\end{theorem}
+
+Thanks to this result we can determine an optimal control via the costate. By solving equation \ref{1-3-pontry-p} 
+arisen in Theorem \ref{1-3-pontry} we can obtain the explicit form of $p^{\ast}$, and then 
+retrieve $u^{\ast}$ from the maximization principle \ref{1-3-pontry-maxH}.
+
+
+\subsection{Dynamic programming interplay}
+
+As we just saw, Pontryagin's principle offers us an-even-though-quite-involved technique 
+for finding an optimal control. As use of a control state Hamiltonian is crucial in this approach, it reminds 
+us of the Hamiltonian defined in \ref{1-2-Hamiltonian1}. The similarity is also fortified by the maximization 
+principle \ref{1-3-pontry-maxH}. We shall prove that this similarity unveils the direct link between 
+Pontryagin's principle and the dynamic programming equation.
+
+We will use the notion of differentiability of the value function. 
+The classical notion of differentiability which we use is the following.
+
+\begin{definition}
+    V is differentiable in $(t,x)$ if there exists $V_t(t,x),V_x(t,x)\in\R$ such that:
+
+    \begin{equation}
+        \lim_{(h,k)\to(0,0)} \frac{1}{\abs{h}+\abs{k}}\abs{V(t+h,x+k)-V(t,x)-V_t(t,x)\cdot h-V_x(t,x)\cdot k}=0
+    \end{equation}
+\end{definition}
+
+Differentiability is somewhat a strong hypothesis, but it allows us to prove the following
+proposition. We must say that differentiability may easily fail in application, in such istances 
+the notion of a weaker solution is needed, namely a viscosity solution.
+
+\begin{theorem}
+    Let $V$ be differentiable in $(t,x)\in Q$ and $u^{\ast}$ an optimal control
+    such that $u^{\ast}\xrightarrow{s\to t}v$, then:
+
+    \begin{equation}\label{1-3-dynamicprogrammeq}
+        V_t(t,x) + L(t,x,v) + f(t,x,v)\cdot D_xV(t,x) = 0
+    \end{equation}
+
+    \begin{proof}
+        Let $h>0$ s.t. $t+h<\tau$, then by \ref{1-2-propriformulation} we have:
+
+        \[ V(t,x) = \int_t^{t+h} L(s,x(s),u^{\ast}(s)) \,ds + V(t+h,x(t+h))\]
+
+        But because of differentiability we have:
+
+        \[\lim_{h\to0}\frac{1}{\abs{h}}\abs{V(t+h,x(t+h))-V(t,x(t))} = V_t(t,x) + f(t,x,v)\cdot D_xV(t,x)\]
+
+        Then we get:
+
+        \begin{align}
+        L(t,x,v) & = \lim_{h\to0} \frac{1}{\abs{h}} \int_t^{t+h} L(s,x(s),u(s)) \,ds = -\lim_{h\to0} \frac{1}{\abs{h}}\abs{V(t+h,x(t+h))-V(t,x(t))} \\
+        & = - V_t(t,x) - f(t,x,v)\cdot D_xV(t,x)
+        \end{align}
+    \end{proof}
+\end{theorem}
+
+Furthermore, we impose existence and continuity of all derivatives of $f,L,g,\psi$.
+The next theorem demonstrates that the costate in the Pontryagin Maximum
+Principle is in fact the gradient in x of the value function v, taken along an optimal
+trajectory. 
+
+\begin{theorem}\label{1-3-pontrydyn}
+    Let $u^{\ast}$ be an optimal right-continuous control and $x^{\ast}$ its corresponding trajectory. 
+    Assume that the value function $V$ is differentiable at $(s,x^{\ast}(s))$ for $s\in[t,t_1)$. If we define:
+
+    \begin{equation}\label{1-3-pontrydyn-defP}
+        p(s) = D_x V(s,x^{\ast}(s)) 
+    \end{equation}
+
+    Then $p(s)$ satisfies \ref{1-3-pontry-p}, \ref{1-3-pontry-maxH} and \ref{1-3-pontry-tras}.
+
+    \begin{proof}
+        The trasversality condition \ref{1-3-pontry-tras} is straightforward from the definition of the  
+        value function, which implies also the maximality condition \ref{1-3-pontry-maxH}. 
+        We need to prove the "lagrangian multiplier condition" \ref{1-3-pontry-p}. 
+        Let us drop all $^{\ast}$ and rewrite this differential equation:
+
+        \begin{equation}\label{1-3-pontrydyn-rewritecond}
+            \frac{d}{dt} p_j(s) = - \sum_{i=1}^n \frac{\partial}{\partial x_j}f_i(s,x(s),u(s))p_i(s) - \frac{\partial}{\partial x_j}L(s,x(s),u(s))
+        \end{equation}
+
+        This system admits solution $\overline{p}$ such that $\overline{p}(s)=D_xV(s,x(s))$; let us show that $\overline{p}(s)=p(s)$. Let $u_s$ be 
+        the restriction of $u$ to $[r,t_1)$, which is admissible by assumption. We have:
+
+        \[V(s,y) \leq J(s,y;u_s) \,\forall y\in\R^n\]
+
+        Then, because $u$ is optimal, $y\mapsto J(s,y;u_s) - V(s,y)$ has its global minimum in $y=x(s)$, which implies by differentiability:
+
+        \begin{equation}\label{1-3-pontrydyn-derconV}
+            D_x V(s,x(s)) = D_x J(s,x(s);u_s)
+        \end{equation}
+
+        Then we prove that $\overline{p}(s) = D_x J(s,x(s);u_s)$. We denote $x(r)$ the solution starting at $x(s)$ at time $r$. Because $L\in C^1$ then for all $i=1,\dots,n$:
+
+        \begin{equation}
+            \frac{\partial}{\partial x_i}J(s,x(s),u) = \sum_{j=1}^n \int_s^{t_1} \left(L_{x_j}(r,x(r),u(r))\frac{\partial x_j(r)}{\partial x_i}\right) \,dr + \psi_{x_j}(x(t_1))\frac{\partial x_j(t_1)}{\partial x_i}
+        \end{equation} 
+
+        But then:
+
+        \begin{align}
+            \overline{p}_i(s)  & = \sum_{j=1}^n \frac{\partial x_j(s)}{\partial x_i}\overline{p}_j(s) = \sum_{j=1}^n \frac{\partial x_j(t_1)}{\partial x_i}\overline{p}_j(t_1) - \int_s^{t_1} \frac{d}{dr}\left(\sum_{j=1}^n \frac{\partial x_j(r)}{\partial x_i}\overline{p}_j(r)\right) \,dr \\
+            & = \sum_{j=1}^n \frac{\partial x_j(t_1)}{\partial x_i}\psi(x(t_1)) - \sum_{j=1}^n \int_s^{t_1} \frac{d}{dr}\left(\frac{\partial x_j(r)}{\partial x_i}\right)\overline{p}_j(r) + \frac{\partial x_j(r)}{\partial x_i}\frac{d}{dr}\left(\overline{p}_j(r)\right) \,dr 
+        \end{align}
+
+        But under the integral:
+
+        \[\int_s^{t_1} \frac{d}{dr}\sum_{l=1}^n \frac{\partial x_j(r)}{\partial x_i}\left(\frac{\partial}{\partial x_j}f_l(r,x(r),u(r))\overline{p}_j(r) - \sum_{l=1}^n \frac{\partial x_j(r)}{\partial x_i}\frac{\partial}{\partial x_j}f_l(r,x(r),u(r))\overline{p}_j(r) - \frac{\partial}{\partial x_j}L(r,x(r),u(r))\right) \,dr\]
+
+        Then we get:
+
+        \begin{align}
+            \overline{p}_i(s) & = \sum_{j=1}^n \left(\frac{\partial x_j(t_1)}{\partial x_i}\psi(x(t_1)) + \int_s^{t_1} \frac{\partial}{\partial x_j}L(r,x(r),u(r))\frac{\partial x_j(r)}{\partial x_i} \,dr\right) \\
+            & = \frac{\partial}{\partial x_i}J(s,x(s);u_r)
+        \end{align}
+    \end{proof}
+\end{theorem}
+

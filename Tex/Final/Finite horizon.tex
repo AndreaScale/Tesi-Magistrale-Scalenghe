@@ -1,0 +1,72 @@
+\section{Finite horizon}
+
+
+Let us consider a finite interval $I=[t,t_1]\subset\R$ as the operating time of the system. At each time $s\in I$ the system is described by $x(s)\in O\subseteq \R^n$ and controlled by $u(s)\in U\subseteq\R^n$
+called control space. The system is described by:
+
+\begin{equation}\label{1-1-syst1}
+    \begin{cases}
+        \dot{x}(s) = f(s,x(s),u(s)) & s\in I \\
+        x(t) = x
+    \end{cases}
+\end{equation}
+
+For a given $x\in O$ and suitable $f:\overline{Q}\times U \rightarrow \R^m$, where $Q_0=[t,t_1)\times O$. That is we impose $f\in C(\overline{Q}\times U)$ and the existence of $K_{\rho}>0$ for all $\rho>0$:
+
+\begin{equation}\label{1-1-lipsch}
+    \abs{f(t,x,v)-f(t,y,v)} \leq K_{\rho}\abs{x-y}
+\end{equation}
+
+For all $t\in I$, $x,y\in O$ and $v\in U$ such that $\abs{v}\leq\rho$. Under this conditions the system \ref*{1-1-syst1} has a unique solution. 
+Controls $u(\cdot)$ are assumed to be in the set $L^{\infty}\left([t,t_1];U\right)$. We will soon specify more about the set of controls.
+
+We have described a control problem. The concept of optimality is related some value function, specified by payoffs (or costs) associated to the system's states.
+Let $L\in C(\overline{Q}\times U)$ be the \textit{running cost} and $\Psi\in C(I\times O)$ the \textit{terminal cost} defined as:
+
+\begin{equation}\label{1-1-deftermcost}
+    \Psi(t,x) = \begin{cases}
+        g(t,x) & \text{if } (t,x)\in [t,t_1)\times O \\
+        \psi(x) & \text{if } (t,x)\in \{t_1\}\times O  
+    \end{cases}
+\end{equation}
+
+We define the \textit{payoff} $J$ as:
+
+\begin{equation}\label{1-1-payoff1}
+    J(t,x;u) = \int_t^{\tau}L(s,x(s),u(s)) \,ds + \Psi(\tau, x(\tau))
+\end{equation}
+
+Where $\tau$ is the exit time of $(s,x(s))$ from $\overline{Q}$, that is:
+
+\begin{equation}\label{1-1-taudef}
+    \tau = \begin{cases}
+        \inf\{s\in [t,t_1)\,|\, x(s)\notin \overline{O}\} & \text{if } \exists s\in [t,t_1): x(s)\notin\overline{O} \\
+        t_1 & \text{if }  x(s)\in\overline{O}\,\forall s\in [t,t_1)
+    \end{cases}
+\end{equation}
+
+Then a control $u^{\ast}(\cdot)$ is \textit{optimal} if:
+
+\begin{equation}\label{1-1-optimalcondition}
+    J(t,x;u^{\ast}) \leq J(t,x;u) \quad \forall u\in L^{\infty}(I;U)
+\end{equation}
+
+Actually, we are being to generous with the control space. We have to impose a further condition on it, the \textit{switching condition}.
+Let us assume that we have $u\in\mathcal{U}(t,x)$ and $u'\in\mathcal{U}(r,x(r))$ for $r\in[t,\tau]$. If we define:
+
+\begin{equation}\label{1-1-switcond}
+    \tilde{u}(s)=\begin{cases}
+        u(s) & s\in[t,r) \\
+        u'(s) & s\in[r,t_1]
+    \end{cases}
+\end{equation}
+
+Then we impose:
+
+\begin{equation}
+    \tilde{u}_s\in\mathcal{U}(s,\tilde{x}(s)) \quad \forall s\in[t,\tilde{\tau}]
+\end{equation}
+
+Where $\tilde{x}$ is the solution to the control problem \ref*{1-1-syst1} with control $\tilde{u}$ and initial condition $x$, 
+$\tilde{u}_s$ is the restriction of $\tilde{u}$ to $[s,t_1]$ and $\tilde{\tau}$ is the exit time of $(s,\tilde{x}(s))$ from $\overline{Q}$.
+This condition assures that admissible controls can be replaced as the time evolves and the resulting control is still admissible. 

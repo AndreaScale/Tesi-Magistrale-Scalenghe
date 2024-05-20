@@ -1,0 +1,181 @@
+\section{Dynamic programming principle}
+
+One way of tackling certain optimal control problems is via \textit{dynamic programming}. 
+% The idea is to use a \textit{value function} as a tool to solve the control problem, finding sufficient and sometimes necessary conditions.
+Let us define the \textit{value function}:
+
+\begin{equation}\label{1-2-valuefunc}
+    V(t,x)=\inf_{u\in \mathcal{U}(t,x)}J(t,x;u)
+\end{equation}
+
+For all $(t,x)\in\overline{Q}$. We get rid of the instance in which $V(t,x)=-\infty$ assuming $Q$ to be compact, or $L$ and $\Psi$ to be bounded below.
+We aim at retrieving the argument which attains the infimum of \ref*{1-2-valuefunc}. In order to immerse this optimal control problem into 
+a dynamic programming one we see the state of the system as the state of the variable and the control function as the decision function.
+The basic idea behind dynamic programming techniques is to subdivide a problem into smaller problems, what does this mean in our context?
+We will be able to find instantaneous the value function $V$ via a partial differential equation (PDE) called Hamilton-Jacobi-Bellman equation.
+
+We start by stating and proving the following proposition, which provides us with an equivalent definition of the value function.
+
+\begin{proposition}\label{1-2-propriformulation}
+    For any $(t,x)\in\overline{Q}$ and any $r\in I$ then:
+
+    \begin{equation}\label{1-2-riformulationvalue}
+        V(t,x)=\inf_{u\in\mathcal{U}(t,x)}\left\{\int_t^{r\land\tau}L(s,x(s),u(s))\,ds+g(\tau,x(\tau))\chi_{\tau<r}+V(r,x(r))\chi_{r\leq\tau}\right\}
+    \end{equation}
+
+    \begin{proof}
+        Value function less than rhs. If $r>\tau$ then $\tau<t_1$ and $\Psi(r\land\tau,x(r\land\tau))=g(\tau,x(\tau))$ and then \ref*{1-2-riformulationvalue}
+        follows directly by definition. If $r\leq\tau$, let $\delta>0$ then there exists $u^1\in\mathcal{U}(r,x(r))$ such that:
+
+        \[\int_r^{\tau^1}L(s,x^1(s),u^1(s))\,ds+\Psi(\tau^1,x^1(\tau^1))\leq V(r,x(r))+\delta\]
+
+        Where $x^1$ is the state function corresponding to $u^1$ with initial condition $(r,x(r))$ and $\tau^1$ the first exit from $\overline{Q}$ of $(s,x^1(s))$.  
+        By defining $\tilde{u}$ as for the switching condition \ref{1-1-switcond} we have $\tau^1=\tilde{\tau}$, because $\tau\geq r$ and then $\tilde{u}$ is $u^1$. Then:
+        
+        \begin{align*}
+            V(t,x) & \leq V(t,x;\tilde{u}) \\
+            & = \int_t^{\tilde{\tau}} L(s,\tilde{x}(s),\tilde{u}(s))\,ds+\Psi(\tilde{\tau},\tilde{x}(\tilde{\tau})) \\
+            & = \int_t^{r} L(s,x(s),u(s))\,ds+\int_r^{\tau^1} L(s,x^1(s),u^1(s))\,ds+\Psi(\tau^1,x^1(\tau^1)) \\
+            & \leq \int_t^{r} L(s,x(s),u(s))\,ds + V(r,x(r)) + \delta
+        \end{align*}
+
+    Since $\delta$ is arbitrary the first inequality is proved.
+    
+    \noindent Value function is bigger than rhs. Let $\delta>0$ and $U\in\mathcal{U}(t,x)$ such that:
+
+    \[\int_r^{\tau}L(s,x(s),u(s))\,ds+\Psi(\tau,x(\tau))\leq V(t,x)+\delta\]
+
+    Then: 
+
+    \begin{align*}
+        V(t,x) & \geq \int_r^{\tau}L(s,x(s),u(s))\,ds+\Psi(\tau,x(\tau)) - \delta \\
+        % & = \int_t^{\tilde{\tau}} L(s,\tilde{x}(s),\tilde{u}(s))\,ds+\Psi(\tilde{\tau},\tilde{x}(\tilde{\tau})) \\
+        & = \int_t^{r\land\tau} L(s,x(s),u(s))\,ds+\int_{r\land\tau}^{\tau} L(s,x(s),u(s))\,ds+\Psi(\tau,x(\tau)) -\delta\\
+        % & \leq \int_t^{r} L(s,x(s),u(s))\,ds + V(r,x(r)) + \delta
+        & = \int_t^{r\land\tau} L(s,x(s),u(s))\,ds+J(r,x(r))\chi_{r\leq\tau}+g(\tau,x(\tau))\chi_{\tau<r} - \delta\\
+        & = \int_t^{r\land\tau} L(s,x(s),u(s))\,ds+V(r,x(r))\chi_{r\leq\tau}+g(\tau,x(\tau))\chi_{\tau<r} - \delta
+    \end{align*}
+
+    As $\delta$ is arbitrary we proved the proposition.
+    \end{proof}
+\end{proposition}
+
+
+In the proof we used the concept of $\delta$-\textit{optimal control}, that is the control function $u\in\mathcal{U}(r,x(r))$ such that:
+
+\[\int_r^{\tau^1}L(s,x^1(s),u^1(s))\,ds+\Psi(\tau^1,x^1(\tau^1))\leq V(r,x(r))+\delta.\]
+
+This new representation allows us to find the so-called \textit{dynamic programming equation}. We have to impose that the value function 
+is continuously differentiable, although this is not always the case. If differentiability fails, the notion of viscosity solution is needed. 
+
+Let us first impose boundary conditions of the value function. Clearly if $t=t_1$ then:
+
+\begin{equation}\label{1-2-boundcond1}
+    V(t_1,x)=\psi(x)\,\forall x\in \overline{O}
+\end{equation}
+
+If $(t,x)\in [t_0,t_1)\times\partial O$ then the value function is $g$:
+
+\begin{equation}\label{1-2-boundcond2}
+    V(t, x) = g(t,x)
+\end{equation}
+
+Before stating the fundamental theorem which gives sufficient conditions 
+for a solution to the optimal problem we follow a heuristic reasoning which will help our intuition. Under the hypothesis of continuous differentiability of the value function 
+let us rewrite the dynamic programming principle as:
+
+\begin{equation}
+    \inf_{u\in\mathcal{U}}\left\{\frac{1}{h}\int_t^{(t+h)\land\tau} L(s,x(s),u(s))\,ds + \frac{1}{h}g(\tau,x(\tau))\chi_{\tau<t+h} + \frac{1}{h}\left[V(t+h,x(t+h))\chi_{\tau\geq t+h} - V(t,x)\right]\right\}=0
+\end{equation}
+
+Then if we formally let $h\to0$ we get:
+
+\[\inf_{u\in\mathcal{U}}\left\{L(t,x(t),u(t)) + \partial_tV(t,x(t)) + D_xV(t,x(t))\cdot f(t,x(t),u(t))\right\}=0\]
+
+Which can be rewritten as:
+
+\begin{equation}\label{1-2-HJB1}
+    -\frac{\partial}{\partial t}V(t,x) + H(t,x,D_xV(t,x))=0
+\end{equation}
+
+Where for $(t,x,p)\in \overline{Q}\times\R^n$ the Hamiltonian is defined as:
+
+\begin{equation}\label{1-2-Hamiltonian1}
+    H(t,x,p) = \sup_{v\in\R^n}\left\{-p\cdot f(t,x,v) - L(t,x,v)\right\}.
+\end{equation}
+
+Equation \ref{1-2-HJB1} turns out to be the main sufficient condition for the value function to be optimal.
+
+Maybe only differentiability is needed (also for if, for only if we already know).
+
+\begin{theorem}[Verification Theorem]\label{1-2-Verificationthe}
+    Let $W\in C^1(\overline{Q})$ satisfy \ref{1-2-HJB1} and the boundary conditions \ref{1-2-boundcond1} and \ref{1-2-boundcond2} then:
+
+    \[W(t,x)\leq V(t,x) \, \forall (t,x)\in\overline{Q}\]
+
+    Moreover, there exists $u^{\ast}\in\mathcal{U}$ such that:
+
+    \begin{equation}\label{1-2-uoptim}
+        \begin{cases}
+            L(s,x^{\ast}(s),u^{\ast}(s)) + f(s,x^{\ast},u^{\ast}(s))\cdot D_xW(s,x^{\ast}(s)) = - H(s,x^{\ast}(s),D_xW(s,x^{\ast}(s))) & \text{a.s. for } s\in[t,\tau^{\ast}] \\
+            W(\tau^{\ast},x^{\ast}(\tau^{\ast})) = g(\tau^{\ast},x^{\ast}(\tau^{\ast})) & \text{if } \tau^{\ast}<t_1
+        \end{cases}    
+    \end{equation}
+
+    if and only if $u^{\ast}$ is optimal and $W=V$.
+
+    \begin{proof}
+        Let $u\in\mathcal{U}$, then:
+
+        \begin{align*}
+            \Psi(\tau,x(\tau)) & = W(\tau,x(\tau)) = W(t,x(t)) + \int_t^{\tau}\frac{d}{ds}W(s,x(s)) \,ds \\
+            & = W(t,x(t)) + \int_t^{\tau} \frac{\partial}{\partial t}W(s,x(s)) + \dot{x}(s)\cdot D_xW(s,x(s)) \,ds \\
+            & = W(t,x(t)) + \int_t^{\tau} \frac{\partial}{\partial t}W(s,x(s)) + f(s,x(s),u(s))\cdot D_xW(s,x(s)) \,ds \\
+            & \overset{\circledast}{\geq} W(t,x(t)) - \int_t^{\tau} L(s,x(s),u(s)) \,ds  
+        \end{align*}
+
+        Then:
+
+        \[W(t,x(t)) \leq J(t,x;u)\]
+
+        And therefore by taking the infimum over $\mathcal{U}$ and recalling $x(t)=x$ we get:
+
+        \[W(t,x) \leq V(t,x)\]
+
+        If furthermore $u^{\ast}$ satisfies \ref{1-2-uoptim} then the inequality $\overset{\circledast}{\geq}$ is an equality, and therefore:
+
+        \[W(t,x) = J(t,x;u^{\ast})\]
+
+        Which implies that $u^{\ast}$ is optimal and $W(t,x)=J(t,x;u^{\ast})=V(t,x)$. 
+        The converse will be proved in a more general setting. In particular, only differentiability is needed.
+        % Conversely, if $u^{\ast}$ is optimal:
+
+        % \begin{align*}
+        %     \color{red}{\int_t^{\tau} \frac{\partial}{\partial t}W(s,x^{\ast}(s)) + f(s,x^{\ast}(s),u^{\ast}(s)) \cdot D_xW(s,x^{\ast}(s)) \,ds & \geq - \int_t^{\tau^{\ast}} L(s,x^{\ast}(s),u^{\ast}(s)) \,ds  \\
+        %     & \geq - \int_t^{\tau} L(s,x^{\ast}(s),u(s)) \,ds = }
+        %     \color{black}{}
+        % \end{align*}
+    \end{proof} 
+\end{theorem}
+
+
+Theorem \ref*{1-2-Verificationthe} is an important tool in determining the explicit form of and optimal control. 
+Indeed, condition \ref*{1-2-uoptim} can be restated as:
+
+\begin{equation}\label{1-2-optimalityconditionu}
+        u^{\ast}(s) \in \argmin_{v\in U} \left\{ f(s,x^{\ast}(s),v) \cdot D_xW(s,x^{\ast}(s)) + L(s,x^{\ast}(s),v)\right\}
+\end{equation}
+
+For almost all $s\in[t,t_1]$.
+
+I have to prove verification theorem in more general case ($O\neq\R^n$).
+
+We can express the optimality condition on $u$ \ref*{1-2-optimalityconditionu} in a differential inclusion form. 
+
+\begin{corollary}
+    A control $u^{\ast}$ is optimal if the corresponding state function $x^{\ast}$ satisfies:
+
+    \begin{equation}
+        x^{\ast} \in \left\{f(t,x,v) \,|\, v\in v^{\ast}(t,x)\right\}
+    \end{equation}
+\end{corollary}

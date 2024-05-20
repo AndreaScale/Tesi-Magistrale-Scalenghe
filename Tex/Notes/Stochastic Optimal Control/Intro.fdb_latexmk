@@ -1,15 +1,15 @@
 # Fdb version 4
-["biber Intro"] 0 "Intro.bcf" "Intro.bbl" "Intro" 0 -1
-  "Intro.bcf" 1715785453 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
+["biber Intro"] 1716197664 "Intro.bcf" "Intro.bbl" "Intro" 1716197670 0
+  "Intro.bcf" 1716197669 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
   "biblio.bib" 0 -1 0 ""
   (generated)
   "Intro.bbl"
   "Intro.blg"
   (rewritten before read)
-["pdflatex"] 1715785450 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Stochastic Optimal Control/Intro.tex" "Intro.pdf" "Intro" 1715785455 2
-  "Intro.aux" 1715785453 3475 fa1ede90163fbff6106b27624bffc06e "pdflatex"
+["pdflatex"] 1716197665 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Stochastic Optimal Control/Intro.tex" "Intro.pdf" "Intro" 1716197670 2
+  "Intro.aux" 1716197669 3475 fa1ede90163fbff6106b27624bffc06e "pdflatex"
   "Intro.bbl" 0 -1 0 "biber Intro"
-  "Intro.out" 1715785453 1130 d91d7317330ec45a326c211937dd2fd5 "pdflatex"
+  "Intro.out" 1716197669 1130 d91d7317330ec45a326c211937dd2fd5 "pdflatex"
   "Intro.tex" 1712842687 5107 ed9112283f2a8ade6cc6ada8768a6184 ""
   "Markov control processes.tex" 1712850723 10074 83c8200bd22fcce457e38c26a0bc6bda ""
   "Stochastic maximum Principle.tex" 1713442982 15531 753e6b3d7d6c0187d470fba6b75fdbc4 ""

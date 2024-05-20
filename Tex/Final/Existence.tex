@@ -1,0 +1,93 @@
+\section{Existence}
+
+We now prove an existence theorem for optimal controls.
+We study the fixed time interval case with $O=\R^n$ and the function $f$ linear in $v$.
+Furthermore, we impose convexity of $L$ in $v$. Under these assumptions a classical variational
+argument proves the optimal control existence.
+\begin{theorem}
+    Let $U$ compact and convex, $f_1,f_2\in C^1(\overline{Q}\times U)$ such that $f(t,x,v)=f_1(t,x)+f_2(t,x)v$ and $\partial_xf_{1},\partial_xf_2,f_2$ bounded.
+    Let also $L\in C^1(\overline{Q}\times U)$ and $L(t,x,\cdot)$ be convex for all $(t,x)\in\overline{Q}$ and the temrinal cost $\psi\in C(\R^n)$. Then there exist an optimal control $u^{\ast}(\cdot)$.
+
+    \begin{proof}
+        Let $u_n$ a minimizing sequence such that:
+
+        \begin{equation}
+            \lim_{n\to+\infty} J(t,x;u_n) = V(t,x)
+        \end{equation}
+
+        Let $x_n(\cdot)$ be the solutions to \ref{1-1-syst1} with $u=u_n$. If we show both sequence to converge respectively 
+        (weakly) to $u^{\ast}$ and uniformly $x^{\ast}$ (along subsequences) such that the latter is again the solution to \ref{1-1-syst1} with $u=u^{\ast}$, then:
+
+        \[J(t,x;u_n) = \int_t^{t_1} L(s,x^{\ast}(s),u_n(s)) \,ds + \int_t^{t_1} L(s,x_n(s),u_n(s)) - L(s,x^{\ast}(s),u_n(s)) \,ds + \phi(x_n(t_1))\]
+
+        But then:
+
+        \[\liminf_{n\to+\infty} \int_t^{t_1} L(s,x_n(s),u_n(s)) - L(s,x^{\ast}(s),u_n(s)) \,ds = 0\]
+
+        And $\psi(x_n(t_1))\xrightarrow{n\to+\infty}\psi(x^{\ast}(t_1))$. But then:
+
+        \begin{equation}\label{1-4-existenceliminf}
+            \liminf_{n\to+\infty} J(t,x;u_n) = \liminf_{n\to+\infty} \int_t^{t_1} L(s,x^{\ast}(s),u_n(s)) \,ds \geq \int_t^{t_1} L(s,x^{\ast}(s),u^{\ast}(s)) \,ds 
+        \end{equation}
+
+        Because $L$ is convex in $u$\footnote{Explained in remark \ref{1-4-reamrkconvexity}}. Therefore:
+
+        \[V(t,x)\leq J(t,x;u^{\ast}) \leq \liminf_{n\to+\infty} J(t,x;u_n) = V(t,x)\]
+
+        We need to prove convergence of $x_n$ and $u_n$. Because $U$ is compact and \textit{convex} then $L^{\infty}([t,t_1];U)$ is 
+        weakly sequentially compact. For what concerns $x_n$ we use Ascoli-Arzela's theorem to show that is admits a uniformly convergent subsequence. Being 
+        uniformly limitated comes from:
+
+        \begin{align}
+            \abs{x_n(s)} & \leq \abs{x_n(s)-x}+\abs{x} = \abs{x} + \int_t^s \frac{d}{dr}\abs{x_n(r)} \,dr \\
+            & = \abs{x} + \int_t^s \abs{f_1(r,x_n(r)) + f_2(r,x_n(r))\cdot u_n(r)}\,dr \\
+            & \color{red}{\leq} \abs{x} + \int_t^s \norm{\partial_xf_1}_{\infty}\abs{x_n(r)} + \norm{f_2}_{\infty}\abs{u_n} \,dr \\
+            & \leq C + K\left( \int_t^s \abs{x_n(r)} \,dr \right)   
+        \end{align}
+
+        Then by Gronwall's lemma $x_n$ is uniformly limitated. Equicontinuity comes from the uniform buondedness of the
+        derivative $\dot{x}_n(s)$. Therefore, we know that there exist the weak limit $u^{\ast}$ and the uniform
+        limit $x^{\ast}$. The latter is the solution of \ref{1-1-syst1} with $u=u^{\ast}$. Indeed:
+
+        \begin{align*}
+                x_n(s) & = x + \int_t^s\frac{d}{dr}x_n(r) \,dr\\
+                & = x + \underbrace{\int_t^sf_1(r,x_n(r)) + f_2(r,x_n(r))u^{\ast}(r) \,dr}_{A_n} + \underbrace{\int_t^s \left[f_2(r,x_n(r)) - f_2(r,x^{\ast}(r))\right]\left[u_n(r)-u^{\ast}(r)\right] \,dr}_{B_n} \\
+                & + \underbrace{\int_t^s f_2(r,x^{\ast}(r))\left[u_n(r)-u^{\ast}(r)\right] \,dr}_{C_n}
+        \end{align*}
+        
+        Letting $n\to+\infty$ we get $B_n$ (by weak convergence and boundedness of $f_2$) and $C_n$ (by weak convergence) going to $0$ 
+        while we obtain:
+
+        \[A_n\xrightarrow{n\to+\infty}\int_t^sf_1(r,x^{\ast}(r))+f_2(r,x^{\ast}(r))u^{\ast}(r)\,dr\]
+        
+        And therefore the thesis.
+    \end{proof}
+\end{theorem}
+
+
+\begin{remark}\label{1-4-reamrkconvexity}
+    In the proof we asserted inequality \ref{1-4-existenceliminf} by convexity of the running cost. Indeed, 
+    by convexity and being $C^1$:
+
+    \[L(s,x(s),u_n(s)) \geq L(s,x(s),u^{\ast}(s)) + \left[u_n(s) - u^{\ast}(s)\right]L_u(s,x(s),u^{\ast}(s))\]
+
+    Then by integrating and taking $\liminf_{n\to+\infty}$ we get the inequality (using weak convergence of $u_n$). 
+\end{remark}
+
+An existence result can also be proved in the context of $O\neq\R^n$, where the cost function
+to be minimized has the form:
+
+\begin{equation}
+    J(t,x;u)=\int_t^{\tau} L(s,x(s),u(s)) \,ds + \Psi(\tau,x(\tau))
+\end{equation}
+
+with dynamical system described by $f(s,x,u)=u$. Therefore, the value function is:
+
+\begin{equation}
+    V(t,x) = \inf_{u\in\mathcal{U}} \left\{\int_t^{\tau} L(s,x(s),\dot{x}(s)) \,ds + \Psi(\tau,x(\tau))\right\}
+\end{equation}
+
+Under technical assumptions an optimal control exists, and the proof follows
+the same procedure as before: we take a minimizing sequence, show its (weak) convergence
+and its corresponding state evolution (uniform) convergence, then we show 
+optimality, slightly modifying the proof because of convergence issues.
