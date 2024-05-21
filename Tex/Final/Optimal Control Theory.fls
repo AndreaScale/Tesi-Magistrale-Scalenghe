@@ -2,8 +2,8 @@ PWD c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final
 INPUT c:/texlive/2023/texmf.cnf
 INPUT c:/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex
-OUTPUT Main.log
+INPUT c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Optimal Control Theory.tex
+OUTPUT Optimal Control Theory.log
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/book.cls
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/book.cls
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/bk12.clo
@@ -114,14 +114,6 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
-INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
-INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
-INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg
-INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg
-INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/makeidx.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/makeidx.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/faktor/faktor.sty
@@ -467,13 +459,18 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.cfg
 INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.cfg
 INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
-INPUT ./Main.aux
-INPUT ./Main.aux
-INPUT Main.aux
-OUTPUT Main.aux
-INPUT c:/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
-OUTPUT Main.out
-OUTPUT Main.pdf
+INPUT ./Optimal Control Theory.aux
+INPUT ./Optimal Control Theory.aux
+INPUT Optimal Control Theory.aux
+OUTPUT Optimal Control Theory.aux
+INPUT ./Optimal Control Theory.out
+INPUT ./Optimal Control Theory.out
+INPUT Optimal Control Theory.out
+INPUT Optimal Control Theory.out
+OUTPUT Optimal Control Theory.pdf
+INPUT ./Optimal Control Theory.out
+INPUT ./Optimal Control Theory.out
+OUTPUT Optimal Control Theory.out
 INPUT c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -488,28 +485,9 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-OUTPUT Main.bcf
-INPUT Main.bbl
-INPUT ./Main.bbl
-INPUT ./Main.bbl
-INPUT ./Main.bbl
-INPUT Main.bbl
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
-INPUT ./logo_new_2022.png
-INPUT ./logo_new_2022.png
-INPUT ./logo_new_2022.png
-INPUT ./logo_new_2022.png
-INPUT ./logo_new_2022.png
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsl12.tfm
+OUTPUT Optimal Control Theory.bcf
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-OUTPUT Main.toc
 INPUT ./Finite horizon.tex
 INPUT ./Finite horizon.tex
 INPUT Finite horizon.tex
@@ -587,11 +565,13 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/esint/uesint.fd
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT ./Dynamic programming principle.tex
 INPUT ./Dynamic programming principle.tex
 INPUT Dynamic programming principle.tex
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsl12.tfm
+INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT ./Pontryagin.tex
@@ -637,7 +617,6 @@ INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/mathabx/mathx10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT ./Infinite horizon.tex
 INPUT ./Infinite horizon.tex
 INPUT Infinite horizon.tex
@@ -646,34 +625,18 @@ INPUT ./Proof of Pontryagin.tex
 INPUT Proof of Pontryagin.tex
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-INPUT ./markov diffusion processes.tex
-INPUT ./markov diffusion processes.tex
-INPUT markov diffusion processes.tex
-INPUT ./Markov control processes.tex
-INPUT ./Markov control processes.tex
-INPUT Markov control processes.tex
-INPUT ./Stochastic maximum Principle.tex
-INPUT ./Stochastic maximum Principle.tex
-INPUT Stochastic maximum Principle.tex
-INPUT ./Intro - Visco.tex
-INPUT ./Intro - Visco.tex
-INPUT Intro - Visco.tex
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
-INPUT Main.aux
-INPUT ./Main.out
-INPUT ./Main.out
-OUTPUT Main.run.xml
-INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT Optimal Control Theory.aux
+INPUT ./Optimal Control Theory.out
+INPUT ./Optimal Control Theory.out
+INPUT Optimal Control Theory.run.xml
+OUTPUT Optimal Control Theory.run.xml
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
-INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
@@ -681,14 +644,11 @@ INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
-INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb
-INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
-INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb

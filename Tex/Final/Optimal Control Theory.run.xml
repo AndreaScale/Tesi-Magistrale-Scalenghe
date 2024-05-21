@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Main.bcf</file>
+      <file>"Optimal Control Theory".bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>Main.bbl</file>
+      <file>"Optimal Control Theory".bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -64,22 +64,22 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>Main</infile>
+      <infile>"Optimal Control Theory"</infile>
     </cmdline>
     <input>
-      <file>Main.bcf</file>
+      <file>"Optimal Control Theory".bcf</file>
     </input>
     <output>
-      <file>Main.bbl</file>
+      <file>"Optimal Control Theory".bbl</file>
     </output>
     <provides type="dynamic">
-      <file>Main.bbl</file>
+      <file>"Optimal Control Theory".bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Main.bcf</file>
+      <file>"Optimal Control Theory".bcf</file>
     </requires>
     <requires type="editable">
-      <file>Bibliography.bib</file>
+      <file>biblio.bib</file>
     </requires>
   </external>
 </requests>

@@ -25,3 +25,4 @@
 \contentsline {subsection}{\numberline {4.1.5}Value Function as Viscosity Solution}{47}{subsection.4.1.5}%
 \contentsline {subsection}{\numberline {4.1.6}Continuity Properties of the Value Function}{56}{subsection.4.1.6}%
 \contentsline {subsection}{\numberline {4.1.7}Pontryagin's Principle}{58}{subsection.4.1.7}%
+\contentsline {chapter}{Bibliography}{59}{chapter*.2}%
