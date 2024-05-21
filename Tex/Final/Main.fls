@@ -51,12 +51,8 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/fge/fge.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/fge/fge.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/mathtools/mathtools.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/mathtools/mathtools.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/mathtools/mhsetup.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty
@@ -114,6 +110,15 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+INPUT c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+INPUT c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+INPUT c:/texlive/2023/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/mathtools/mhsetup.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
@@ -471,8 +476,6 @@ INPUT ./Main.aux
 INPUT ./Main.aux
 INPUT Main.aux
 OUTPUT Main.aux
-INPUT c:/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
-OUTPUT Main.out
 OUTPUT Main.pdf
 INPUT c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -660,8 +663,6 @@ INPUT ./Intro - Visco.tex
 INPUT Intro - Visco.tex
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT Main.aux
-INPUT ./Main.out
-INPUT ./Main.out
 OUTPUT Main.run.xml
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

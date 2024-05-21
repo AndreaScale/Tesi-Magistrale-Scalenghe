@@ -5,11 +5,12 @@
 \usepackage[english]{babel}
 \selectlanguage{english}
 \usepackage{amsmath,amsthm,amssymb,fge,mathrsfs}
+\usepackage{bookmark}
 \usepackage{mathtools}
 % \usepackage{hyperref}
-\usepackage[hidelinks, colorlinks = true, linkcolor = gray, citecolor = gray]{hyperref}
-\usepackage{csquotes}
+\usepackage{hyperref}
 
+\usepackage{csquotes}
 \usepackage{makeidx} %per fare l'indice
 \usepackage{faktor} %per i quozienti
 
@@ -202,9 +203,13 @@
 
 \newpage
 
+{\hypersetup{linkbordercolor=black, hidelinks}
+% or \hypersetup{linkcolor=black}, if the colorlinks=true option of hyperref is used
 \tableofcontents
-
+}
 \newpage
+
+\hypersetup{colorlinks, linkcolor = gray, citecolor = gray, hidelinks}
 
 \chapter{Introduction}
 
