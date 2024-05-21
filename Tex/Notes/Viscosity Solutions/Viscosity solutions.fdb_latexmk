@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber Viscosity solutions"] 1716213071 "Viscosity solutions.bcf" "Viscosity solutions.bbl" "Viscosity solutions" 1716213071 0
-  "Viscosity solutions.bcf" 1716213070 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
+["biber Viscosity solutions"] 1716285154 "Viscosity solutions.bcf" "Viscosity solutions.bbl" "Viscosity solutions" 1716285154 0
+  "Viscosity solutions.bcf" 1716285152 107347 8433af65fa9bf2892ddc39b4f2af661d "pdflatex"
   "biblio.bib" 0 -1 0 ""
   (generated)
   "Viscosity solutions.bbl"
   "Viscosity solutions.blg"
   (rewritten before read)
-["pdflatex"] 1716213066 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Viscosity Solutions/Viscosity solutions.tex" "Viscosity solutions.pdf" "Viscosity solutions" 1716213071 0
-  "Intro.tex" 1716197615 42549 0b7f7d6975f96d1631548fde1ff4dffb ""
-  "Viscosity solutions.aux" 1716213070 4234 f1b9ecb2b7b61215ed1ce2e7a1dd7c75 "pdflatex"
+["pdflatex"] 1716285148 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Viscosity Solutions/Viscosity solutions.tex" "Viscosity solutions.pdf" "Viscosity solutions" 1716285154 0
+  "Intro.tex" 1716285129 53558 aa4420f9dc93953666b4ef6b87e092ba ""
+  "Viscosity solutions.aux" 1716285152 5231 041e035e27bfe808a8d416a664055e0d "pdflatex"
   "Viscosity solutions.bbl" 0 -1 0 "biber Viscosity solutions"
-  "Viscosity solutions.out" 1716213070 1262 af92b833721a76eb22096a7898e89149 "pdflatex"
-  "Viscosity solutions.run.xml" 1716213070 2420 57e76bdfc34f9869c9e0476cde832124 "pdflatex"
+  "Viscosity solutions.out" 1716285152 1732 2ea721bca0915437f6ff80e97b71edab "pdflatex"
+  "Viscosity solutions.run.xml" 1716285152 2420 57e76bdfc34f9869c9e0476cde832124 "pdflatex"
   "Viscosity solutions.tex" 1716125852 4755 48fa375fec289d62f12c8ee50fe2b17a ""
   "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Notes/Viscosity Solutions/Viscosity solutions.tex" 1716125852 4755 48fa375fec289d62f12c8ee50fe2b17a ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1702045797 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -62,6 +62,7 @@
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/stmaryrd/stmary6.tfm" 1702049397 848 068dd119e13b75777e62821af7d4f2a6 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm" 1702049397 848 6125cdd3627e68d3db8013b98e587508 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1702045120 32080 340ef9bf63678554ee606688e7b5339d ""
+  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1702045120 30251 6afa5cb1d0204815a708a080681d4674 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1702045120 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1702045120 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1702045120 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""

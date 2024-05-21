@@ -71,15 +71,12 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
 
         It is a square integrable martingale because:
         
-        \begin{align}
-            E\left\{E^2\left[\xi + \int_t^{t_1} f(r,u_r,v_r)\,dr\,|\,\mathcal{F}_s\right]\right\} & 
-            % \leq C E^2\left\{E\left[\xi + \int_t^{t_1} f(r,u_r,v_r)\,dr\,|\,\mathcal{F_s}\right]\right\} \\
-            % & = C E^2\left[\xi + \int_t^{t_1} f(r,u_r,v_r)\,dr\right] \\
-             \leq C_0 E^2\xi + C_1E^2\int_t^{t_1} f(r,0,0)\,dr \\
+        \begin{align*}
+            E\left\{E^2\left[\xi + \int_t^{t_1} f(r,u_r,v_r)\,dr\,|\,\mathcal{F}_s\right]\right\} & \leq C_0 E^2\xi + C_1E^2\int_t^{t_1} f(r,0,0)\,dr \\
             & + C_2E^2\int_t^{t_1} f(r,u_r,v_r)-f(r,0,0)\,dr \\
             & + C_3E\xi^2E\int_t^{t_1}f(r,0,0)^2\,dr \\
             & + C_4E\xi^2E\int_t^{t_1}(f(r,u_r,v_r)-f(r,0,0))^2\,dr, 
-        \end{align}
+        \end{align*}
 
         which is finite because of the assumptions and given $(u,v)\in X$. It is a martingale. Therefore, by 
         Ito's martingale representation theorem there exists a unique $z\in\mathbb{H}^2(t,t_1)^n$\footnote{Unique with respect to $\norm{\cdot}_{\mathbb{H}}$.} and $m_t\in L2$ such that:
@@ -130,7 +127,7 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
         \begin{align}
             E\overline{y}_t^2 + E\left[\int_t^{t_1}e^{\beta r} \left(\beta\overline{y}_r^2+\overline{z}_r^2\right)\,dr\right] & = 2E\left[\int_t^{t_1}e^{\beta r}\overline{y}_r\overline{f}_r\,dr\right] \\
             & \leq 2CE\left[\int_t^{t_1}e^{\beta r}\overline{y}_r\left(\overline{u}_r+\overline{v}_r\right)\,dr\right] \\
-            & \leq 2CE\left[\int_t^{t_1}e^{\beta r}\overline{y}_r^2\,dr\right] + CE\left[\int_t^{t_1}e^{\beta r}\left(\overline{u}_r^2+\overline{v}_r^2\right)\,dr\right], \\
+            & \leq 2CE\left[\int_t^{t_1}e^{\beta r}\overline{y}_r^2\,dr\right] + CE\left[\int_t^{t_1}e^{\beta r}\left(\overline{u}_r^2+\overline{v}_r^2\right)\,dr\right], 
         \end{align}
 
         which implies:
@@ -255,17 +252,21 @@ This functional will define the BSDE in the next theorem.
         We compute the derivative and get:
 
         \begin{align*}
-            \frac{\partial^2V}{\partial x\partial t}(s,x(s)) + D_xf(s,x,u(s))|_{x=x(s)}D_xV(s,x(s)) + f(s,x(s),u(s))D_x^2V(s,x(s)) \\
-            + \frac{1}{2}tr\left[D_x(\sigma\sigma')(s,x,u(s))|_{x=x(s)}\cdot D_x^2V(s,x(s))\right] + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right] + D_xL(s,x(s),u(s)) \\
-            = \frac{\partial^2V}{\partial x\partial t}(s,x(s)) + f(s,x(s),u(s))D_x^2V(s,x(s)) + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right] \\
-            + f(s,x(s),u(s))D_xV(s,x(s)) + tr\left[D_x\sigma'(s,x(s),u(s))\cdot D_x^2V(s,x(s))\sigma(s,x(s),u(s))\right] + D_xL(s,x(s),u(s)),
+            \frac{\partial^2V}{\partial x\partial t}(s,x(s)) & + D_xf(s,x,u(s))|_{x=x(s)}D_xV(s,x(s)) + f(s,x(s),u(s))D_x^2V(s,x(s)) \\
+            & + \frac{1}{2}tr\left[D_x(\sigma\sigma')(s,x,u(s))|_{x=x(s)}\cdot D_x^2V(s,x(s))\right] \\
+            & + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right] + D_xL(s,x(s),u(s)) \\
+            & = \frac{\partial^2V}{\partial x\partial t}(s,x(s)) + f(s,x(s),u(s))D_x^2V(s,x(s)) \\
+            & + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right] \\
+            & + f(s,x(s),u(s))D_xV(s,x(s)) + tr\left[D_x\sigma'(s,x(s),u(s))\cdot D_x^2V(s,x(s))\sigma(s,x(s),u(s))\right] \\
+            & + D_xL(s,x(s),u(s)),
         \end{align*}
 
         which implies:
 
         \begin{equation}\label{2-3-relD3G}
-            \begin{align*}\frac{\partial^2V}{\partial x\partial t}(s,x(s)) + f(s,x(s),u(s))D_x^2V(s,x(s)) + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right] \\
-            = -D_x\left[\mathcal{G}(s,x(s),u(s),D_xV(s,x(s)),D_x^2V(s,x(s))\sigma(s,x(s),u(s)))\right].
+            \begin{align*}
+                & \frac{\partial^2V}{\partial x\partial t}(s,x(s)) + f(s,x(s),u(s))D_x^2V(s,x(s)) + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right] \\
+                & = -D_x\left[\mathcal{G}(s,x(s),u(s),D_xV(s,x(s)),D_x^2V(s,x(s))\sigma(s,x(s),u(s)))\right].
             \end{align*}
         \end{equation}
 
@@ -274,7 +275,8 @@ This functional will define the BSDE in the next theorem.
         \begin{align*}
             -dy_s & = -d[D_xv(s,x(s))] =  -\frac{\partial^2V}{\partial x\partial t}(s,x(s))ds - f(s,x(s),u(s))D_x^2V(s,x(s))ds \\
             & - D_x^2V(s,x(s))\sigma(s,x(s),u(s))dw_s + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right]ds \\
-            & = D_x\left[\mathcal{G}(s,x(s),u(s),D_xV(s,x(s)),D_x^2V(s,x(s))\sigma(s,x(s),u(s)))\right]ds - D_x^2V(s,x(s))\sigma(s,x(s),u(s))dw_s,
+            & = D_x\left[\mathcal{G}(s,x(s),u(s),D_xV(s,x(s)),D_x^2V(s,x(s))\sigma(s,x(s),u(s)))\right]ds \\
+            & - D_x^2V(s,x(s))\sigma(s,x(s),u(s))dw_s,
         \end{align*}
 
         and:

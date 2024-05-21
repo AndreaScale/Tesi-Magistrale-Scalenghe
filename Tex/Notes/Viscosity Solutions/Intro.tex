@@ -661,7 +661,7 @@ Under this hypotheses we can state the following theorem.
 
 This Theorem implies that if $V$ and $W$ are two viscosity solution of \ref{4-2-firstordereq} satisfying the boundary conditions
 
-\begin{equation}
+\begin{equation}\label{4-2-TerminalcondV}
     \begin{aligned}
         V(t,x) = g(t,x),&\forall(t,x)\in[T_0,t_1)\times O, \\
         V(t_1,x) = \psi(x),&x\in\overline{O},
@@ -817,10 +817,230 @@ The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove th
         \Phi_{\gamma}(t,x,s,y) = \Phi(t,x,s,y) - \frac{\gamma}{2}\left[\abs{t-t_{\gamma}}^2+\abs{s-s_{\gamma}}^2 + \abs{x-x_{\gamma}}^2 + \abs{y-y_{\gamma}}^2\right],
     \end{equation}
 
-    for $(t,x),(s,y)\in \overline{Q}$.
+    for $(t,x),(s,y)\in \overline{Q}$. 
+    
+    We now follow a similar procedure to the one used in the bounded case.
+
+    \begin{enumerate}[label=\arabic*')]
+        \item Let the moduli of continuity $m_W,m_V$ and the bound $K_1$ as before. Since we assume the value functions to be bounded and 
+        absolutely continuous we have, as before, that
+        
+        \[m_W,m_V\in C([0,\infty)),\, m_W(0)=m_V(0)=0,\, K_1=\sup\{m_W(\rho):\,\rho\geq0\}<+\infty.\]
+
+        Let us note that for $(t,x),(s,y)\in\overline{Q}\times\overline{Q}$ such that 
+
+        \[\abs{t-t_{\gamma}}^2+\abs{s-s_{\gamma}}^2 + \abs{x-x_{\gamma}}^2 + \abs{y-y_{\gamma}}^2>2,\]
+
+        then
+
+        \[\Phi_{\gamma}(t,x,s,y) \leq \Phi(t,x,s,y) - \gamma \leq \Phi(t_{\gamma},x_{\gamma},s_{\gamma},y_{\gamma}) = \Phi_{\gamma}\Phi(t_{\gamma},x_{\gamma},s_{\gamma},y_{\gamma}).\]
+
+        The supremum of $\Phi_{\gamma}$ is achieved since $\Phi_{\gamma}$ is bounded by $\Phi(t_{\gamma},x_{\gamma},s_{\gamma},y_{\gamma})$. It is achieved at $(t',x'),(s',y')$. Then
+
+        \begin{equation}
+            \abs{t-t_{\gamma}}^2+\abs{s-s_{\gamma}}^2 + \abs{x-x_{\gamma}}^2 + \abs{y-y_{\gamma}}^2\leq2.
+        \end{equation}
+
+        We now claim two estimates on the distance between the time variables and space variables. For $\gamma,\delta,\epsilon\leq\frac{1}{2}$ we have
+
+        \begin{equation}\label{4-2-inproofSup:unboundedCLAIMS}
+            \abs{t'-s'} \leq \sqrt{2(K_1+1)\delta},\,\abs{x'-y'}\leq\sqrt{2\epsilon(2\gamma + m_W(2\epsilon(K_1+1)))}.
+        \end{equation}
+
+        Indeed, $\Phi_{\gamma}(t',x',s',y')\geq\Phi_{\gamma}(s',x',s',y')$ implies
+
+        \begin{align*}
+            \frac{1}{2\delta}\abs{t'-s'}^2 & \leq W(t',x')-W(s',x') + \frac{\gamma}{2}[\abs{s'-t_{\gamma}}^2-\abs{t'-t_{\gamma}}^2] \\
+            & \leq \frac{1}{2}K_1 + \gamma\abs{t'-s'}^2 + \frac{\gamma}{2}\abs{t'-t_{\gamma}}^2 \\
+            & \leq \frac{1}{2}K_1 + \gamma\abs{t'-s'}^2 + \gamma,
+        \end{align*}
+
+        which implies, recalling the bound on $\delta$ and $\gamma$, that 
+
+        \[\left(\frac{1}{4\delta}\right)\abs{t'-s'}^2\leq\left(\frac{1-\delta}{2\delta}\right)\abs{t'-s'}^2\leq\left(\frac{1}{2\delta}-\gamma\right)\abs{t'-s'}^2\leq \frac{1}{2}K_1 + \frac{1}{2}.\]
+
+        From $\Phi_{\gamma}(t',x',s',y')\geq\Phi_{\gamma}(t',y',s',y')$ we get
+
+        \begin{align*}
+            \frac{1}{2\epsilon}\abs{x'-y'}^2 & \leq W(t',x')-W(t',x') + \frac{\gamma}{2}[\abs{y'-x_{\gamma}}^2-\abs{x'-x_{\gamma}}^2] \\
+            & \leq \frac{1}{2}m_W(\abs{x'-y'}^2) + \gamma\abs{x'-y'}^2 + \frac{\gamma}{2}\abs{x'-x_{\gamma}}^2 \\
+            & \leq \frac{1}{2}m_W(\abs{x'-y'}^2) + \gamma\abs{x'-y'}^2 + \gamma,
+        \end{align*}
+
+        which implies
+
+        \[\frac{1}{4\epsilon}\abs{x'-y'}^2\leq \frac{1}{2}m_W(\abs{x'-y'}^2)+\gamma\Rightarrow \abs{x'-y'}^2\leq 2(K_1+1)\epsilon.\]
+
+        Therefore, we get
+
+        \[\frac{1}{4\epsilon}\abs{x'-y'}^2\leq \left(\frac{1}{2\epsilon}-\gamma\right)\abs{x'-y'}^2\leq \frac{1}{2}m_W\left(2(K_1+1)\epsilon\right)+\gamma,\]
+
+        hence the second equation in \ref{4-2-inproofSup:unboundedCLAIMS}.
+
+        \item Replicating the same argument of the bounded case we get if $(t',x')\in\partial^{\ast}Q$ then
+        
+        \begin{equation}
+            \Phi_{\gamma}(t',x',s',y') \leq \frac{1}{2}m_V\left(2(K_1+1)(\epsilon+\delta)\right) + \sup_{\partial^{\ast}Q}[W-V],
+        \end{equation}
+
+        and if $(s',y')\in\partial^{\ast}Q$ then
+
+        \begin{equation}
+            \Phi_{\gamma}(t',x',s',y') \leq \frac{1}{2}m_W\left(2(K_1+1)(\epsilon+\delta)\right) + \sup_{\partial^{\ast}Q}[W-V].
+        \end{equation}
+
+        \item Finally, if we find a bound over $\beta$ for $(t',x'),(s',y')\in Q$ we then prove that this bound is not satisfied and then we can invoke 
+        point $2'$ and get
+
+        \begin{equation}
+            \limsup_{\epsilon\to0}\limsup_{\delta\to0}\limsup_{\gamma\to0}\Phi_{\gamma}(t',x',s',y') \leq \sup_{\partial^{\ast}Q}[W-V],
+        \end{equation}
+
+        which implies, as before, that
+
+        \[W(t,x) - V(s,y)\leq \sup_{\partial^{\ast}Q}[W-V].\]
+
+        Let $(t',x'),(s',y')\in Q$ and the test function
+
+        \[\overline{w}(t,x)=\frac{1}{2\delta}\abs{t-s'}^2+\frac{1}{2\epsilon}\abs{x-y'}^2+\frac{\gamma}{2}\left(\abs{t-t_{\gamma}}^2+\abs{x-x_{\gamma}}^2\right),\]
+
+        defined over $Q$. Then $(t',x')$ is where $W-\overline{w}$ is null and maximized. Therefore
+
+        \begin{equation}\label{4-2-inproofSup:qandpwithoutbeta}
+             - \underbrace{\frac{1}{\delta}(t'-s')}_{\overset{def}{=}q_{\delta}}  - \underbrace{\gamma(t'-t_{\gamma})}_{\overset{def}{=}q_{\gamma}} + H(t',x',p_{\epsilon}+p_{\gamma}) \leq 0, 
+        \end{equation}
+
+        where
+
+        \[p_{\epsilon}=\frac{1}{\epsilon}(x'-y'),\, p_{\gamma}=\gamma(x'-x_{\gamma}).\]
+
+        With the same reasoning we define the test function
+
+        \[w^{\ast}(s,y)=-\frac{1}{2\delta}\abs{t'-s}^2-\frac{1}{2\epsilon}\abs{x'-y}^2+\frac{\gamma}{2}\left(\abs{s-s_{\gamma}}^2+\abs{y-y_{\gamma}}^2\right)+\beta(s-t_1),\]
+
+        from which we get
+
+        \begin{equation}\label{4-2-inproofSup:qandpwithbeta}
+            - \beta - q_{\delta}  - \underbrace{\gamma(s'-s_{\gamma})}_{\overset{def}{=}\overline{q}_{\gamma}} + H(s',y',p_{\epsilon}+\overline{p}_{\gamma}) \geq 0, 
+       \end{equation}
+
+       where $\overline{p}_{\gamma} = \gamma(y_{\gamma}-y').$
+
+       We can find the upper bound to $\beta$ using the estimates in \ref{4-2-inproofSup:unboundedCLAIMS} and equations \ref{4-2-inproofSup:qandpwithbeta} and \ref{4-2-inproofSup:qandpwithoutbeta}:
+
+       \begin{align*}
+       \beta&\leq H(s',y',p_{\epsilon}+\overline{p}_{\gamma}) - H(t',x',p_{\epsilon}+p_{\gamma}) + q_{\gamma} - \overline{q}_{\gamma} \\
+       & \leq h(\abs{t'-s'}+\abs{x'-y'})+h(\abs{t'-s'})\left[\abs{p_{\epsilon}+\abs{\overline{p}_{\gamma}}}\right] \\
+       & + K\abs{x'-y'}\left[\abs{p_{\epsilon}+\abs{\overline{p}_{\gamma}}}\right]+K\abs{\overline{p}_{\gamma}-p_{\gamma}}+q_{\gamma}-\overline{q}_{\gamma} \\
+       & \leq h(\sqrt{2(K_1+1)\delta}+\sqrt{2(K_1+1)\epsilon})+h(\sqrt{2(K_1+1)\delta})\left[\sqrt{\frac{\abs{2(K_1+1)}}{\epsilon}}+2\gamma\right] \\
+       & + K2\left[2\gamma+m_W(2(K_1+1))\epsilon+\sqrt{2(K_1+1)\epsilon\delta}\right]+2(K+1)\gamma.
+       \end{align*}
+    \end{enumerate}
 \end{proof}
 
-Poi II.8-II.9 da fare con criterio. Lemmi super tecnici dati per buoni. Fare bene unicità (molto lunga).
+\subsection{Continuity Properties of the Value Function}
+
+We now investigate continuity properties of the value function. In particular, we consider two different sets of assumptions which guarantee continuity, actually 
+something stronger: Lipschitz continuity and Uniform continuity. Let us consider $f,L,\psi$ as usual, recalling that there exists $K_{\rho}>0$ such that 
+
+\begin{equation}\label{4-3-boundonf}
+    \abs{f(t,x,v) - f(t,y,v)} \leq K_{\rho}\abs{x-y}, 
+\end{equation}
+
+for all $\abs{v}\leq\rho$. Note that these are minimal assumption to start working with the optimal control problem.
+
+\begin{theorem}\label{4-3-Theorem:1cont}
+    Let a bounded control space $U$, $Q=[t_0,t_1)\times\R^n$. Assume that $f,L,\psi$ are bounded, $f$ satisfies \ref{4-3-boundonf} and $L,\psi$ uniformly continuous. 
+    Then the value function $V$ is bounded and uniformly continuous.
+    
+    \begin{proof}
+        $V$ is bounded. Indeed 
+
+        \[V(t,x) = \inf_{u\in\mathcal{U}}\int_t^{t_1} L(s,x(s),u(s))\,ds + \psi(t_1,x(t_1)) \leq (t_1-t)K_L + K_{\psi},\]
+
+        where $K_g$ is the bound over the function $g$. 
+
+        $V$ is uniformly continuous. Standard arguments on solutions of ODE (integral form of the solution, bound on the flow and Gronwall) yield 
+
+        \begin{equation}
+            \Lambda(s) \overset{def}{=} \abs{x(s)-y(s)} \leq \abs{x-y}e^{K(s-t)},
+        \end{equation} 
+
+        where $x(s),y(s)$ are solution to the Cauchy problem
+
+        \[\frac{d}{ds}w(s) = f(s,w(s),u(s)),\, w(t)=w.\]
+
+        Then
+
+        \begin{align*}
+            \abs{J(t,x,u) - J(t,y,u)} & \leq \int_t^{t_1} \abs{L(s,x(s),u(s)) - L(s,y(s), u(s))}\,ds + \abs{\psi(x(t_1)) - \psi(y(t_1))} \\
+            & \leq \int_t^{t_1} m_L(\Lambda(s))\,ds + m_{\psi}(\Lambda(t_1)) \\
+            & + (t_1-t_0)m_L(\abs{x-y}e^{K(t_1-t_0)}) + m_{\psi}(\abs{x-y}e^{K(t_1-t_0)}),
+        \end{align*}
+
+        where $m_g$ is the modulus of continuity of the function $g$. Since both $L$ and $\psi$ are uniformly continuous $m_L,m_{\psi}\in C([0,\infty))$ and 
+        they are null at the origin. Then for a fixed $t$ we have the bound
+        
+        \begin{equation}\label{4-3-InProof:modulust}
+            \abs{V(t,x)-V(t,y)} \leq (t_1-t_0)m_L(\abs{x-y}e^{K(t_1-t_0)}) + m_{\psi}(\abs{x-y}e^{K(t_1-t_0)}).
+        \end{equation}
+
+        Similarly, if we fix $x$ we get 
+
+        \begin{equation}\label{4-3-InProof:modulusx}
+            \abs{V(t,x)-V(s,x)} \leq K_1\abs{t-s} + (t_1-t_0)m_L(\abs{t-s}K_2e^{K(t_1-t_0)}) + m_{\psi}(\abs{t-s}K_2e^{K(t_1-t_0)}),
+        \end{equation}
+
+        where $K_1=\sup\abs{L}$ and $K_2$ is such that $\abs{x(s)-x}\leq K_2\abs{t-s}$, which exists because $f$ is bounded. Then by splitting 
+        $\abs{V(t,x)-V(s,y)}$ we find a modulus of continuity for it, by summing \ref{4-3-InProof:modulusx} and \ref{4-3-InProof:modulust}. 
+    \end{proof}
+\end{theorem}
+
+From the proof it is clear that by taking $L$ and $\psi$ Lipschitz continuous we get $V$ Lipschitz continuous, since we can use 
+
+\[m_L(\rho)=K_L\rho,\, m_{\psi}(\rho)=K_{\psi}\rho,\]
+
+for some constants $K_L,K_{\psi}>0$. 
+
+This theorem allows us to conclude the following result.
+
+\begin{corollary} 
+    Under the previous assumptions, the value function is the unique viscosity solution of the dynamic programming equation with fixed terminal conditions \ref{4-2-TerminalcondV}. 
+
+    \begin{proof} 
+        Since $U$ is bounded the Hamiltonian $H$ satisfies \ref{4-2-Hassumptions}. Indeed, the bound on the derivative is obvious. 
+        The upper bound function $h$ can be found as follows:
+
+        \begin{align*}
+            H(t,x,p) - H(s,y,p') & \leq \sup_{v\in U}\left\{\abs{L(t,x,v)-L(s,y,v) + f(t,x,v)\cdot p - f(s,y,v)\cdot p'}\right\} \\
+            & \leq \sup_{v\in U}\left\{\abs{L(t,x,v)-L(s,y,v)}\right\} + \sup_{v\in U}\abs{f(s,y,v)}\abs{p-p'} \\
+            & + \sup_{v\in U}\abs{f(t,x,v)-f(s,y,v)}\abs{p},
+        \end{align*}
+
+        but the uniform continuity of $L$ and Lipschitz continuity of $f$ yield \ref{4-2-Hassumptions}. Then by Theorem \ref{4-2-Theo:Suponbound} we get the thesis.
+    \end{proof} 
+\end{corollary}
+
+% Let us now address the bounded $Q$ case. We assume that the value function has the form
+
+% \[V(t,x) = \inf_{u\in\mathcal{U}} J(t,x;u),\]
+
+% where 
+
+% \[J(t,x;u) = \int_t^{\tau} L(s,x(s),u(s)) \,ds + \Psi(\tau,x(\tau)).\]
+
+% We require $\Psi$ to be 
+
+% \[\Psi(\tau,x(\tau)) = 0\text{ if }\tau<t_1,\,\Psi(\tau,x(\tau)) = \psi(x(t_1))\text{ if }\tau = t_1.\]
+
+% \begin{theorem}
+    
+% \end{theorem}
+
+
+\subsection{Prontryagin's Principle}
+
+
 
 Poi II.10 fare bene Lipschitz.
 
