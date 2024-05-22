@@ -1038,7 +1038,110 @@ This theorem allows us to conclude the following result.
 % \end{theorem}
 
 
-\subsection{Prontryagin's Principle}
+\subsection{Pontryagin's Principle for Viscosity Solutions}
+
+In section \ref{Section: Pontryagin Principle} we stated the Pontryagin's principle for continuously differentiable value functions. 
+As we come to understand in this chapter, value functions may easily fail to be $C^1$ which requires a weaker notion of solution. We have introduced 
+the concept of viscosity solution, which turns out to be also a handy notion to extend Pontryagin's principle in non-differentiable settings. 
+Recall that it states the relation between a so-called adjoint variable $P$ and the state variable via a system of differential equations. Since may fail 
+to be differentiable somewhere we need to carefully extend the possible values of the adjoint variable for those instances. Let us 
+define two new key concepts that incorporate the possible value that the incremental limit may have in non-smooth points. 
+
+\begin{definition}
+    Let $W\in C(\overline{Q})$ and $(t,x)\in Q$. We define:
+
+    \begin{enumerate}
+        \item The set of \textit{superdifferentials} of $W$ at $(t,x)$ as the collection of all $(q,p)\in\R\times\R^n$ such that 
+        there exists some $w\in C^1(Q)$ for which:
+        
+        \begin{equation}
+            (q,p) = \left(\frac{\partial}{\partial t}w(t,x),D_x w(t,x)\right),
+        \end{equation}
+
+        and
+
+        \begin{equation}
+            (t,x) \in \arg \max \left\{(W-w)(s,y)\,|\,(s,y)\in\overline{Q}\right\}.
+        \end{equation}
+
+        We denote it with $D^+W(t,x)$.
+
+        \item The set of \textit{subdifferentials} of $W$ at $(t,x)$ as the collection of all $(q,p)\in\R\times\R^n$ such that 
+        there exists some $w\in C^1(Q)$ for which:
+        
+        \begin{equation}
+            (q,p) = \left(\frac{\partial}{\partial t}w(t,x),D_x w(t,x)\right),
+        \end{equation}
+
+        and
+
+        \begin{equation}
+            (t,x) \in \arg \min \left\{(W-w)(s,y)\,|\,(s,y)\in\overline{Q}\right\}.
+        \end{equation}
+
+        We denote it with $D^-W(t,x)$.
+    \end{enumerate}
+\end{definition}
+
+Note that this definition is consistent with the notion of viscosity solution since if $W$ is a viscosity subsolution in $Q$ 
+if and only if 
+
+\[-q+H(t,x,p)\leq 0,\,\forall (q,p)\in D^+W(t,x),\,\forall(t,x)\in Q,\]
+
+and similarly for a supersolution.
+
+The notion of superdifferential will take the place of the derivative in Pontryagin's result. We recall the definition of the adjoint variable for a state variable $x$, a control $u$, 
+a terminal condition $\psi$ and a Hamiltonian $H$:
+
+\begin{equation}\label{4-3-pontrydotp}
+    \dot{p}^{\ast}(s) =  - D_x H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s)),
+\end{equation}
+
+And also:
+
+\begin{equation}\label{4-3-pontry-maxH}
+    H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s)) = \sup_{v\in U} H(s,x^{\ast}(s),v,p^{\ast}(s)),
+\end{equation}
+
+With:
+
+\begin{equation}\label{4-3-pontryp}
+    p^{\ast}(t_1) = D \psi(x^{\ast}(t_1)).
+\end{equation}
+
+We can now state Pontryagin's maximum principle in this broader context.
+
+\begin{theorem}
+    Let $u^{\ast}(\cdot)$ be an optimal control at $(t,x)$ which is right continuous at each $[t,t_1)$, and $p^{\ast}(s)$ defined by \label{4-3-pontrydotp}, \ref{4-3-pontry-maxH} and \ref{4-3-pontry-tras}. 
+    Then for each $s\in[t,t_1)$ 
+    
+    \begin{equation}
+        \bigg(H(s,x^{\ast},p^{\ast}(s)),p^{\ast}(s)\bigg) \in D^+V(s,x^{\ast}(s)).
+    \end{equation}
+
+    \begin{proof}
+        By definition of value function we have
+
+        \[V(r,y) \leq J(r,y;u^{\ast}),\,\forall (r,y)\in Q,\]
+
+        and equality for $(r,y)=(s,x^{\ast}(s))$ for each $s\in[t,t_1]$. Hence, if we show that $J$ is continuously differentiable and
+
+        \begin{equation}
+            \frac{\partial}{\partial r}J(s,x^{\ast}(s);u^{\ast}) = p^{\ast}(s),
+        \end{equation}
+
+        and 
+
+        \begin{equation}
+            D_yJ(s,x^{\ast}(s);u^{\ast}) = H(s,x^{\ast}(s),p^{\ast}(s))
+        \end{equation}
+
+        for $s\in[t,t_1)$, then the thesis holds by definition. 
+    \end{proof}
+\end{theorem}
+
+
+
 
 
 
