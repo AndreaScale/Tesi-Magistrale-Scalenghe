@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  21 MAY 2024 16:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  23 MAY 2024 12:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1748,6 +1748,9 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 
 LaTeX Warning: Label `2-1-opt' multiply defined.
 
+
+LaTeX Warning: Label `4-3-pontrydotp' multiply defined.
+
 )
 \openout1 = `Main.aux'.
 
@@ -2161,9 +2164,11 @@ Chapter 4.
 (./Intro - Visco.tex [37
 
 ]
-Overfull \hbox (20.73663pt too wide) detected at line 72
+Overfull \hbox (114.8362pt too wide) detected at line 72
 [] [][] \OT1/cmr/m/n/12 1 \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12 p[] ds \U/matha/
-m/n/12 ^^P []
+m/n/12 ^^P []p\OT1/cmr/m/n/12 1 \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12 p[]\U/math
+a/m/n/12 qp\OML/cmm/m/it/12 ^^\ \U/matha/m/n/12 ^^A \OML/cmm/m/it/12 t\U/matha/
+m/n/12 q ^^P []
  []
 
 [38] [39] [40]
@@ -2295,7 +2300,33 @@ Overfull \hbox (1.8001pt too wide) detected at line 1018
 []
  []
 
-) [58]
+
+LaTeX Warning: Reference `Section: Pontryagin Principle' on page 58 undefined o
+n input line 1043.
+
+[58]
+
+LaTeX Warning: Reference `4-3-pontry-tras' on page 59 undefined on input line 1
+115.
+
+[59]
+Overfull \hbox (12.50555pt too wide) detected at line 1143
+[]
+ []
+
+
+Overfull \hbox (95.93254pt too wide) detected at line 1173
+[]
+ []
+
+[60]
+Overfull \hbox (51.1448pt too wide) detected at line 1186
+[]
+ []
+
+) [61] [62
+
+]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -2313,9 +2344,7 @@ Overfull \hbox (42.19447pt too wide) in paragraph at lines 265--265
 rem / 122247000000001721 .
  []
 
-[59
-
-] (./Main.aux)
+[63] (./Main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
@@ -2332,10 +2361,10 @@ Package logreq Info: Writing requests to 'Main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58500 strings out of 474267
- 1353531 string characters out of 5751465
- 2303765 words of memory out of 5000000
- 79225 multiletter control sequences out of 15000+600000
+ 58526 strings out of 474267
+ 1353922 string characters out of 5751465
+ 2304023 words of memory out of 5000000
+ 79232 multiletter control sequences out of 15000+600000
  587896 words of font info for 246 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,107p,1576b,1982s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2365,10 +2394,10 @@ x-type1/mathx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msbm7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
 >
-Output written on Main.pdf (59 pages, 529017 bytes).
+Output written on Main.pdf (63 pages, 538651 bytes).
 PDF statistics:
- 1046 PDF objects out of 1200 (max. 8388607)
- 917 compressed objects within 10 object streams
- 378 named destinations out of 1000 (max. 500000)
+ 1086 PDF objects out of 1200 (max. 8388607)
+ 953 compressed objects within 10 object streams
+ 397 named destinations out of 1000 (max. 500000)
  45794 words of extra memory for PDF output out of 51595 (max. 10000000)
 

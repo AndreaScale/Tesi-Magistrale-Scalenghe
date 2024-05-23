@@ -65,7 +65,7 @@ Analogously, if $p<0$:
 
 We now solve:
 
-\[\inf_{p\in\R} \int_t^{\tau}1+p^2\,ds=\begin{cases}
+\[\inf_{p\in\R} \int_t^{\tau}1+p^2\,ds=\inf_{p\in\R}(1+p^2)(\tau-t)=\begin{cases}
     (1+p^2)(1-t), & p=0\text{ or }p>0\land p\geq \frac{1-x}{2(1-t)}\text{ or }p<0\land p\leq\frac{-1-x}{2(1-t)}\\
     (1+p^2)\frac{1-x}{2p}, & p>0\land p\geq \frac{1-x}{2(1-t)} \\
     -(1+p^2)\frac{1+x}{2p}, & p\leq\frac{-1-x}{2(1-t)},
@@ -1038,4 +1038,158 @@ This theorem allows us to conclude the following result.
 % \end{theorem}
 
 
-\subsection{Pontryagin's Principle}
+\subsection{Pontryagin's Principle for Viscosity Solutions}
+
+In section \ref{Section: Pontryagin Principle} we stated the Pontryagin's principle for continuously differentiable value functions. 
+As we come to understand in this chapter, value functions may easily fail to be $C^1$ which requires a weaker notion of solution. We have introduced 
+the concept of viscosity solution, which turns out to be also a handy notion to extend Pontryagin's principle in non-differentiable settings. 
+Recall that it states the relation between a so-called adjoint variable $P$ and the state variable via a system of differential equations. Since may fail 
+to be differentiable somewhere we need to carefully extend the possible values of the adjoint variable for those instances. Let us 
+define two new key concepts that incorporate the possible value that the incremental limit may have in non-smooth points. 
+
+\begin{definition}
+    Let $W\in C(\overline{Q})$ and $(t,x)\in Q$. We define:
+
+    \begin{enumerate}
+        \item The set of \textit{superdifferentials} of $W$ at $(t,x)$ as the collection of all $(q,p)\in\R\times\R^n$ such that 
+        there exists some $w\in C^1(Q)$ for which:
+        
+        \begin{equation}
+            (q,p) = \left(\frac{\partial}{\partial t}w(t,x),D_x w(t,x)\right),
+        \end{equation}
+
+        and
+
+        \begin{equation}
+            (t,x) \in \arg \max \left\{(W-w)(s,y)\,|\,(s,y)\in\overline{Q}\right\}.
+        \end{equation}
+
+        We denote it with $D^+W(t,x)$.
+
+        \item The set of \textit{subdifferentials} of $W$ at $(t,x)$ as the collection of all $(q,p)\in\R\times\R^n$ such that 
+        there exists some $w\in C^1(Q)$ for which:
+        
+        \begin{equation}
+            (q,p) = \left(\frac{\partial}{\partial t}w(t,x),D_x w(t,x)\right),
+        \end{equation}
+
+        and
+
+        \begin{equation}
+            (t,x) \in \arg \min \left\{(W-w)(s,y)\,|\,(s,y)\in\overline{Q}\right\}.
+        \end{equation}
+
+        We denote it with $D^-W(t,x)$.
+    \end{enumerate}
+\end{definition}
+
+Note that this definition is consistent with the notion of viscosity solution since if $W$ is a viscosity subsolution in $Q$ 
+if and only if 
+
+\[-q+H(t,x,p)\leq 0,\,\forall (q,p)\in D^+W(t,x),\,\forall(t,x)\in Q,\]
+
+and similarly for a supersolution.
+
+The notion of superdifferential will take the place of the derivative in Pontryagin's result. We recall the definition of the adjoint variable for a state variable $x$ defined by the flow $f$, a control $u$, 
+a terminal condition $\psi$, a Lagrangian $L$ and a Hamiltonian $H$:
+
+\begin{equation}\label{4-3-pontrydotp}
+    \dot{p}_j^{\ast}(s) =  - \sum_{i=1}^n \frac{\partial}{\partial x_{j}}f_i(s,x^{\ast}(s),u^{\ast}(s))p_i(s) - \frac{\partial}{\partial x_{j}} L(s,x^{\ast},u^{\ast})  ,
+\end{equation}
+
+And also:
+
+\begin{equation}\label{4-3-pontry-maxH}
+    p(s)\cdot f(s,x^{\ast}(s),u^{\ast}(s)) + L(s,x^{\ast}(s),u^{\ast}(s)) = -H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s)),
+\end{equation}
+
+With:
+
+\begin{equation}\label{4-3-pontryp}
+    p^{\ast}(t_1) = D \psi(x^{\ast}(t_1)).
+\end{equation}
+
+We can now state Pontryagin's maximum principle in this broader context.
+
+\begin{theorem}
+    Let $u^{\ast}(\cdot)$ be an optimal control at $(t,x)$ which is right continuous at each $[t,t_1)$, and $p^{\ast}(s)$ defined by \label{4-3-pontrydotp}, \ref{4-3-pontry-maxH} and \ref{4-3-pontry-tras}. 
+    Then for each $s\in[t,t_1)$ 
+    
+    \begin{equation}
+        \bigg(H(s,x^{\ast}(s),p^{\ast}(s)),p^{\ast}(s)\bigg) \in D^+V(s,x^{\ast}(s)).
+    \end{equation}
+
+    \begin{proof}
+        By definition of value function we have
+
+        \[V(r,y) \leq J(r,y;u^{\ast}),\,\forall (r,y)\in Q,\]
+
+        and equality for $(r,y)=(s,x^{\ast}(s))$ for each $s\in[t,t_1]$. Hence, if we show that $J$ is continuously differentiable and
+
+        \begin{equation}\label{4-3-InProof:Pontryagin-der_t}
+            \frac{\partial}{\partial r}J(s,x^{\ast}(s);u^{\ast}) = p^{\ast}(s),
+        \end{equation}
+
+        and 
+
+        \begin{equation}\label{4-3-InProof:Pontryagin-der_x}
+            D_yJ(s,x^{\ast}(s);u^{\ast}) = H(s,x^{\ast}(s),p^{\ast}(s))
+        \end{equation}
+
+        for $s\in[t,t_1)$, then the thesis holds by definition. We prove \ref{4-3-InProof:Pontryagin-der_t} by direct computation 
+
+        \begin{align*}
+            \frac{\partial}{\partial x_i}J(s,x^{\ast}(s);u^{\ast}) & = \sum_{j=1}^n\left\{\int_s^{t_1} L_{x_j}(r,x^{\ast}(r),u^{\ast}(r))\,dr + \psi_{x_j}(x^{\ast}(t_1))\frac{\partial}{\partial x_j}x_i(t_1,x^{\ast}(t_1))\right\},
+        \end{align*}
+
+        but we have
+        
+        \begin{equation}
+            \frac{d}{dr}\left\{\sum_{j=1}^n \frac{\partial}{\partial x_j}x_i(r,x^{\ast}(r))p_i(r) \right\} = - \sum_{i=1}^n \frac{\partial}{\partial x_{j}}f_i(s,x^{\ast}(r),u^{\ast}(r))\frac{\partial}{\partial x_j}x_i(r,x^{\ast}(r)),
+        \end{equation}
+
+        then by integrating and recalling that 
+        
+        \[\frac{\partial}{\partial x_j}x_i(s,x^{\ast}(s))=\delta_{ij}\]
+        
+        we get 
+
+        \begin{align*}
+            p_i(s) &= \sum_{j=1}^n \frac{\partial}{\partial x_j}x_i(s,x^{\ast}(s))p_j(s) \\
+            & = \sum_{j=1}^n \frac{\partial}{\partial x_j}x_i(t_1,x^{\ast}(t_1))p_j(t_1) - \int_s^{t_1} \frac{d}{dr}\left\{\sum_{j=1}^n \frac{\partial}{\partial x_j}x_i(r,x^{\ast}(r))p_i(r) \right\}\,dr \\
+            &= \frac{\partial}{\partial x_i}J(s,x^{\ast}(s);u^{\ast}) \\
+            & = \frac{\partial}{\partial x_i}V(s,x^{\ast}(s)).
+        \end{align*}
+
+        To prove \ref{4-3-InProof:Pontryagin-der_t} we define
+
+        \[z(s;r,y) = \frac{\partial}{\partial r}x(s;r,y),\]
+
+        which allows us to compute 
+
+        \begin{align*}
+            \frac{\partial}{\partial r}J(r,x^{\ast}(r);u^{\ast}) & = -L(r,x^{\ast}(r), u^{\ast}(r)) \\
+            & + \sum_{j=1}^n\left\{\int_r^{t_1}\frac{\partial}{\partial x_j}L(s,x^{\ast}(s),u^{\ast}(s))z_j(s;r,x^{\ast}(r))\,ds + \frac{\partial}{\partial x_j}\psi(t_1,x^{\ast}(t_1))z_j(t_1;r,x^{\ast}(r))\right\},
+        \end{align*}
+
+        but 
+        
+        \begin{align*}
+            \frac{d}{ds}\left[z(s)\cdot p(s)\right] = - \sum_{j=1}^n \frac{\partial}{\partial x_j} L(s,x^{\ast}(s),u^{\ast}(s))z_j(s),
+        \end{align*}
+
+        then
+
+        \begin{align*}
+            -f(r,x^{\ast}(r),u^{\ast}(r))\cdot p(r) & = z(r)\cdot p(r) = z(t_1)\cdot p(t_1) - \int_r^{t_1} \frac{d}{ds}[z(s)\cdot p(s)]\,ds \\
+            & = \sum_{j=1}^n\left\{\frac{\partial}{\partial x_j}\psi(t_1,x^{\ast}(t_1))z_j(t_1) + \int_r^{t_1} \frac{\partial}{\partial x_j}L(s,x^{\ast}(s),u^{\ast}(s))z_j(s)\,ds\right\},
+        \end{align*}
+
+        which implies that
+
+        \[\frac{\partial}{\partial r}J(r,x^{\ast}(r);u^{\ast}) = - L(r,x^{\ast}(r),u^{\ast}(r)) - f(r,x^{\ast}(r),u^{\ast}(r))\cdot p(r).\]
+
+
+
+    \end{proof}
+\end{theorem}
