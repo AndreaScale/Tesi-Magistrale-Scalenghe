@@ -1,0 +1,377 @@
+%!TEX program = xelatex
+\documentclass[10pt, compress]{beamer}
+\usetheme[titleprogressbar]{m}
+\usepackage{booktabs}
+\usepackage[italian]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[scale=2]{ccicons}
+\usepackage[utf8]{inputenc}
+% \usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{pst-node}
+\usepackage[inline]{enumitem}
+% \usepackage{tikz}
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{sample.bib} %Import the bibliography file
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\usepackage{pst-node}
+%\uspackage{auto-pst-pdf}
+\usepackage{tikz-cd} 
+\usepackage{graphicx, animate}
+\usepackage{graphicx}
+\pgfplotsset{%
+    ,compat=1.12
+    ,every axis x label/.style={at={(current axis.right of origin)},anchor=north west}
+    ,every axis y label/.style={at={(current axis.above origin)},anchor=north east}
+    }
+\newlist{inlineroman}{enumerate*}{1}
+\setlist[inlineroman]{itemjoin*={{, and }},afterlabel=~,label=\Roman*.}
+
+\newcommand{\inlinerom}[1]{
+\begin{inlineroman}
+#1
+\end{inlineroman}
+}
+
+\renewcommand{\thefootnote}{[\arabic{footnote}]}% Modify footnote globally
+
+%%%simboli speciali
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\CO}{\mathcal{C}}
+
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\Ima}{Im}
+
+\DeclareMathOperator{\mcd}{MCD}
+\DeclareMathOperator{\mcm}{mcm}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\spanlin}{span}
+
+%\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+%\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+%Necessario per far si che la dimensione del valore assoluto e della norma si adatti all'aromento passato
+%\makeatletter
+%\let\oldabs\abs
+%\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+%\let\oldnorm\norm
+%\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+%\makeatother
+
+%rinomino il comando per il prodotto interno
+\let\pint\braket
+%comando per il prodotto scalare
+\newcommand{\pscal}[2]{\left\langle #1, #2 \right\rangle}
+
+%Spaziatura per i quantificatori
+\let\oldforall\forall
+\renewcommand{\forall}{\; \oldforall \;}
+\let\oldexists\exists
+\renewcommand{\exists}{\; \oldexists \;}
+
+%freccia per la convergenza debole
+\newcommand{\longrightharpoonup}{\xrightharpoonup{\phantom{AB}}}
+
+\newcommand{\warrow}{\xrightharpoonup{\:\, w \:\, }}
+\newcommand{\sarrow}{\overset{s}{\longrightarrow}}
+\newcommand{\wastarrow}{\xrightharpoonup{ w^* }}
+
+\newcommand{\ctikz}[1]{
+\begin{center}
+\begin{tikzpicture}
+\node{#1}
+\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\ctikzo}[1]{
+\begin{center}
+\begin{tikzpicture}
+\node[opacity=0]{#1}
+\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\tikzz}[1]{
+\begin{tikzpicture}
+\node{#1}
+\end{tikzpicture}
+}
+
+\newcommand{\tikzo}[1]{
+\begin{tikzpicture}
+\node[opacity=0]{#1}
+\end{tikzpicture}
+}
+
+\newcommand{\ctikzi}[1]{
+\begin{center}
+\begin{tikzpicture}
+\node[opacity=0.2]{#1}
+\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\tikzi}[1]{
+\begin{tikzpicture}
+\node[opacity=0.2]{#1}
+\end{tikzpicture}
+}
+
+\newcommand{\semitransp}[2][1]{\textcolor{#1}{#2}}
+
+\newcommand{\comment}[1]{}
+\usepgfplotslibrary{dateplot}
+
+\title{Optimal control via dynamic programming}
+\subtitle{Viscosity Solutions}
+\author{Andrea Scalenghe}
+\institute{Tesi magistrale}
+%\date{22 Luglio 2022}
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Non differentiability}
+add plot
+   Let us consider the calculus of variation problem:
+\begin{equation*}
+    \inf_{x\in Lip([0,1];[-1,1])} \int_t^{t_1} 1 + \frac{1}{4}(\dot{x}(s))^2 \,ds,
+\end{equation*}
+then the H-J equations are
+\[\dot{x}^{\ast}(s) = 2p^{\ast}(s),\,
+    \dot{p}^{\ast}(s) = 0,\]
+    which define the value function
+    \[V(t,x)=\begin{cases}
+    1-t & \abs{x}\leq t \\
+    1-t& \abs{x}\geq t,
+\end{cases}\]
+\end{frame}
+
+\begin{frame}{Vanishing Viscosity}
+    Let
+    \begin{equation}\label{4-1-fullynonlinear}
+    \begin{cases}
+        u_t + H(u,Du) = 0,& \R^n\times(0,+\infty) \\
+        u = g,& \R^n\times\{t=0\}.
+    \end{cases}
+\end{equation}
+We perturbate by second order derivative the equation
+\[u^{\epsilon}_t + H(u^{\epsilon},Du^{\epsilon}) -\epsilon\Delta u^{\epsilon}= 0,\]
+which happens to have a solution\footnote{Galerkin's Method, Evans section 7.1.2}. If Ascoli-Arzelà's hypotheses are satisfied\footnote{Easiest applications have a uniform Lipschitz bound. Barles-Perthame procedure has a wide range of applications.} we take the limit $u\xleftarrow{j\to+\infty}u^{\epsilon_j}$ as a candidate solution. 
+
+We lack information about its derivatives.
+\end{frame}
+
+\begin{frame}{Vanishing Viscosity}
+    Then we take $v$ smooth and $(t_0,x_0)$ s.t. $u-v$ has a local maximum and there it nullifies. It implies
+    \[(u^{\epsilon}-v)(x_{\epsilon_j},t_{\epsilon_j}) \geq (u^{\epsilon}-v)(x,t),\]
+    for $(x,t)$ close to $(x_0,t_0)$ and $(x_{\epsilon_j},t_{\epsilon_j})\xrightarrow{j\to+\infty}(x_0,t_0)$\footnote{Because of local uniform convergence.}. Since $u_{\epsilon_j}-v$ is maximized at $(x_{\epsilon_j},t_{\epsilon_j})$
+    \[u^{\epsilon_j}_t(x_{\epsilon_j},t_{\epsilon_j}) =v(x_{\epsilon_j},t_{\epsilon_j}),Du^{\epsilon_j}(x_{\epsilon_j},t_{\epsilon_j})=Dv(x_{\epsilon_j},t_{\epsilon_j}),-\Delta u^{\epsilon_j}(x_{\epsilon_j},t_{\epsilon_j}) \geq -\Delta v(x_{\epsilon_j},t_{\epsilon_j}).\]
+    Letting $j\to+\infty$ we get
+
+    \begin{equation}
+        v_t(x_0,t_0)+H(Dv(x_0,t_0),x_0)\leq0
+    \end{equation}
+    
+\end{frame}
+
+\begin{frame}{Viscosity Solution}
+    \begin{definition}
+    A viscosity solution of \ref{4-1-fullynonlinear} is a function $u$ bounded and uniformly continuous on $\R^n\times[0,T]$ for all $T>0$ such that 
+    for all $v\in C^{+\infty}(\R^n\times(0,+\infty))$:
+
+    \[v_t(x,t)+H(Dv(x,t),x)\leq0\]
+
+    for all $(x,t)\in\arg \max\{u-v\}$ and:
+
+    \[v_t(x,t)+H(Dv(x,t),x)\geq0\]
+
+    for all $(x,t)\in\arg \min\{u-v\}$. Furthermore, $u\equiv g$ for $t=0$. 
+\end{definition}
+\end{frame}
+
+\begin{frame}{Abstract Dynamic Programming}
+    Let $\Sigma$ be a closed subset of a Banach space and $\mathcal{C}$ a collection of functions on $\Sigma$, closed under addition, $\mathcal{T}_{tt}\phi = \phi$ and 
+    \begin{equation}\label{4-1-T}
+        \begin{aligned}
+            \mathcal{T}_{tr}\phi\leq\mathcal{T}_{ts}\psi & \text{ if } \phi\leq \mathcal{T}_{rs}\psi\\
+            \mathcal{T}_{tr}\phi\geq\mathcal{T}_{ts}\psi & \text{ if } \phi\geq \mathcal{T}_{rs}\psi.
+        \end{aligned}
+    \end{equation}
+    Provided that $\mathcal{T}_{rt}:\mathcal{C}\rightarrow\mathcal{C}$ implies the semigroup property and \ref{4-1-T} is equivalent to monotonicity.
+
+    The semigroup property will mimic the dynamic programming principle.
+\end{frame}
+
+\begin{frame}{Abstract Dynamic Programming}
+    Let $\Sigma=\overline{O}\subset\mathbb{R}^n$, $\mathcal{C}=\mathcal{M}(\Sigma)$, and
+    \begin{equation*}\label{4-1-valuefunctreform}
+    \mathcal{T}_{t,r;u}\psi(x) = \int_t^{\tau\wedge r}L(s,x(s),u(s)),\,ds + g(\tau,x(\tau))\chi_{\tau<r} + \psi(x(r))\chi_{\tau\geq r}, 
+    \end{equation*}
+    and $\mathcal{T}_{tr}\psi = \inf_{u\in\mathcal{U}(t,x)} \mathcal{T}_{t,r;u}\psi.$ Under the usual assumption on the running and terminal costs $\mathcal{T}_{tr}\psi\in\mathcal{C}$, then the programming principle reads
+    \[\mathcal{T}_{tt_1}\psi(x)=\mathcal{T}_{tr}\left(\mathcal{T}_{rt_1}\psi\right)(x).\]
+\end{frame}
+
+\begin{frame}{Abstract Dynamic Programming}
+    Let us define $V(t,x) = (\mathcal{T}_{tt_1}\psi)(x)$. Then
+    \[-\frac{1}{h}\left[\mathcal{T}_{tt+h}V(t+h,\cdot)(x)-V(t,x)\right]=0.\]
+    We ask for $\{\mathcal{G}_t\}_{t\in[t_0,t_1]}$ functions on $\Sigma$ such that:
+\begin{equation}\label{4-1-conditiononG_t}
+    \lim_{h\to 0}\frac{1}{h}\left[\mathcal{T}_{tt+h}V(t+h,\cdot)(x)-V(t,x)\right] = \frac{\partial}{\partial t}w(t,x) - (\mathcal{G}_tw(t,\cdot))(x),
+\end{equation}
+for all $w\in\mathcal{D}$\footnote{Continuity assumptions are made on $\mathcal{D}$.}. Then the dynamic programming equation reads
+\begin{equation}\label{4-1-newprogreq}
+    -\frac{\partial }{\partial t}V(t,x) + (\mathcal{G}_tV(t,\cdot))(x) = 0,\,(t,x)\in Q.
+\end{equation}
+\end{frame}
+
+\begin{frame}{Viscosity Solutions}
+\vspace{-5mm}
+    \begin{definition}\label{4-1-defviscsol}
+    Let $W\in C([t_0,t_1]\times\Sigma)$. $W$ is a \textit{viscosity subsolution} of \ref{4-1-newprogreq} in $Q$ if for every $w\in\mathcal{D}$:
+    \begin{equation}\label{4-1-defsubsolution}
+         -\frac{\partial}{\partial t}w\left(\overline{t},\overline{x}\right) + \left(\mathcal{G}_{\overline{t}}w\left(\overline{t},\cdot\right)\right)\left(\overline{x}\right) \leq 0,
+    \end{equation} 
+    at every $\left(\overline{t},\overline{x}\right)\in \arg \max_{(t,x)\in Q}\left\{(W-w)(t,x)\right\}$, and $W\left(\overline{t},\overline{x}\right)=w\left(\overline{t},\overline{x}\right)$.
+        
+    $W$ is a \textit{viscosity supersolution} of \ref{4-1-newprogreq} in $Q$ if for every $w\in\mathcal{D}$:
+    \begin{equation}\label{4-1-defsupersolution}
+        -\frac{\partial}{\partial t}w\left(\overline{t},\overline{x}\right) + \left(\mathcal{G}_{\overline{t}}w\left(\overline{t},\cdot\right)\right)\left(\overline{x}\right) \geq 0,
+    \end{equation} 
+    at every $\left(\overline{t},\overline{x}\right)\in \arg \min_{(t,x)\in Q}\left\{(W-w)(t,x)\right\}$, and $W\left(\overline{t},\overline{x}\right)=w\left(\overline{t},\overline{x}\right)$.
+    \vspace{5mm}  
+    
+    $W$ is a \textit{viscosity solution} if it is a subsolution and a supersolution.
+\end{definition}
+\end{frame}
+
+\begin{frame}{Strandard Approach}
+    Historically the notion of viscosity solution was introduced for partial differential equations, that is when $\mathcal{G}_t$ is a partial differential operator.
+
+    \vspace{5mm}
+
+    The definition of viscosity solution for
+    \begin{equation}\label{4-1-PDEwithW}
+        -\frac{\partial}{\partial t}W(t,x) + F(t,x,D_xW(t,x),D_x^2W(t,x),W(t,x))=0,
+    \end{equation}
+    is the same we gave with $\mathcal{G}_t$, a part from the space of test functions:
+    \[w \in C^{\infty}(Q).\]
+
+    \begin{theorem}
+        Let all the previous assumptions and $W\in C_p(\overline{Q})\cap\mathcal{M}(\overline{Q})$ and $\mathcal{D}\subset C^{1,2}(Q)$. Then the solution concepts coincide.
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{Value Function as Viscosity Solution}
+    We now prove that it is a viscosity solution of the dynamic programming equation under two sets of assumptions.
+    \begin{theorem}\label{4-1-viscodynamiceq}
+    Let $U$ be a bounded space of control and $f\in C(\overline{Q}\times U)$ such that $\abs{f(t,x,v)}\leq K(1+\abs{|x|})$. The for every $w\in C^1(Q)\cap \mathcal{M}(\overline{Q})$ 
+
+    \begin{equation}\label{4-1-viscodynamiceq-lim}
+        \lim_{h\to 0} \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right] = \frac{\partial}{\partial t}w(t,x) - H(t,x,D_xw(t,x)),
+    \end{equation}
+    for all $(t,x)\in\overline{Q}$.
+\end{theorem}
+\end{frame}
+
+\begin{frame}{Proof Idea}
+    
+\end{frame}
+
+\begin{frame}{Value Function as Viscosity Solution}
+    The previous result holds under quite stringent hypotheses. We can relax those assumptions by asking for the existence of an optimal control.
+
+    \begin{theorem}
+    If for each $(t,x)\in Q$ there exists a $u^{\ast}\in\mathcal{U}(t,x)$ be an optimal control, then a continuous value function is a viscosity solution of its dynamic programming equation.
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{Uniqueness of Solution}
+Let us consider 
+\begin{equation}\label{4-2-firstordereq}
+    -\frac{\partial}{\partial t}V(t,x) + H(t,x,D_xV(t,x)) = 0,\,(t,x)\in Q.\footnote{H(t,x,p)-H(s,y,p')\leq h(\abs{t-s}+\abs{x-y})+h(\abs{t-s})\abs{p}+K\abs{x-y}\abs{p} + K\abs{p-p'},\,|H_p|\leq K,\,|H_t|+|H_x|\leq K'(1+|p|).}
+\end{equation}
+    \begin{theorem}\label{4-2-Theo:Suponbound}
+    Let $W$ and $V$ viscosity subsolution and supersolution of \ref{4-2-firstordereq} in $Q$, respectively. If $Q$ is unbounded we assume $W$, $V$ to be bounded and 
+    uniformly continuous on its closure. Then
+    
+    \[\sup_{\overline{Q}}[W-V] = \sup_{\partial^{\ast}Q}[W-V].\]
+\end{theorem}
+\end{frame}
+
+\begin{frame}{Proof Idea}
+    
+\end{frame}
+
+\begin{frame}{Continuity of Solution}
+    We recall that
+    \begin{equation}\label{4-3-boundonf}
+    \abs{|f(t,x,v) - f(t,y,v)|} \leq K_{\rho}\abs{|x-y|},\,\forall\abs{|v|}\leq\rho. 
+\end{equation}
+\begin{theorem}\label{4-3-Theorem:1cont}
+    Let a bounded control space $U$, $Q=[t_0,t_1)\times\R^n$. Assume that $f,L,\psi$ are bounded, $f$ satisfies \ref{4-3-boundonf} and $L,\psi$ uniformly continuous. 
+    Then the value function $V$ is bounded and uniformly continuous.
+\end{theorem}
+
+\begin{corollary} 
+    Under the previous assumptions, the value function is the unique viscosity solution of the dynamic programming equation with fixed terminal conditions
+\end{corollary}
+\end{frame}
+
+\begin{frame}{Pontryagin's Principle}
+\begin{definition}
+    Let $W\in C(\overline{Q})$ and $(t,x)\in Q$. The set of \textit{superdifferentials} $D^+W(t,x)$ of $W$ at $(t,x)$ is the collection of all $(q,p)\in\R\times\R^n$ such that there exists some $w\in C^1(Q)$ for which:
+    \begin{equation}
+        (q,p) = \left(\frac{\partial}{\partial t}w(t,x),D_x w(t,x)\right),
+    \end{equation}
+    and $(t,x) \in \arg \max \left\{(W-w)(s,y)\,|\,(s,y)\in\overline{Q}\right\}.$
+        
+    The set of \textit{subdifferentials} $D^-W(t,x)$ of $W$ at $(t,x)$ as the collection of all $(q,p)\in\R\times\R^n$ such that there exists some $w\in C^1(Q)$ for which:
+    \begin{equation}
+        (q,p) = \left(\frac{\partial}{\partial t}w(t,x),D_x w(t,x)\right),
+    \end{equation}
+    and $(t,x) \in \arg \min \left\{(W-w)(s,y)\,|\,(s,y)\in\overline{Q}\right\}.$
+\end{definition}
+\end{frame}
+
+
+\begin{frame}{Pontryagin's Principle}
+    We recall the definition of the adjoint variable for a state variable $x$ defined by the flow $f$, a control $u$, a terminal condition $\psi$, a Lagrangian $L$ and a Hamiltonian $H$:
+\begin{equation}\label{4-3-pontrydotp}
+    \dot{p}_j^{\ast}(s) =  - \sum_{i=1}^n \frac{\partial}{\partial x_{j}}f_i(s,x^{\ast}(s),u^{\ast}(s))p_i(s) - \frac{\partial}{\partial x_{j}} L(s,x^{\ast},u^{\ast})  ,
+\end{equation}
+And also:
+\begin{equation}\label{4-3-pontry-maxH}
+    p(s)\cdot f(s,x^{\ast}(s),u^{\ast}(s)) + L(s,x^{\ast}(s),u^{\ast}(s)) = -H(s,x^{\ast}(s),u^{\ast}(s),p^{\ast}(s)),
+\end{equation}
+With:
+\begin{equation}\label{4-3-pontry-trans}
+    p^{\ast}(t_1) = D \psi(x^{\ast}(t_1)).
+\end{equation}
+\end{frame}
+
+\begin{frame}{Pontryagin's Principle}
+    \begin{theorem}
+    Let $u^{\ast}(\cdot)$ be an optimal control at $(t,x)$ which is right continuous at each $[t,t_1)$, and $p^{\ast}(s)$ defined by \ref{4-3-pontrydotp}, \ref{4-3-pontry-maxH} and \ref{4-3-pontry-tras}. 
+    Then for each $s\in[t,t_1)$ 
+    
+    \begin{equation}
+        \bigg(H(s,x^{\ast}(s),p^{\ast}(s)),p^{\ast}(s)\bigg) \in D^+V(s,x^{\ast}(s)).
+    \end{equation}
+\end{theorem}
+\end{frame}
+
+\begin{frame}{Proof Idea}
+    
+\end{frame}
+\end{document}

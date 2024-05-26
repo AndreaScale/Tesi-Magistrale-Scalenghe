@@ -104,16 +104,20 @@ interested in it, instead we start by perturbing the system as:
     \end{cases}
 \end{equation}
 
-so that the fully non-linear system in \ref{4-1-fullynonlinear} becomes a semilinear one, which turn out to have a smooth solution. 
+so that the fully non-linear system in \ref{4-1-fullynonlinear} becomes a semilinear one, which turn out to have a smooth solution {\color{red}{}READ EVANS}. 
 Then, we take $\epsilon\to0$. We expect the solution $u^{\epsilon}$ to lose the bounds on the derivatives, as they strongly depend on the 
-regularization effect of $\epsilon\Lambda$. Turns out that many times Ascoli-Arzela theorem's hypotheses are satisfied, that is $(u^{\epsilon})_{\epsilon}$ 
+regularization effect of $\epsilon\Delta$. Turns out that many times Ascoli-Arzelà theorem's hypotheses are satisfied, that is $(u^{\epsilon})_{\epsilon}$ 
 is uniformly bounded and equicontinuous, then we have local uniform convergence along a subsequence $u^{\epsilon_j}$. We now use the limit
 $u\xleftarrow{j\to+\infty}u^{\epsilon_j}$ as a solution. 
-We now it to be continuous but we lack information about its derivatives. We will then verify these information using test functions. 
-Unlike the classical variational weak solution concept, where integration by part play the central role, we will use the maximum principle 
+We know the limit to be continuous but we lack information about its derivatives. We will then verify these information using test functions. 
+Unlike the classical variational weak solution concept, where integration by part plays the central role, we will use the maximum principle 
 to translate the derivates of $u$ onto the test functions. 
 
-Let us take $v\in C^{\infty}(\R^n\times(0,+\infty))$ and suppose that $u-v$ has a strict local maximum at $(x_0,t_0)$, then:
+Let us take $v\in C^{\infty}(\R^n\times(0,+\infty))$ and suppose that $u-v$ has a strict local maximum at $(x_0,t_0)$ and 
+
+\[u(x_0,t_0) = v(x_0,t_0),\]
+
+then:
 
 \[(u-v)(x_0,t_0) > (u-v)(x,t),\]
 
@@ -132,11 +136,11 @@ Because $(u^{\epsilon}-v)$ has a local maximum at $(x_{\epsilon_j},t_{\epsilon_j
 
 and:
 
-\[-\Lambda u^{\epsilon_j}(x_{\epsilon_j},t_{\epsilon_j}) \geq -\Lambda v(x_{\epsilon_j},t_{\epsilon_j}).\]
+\[-\Delta u^{\epsilon_j}(x_{\epsilon_j},t_{\epsilon_j}) \geq -\Delta v(x_{\epsilon_j},t_{\epsilon_j}).\]
 
 Therefore, we get:
 
-\[v_t(x_{\epsilon_j},t_{\epsilon_j}) +H(Dv(x_{\epsilon_j},t_{\epsilon_j}) ,x_{\epsilon_j})\leq \Lambda v(x_{\epsilon_j},t_{\epsilon_j}) \xrightarrow{j\to+\infty}0\]
+\[v_t(x_0,t_0)+H(Dv(x_0,t_0),x_0)\xleftarrow{j\to+\infty}v_t(x_{\epsilon_j},t_{\epsilon_j}) +H(Dv(x_{\epsilon_j},t_{\epsilon_j}) ,x_{\epsilon_j})\leq \Delta \epsilon_jv(x_{\epsilon_j},t_{\epsilon_j}) \xrightarrow{j\to+\infty}0\]
 
 Analogous computations can be done for local minimum of $u-v$, obtaining the opposite inequality above.
 
@@ -144,7 +148,7 @@ We can now grasp the intuition behind the following definition.
 
 \begin{definition}
     A viscosity solution of \ref{4-1-fullynonlinear} is a function $u$ bounded and uniformly continuous on $\R^n\times[0,T]$ for all $T>0$ such that 
-    for all $v\in C^{+\infty}(\R^n\times(0,+\infty))$:
+    for all $v\in C^{\infty}(\R^n\times(0,+\infty))$:
 
     \[v_t(x,t)+H(Dv(x,t),x)\leq0\]
 
@@ -155,7 +159,7 @@ We can now grasp the intuition behind the following definition.
     for all $(x,t)\in\arg \min\{u-v\}$. Furthermore, $u\equiv g$ for $t=0$. 
 \end{definition}
 
-\subsection{Abstract dynamic programming and viscosity solutions}
+\section{Abstract dynamic programming and viscosity solutions}
 
 We now present an abstraction of the dynamic programming principle, which will allow us to define the viscosity solutions of the dynamic programming 
 equation. Let $\Sigma$ be a closed subset of a Banach space and $\mathcal{C}$ a collection of functions on $\Sigma$, closed under addition:
@@ -200,13 +204,19 @@ which gives:
     \mathcal{T}_{tr}\psi = \inf_{u\in\mathcal{U}(t,x)} \mathcal{T}_{t,r;u}\psi.
 \end{equation}
 
-Under the usual assumption on the running and terminal costs, as well as on the control space $U$ we now that the value function defined in ref{4-1-valuefunctreform} 
+Under the usual assumption on the running and terminal costs, as well as on the control space $U$ we now that the value function defined in \ref{4-1-valuefunctreform} 
 is measurable and bounded by below. Therefore, $\mathcal{T}_{rt}:\mathcal{C}\rightarrow\mathcal{C}$ and we can formulate the semigroup property just by asking $\psi\in\mathcal{C}$. 
 It is clear by its definition that the dynamic programming principle is translated as:
 
 \[\mathcal{T}_{tt_1}\psi(x)=\mathcal{T}_{tr}\left(\mathcal{T}_{rt_1}\psi\right)(x),\]
 
-for $(t,x)\in\overline{Q}$ and $\psi\in\mathcal{C}$. We now derive the abstract dynamic programming equation. The same procedure as in chapter 1 gives:
+for $(t,x)\in\overline{Q}$ and $\psi\in\mathcal{C}$. Let us define the value function As
+
+\begin{equation}
+    V(t,x) = (\mathcal{T}_{tt_1}\psi)(x).
+\end{equation}
+
+We now derive the abstract dynamic programming equation. The same procedure as in chapter 1 gives:
 
 \[-\frac{1}{h}\left[\mathcal{T}_{tt+h}V(t+h,\cdot)(x)-V(t,x)\right]=0.\]
 
@@ -342,13 +352,13 @@ equation \ref{4-1-newprogreq}.
     \end{proof}
 \end{theorem}
 
-\subsection{The Standard Approach}
+\section{The Standard Approach}
 
 We have talked about \textit{viscosity solutions} for $\mathcal{G}_t$ that are infinitesimal generators of semigroups. Historically the notion of viscosity solution was introduced 
 for partial differential equations, that is when $\mathcal{G}_t$ is a partial differential operator. In this section we will introduce this classical notion and provide some properties, 
 establishing as well the relevant links to the already proven theory. 
 
-Let $\mathcal{G}_t$ be a partial differential operator defined As
+Let $\mathcal{G}_t$ be a partial differential operator defined as
 
 \begin{equation}\label{4-1-GPDEop}
     (\mathcal{G}_t\phi)(x) = F(t,x,D\phi(x), D^2\phi(x), \phi(x)),
@@ -503,23 +513,22 @@ Finally, we prove the equivalence of these definitions.
     \end{proof}
 \end{theorem}
 
-\subsection{Value Function as Viscosity Solution}
+\section{Value Function as Viscosity Solution}
 
 In the first section we proved that the value function of a dynamic programming problem is the classical solution of the dynamic programming equation, under differentiability 
 assumptions. We now prove that it is a viscosity solution of the dynamic programming equation given two sets of assumptions.
 
 \begin{theorem}\label{4-1-viscodynamiceq}
-    Let $U$ be a bounded space of control and $f\in C(\overline{Q}\times U)$ such that $\abs{f(t,x,v)}\leq K(1+\abs{x})$. The for every $w\in C^1(Q)\cap \mathcal{M}(\overline{Q})$ 
+    Let $U$ be a bounded space of control and $f\in C(\overline{Q}\times U)$ such that $\abs{f(t,x,v)}\leq K(1+\abs{x})$. Then for every $w\in C^1(Q)\cap \mathcal{M}(\overline{Q})$ 
 
-    \begin{equation}
+    \begin{equation}\label{4-1-viscodynamiceq-lim}
         \lim_{h\to 0} \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right] = \frac{\partial}{\partial t}w(t,x) - H(t,x,D_xw(t,x)), \,\forall(t,x)\in\overline{Q}.
     \end{equation}
 \end{theorem}
 
 \vspace{5mm}
 
-
-Note that equation \ref{4-1-viscodynamiceq} implies that $V$ is a viscosity solution of \ref{1-2-HJB1} via theorem \ref{4-1-thm:Vtoviscosity}.
+Note that equation \ref{4-1-viscodynamiceq-lim} implies that $V$ is a viscosity solution of \ref{1-2-HJB1} via theorem \ref{4-1-thm:Vtoviscosity}.
 
 \vspace{5mm}
 
@@ -595,11 +604,18 @@ Note that equation \ref{4-1-viscodynamiceq} implies that $V$ is a viscosity solu
     \color{red}{PROVE THAT \ref{miao} VIA CONVEXHULL STUFF.}\color{black}{}
 \end{proof}
 
+We state a general result for later use.
+
+\begin{corollary}\label{3-4-Coroll: Continuous V implies solution}
+    Let $U$ be a bounded space of control and $f\in C(\overline{Q}\times U)$ such that $\abs{f(t,x,v)}\leq K(1+\abs{x})$, then the value 
+    function is a solution to the dynamic programming equation \ref{1-2-HJB1}.
+\end{corollary}
+
 It is important to notice that the previous result holds under quite stringent hypotheses. We both require the space control to be bounded and the flow $f$ to have sublinear growth in its state variable. We can relax these assumptions 
-and get a similar result, but we need to require the existence of an optimal control.\
+and get a similar result, but we need to require the existence of an optimal control.
 
 \begin{theorem}
-    If for each $(t,x)\in Q$ there exists a $u^{\ast}\mathcal{U}(t,x)$ be an optimal control, then a continuous value function is a viscosity solution of its dynamic programming equation.
+    If for each $(t,x)\in Q$ there exists a $u^{\ast}\in\mathcal{U}(t,x)$ be an optimal control, then a continuous value function is a viscosity solution of its dynamic programming equation.
     
     \begin{proof}
         Let us drop the $^{\ast}$. As we did before in theorem \ref{4-1-viscodynamiceq}, for every $w\in C^{\infty}(Q)$ we have
@@ -659,7 +675,7 @@ Under this hypotheses we can state the following theorem.
     \[\sup_{\overline{Q}}[W-V] = \sup_{\partial^{\ast}Q}[W-V].\]
 \end{theorem}
 
-This Theorem implies that if $V$ and $W$ are two viscosity solution of \ref{4-2-firstordereq} satisfying the boundary conditions
+This theorem implies that if $V$ and $W$ are two viscosity solution of \ref{4-2-firstordereq} satisfying the boundary conditions
 
 \begin{equation}\label{4-2-TerminalcondV}
     \begin{aligned}
@@ -1008,6 +1024,7 @@ This theorem allows us to conclude the following result.
     Under the previous assumptions, the value function is the unique viscosity solution of the dynamic programming equation with fixed terminal conditions \ref{4-2-TerminalcondV}. 
 
     \begin{proof} 
+        It is a solution because of \ref{3-4-Coroll: Continuous V implies solution}. We prove uniqueness via Theorem \ref{4-2-Theo:Suponbound}. 
         Since $U$ is bounded the Hamiltonian $H$ satisfies \ref{4-2-Hassumptions}. Indeed, the bound on the derivative is obvious. 
         The upper bound function $h$ can be found as follows:
 
@@ -1038,7 +1055,7 @@ This theorem allows us to conclude the following result.
 % \end{theorem}
 
 
-\subsection{Pontryagin's Principle for Viscosity Solutions}
+\section{Pontryagin's Principle for Viscosity Solutions}
 
 In section \ref{Section: Pontryagin Principle} we stated the Pontryagin's principle for continuously differentiable value functions. 
 As we come to understand in this chapter, value functions may easily fail to be $C^1$ which requires a weaker notion of solution. We have introduced 
@@ -1105,14 +1122,14 @@ And also:
 
 With:
 
-\begin{equation}\label{4-3-pontryp}
+\begin{equation}\label{4-3-pontry-trans}
     p^{\ast}(t_1) = D \psi(x^{\ast}(t_1)).
 \end{equation}
 
 We can now state Pontryagin's maximum principle in this broader context.
 
 \begin{theorem}
-    Let $u^{\ast}(\cdot)$ be an optimal control at $(t,x)$ which is right continuous at each $[t,t_1)$, and $p^{\ast}(s)$ defined by \label{4-3-pontrydotp}, \ref{4-3-pontry-maxH} and \ref{4-3-pontry-tras}. 
+    Let $u^{\ast}(\cdot)$ be an optimal control at $(t,x)$ which is right continuous at each $[t,t_1)$, and $p^{\ast}(s)$ defined by \ref{4-3-pontrydotp}, \ref{4-3-pontry-maxH} and \ref{4-3-pontry-tras}. 
     Then for each $s\in[t,t_1)$ 
     
     \begin{equation}

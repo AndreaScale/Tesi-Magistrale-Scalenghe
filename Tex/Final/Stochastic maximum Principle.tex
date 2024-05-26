@@ -62,7 +62,7 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
             \norm{(y,z)}_{\beta} = \left(E\left[\int_t^{t_1} e^{\beta s}\left(\abs{y_s}^2+\abs{z_s}^2\right)ds\right]\right).
         \end{equation}
 
-        This result is proved in the appendix. We call the previous Banach space $(X,\norm{\cdot})$. We construct the map 
+        {\color{red}{}This result is proved in the appendix}. We call the previous Banach space $(X,\norm{\cdot})$. We construct the map 
         $\Phi:X\rightarrow X$ defined as $\Phi(u,v)=(y,z)$. The processes $y$ and $z$ are defined as follows. We define:
 
         \begin{equation}
@@ -79,7 +79,7 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
         \end{align*}
 
         which is finite because of the assumptions and given $(u,v)\in X$. It is a martingale. Therefore, by 
-        Ito's martingale representation theorem there exists a unique $z\in\mathbb{H}^2(t,t_1)^n$\footnote{Unique with respect to $\norm{\cdot}_{\mathbb{H}}$.} and $m_t\in L2$ such that:
+        Ito's martingale representation theorem there exists a unique $z\in\mathbb{H}^2(t,t_1)^n$\footnote{Unique with respect to $\norm{\cdot}_{\mathbb{H}}$.} and $m_t\in L^2$ such that:
         
         \begin{equation}
             m_s = m_t + \int_t^{s} z_r\,dw_r.
@@ -105,7 +105,7 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
 
         \[E\left[\sup_{s\in[t,t_1]}\int_t^sz_r\,dw_r\right]^2 \leq 4E\left[\int_t^{t_1}z_r^2\,dw_r\right]<+\infty.\]
 
-        If we prove $\Phi$ to be a contraction we'll have a unique (in $(X,\norm{\cdot})$) fixed point, therefore the thesis. 
+        If we prove $\Phi$ to be a contraction we'll have a unique infixed point $(X,\norm{\cdot})$ , therefore the thesis. 
         
         Let $(U_1,V_1),(U_2,V_2)\in X$, $(X_1,Y_1),(X_2,Y_2)$ their images and $\overline{U},\overline{V},\overline{X},\overline{Y},\overline{f}_t$ the differences between subscript $1$ and $2$. 
         By Ito's formula we have:
@@ -117,7 +117,7 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
             & = - \int_t^{t_1} e^{\beta r}\left(\beta\overline{y}_r^2-2\overline{y}_r\overline{f}_r\right)\,dr - \int_t^{t_1}e^{\beta r}\overline{z}_r^2\,dr - 2\int_t^{t_1}e^{\beta r}\overline{y}_r\overline{z}_r\,dw_r.
         \end{align}
 
-        We show that $e^{\beta r}\overline{y}_r\overline{z}_r\in\mathbb{H}^2(t,t_1)^1$, which will guarantee the integral to vanish under expectation. We have:
+        We show that $e^{\beta r}\overline{y}_r\overline{z}_r\in\mathbb{H}^2(t,t_1)$, which will guarantee the integral to vanish under expectation. We have:
 
         \color{red}{\[E\left[\left(\int_t^{t_1} e^{2\beta r}\overline{y}_r^2\overline{z}_r^2\,dr\right)^{1/2}\right]\leq \frac{e^{\beta t_1}}{2}E\left[\sup_{s\in[t,t_1]}\overline{y}_s^2 + \int_t^{t_1}\overline{z}_r^2\,dr\right] <+\infty.\]}
         
@@ -135,9 +135,9 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
         \[E\left[\int_t^{t_1}e^{\beta r} \left(\overline{y}_r^2+\overline{z}_r^2\right)\,dr\right] \leq E\left[\int_t^{t_1}e^{\beta r} \left(\overline{u}_r^2+\overline{v}_r^2\right)\,dr\right]\]
     \end{proof}
 \end{theorem}
-
+{\color{red}{}
 The previous proof used the concept of local martingale and the Burkholder-Davis-Gundy inequality, they are detailed in the appendix. In particular the fact that if $X\in\mathbb{H}^2$ then $\int X\,dw$ is a martingale uses these concepts.
-
+}
 A notable case is the one with a generator $f$ linear in $y$ and $z$. That is, there exists 
 $a,b$ bounded progressively measurable processes valued in $\R$ and $\R^n$ and $c\in\mathbb{H}(t,t_1)^1$ which define:
 

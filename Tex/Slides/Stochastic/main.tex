@@ -304,7 +304,9 @@ where the last (stochastic) integral can be seen as a martingale. In particular,
 
 \begin{frame}{Hamiltonian and HJB equation}
     The Hamiltonian $\mathcal{H}$ is defined as:
-    \[\mathcal{H}(t,x,p,A) = \sup_{v\in U}\left\{-f\cdot p - \frac{1}{2}\text{tr}\left[a\cdot A\right] - L\right\}\]
+    \begin{equation}\label{Def: Hamiltonian Stochastic  }
+        \mathcal{H}(t,x,p,A) = \sup_{v\in U}\left\{-f\cdot p - \frac{1}{2}\text{tr}\left[a\cdot A\right] - L\right\}
+    \end{equation}
     The verification theorem uses this Hamiltonian to provide conditions under which a control is optimal. We'll impose the optimality condition:
 
     \[A^vW = 0 \Rightarrow -\frac{\partial W}{\partial t} + \mathcal{H}(t,x,D_xW,D_x^2W) = 0\]
@@ -335,6 +337,70 @@ where the last (stochastic) integral can be seen as a martingale. In particular,
     \[O_{\rho} = O\cap\left\{\abs{x}<\rho\,|\,d(x,\partial O)>\frac{1}{\rho}\right\},\, Q_{\rho} = [t_0,t_1-\rho^{-1}]\times O_{\rho},\]
 
     get thesis for all $\rho^{-1}<t_1-t_0$ and pass to the limit showing uniform integrability of both addenda, which together with convergence in probability implies $L^1$ convergence.
+\end{frame}
+
+\begin{frame}{Stochastic Maximum Principle}
+    The stochastic analogous of Pontryagin’s principle is the stochastic maximum principle. It relies on the notion of the backward stochastic differential equation, whose solution will provide a necessary condition on the controlled system.
+\end{frame}
+
+\begin{frame}{BSDE}
+    A backward stochastic differential equation is a SDE where the initial date is replaced by a final distribution. We start by defining a formal concept of solution and provide a general result about existence and uniqueness.
+
+    \begin{equation}\label{2-3-defBSDE}
+    \begin{cases}
+        - dy_s = f(s,y_s,z_s)ds - z_sdw_s & \forall s\in[t,t_1]\\
+        y_{t_1} = \xi, 
+    \end{cases}
+\end{equation}
+
+where $f$ is real valued and $\xi$ a suitable random variable. Further conditions on $f$ and $\xi$ will be imposed 
+by the existence theorem.
+\end{frame}
+
+\begin{frame}{BSDE}
+    \begin{definition}
+    A solution of \ref{2-3-solBSDE} is a couple $(y,z)\in\mathbb{S}^2(t,t_1)\times\mathbb{H}^2(t,t_1)^n$ such that:
+    
+    \[y_s = \xi + \int_s^{t_1} f(r,y_r,z_r)\,dr - \int_s^{t_1} z_r\,dw_r,\,\forall s\in[t,t_1].\] 
+ 
+\end{definition}
+
+\begin{theorem}
+    Let $f:\Omega\times[t,t_1]\times\R\times\R^n\rightarrow \R$ such that $f(\cdot,\cdot,y,z)$ is progressively measurable for all 
+    $(y,z)\in\R^{n+1}$, $f(\cdot,\cdot,0,0)\in\mathbb{H}^2(t,t_1)^1$ and $\exists C>0$ s.t.:
+    \begin{equation}
+        \abs{f(s,y_1,z_1)-f(s,y_2,z_2)} \leq C(\abs{y_1-y_2} + \abs{z_1-z_2}),\,\forall y_1,y_2,z_1,z_2,\, m\otimes P\,a.s.
+    \end{equation}
+
+    Then for every $\xi\in L^2$ the BSDE \ref{2-3-defBSDE} has a unique solution.
+\end{theorem}
+\end{frame}
+
+\begin{frame}{Proof Idea}
+    Let $\Phi:X\rightarrow X$ defined as $\Phi(u,v)=(y,z)$ where $X=\mathbb{S}(t,t_1)\times\mathbb{H}^2(t,t_1)^n$ and 
+    \[y_t = \xi + \int_t^{t_1} f(s,u_s,v_s)\,ds - \int_t^{t_1} z_s\,dw_s.\]
+    We show $\Phi$ to be a contraction and get a fixed point by Banach-Cacciopoli, which is the (unique) solution to the BSDE. 
+
+    Technical point 
+    
+\end{frame}
+
+\begin{frame}{Stochastic Maximum Principle}
+    As in the determinist case, under the assumption of optimality the value function $V$ will define the solution of a differential problem: a BSDE. We adapt the Hamiltonian \ref{Def: Hamiltonian Stochastic  } to 
+    \begin{equation}\label{3-2-defG}\mathcal{G}(t,x,v,y,z) = -f(s,x,v)\cdot y - tr\left[\sigma'(s,x,v)\cdot z\right] - L(s,x,v).\end{equation}
+
+    \begin{theorem}\label{2-3-stochmaxprinc}
+    Let $u^{\ast}$ be an optimal control and $x^{\ast}$ the corresponding diffusion process, and the value function 
+    $V\in C^{1,2}(O)\cap C(\overline{O})$. Then $V$ satisfies:
+    \begin{equation}\label{2-3-maxcond}
+        \mathcal{H}(s,x_s^{\ast}, u_s^{\ast}, D_xV(s,x^{\ast}_s), D_x^2V(s,x^{\ast}_s)) = \sup_{v \in U}\mathcal{H}(s,x_s^{\ast}, v, D_xV(s,x^{\ast}_s), D_x^2V(s,x^{\ast}_s)),
+    \end{equation}
+    and the pair $(y_s,z_s)=\left(D_xV(s,x_s^{\ast}),D_x^2v(s,x_s^{\ast})\sigma(s,x_s^{\ast},u_s^{\ast})\right)$ solves the BSDE:
+    \begin{equation}\label{2-3-maxprinc-BSDE}
+        -dy_s = D_x\mathcal{G}(s,x_s^{\ast}, u_s^{\ast}, y_s, z_s)ds - z_sdw_s,
+    \end{equation}
+    with final condition $y_{t_1} = D_x\Psi(t_1,x_{t_1}).$
+    \end{theorem}
 \end{frame}
 
 \end{document}

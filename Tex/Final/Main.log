@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  23 MAY 2024 12:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  26 MAY 2024 12:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1748,9 +1748,6 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 
 LaTeX Warning: Label `2-1-opt' multiply defined.
 
-
-LaTeX Warning: Label `4-3-pontrydotp' multiply defined.
-
 )
 \openout1 = `Main.aux'.
 
@@ -1883,16 +1880,18 @@ Package pdftex.def Info: logo_new_2022.png  used on input line 179.
 [1
 
 {c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo_new_2022
-.png>] [2
+.png>] [2] [3] [4
 
 ] (./Main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
- (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (c:/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
+)
+(c:/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 
 (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1900,47 +1899,47 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (c:/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+fgerm on input line 5
+LaTeX Font Info:    Trying to load font information for U+fgerm on input line 4
 .
 
 (c:/texlive/2023/texmf-dist/tex/latex/fge/Ufgerm.fd
 File: fgerm.fd 2015/05/19 1.25 fge roman symbol font definitions
 )
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/12'
-(microtype)             (new value: 12.0pt) on input line 5.
+(microtype)             (new value: 12.0pt) on input line 4.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/8'
-(microtype)             (new value: 8.0pt) on input line 5.
+(microtype)             (new value: 8.0pt) on input line 4.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgerm/m/n/6'
-(microtype)             (new value: 6.0pt) on input line 5.
-LaTeX Font Info:    Trying to load font information for U+fgeit on input line 5
+(microtype)             (new value: 6.0pt) on input line 4.
+LaTeX Font Info:    Trying to load font information for U+fgeit on input line 4
 .
 
 (c:/texlive/2023/texmf-dist/tex/latex/fge/Ufgeit.fd
 File: fgeit.fd 2015/05/19 1.25 fge italic symbol font definitions
 )
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/12'
-(microtype)             (new value: 12.0pt) on input line 5.
+(microtype)             (new value: 12.0pt) on input line 4.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/8'
-(microtype)             (new value: 8.0pt) on input line 5.
+(microtype)             (new value: 8.0pt) on input line 4.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/fgeit/m/n/6'
-(microtype)             (new value: 6.0pt) on input line 5.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 5.
+(microtype)             (new value: 6.0pt) on input line 4.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 4.
 
 
 (c:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+esvect on input line 
-5.
+4.
 
 (c:/texlive/2023/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 4
 .
 
 (c:/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+esint on input line 5
+LaTeX Font Info:    Trying to load font information for U+esint on input line 4
 .
 
 (c:/texlive/2023/texmf-dist/tex/latex/esint/uesint.fd
@@ -1949,19 +1948,15 @@ File: uesint.fd
 \tf@toc=\write6
 \openout6 = `Main.toc'.
 
- [3]
+
 
 Package hyperref Warning: Option `colorlinks' has already been used,
-(hyperref)                setting the option has no effect on input line 212.
+(hyperref)                setting the option has no effect on input line 224.
 
-[4
-
-]
-Chapter 1.
 [5] [6
 
 ]
-Chapter 2.
+Chapter 1.
 (./Finite horizon.tex [7]) (./Dynamic programming principle.tex [8] [9]
 Overfull \hbox (101.94565pt too wide) detected at line 89
 [][][][] [] \U/matha/m/n/12 ^^P \OT1/cmr/m/n/12 0
@@ -2049,7 +2044,7 @@ n/12 p\OML/cmm/m/it/12 x\U/matha/m/n/12 p\OML/cmm/m/it/12 t[]\U/matha/m/n/12 qq
  []
 
 ) [20]
-Chapter 3.
+Chapter 2.
 (./markov diffusion processes.tex [21
 
 ] [22] [23]
@@ -2160,7 +2155,7 @@ Overfull \hbox (0.21237pt too wide) detected at line 280
  []
 
 ) [36]
-Chapter 4.
+Chapter 3.
 (./Intro - Visco.tex [37
 
 ]
@@ -2171,8 +2166,20 @@ a/m/n/12 qp\OML/cmm/m/it/12 ^^\ \U/matha/m/n/12 ^^A \OML/cmm/m/it/12 t\U/matha/
 m/n/12 q ^^P []
  []
 
-[38] [39] [40]
-Overfull \hbox (18.64078pt too wide) detected at line 224
+[38] [39]
+Overfull \hbox (47.34436pt too wide) detected at line 143
+\OML/cmm/m/it/12 v[]\U/matha/m/n/12 p\OML/cmm/m/it/12 x[]; t[]\U/matha/m/n/12 q
+ ^^@ \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 Dv\U/matha/m/n/12 p\OM
+L/cmm/m/it/12 x[]; t[]\U/matha/m/n/12 q\OML/cmm/m/it/12 ; x[]\U/matha/m/n/12 q 
+[] \OML/cmm/m/it/12 v[]\U/matha/m/n/12 p\OML/cmm/m/it/12 x[]; t[]\U/matha/m/n/1
+2 q ^^@ \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 Dv\U/matha/m/n/12 p
+\OML/cmm/m/it/12 x[]; t[]\U/matha/m/n/12 q\OML/cmm/m/it/12 ; x[]\U/matha/m/n/12
+ q ¤ \OT1/cmr/m/n/12 ^^A\OML/cmm/m/it/12 ^^O[]v\U/matha/m/n/12 p\OML/cmm/m/it/1
+2 x[]; t[]\U/matha/m/n/12 q [] \OT1/cmr/m/n/12 0
+ []
+
+[40]
+Overfull \hbox (18.64078pt too wide) detected at line 234
 [][][] \U/matha/m/n/12 @ \OML/cmm/m/it/12 w \U/matha/m/n/12 P \OMS/cmsy/m/n/12 
 D[][]\OML/cmm/m/it/12 ;  \OMS/cmsy/m/n/12 G[]\OML/cmm/m/it/12 w\U/matha/m/n/12 
 p\OML/cmm/m/it/12 t; \U/matha/m/n/12 ^^Dq[]\OML/cmm/m/it/12 w\U/matha/m/n/12 p\
@@ -2181,17 +2188,29 @@ OML/cmm/m/it/12 t; \U/matha/m/n/12 ^^Dq P \OMS/cmsy/m/n/12 C \U/matha/m/n/12 @
 s\OML/cmm/m/it/12 ;
  []
 
+
+Overfull \hbox (15.24329pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 3.2.  ABSTRACT DYNAMIC PROGRAMMING AND VISCOSITY SOLUTIONS \OT
+1/cmr/m/n/12 41
+ []
+
 [41] [42]
 
 LaTeX Warning: Reference `4-1-subsolution' on page 43 undefined on input line 3
-04.
+14.
 
 
 LaTeX Warning: Reference `4-1-supersolution' on page 43 undefined on input line
- 304.
+ 314.
+
+
+Overfull \hbox (15.24329pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 3.2.  ABSTRACT DYNAMIC PROGRAMMING AND VISCOSITY SOLUTIONS \OT
+1/cmr/m/n/12 43
+ []
 
 [43] [44] [45] [46]
-Overfull \hbox (5.56255pt too wide) detected at line 516
+Overfull \hbox (5.56255pt too wide) detected at line 526
 [][][][] [] [] \U/matha/m/n/12 ^^P []\OML/cmm/m/it/12 w\U/matha/m/n/12 p\OML/cm
 m/m/it/12 t; x\U/matha/m/n/12 q ^^A \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm
 /m/it/12 t; x; D[]w\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 qq\OML
@@ -2200,22 +2219,22 @@ m/m/it/12 t; x\U/matha/m/n/12 q ^^A \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm
  []
 
 
-Overfull \hbox (70.1443pt too wide) detected at line 544
+Overfull \hbox (70.1443pt too wide) detected at line 553
 []
  []
 
 [47]
-Overfull \hbox (12.61426pt too wide) detected at line 564
+Overfull \hbox (12.61426pt too wide) detected at line 573
 []
  []
 
 
-Overfull \hbox (8.40096pt too wide) detected at line 573
+Overfull \hbox (8.40096pt too wide) detected at line 582
 [][][][][]
  []
 
 
-Overfull \hbox (6.93033pt too wide) in paragraph at lines 585--586
+Overfull \hbox (6.93033pt too wide) in paragraph at lines 594--595
 []\OT1/cmr/m/n/12 (-20) Because of the con-ti-nu-ity of $\OML/cmm/m/it/12 L$\OT
 1/cmr/m/n/12 (-20) , of $\OML/cmm/m/it/12 f$ \OT1/cmr/m/n/12 (-20) and smooth-n
 ess of $\OML/cmm/m/it/12 w$ \OT1/cmr/m/n/12 (-20) we have that $[][] \OML/cmm/m
@@ -2223,7 +2242,7 @@ ess of $\OML/cmm/m/it/12 w$ \OT1/cmr/m/n/12 (-20) we have that $[][] \OML/cmm/m
  []
 
 
-Overfull \hbox (78.90541pt too wide) detected at line 589
+Overfull \hbox (78.90541pt too wide) detected at line 598
 [][][]\OML/cmm/m/it/12 n [][] L\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m
 /n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q\OML/cmm/m/it/12 ; u[]\U/matha/m/n/12
  p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq \OML/cmm/m/it/12 ds \U/matha/m/n/12 ^^@ 
@@ -2233,8 +2252,8 @@ n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq \OML/cmm/m/it/12 ds \U/matha/m/n/12
 q ¤ [] [] \OML/cmm/m/it/12 ;
  []
 
-[48]
-Overfull \hbox (0.30894pt too wide) in paragraph at lines 640--641
+[48] [49]
+Overfull \hbox (0.30894pt too wide) in paragraph at lines 656--657
 []\OT1/cmr/m/n/12 (-20) There ex-ists $\OML/cmm/m/it/12 K \U/matha/m/n/12 P \U/
 msb/m/n/12 R$ \OT1/cmr/m/n/12 (-20) and $\OML/cmm/m/it/12 h \U/matha/m/n/12 P \
 OML/cmm/m/it/12 C\U/matha/m/n/12 pr\OT1/cmr/m/n/12 (-20) 0\OML/cmm/m/it/12 ; \U
@@ -2244,8 +2263,8 @@ hat $ \U/matha/m/n/12 @ p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q\OML/cmm/m/it/12
  ; \U/matha/m/n/12 p\OML/cmm/m/it/12 s; y\U/matha/m/n/12 q P
  []
 
-[49]
-Overfull \hbox (19.34325pt too wide) detected at line 642
+
+Overfull \hbox (19.34325pt too wide) detected at line 658
 \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x; p\U/matha/m/n/12 q ^^
 A \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 s; y; p[]\U/matha/m/n/12 
 q ¤ \OML/cmm/m/it/12 h\U/matha/m/n/12 p[] ^^@ []q ^^@ \OML/cmm/m/it/12 h\U/math
@@ -2254,7 +2273,7 @@ a/m/n/12 p[]q[] ^^@ \OML/cmm/m/it/12 K[][] \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12
  []
 
 [50] [51] [52]
-Overfull \hbox (40.90181pt too wide) detected at line 804
+Overfull \hbox (40.90181pt too wide) detected at line 820
 \OML/cmm/m/it/12 W\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q ^^A \
 OML/cmm/m/it/12 V\U/matha/m/n/12 p\OML/cmm/m/it/12 s; y\U/matha/m/n/12 q ^^P []
  \OML/cmm/m/it/12 W\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q ^^A 
@@ -2265,8 +2284,8 @@ OML/cmm/m/it/12 ^^L\U/matha/m/n/12 p\OML/cmm/m/it/12 t \U/matha/m/n/12 ^^A \OML
 ha/m/n/12 ^^A \OML/cmm/m/it/12 V\U/matha/m/n/12 s\OML/cmm/m/it/12 :
  []
 
-
-Overfull \hbox (8.40312pt too wide) detected at line 828
+[53]
+Overfull \hbox (8.40312pt too wide) detected at line 844
 \OML/cmm/m/it/12 m[]; m[] \U/matha/m/n/12 P \OML/cmm/m/it/12 C\U/matha/m/n/12 p
 r\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \U/matha/m/n/12 8qq\OML/cmm/m/it/12 ;  m[]
 \U/matha/m/n/12 p\OT1/cmr/m/n/12 0\U/matha/m/n/12 q ^^P \OML/cmm/m/it/12 m[]\U/
@@ -2276,18 +2295,18 @@ m/it/12 ;  K[] \U/matha/m/n/12 ^^P []t\OML/cmm/m/it/12 m[]\U/matha/m/n/12 p\OML
 tha/m/n/12 ¥ \OT1/cmr/m/n/12 0\U/matha/m/n/12 u   ^^@8\OML/cmm/m/it/12 :
  []
 
-[53] [54] [55]
-Overfull \hbox (13.65894pt too wide) detected at line 937
+[54] [55]
+Overfull \hbox (13.65894pt too wide) detected at line 953
 []
  []
 
 [56]
-Overfull \hbox (36.25522pt too wide) detected at line 979
+Overfull \hbox (36.25522pt too wide) detected at line 995
 []
  []
 
-
-Overfull \hbox (19.9334pt too wide) detected at line 992
+[57]
+Overfull \hbox (19.9334pt too wide) detected at line 1008
 [][][][] \U/matha/m/n/12 ¤ \OML/cmm/m/it/12 K[][] \U/matha/m/n/12 ^^@ p\OML/cmm
 /m/it/12 t[] \U/matha/m/n/12 ^^A \OML/cmm/m/it/12 t[]\U/matha/m/n/12 q\OML/cmm/
 m/it/12 m[]\U/matha/m/n/12 p[]\OML/cmm/m/it/12 K[]e[]\U/matha/m/n/12 q ^^@ \OML
@@ -2295,32 +2314,28 @@ m/it/12 m[]\U/matha/m/n/12 p[]\OML/cmm/m/it/12 K[]e[]\U/matha/m/n/12 q ^^@ \OML
 /cmm/m/it/12 ;
  []
 
-[57]
-Overfull \hbox (1.8001pt too wide) detected at line 1018
+
+Overfull \hbox (1.8001pt too wide) detected at line 1035
 []
  []
 
+[58] [59]
 
-LaTeX Warning: Reference `Section: Pontryagin Principle' on page 58 undefined o
-n input line 1043.
-
-[58]
-
-LaTeX Warning: Reference `4-3-pontry-tras' on page 59 undefined on input line 1
-115.
-
-[59]
-Overfull \hbox (12.50555pt too wide) detected at line 1143
-[]
- []
+LaTeX Warning: Reference `4-3-pontry-tras' on page 60 undefined on input line 1
+132.
 
 
-Overfull \hbox (95.93254pt too wide) detected at line 1173
+Overfull \hbox (12.50555pt too wide) detected at line 1160
 []
  []
 
 [60]
-Overfull \hbox (51.1448pt too wide) detected at line 1186
+Overfull \hbox (95.93254pt too wide) detected at line 1190
+[]
+ []
+
+
+Overfull \hbox (51.1448pt too wide) detected at line 1203
 []
  []
 
@@ -2332,13 +2347,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (42.28958pt too wide) in paragraph at lines 265--265
+Overfull \hbox (42.28958pt too wide) in paragraph at lines 273--273
 []\OT1/cmr/m/n/12 (-20) Daron Ace-moglu. \  In-tro-duc-tion to Mod-ern Eco-nomi
 c Growth". In: 122247000000001721
  []
 
 
-Overfull \hbox (42.19447pt too wide) in paragraph at lines 265--265
+Overfull \hbox (42.19447pt too wide) in paragraph at lines 273--273
 \OT1/cmr/m/n/12 (-20) (Nov. 2007). \OT1/cmr/m/sc/12/100ls (-20) url\OT1/cmr/m/n
 /12 (-20) : []$\OT1/cmtt/m/n/12 https : / / ideas . repec . org / p / cla / lev
 rem / 122247000000001721 .
@@ -2361,13 +2376,13 @@ Package logreq Info: Writing requests to 'Main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58526 strings out of 474267
- 1353922 string characters out of 5751465
- 2304023 words of memory out of 5000000
- 79232 multiletter control sequences out of 15000+600000
- 587896 words of font info for 246 fonts, out of 8000000 for 9000
+ 58538 strings out of 474267
+ 1354067 string characters out of 5751465
+ 2304205 words of memory out of 5000000
+ 79234 multiletter control sequences out of 15000+600000
+ 588272 words of font info for 250 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,16n,107p,1576b,1982s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,16n,107p,1576b,1977s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/202
 3/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-d
@@ -2394,10 +2409,10 @@ x-type1/mathx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msbm7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
 >
-Output written on Main.pdf (63 pages, 538651 bytes).
+Output written on Main.pdf (63 pages, 539436 bytes).
 PDF statistics:
- 1086 PDF objects out of 1200 (max. 8388607)
- 953 compressed objects within 10 object streams
- 397 named destinations out of 1000 (max. 500000)
- 45794 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1090 PDF objects out of 1200 (max. 8388607)
+ 957 compressed objects within 10 object streams
+ 399 named destinations out of 1000 (max. 500000)
+ 45786 words of extra memory for PDF output out of 51595 (max. 10000000)
 

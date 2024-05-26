@@ -1,26 +1,26 @@
 # Fdb version 4
-["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 1716461156 -1
+["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 1716720057 -1
   "./Bibliography.bib" 1716200442 5773 8e6f47d594fade753c71d499d3ba3809 ""
-  "Main.bcf" 1716461155 107770 0bfe6ed90dbd8267d6f24ad6ff6cdfb4 "pdflatex"
+  "Main.bcf" 1716720056 107770 0bfe6ed90dbd8267d6f24ad6ff6cdfb4 "pdflatex"
   (generated)
   "Main.bbl"
   "Main.blg"
   (rewritten before read)
-["pdflatex"] 1716461148 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" "Main.pdf" "Main" 1716461156 2
+["pdflatex"] 1716720052 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" "Main.pdf" "Main" 1716720057 2
   "Dynamic programming principle.tex" 1716276908 9159 69e4e9144b7e2a2ac3140f875fcf5cb3 ""
   "Existence.tex" 1712079920 5106 5af66d95de4c9c16b5b229ac7a6a623a ""
   "Finite horizon.tex" 1710797686 3251 c4731bbb7c68a644dee85805affa7c9d ""
   "Infinite horizon.tex" 1711383266 723 29273a91426f31294161d57c81e575ec ""
-  "Intro - Visco.tex" 1716461111 60228 f325dc3c673333059bbda37da7f9043b ""
-  "Main.aux" 1716461155 23657 5f2c20ce5c4a275f87c22f38e0d47f5f "pdflatex"
-  "Main.bbl" 1716303086 15150 bbf7e1c8fd7d99ee5b19615971aed7d5 "biber Main"
-  "Main.tex" 1716303044 7088 565e16c815aa4028afb3e335797ae2dd ""
-  "Main.toc" 1716461155 2422 80a6935376e5fb18fc17aec32c4bcd07 "pdflatex"
+  "Intro - Visco.tex" 1716719691 61004 253e6d95a2153a9f5ea82031ff691be7 ""
+  "Main.aux" 1716720056 23406 b2a97dab916ce2d358754fde681570ca "pdflatex"
+  "Main.bbl" 1716718040 15150 bbf7e1c8fd7d99ee5b19615971aed7d5 "biber Main"
+  "Main.tex" 1716718265 7199 1d91fe492c2b86a24795bfd6e6e10aae ""
+  "Main.toc" 1716720056 2314 bc30db0285db1aba7799542cd04514e6 "pdflatex"
   "Markov control processes.tex" 1716276923 10075 8bad8ff435632c1ddc49e8c6673dc1e4 ""
-  "Pontryagin.tex" 1711388303 8593 090f143c073016b619006db68117a2f6 ""
+  "Pontryagin.tex" 1716718353 8630 5533f4d74a3b5bf6c642d4a643b36014 ""
   "Proof of Pontryagin.tex" 1712078984 6840 6e9b2b9a562e3f993effda03f98e99a2 ""
-  "Stochastic maximum Principle.tex" 1716286294 15435 7621d124ec5b9e6f793eee495d0b577e ""
-  "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" 1716303044 7088 565e16c815aa4028afb3e335797ae2dd ""
+  "Stochastic maximum Principle.tex" 1716559976 15462 f086a9efcc64350802209489f642f146 ""
+  "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" 1716718265 7199 1d91fe492c2b86a24795bfd6e6e10aae ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1702045797 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1702046692 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1702046295 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
