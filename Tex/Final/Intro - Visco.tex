@@ -8,11 +8,11 @@ is exactly what we are searching for. It arises from a standard procedure called
 solution of a fully non-linear first order PDE as the limiting solution of quasilinear parabolic PDEs, obtained via infinitesimal 
 perturbations of second order derivatives. 
 
-\subsection{Non-differentiable value functions}
+\subsection{Non-differentiable value functions}\label{Non diff V}
 
 Let us consider the calculus of variation problem:
 
-\begin{equation}
+\begin{equation}\label{Non diff V-problem}
     \inf_{x\in Lip([0,1];[-1,1])} \int_t^{t_1} 1 + \frac{1}{4}(\dot{x}(s))^2 \,ds,
 \end{equation}
 
@@ -73,10 +73,10 @@ We now solve:
 
 which is solved as follows:
 
-\[V(t,x)=\begin{cases}
+\begin{equation}\label{Non diff V-V}V(t,x)=\begin{cases}
     1-t & \abs{x}\leq t \\
     1-t& \abs{x}\geq t,
-\end{cases}\]
+\end{cases}\end{equation}
 
 which is continuous on the whole space, but clearly no differentiable in $\abs{x}=t$.
 
@@ -568,9 +568,9 @@ Note that equation \ref{4-1-viscodynamiceq-lim} implies that $V$ is a viscosity 
 
     Then for suitably small $r$ that $\tau\geq r\wedge t_1$ for all $u(\cdot)\in\mathcal{U}(t,x)$. Then for $n$ sufficiently large by definition of $\mathcal{T}_{tr}$ we can find a control $u^n(\cdot)$ such that
     
-    \begin{align*}
+    \begin{equation*}
         \left(\mathcal{T}_{tt+\frac{1}{n}}w\left(t+\frac{1}{n}\right)\right)(x) \geq \int_t^{t+1/n} L(s,x(s),u(s)) \,ds + w\left(t+\frac{1}{n},x^n\left(t+\frac{1}{n}\right)\right) - \frac{1}{n^2},
-    \end{align*}
+    \end{equation*}
 
     which implies that 
 
@@ -1105,7 +1105,28 @@ if and only if
 
 \[-q+H(t,x,p)\leq 0,\,\forall (q,p)\in D^+W(t,x),\,\forall(t,x)\in Q,\]
 
-and similarly for a supersolution.
+and similarly for a supersolution. 
+
+\begin{example}
+    In subsection \ref{Non diff V} we showed a non-differentiable value function. Recall that the original problem was
+    
+    \begin{equation}
+        \inf_{x\in Lip([0,1];[-1,1])} \int_t^{t_1} 1 + \frac{1}{4}(\dot{x}(s))^2 \,ds,
+        \tag{\ref{Non diff V-problem}}
+    \end{equation}
+    
+    and the resulting value function
+    
+    \begin{equation}
+        V(t,x)=\begin{cases}
+            1-t & \abs{x}\leq t \\
+            1-t& \abs{x}\geq t.
+        \end{cases}
+        \tag{\ref{Non diff V-V}}
+    \end{equation}
+
+    Let us compute $D^+V(t,x)$ and $D^-V(t,x)$. \dots
+\end{example}
 
 The notion of superdifferential will take the place of the derivative in Pontryagin's result. We recall the definition of the adjoint variable for a state variable $x$ defined by the flow $f$, a control $u$, 
 a terminal condition $\psi$, a Lagrangian $L$ and a Hamiltonian $H$:
@@ -1129,7 +1150,7 @@ With:
 We can now state Pontryagin's maximum principle in this broader context.
 
 \begin{theorem}
-    Let $u^{\ast}(\cdot)$ be an optimal control at $(t,x)$ which is right continuous at each $[t,t_1)$, and $p^{\ast}(s)$ defined by \ref{4-3-pontrydotp}, \ref{4-3-pontry-maxH} and \ref{4-3-pontry-tras}. 
+    Let $u^{\ast}(\cdot)$ be an optimal control at $(t,x)$ which is right continuous at each $[t,t_1)$, and $p^{\ast}(s)$ defined by \ref{4-3-pontrydotp}, \ref{4-3-pontry-maxH} and \ref{4-3-pontry-trans}. 
     Then for each $s\in[t,t_1)$ 
     
     \begin{equation}
@@ -1156,24 +1177,24 @@ We can now state Pontryagin's maximum principle in this broader context.
         for $s\in[t,t_1)$, then the thesis holds by definition. We prove \ref{4-3-InProof:Pontryagin-der_t} by direct computation 
 
         \begin{align*}
-            \frac{\partial}{\partial x_i}J(s,x^{\ast}(s);u^{\ast}) & = \sum_{j=1}^n\left\{\int_s^{t_1} L_{x_j}(r,x^{\ast}(r),u^{\ast}(r))\,dr + \psi_{x_j}(x^{\ast}(t_1))\frac{\partial}{\partial x_j}x_i(t_1,x^{\ast}(t_1))\right\},
+            \frac{\partial}{\partial x_i}J(s,x^{\ast}(s);u^{\ast}) & = \sum_{j=1}^n\left\{\int_s^{t_1} L_{x_j}(r,x^{\ast}(r),u^{\ast}(r))frac{\partial}{\partial x_j}x_i(r,x^{\ast}(r))\,dr + \psi_{x_j}(x^{\ast}(t_1))\frac{\partial}{\partial x_i}x_j(t_1,x^{\ast}(t_1))\right\},
         \end{align*}
 
         but we have
         
         \begin{equation}
-            \frac{d}{dr}\left\{\sum_{j=1}^n \frac{\partial}{\partial x_j}x_i(r,x^{\ast}(r))p_i(r) \right\} = - \sum_{i=1}^n \frac{\partial}{\partial x_{j}}f_i(s,x^{\ast}(r),u^{\ast}(r))\frac{\partial}{\partial x_j}x_i(r,x^{\ast}(r)),
+            \frac{d}{dr}\left\{\sum_{j=1}^n \frac{\partial}{\partial x_i}x_j(r,x^{\ast}(r))p_i(r) \right\} = - \sum_{i=1}^n \frac{\partial}{\partial x_{j}}L(s,x^{\ast}(r),u^{\ast}(r))\frac{\partial}{\partial x_i}x_j(r,x^{\ast}(r)),
         \end{equation}
 
         then by integrating and recalling that 
         
-        \[\frac{\partial}{\partial x_j}x_i(s,x^{\ast}(s))=\delta_{ij}\]
+        \[\frac{\partial}{\partial x_i}x_j(s,x^{\ast}(s))=\delta_{ij}\]
         
         we get 
 
         \begin{align*}
-            p_i(s) &= \sum_{j=1}^n \frac{\partial}{\partial x_j}x_i(s,x^{\ast}(s))p_j(s) \\
-            & = \sum_{j=1}^n \frac{\partial}{\partial x_j}x_i(t_1,x^{\ast}(t_1))p_j(t_1) - \int_s^{t_1} \frac{d}{dr}\left\{\sum_{j=1}^n \frac{\partial}{\partial x_j}x_i(r,x^{\ast}(r))p_i(r) \right\}\,dr \\
+            p_i(s) &= \sum_{j=1}^n \frac{\partial}{\partial x_i}x_j(s,x^{\ast}(s))p_j(s) \\
+            & = \sum_{j=1}^n \frac{\partial}{\partial x_i}x_j(t_1,x^{\ast}(t_1))p_j(t_1) - \int_s^{t_1} \frac{d}{dr}\left\{\sum_{j=1}^n \frac{\partial}{\partial x_i}x_j(r,x^{\ast}(r))p_i(r) \right\}\,dr \\
             &= \frac{\partial}{\partial x_i}J(s,x^{\ast}(s);u^{\ast}) \\
             & = \frac{\partial}{\partial x_i}V(s,x^{\ast}(s)).
         \end{align*}

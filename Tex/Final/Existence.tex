@@ -50,8 +50,9 @@ argument proves the optimal control existence.
         limit $x^{\ast}$. The latter is the solution of \ref{1-1-syst1} with $u=u^{\ast}$. Indeed:
 
         \begin{align*}
-                x_n(s) & = x + \int_t^s\frac{d}{dr}x_n(r) \,dr\\
-                & = x + \underbrace{\int_t^sf_1(r,x_n(r)) + f_2(r,x_n(r))u^{\ast}(r) \,dr}_{A_n} + \underbrace{\int_t^s \left[f_2(r,x_n(r)) - f_2(r,x^{\ast}(r))\right]\left[u_n(r)-u^{\ast}(r)\right] \,dr}_{B_n} \\
+                x_n(s) = & x + \int_t^s\frac{d}{dr}x_n(r) \,dr\\
+                = & x + \underbrace{\int_t^sf_1(r,x_n(r)) + f_2(r,x_n(r))u^{\ast}(r) \,dr}_{A_n} \\ 
+                & + \underbrace{\int_t^s \left[f_2(r,x_n(r)) - f_2(r,x^{\ast}(r))\right]\left[u_n(r)-u^{\ast}(r)\right] \,dr}_{B_n} \\
                 & + \underbrace{\int_t^s f_2(r,x^{\ast}(r))\left[u_n(r)-u^{\ast}(r)\right] \,dr}_{C_n}
         \end{align*}
         
