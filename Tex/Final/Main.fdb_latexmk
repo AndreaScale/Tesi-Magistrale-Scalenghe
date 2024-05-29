@@ -1,21 +1,21 @@
 # Fdb version 4
-["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 1716904421 -1
+["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 0 -1
   "./Bibliography.bib" 1716200442 5773 8e6f47d594fade753c71d499d3ba3809 ""
-  "Main.bcf" 1716904419 107770 0bfe6ed90dbd8267d6f24ad6ff6cdfb4 "pdflatex"
+  "Main.bcf" 1716966732 107770 0bfe6ed90dbd8267d6f24ad6ff6cdfb4 "pdflatex"
   (generated)
   "Main.bbl"
   "Main.blg"
   (rewritten before read)
-["pdflatex"] 1716904415 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" "Main.pdf" "Main" 1716904421 2
-  "Dynamic programming principle.tex" 1716276908 9159 69e4e9144b7e2a2ac3140f875fcf5cb3 ""
+["pdflatex"] 1716966726 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" "Main.pdf" "Main" 1716966734 2
+  "Dynamic programming principle.tex" 1716966723 9173 c589782ee0a4a7626ffb678208ddf0e1 ""
   "Existence.tex" 1716890966 5129 c5b89f78c2c9391417e647dc64fedc36 ""
   "Finite horizon.tex" 1710797686 3251 c4731bbb7c68a644dee85805affa7c9d ""
   "Infinite horizon.tex" 1711383266 723 29273a91426f31294161d57c81e575ec ""
   "Intro - Visco.tex" 1716890111 61779 18d84e06a8c2d1395fb6adde4f18e6a1 ""
-  "Main.aux" 1716904419 23681 c74ed8ea9a70e799a3df7d6ebf8cff38 "pdflatex"
-  "Main.bbl" 1716720065 15150 bbf7e1c8fd7d99ee5b19615971aed7d5 "biber Main"
+  "Main.aux" 1716966732 23681 c74ed8ea9a70e799a3df7d6ebf8cff38 "pdflatex"
+  "Main.bbl" 1716966496 15150 bbf7e1c8fd7d99ee5b19615971aed7d5 "biber Main"
   "Main.tex" 1716718265 7199 1d91fe492c2b86a24795bfd6e6e10aae ""
-  "Main.toc" 1716904419 2314 3135cd979ee48a879143ada0524e6acc "pdflatex"
+  "Main.toc" 1716966732 2314 3135cd979ee48a879143ada0524e6acc "pdflatex"
   "Markov control processes.tex" 1716902631 10096 7967452a6b7c4c7a4fc4ea7cf9db9e04 ""
   "Pontryagin.tex" 1716718353 8630 5533f4d74a3b5bf6c642d4a643b36014 ""
   "Proof of Pontryagin.tex" 1712078984 6840 6e9b2b9a562e3f993effda03f98e99a2 ""
