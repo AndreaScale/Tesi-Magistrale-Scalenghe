@@ -24,4 +24,7 @@
 \contentsline {section}{\numberline {3.4}Value Function as Viscosity Solution}{47}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Continuity Properties of the Value Function}{57}{subsection.3.4.1}%
 \contentsline {section}{\numberline {3.5}Pontryagin's Principle for Viscosity Solutions}{59}{section.3.5}%
-\contentsline {chapter}{Bibliography}{63}{chapter*.5}%
+\contentsline {chapter}{\numberline {4}Singular Stochastic Control}{63}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Spacecraft control}{63}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Singular Stochastic Control}{63}{section.4.2}%
+\contentsline {chapter}{Bibliography}{65}{chapter*.5}%

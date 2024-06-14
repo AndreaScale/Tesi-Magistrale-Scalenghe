@@ -61,6 +61,8 @@
 \usepackage{subfiles} %meglio caricarla per ultima
 
 \usepackage{biblatex}
+
+\usepackage{amsmath}
 % \addbibresource{Bibliography.bib}
 \addbibresource{Bibliography.bib}
 
@@ -266,6 +268,15 @@ We now study viscosity solutions and their relation with optimal control.
 \input{Intro - Visco.tex}
 
 \newpage
+
+\chapter{Singular Stochastic Control}
+
+We now study singular stochastic control, that is stochastic optimal control problem where the displacement of the state due to the control is allowed to be discontinuous. 
+A singular stochastic optimal control problem is a special case of a stochastic optimal control problem where the control appears linearly in the dynamics, and there are constraints on the control that lead to the control being "singular" in some regions. This often results in the optimal control being a measure rather than a function, implying that the control can change instantaneously in time.
+
+\input{spacecraft.tex}
+
+\input{Singular Stochastic Control.tex}
 
 \nocite{*}
 \bibstyle{numeric}

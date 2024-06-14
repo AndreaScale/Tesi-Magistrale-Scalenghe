@@ -93,9 +93,9 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
 
         We know that $z\in\mathbb{H}^2$. We show $y\in\mathbb{S}^2$:
 
-        \begin{align}
+        \begin{equation}
             E\left[\sup_{s\in[t,t_1]}\abs{y_s}^2\right] & \leq C_0E\left[\sup_{s\in[t,t_1]}\abs{m_s}^2\right] + C_1E\left[\sup_{s\in[t,t_1]}\abs{\int_t^s f(r,u_r,v_r)\,dr}^2\right],
-        \end{align}
+        \end{equation}
 
         but as before the second addend converges while for the first one:
 
@@ -232,11 +232,11 @@ This functional will define the BSDE in the next theorem.
 
         We then apply Ito's formula and get:
 
-        \begin{align}
+        \begin{multiline*}
             \int_t^{t_1} \partial_sV(r,x(r)) + D_xV(r,x(r))f(r,x(r),u(r)) + \frac{1}{2}tr\left[\sigma\sigma'(r,x(r),u(r))D_xx^2V(r,x(r))\right] \,dr \\
             + \int_t^{t_1} D_xV(r,x(r))\sigma(r,x(r),u(r))\,dw_r + V(t,x) \\
             {\color{red}{}= \int_t^{t_1} -f(r,x(r),u(r))\,dr + \int_t^{t_1}\alpha_r\,dw_r + V(t,x)}
-        \end{align}
+        \end{multline*}
 
         where we used the integral representation of a martingale, which implies:
 
@@ -265,7 +265,7 @@ This functional will define the BSDE in the next theorem.
 
         \begin{equation}\label{2-3-relD3G}
             \begin{align*}
-                & \frac{\partial^2V}{\partial x\partial t}(s,x(s)) + f(s,x(s),u(s))D_x^2V(s,x(s)) + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right] \\
+                \frac{\partial^2V}{\partial x\partial t}(s,x(s)) & + f(s,x(s),u(s))D_x^2V(s,x(s)) + \frac{1}{2}tr\left[\sigma\sigma'(s,x(s),u(s))\cdot D_x^3V(s,x(s))\right] \\
                 & = -D_x\left[\mathcal{G}(s,x(s),u(s),D_xV(s,x(s)),D_x^2V(s,x(s))\sigma(s,x(s),u(s)))\right].
             \end{align*}
         \end{equation}

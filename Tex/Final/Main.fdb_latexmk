@@ -1,26 +1,27 @@
 # Fdb version 4
-["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 0 -1
+["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 1718388315 -1
   "./Bibliography.bib" 1716200442 5773 8e6f47d594fade753c71d499d3ba3809 ""
-  "Main.bcf" 1717666320 107770 0bfe6ed90dbd8267d6f24ad6ff6cdfb4 "pdflatex"
+  "Main.bcf" 1718388314 107770 0bfe6ed90dbd8267d6f24ad6ff6cdfb4 "pdflatex"
   (generated)
   "Main.bbl"
   "Main.blg"
   (rewritten before read)
-["pdflatex"] 1717666306 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" "Main.pdf" "Main" 1717666322 2
+["pdflatex"] 1718388309 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" "Main.pdf" "Main" 1718388315 2
   "Dynamic programming principle.tex" 1716966723 9173 c589782ee0a4a7626ffb678208ddf0e1 ""
   "Existence.tex" 1716890966 5129 c5b89f78c2c9391417e647dc64fedc36 ""
   "Finite horizon.tex" 1710797686 3251 c4731bbb7c68a644dee85805affa7c9d ""
   "Infinite horizon.tex" 1711383266 723 29273a91426f31294161d57c81e575ec ""
   "Intro - Visco.tex" 1716890111 61779 18d84e06a8c2d1395fb6adde4f18e6a1 ""
-  "Main.aux" 1717666320 23681 c74ed8ea9a70e799a3df7d6ebf8cff38 "pdflatex"
+  "Main.aux" 1718388314 25198 534c6c06446aab148563e4c734594555 "pdflatex"
   "Main.bbl" 1716966496 15150 bbf7e1c8fd7d99ee5b19615971aed7d5 "biber Main"
-  "Main.tex" 1716718265 7199 1d91fe492c2b86a24795bfd6e6e10aae ""
-  "Main.toc" 1717666320 2314 3135cd979ee48a879143ada0524e6acc "pdflatex"
+  "Main.tex" 1718383617 7910 eed5614a0bbd387188d0deae22267ec4 ""
+  "Main.toc" 1718388314 2565 b9f01cce911d43491ba063d1bb3a0f10 "pdflatex"
   "Markov control processes.tex" 1716902631 10096 7967452a6b7c4c7a4fc4ea7cf9db9e04 ""
   "Pontryagin.tex" 1716718353 8630 5533f4d74a3b5bf6c642d4a643b36014 ""
   "Proof of Pontryagin.tex" 1712078984 6840 6e9b2b9a562e3f993effda03f98e99a2 ""
-  "Stochastic maximum Principle.tex" 1716904406 15477 fb9e5ae04971532f97982a1c286aa8f9 ""
-  "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" 1716718265 7199 1d91fe492c2b86a24795bfd6e6e10aae ""
+  "Singular Stochastic Control.tex" 1718388301 1318 c73b9250bff827f96138a60452421f5e ""
+  "Stochastic maximum Principle.tex" 1718377554 15492 8e32acf02ad538984a932a58c52a120a ""
+  "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" 1718383617 7910 eed5614a0bbd387188d0deae22267ec4 ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1702045797 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1702046692 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1702046295 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -381,6 +382,7 @@
   "c:/texlive/2023/texmf.cnf" 1702050383 713 e69b156964470283e0530f5060668171 ""
   "logo_new_2022.png" 1708462798 27684 9369cc98bbc583d617777fc7fddd2916 ""
   "markov diffusion processes.tex" 1711818026 10726 a09650e75a1693084ac1b73d9e99da96 ""
+  "spacecraft.tex" 1718377753 36 3e1acbad823919ff71449326ce62b71f ""
   (generated)
   "Main.aux"
   "Main.bcf"

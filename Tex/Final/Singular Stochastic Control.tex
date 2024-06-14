@@ -1,0 +1,35 @@
+\section{Singular Stochastic Control}
+
+Let $\nu=(\Omega, \{\mathcal{F}_s\}, P, w)$ be a reference system, with $\mathcal{F}_s$ right continuous. We want to define the motion of a state variable through a Stochastic Differential Equation. 
+Let us define the auxiliary functions
+
+\begin{equation}
+    \hat{u}(s) = \begin{cases}
+        \abs{u(s)}^{-1}u(s) & \text{if } u(s) \neq 0 \\
+        0 & \text{if } u(s) = 0,
+    \end{cases}
+\end{equation}
+
+and
+
+\begin{equation}
+    \xi(t) = \int_0^t \abs{u(s)} \,ds.
+\end{equation}
+
+We thus define the SDE
+
+\begin{equation}\label{4-2-eq: SDE def}
+    dx(s) = \hat{f}(x(s))ds + \hat{\sigma}(x(s))dw(s) + \hat{u}(s)d\xi(s),\,s>0.
+\end{equation}
+
+What do we consider as a control variable in this context? In classical stochastic optimal control problem the SDE is
+
+\[dx(s) = f(x(s),u(s))ds + \sigma(x(s),u(s))dw(s),\]
+
+where both $f$ and $\sigma$ are possibly time-dependent, and $u$ is the control variable. We define the control variable for \eqref{4-2-eq: SDE def} assign
+
+\begin{equation}
+    z(t) = \int_{[0,t)} \hat{u}(s) \,d\xi(s).
+\end{equation}
+
+Since $z(\cdot)$ may fail to be absolutely continuous. We impose it to be of bounded variation on every interval $[0,t)$, thus obtaining an almost always differentiable function (reference).

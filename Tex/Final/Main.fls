@@ -661,6 +661,12 @@ INPUT Stochastic maximum Principle.tex
 INPUT ./Intro - Visco.tex
 INPUT ./Intro - Visco.tex
 INPUT Intro - Visco.tex
+INPUT ./spacecraft.tex
+INPUT ./spacecraft.tex
+INPUT spacecraft.tex
+INPUT ./Singular Stochastic Control.tex
+INPUT ./Singular Stochastic Control.tex
+INPUT Singular Stochastic Control.tex
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT Main.aux
 OUTPUT Main.run.xml
