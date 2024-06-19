@@ -1,25 +1,25 @@
 # Fdb version 4
-["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 1718388315 -1
+["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 1718809262 -1
   "./Bibliography.bib" 1716200442 5773 8e6f47d594fade753c71d499d3ba3809 ""
-  "Main.bcf" 1718388314 107770 0bfe6ed90dbd8267d6f24ad6ff6cdfb4 "pdflatex"
+  "Main.bcf" 1718809260 107770 0bfe6ed90dbd8267d6f24ad6ff6cdfb4 "pdflatex"
   (generated)
   "Main.bbl"
   "Main.blg"
   (rewritten before read)
-["pdflatex"] 1718388309 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" "Main.pdf" "Main" 1718388315 2
+["pdflatex"] 1718809256 "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" "Main.pdf" "Main" 1718809262 2
   "Dynamic programming principle.tex" 1716966723 9173 c589782ee0a4a7626ffb678208ddf0e1 ""
   "Existence.tex" 1716890966 5129 c5b89f78c2c9391417e647dc64fedc36 ""
   "Finite horizon.tex" 1710797686 3251 c4731bbb7c68a644dee85805affa7c9d ""
   "Infinite horizon.tex" 1711383266 723 29273a91426f31294161d57c81e575ec ""
   "Intro - Visco.tex" 1716890111 61779 18d84e06a8c2d1395fb6adde4f18e6a1 ""
-  "Main.aux" 1718388314 25198 534c6c06446aab148563e4c734594555 "pdflatex"
+  "Main.aux" 1718809260 25467 fe9450ba1638768d0a8c525022f6eaa3 "pdflatex"
   "Main.bbl" 1716966496 15150 bbf7e1c8fd7d99ee5b19615971aed7d5 "biber Main"
   "Main.tex" 1718383617 7910 eed5614a0bbd387188d0deae22267ec4 ""
-  "Main.toc" 1718388314 2565 b9f01cce911d43491ba063d1bb3a0f10 "pdflatex"
+  "Main.toc" 1718809260 2565 2301768ade2f92dc1844ce08e4a0d458 "pdflatex"
   "Markov control processes.tex" 1716902631 10096 7967452a6b7c4c7a4fc4ea7cf9db9e04 ""
   "Pontryagin.tex" 1716718353 8630 5533f4d74a3b5bf6c642d4a643b36014 ""
   "Proof of Pontryagin.tex" 1712078984 6840 6e9b2b9a562e3f993effda03f98e99a2 ""
-  "Singular Stochastic Control.tex" 1718388301 1318 c73b9250bff827f96138a60452421f5e ""
+  "Singular Stochastic Control.tex" 1718809245 5402 41fb6960bc150d9eb7548957f1f80cf5 ""
   "Stochastic maximum Principle.tex" 1718377554 15492 8e32acf02ad538984a932a58c52a120a ""
   "c:/Users/ASUS/Desktop/Uni/LM/Tesi/Tex/Final/Main.tex" 1718383617 7910 eed5614a0bbd387188d0deae22267ec4 ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1702045797 2900 1537cc8184ad1792082cd229ecc269f4 ""

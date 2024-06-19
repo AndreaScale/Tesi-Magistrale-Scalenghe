@@ -1,5 +1,11 @@
 \section{Singular Stochastic Control}
 
+We consider an infinite horizon problem where $O\subset\R^n$, $U\subset\R^n$ a closed cone, functions $\hat{f},\hat{c}\in C^1(\R^n)$ with bounded first order partial derivatives and $\hat{c},\hat{L}\in C(\R^n)$ such that $f(x,v)=v+\hat{f}(x)$, $\sigma(x,v)=\hat{\sigma}(x)$, $L(x,v)=\hat{L}(x)+\hat{c}(v)$ for all $x\in\R^n,v\in U$, and $\hat{c}$ homogeneous of degree one. Furthermore, we set null boundary condition $g\equiv 0$ and non-negative costs. If we then define
+
+\begin{equation}
+    \mathcal{H}(t,x,p,A) = \sup_{v\in U}\left[-f(t,x,v)\cdot p - \frac{1}{2}tr(a(t,x,v)A) - L(t,x,v)\right].
+\end{equation}
+
 Let $\nu=(\Omega, \{\mathcal{F}_s\}, P, w)$ be a reference system, with $\mathcal{F}_s$ right continuous. We want to define the motion of a state variable through a Stochastic Differential Equation. 
 Let us define the auxiliary functions
 
@@ -28,8 +34,82 @@ What do we consider as a control variable in this context? In classical stochast
 
 where both $f$ and $\sigma$ are possibly time-dependent, and $u$ is the control variable. We define the control variable for \eqref{4-2-eq: SDE def} assign
 
-\begin{equation}
+\begin{equation}\label{4-2-eq: def z}
     z(t) = \int_{[0,t)} \hat{u}(s) \,d\xi(s).
 \end{equation}
 
-Since $z(\cdot)$ may fail to be absolutely continuous. We impose it to be of bounded variation on every interval $[0,t)$, thus obtaining an almost always differentiable function (reference).
+Since we aim at more general $z(\cdot)$ control functions, that may fail to be absolutely continuous, we impose them to be of bounded variation on every interval $[0,t)$, thus obtaining an almost always differentiable functions. If so, given $\mu(\cdot)$ the total variation of $z(\cdot)$, we get 
+\[\xi(t)=\int_{[0,t)} d\mu(s)\]
+which is non-decreasing, left-continuous and $\xi(0)=0$. Besides, Radon-Nikodym Theorem implies the existence of a function $\hat{u}(s)$ such that \eqref{4-2-eq: def z} holds. Under this construction $\mathcal{F}_s$-measurability of $z(\cdot)$ is passed to $\xi(\cdot)$ and $\hat{u}(\cdot)$, thus we always assume it. Moreover, we assume that $\hat{u}(s)\in U$ for $\mu$-almost all $s\geq 0$ and that each moment of $z(\cdot)$ is finite, that is $E\abs{z(t)}^m<+\infty$ for all $m\in\N\setminus\{0\}$.
+The existence of a unique solution to \eqref{4-2-eq: SDE def} is proven by Picard iteration, although such a $x(\cdot)$ is not necessarily continuous. 
+
+We now want to maximize
+\begin{equation}\label{4-2-eq: def J}
+    J(x;\xi,\hat{u}) = E_x\int_{[0,\tau)} e^{-\beta s}\left[\hat{L}(x(s))ds + \hat{c}(\hat{u}(s))d\xi(s)\right],
+\end{equation}
+
+over all controls $(\xi(\cdot),\hat{u}(\cdot))\in\mathcal{A}_{\nu}$, where $\tau$ is the exit time of $x(s)$ from $\overline{O}$. Finally, to avoid the possibility of $J$ being $+\infty$ we impose 
+
+\begin{equation}
+    E_x \int_{[0,\tau)} e^{-\beta s}\abs{L(x(s),u(s))}\,ds<+\infty.
+\end{equation}
+
+Thus, the value functions are
+
+\begin{equation}
+    V_{\nu}(x) = \inf_{\mathcal{A}_{\nu}} J(x;\xi,\hat{u}),
+\end{equation}
+
+and
+
+\begin{equation}
+    V(x) = V_{PM}(x) = \inf_{\nu} V_{\nu}.
+\end{equation}
+
+We would now be tempted to search for solutions of
+
+\[-\frac{\partial V}{\partial t} + \mathcal{H}(t,x,D_x V,D_x^2 V)=0,\,(t,x)\in Q,\]
+
+but in this context it may be the case that $\mathcal{H}(p)=+\infty$, indeed if 
+
+\begin{equation}
+    H(p) = \sup_{v\in\hat{K}}-p\cdot v-\hat{c}(v),
+\end{equation}
+
+where $\hat{K}$ as the unitary elements of $U$, is strictly positive value then because of homogeneity and $U$ being a cone then
+
+\begin{equation}
+    \hat{\mathcal{H}}(p)=\sup_{v\in U}\left\{-p\cdot v - \hat{c}(v)\right\}
+\end{equation}
+
+is $+\infty$ there, thus observing that
+
+\[\mathcal{H}(x,p,A) = -\frac{1}{2}trl\left(\hat{a}(x)A\right) - \hat{f}(x)\cdot p - \hat{L}(x) + \hat{\mathcal{H}}(p),\]
+
+we get that $\mathcal{H}$ is $+\infty$. Nevertheless, we expect
+
+\begin{equation}
+    H(DV(x)) \leq 0,
+\end{equation}
+
+and 
+
+\begin{equation}
+    \mathcal{L}V(x) = \beta V(x) - \frac{1}{2}tr\left(\hat{a}(x)D^2V(x)\right) - \hat{f}(x)\cdot DV(x)\leq \hat{L}(x), \, x\in O.
+\end{equation}
+
+But if $H(DV(x))<0$ then in a neighborhood of $x$ the optimal control is zero, thus we have
+
+\[\mathcal{L}V(x)=\hat{L}(x).\]
+
+In a more compact notation
+
+\begin{equation}\label{4-2-eq: new dynamic programming}
+    \max\left\{\mathcal{L}V(x)-\hat{L}(x),H(DV(x))\right\} = 0,\, x\in O.
+\end{equation}
+
+The definition of a classical solution of \eqref{4-2-eq: new dynamic programming} is the following.
+
+\begin{definition}
+    Let $W\in C_p(\overline{O})\cap C^1(\overline{O})$ with $DW\in L_{loc}^{1,\infty}(O;\R^n)$ and define $\mathcal{P}=\left\{x\in\R^n\,:\,H(DW(x))<0\right\}$. We say that $W$ is classical solution to \eqref{4-2-eq: new dynamic programming} if $W\in C^2(\mathcal{P})$ and $\mathcal{L}W(x)=\hat{L}(x)$ for all $x\in\mathcal{P}$, while $H(DW(x))\leq 0$ for all $x\in\overline{O}$, and $\mathcal{L}W(x)\leq \hat{L}(x)$ almost everywhere in $\R^n$.  
+\end{definition}
