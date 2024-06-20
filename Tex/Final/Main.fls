@@ -472,6 +472,9 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.cfg
 INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.cfg
 INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+INPUT ./Main.aux
+INPUT ./Main.aux
+INPUT Main.aux
 OUTPUT Main.aux
 OUTPUT Main.pdf
 INPUT c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -509,10 +512,10 @@ INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsl12.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-OUTPUT Main.toc
-INPUT ./Finite horizon.tex
-INPUT ./Finite horizon.tex
-INPUT Finite horizon.tex
+INPUT ./Main.toc
+INPUT ./Main.toc
+INPUT Main.toc
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
@@ -587,7 +590,10 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/esint/uesint.fd
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+OUTPUT Main.toc
+INPUT ./Finite horizon.tex
+INPUT ./Finite horizon.tex
+INPUT Finite horizon.tex
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT ./Dynamic programming principle.tex
 INPUT ./Dynamic programming principle.tex
@@ -637,7 +643,6 @@ INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/mathabx/mathx10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT ./Infinite horizon.tex
 INPUT ./Infinite horizon.tex
 INPUT Infinite horizon.tex
@@ -666,8 +671,8 @@ INPUT ./Singular Stochastic Control.tex
 INPUT Singular Stochastic Control.tex
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT Main.aux
+INPUT Main.run.xml
 OUTPUT Main.run.xml
-INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
