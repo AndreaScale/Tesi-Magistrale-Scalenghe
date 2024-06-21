@@ -108,14 +108,139 @@ In a more compact notation
     \max\left\{\mathcal{L}V(x)-\hat{L}(x),H(DV(x))\right\} = 0,\, x\in O.
 \end{equation}
 
+\subsection{Verification Theorem}
+
 The definition of a classical solution of \eqref{4-2-eq: new dynamic programming} is the following.
 
 \begin{definition}
     Let $W\in C_p(\overline{O})\cap C^1(\overline{O})$ with $DW\in L_{loc}^{1,\infty}(O;\R^n)$ and define $\mathcal{P}=\left\{x\in\R^n\,:\,H(DW(x))<0\right\}$. We say that $W$ is classical solution to \eqref{4-2-eq: new dynamic programming} if $W\in C^2(\mathcal{P})$ and $\mathcal{L}W(x)=\hat{L}(x)$ for all $x\in\mathcal{P}$, while $H(DW(x))\leq 0$ for all $x\in\overline{O}$, and $\mathcal{L}W(x)\leq \hat{L}(x)$ almost everywhere in $\R^n$.  
 \end{definition}
 
+
 A verification theorem holds in this context. This result mimics one for classical stochastic optimal control problems, that we have not proved in chapter II [cite IV 5.1].
 
 \begin{theorem}
-    Let $O$ be convex and $W$ solution to \eqref{4-2-eq: new dynamic programming} with boundary condition $V(x)=0$ for $x\in\partial O$. Then for all $x\in\overline{O}$ 
+    Let $O$ be convex and $W$ solution to \eqref{4-2-eq: new dynamic programming} with boundary condition $V(x)=0$ for $x\in\partial O$. Then for all $x\in\overline{O}$:
+    
+    \begin{enumerate}[label=(\arabic*.)]
+        \item for all $(\xi(\cdot),\hat{u}(\cdot))\in\hat{\mathcal{A}}_{\nu}$ such that
+        
+        \begin{equation}
+            \liminf_{t\to+\infty} e^{-\beta t}E_x\left[W(x(t))\chi_{\tau=+\infty}\right] = 0,
+        \end{equation}
+
+        then $W(x)\leq J(x;\xi,\hat{u})$
+
+        \item if $W\geq 0$ and there exists $(\xi^{\ast}(\cdot),u^{\ast}(\cdot))\in\hat{\mathcal{A}}_{\nu}$ such that with probability one:
+        
+        \begin{enumerate}[label=(2.\alph*.)]
+            \item $x^{\ast}(t)\in\mathcal{P}$ for almost every $t\leq \tau$,
+            \item for all $t\leq\tau$
+            
+            \[\int_{[0,t)} \left[u^{\ast}(s)\cdot DW(x^{\ast}(s)) + \hat{c}(u^{\ast}(s))\right]\,d\xi^{\ast}(s) = 0,\]
+
+            \item for all $t\leq \tau$
+            
+            \[W(x^{\ast}(t)) - W(x^{\ast}(t^+)) = \hat{c}(u^{\ast}(t))\left[\xi^{\ast}(t^+) - \xi(t)\right],\]
+            
+            \item and 
+            
+            \[\lim_{t\to+\infty} E_x\left[e^{-\beta(t\land\tau)}W(x^{\ast}(t\land\tau))\chi_{\tau=+\infty}\right] = 0.\]
+        \end{enumerate}
+
+        Then $J(x;\xi^{\ast},u^{\ast}) = W(x)$.
+    \end{enumerate}
+
+    \begin{proof}
+        $(\textit{1}.)$ 
+    \end{proof}
+\end{theorem}
+
+
+\section{Viscosity Solution}
+
+Consistently with what has been done in previous chapters we now prove the value function arising from the Singular stochastic problem is indeed a solution (viscous) of the dynamic programming equation. We have already defined the dynamic programming equation in this context, that is equation \eqref{4-2-eq: new dynamic programming}; the value function $V$ is assumed to be in $C_p(\overline{O})$ and satisfy the dynamic programming principle, that is 
+
+\begin{equation}\label{4-2-eq: porgramming principle}
+    V(x) = \inf_{\nu} \inf_{\mathcal{A}_{\nu}} \left\{E_xe^{-\beta(\tau\land\theta)}V(x(\tau\land\theta)) + E_x\int_{[0,\tau\land\theta]}e^{-\beta s}\left[\hat{L}(x(s))ds + \hat{c}(\hat{u}(s))d\xi(s)\right]\right\},
+\end{equation}
+
+where $\tau$ is the exit time of $x(\cdot)$ from $\overline{O}$ and \eqref{4-2-eq: porgramming principle} holds for all $x\in O$ and all stopping times $\theta$. Formally we can also define the value function as
+
+\begin{equation}
+    V(x) = \inf_{\nu}\inf_{\mathcal{A}_{\nu}} J(x;\xi,u),
+\end{equation}
+
+recalling what we did in previous chapters.
+
+\begin{theorem}
+    Let $V\in C_p(\overline{O})$ such that \eqref{4-2-eq: porgramming principle} holds $\forall x\in O$ and all stopping times $\theta$, then $V$ is a viscosity solution of \eqref{4-2-eq: new dynamic programming}.
+
+    \begin{proof}
+        (Subsolution.) Shall we take a $w\in C^2(O)\cap C_p(\overline{O})$ and $\overline{x}\in O$ such that
+        
+        \[\overline{x} = \arg \max_{\overline{O}} V-w\]
+
+        and show that 
+
+        \begin{equation}\label{4-2-eq: subsol prop}
+            \max\left\{\mathcal{L}w(\overline{x}) - \hat{L}(\overline{x}), H(Dw(\overline{x}))\right\} \leq 0.
+        \end{equation}
+
+        From \eqref{4-2-eq: porgramming principle:} by taking $\theta = h>0$ we get
+
+        \begin{equation}\label{4-2-eq: subsolution V, relation w and V}
+            w(\overline{x}) \leq E_{\overline{x}} \int_{[0,\tau\land h]} e^{-\beta s}\left[\hat{L}(x(s))ds + \hat{c}(\hat{u}(s))d\xi(s)\right]+E_{\overline{x}}e^{-\beta(\tau\land h)}w(x(\tau\land h)).
+        \end{equation}
+
+        If we set $\delta>0$, $\xi=\delta\chi_{\R_+}$, and $\hat{u}(s)\equiv \hat{v}\in U$ we get
+
+        \[x(0^+)=\lim_{t\to 0^+}x(t) = x(0) + \hat{u}(0)(\lim_{t\to 0^+}\xi(t)-\xi(0))=\overline{x}+\hat{v}\delta,\]
+
+        then if we let $h\to0^+$ in \eqref{4-2-eq: subsolution V, relation w and V} we get
+
+        \begin{equation}
+            w(\overline{x}) \leq \delta\hat{c}(\hat{v}) + w(\overline{x} + \delta\hat{v}),
+        \end{equation}
+
+        which implies 
+
+        \begin{equation}
+            -Dw(\overline{x}) -\hat{c}(\hat{v}) = \lim_{\delta\to0} \frac{w(\overline{x} + \delta\hat{v}) - w(\overline{x})}{\delta} - \hat{c}(\hat{v}) \leq 0,
+        \end{equation}
+
+        for all $\hat{v}\in U$, thus
+
+        \[H(Dw(\overline{x}))\leq 0.\]
+
+        If we instead impose $\xi=0$ in \eqref{4-2-eq: subsolution V, relation w and V} we get
+        
+        \begin{equation}\label{4-2-eq: first for subsol}
+            w(\overline{x}) \leq E_{\overline{x}} \int_{[0,\tau\land h]} e^{-\beta s}\hat{L}(x(s))ds + E_{\overline{x}}e^{-\beta(\tau\land h)}w(x(\tau\land h)),
+        \end{equation}    
+        
+        if we then apply Ito's formula to $e^{-\beta s}w(x(s))$ we get 
+
+        \begin{equation}\label{4-2-eq: second for subsol}
+            E_{\overline{x}}e^{-\beta(\tau\land h)}w(x(\tau\land h)) = - E_{\overline{x}} \int_{[0,\tau\land h]} e^{-\beta s}\mathcal{L}w(x(s))ds + w(\overline{x}),
+        \end{equation}
+
+        then combining \eqref{4-2-eq: first for subsol} together with \eqref{4-2-eq: second for subsol} we get
+
+        \begin{equation}
+            E_{\overline{x}} \int_{[0,\tau\land h]} e^{-\beta s}\mathcal{L}(x(s)) - e^{-\beta s}\hat{L}w(x(s))\,ds\leq 0,  
+        \end{equation}
+
+        thus letting $h\to0^+$
+
+        \begin{equation}
+            \mathcal{L}w(x(s)) - \hat{L}(x(s))\leq 0.
+        \end{equation}
+
+        (Supersolution.) Let $w$ as before and $\overline{x}\in O$ such that $V-w$ is minimized with $(V-w)(\overline{x})=0$, let us show
+
+        \begin{equation}
+            \max\left\{\mathcal{L}w(\overline{x}) - \hat{L}(\overline{x}), H(Dw(\overline{x}))\right\} \geq 0.
+        \end{equation}
+    \end{proof}
 \end{theorem}
