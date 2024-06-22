@@ -72,7 +72,7 @@ We would now be tempted to search for solutions of
 
 but in this context it may be the case that $\mathcal{H}(p)=+\infty$, indeed if 
 
-\begin{equation}
+\begin{equation}\label{4-2-eq: H definition}
     H(p) = \sup_{v\in\hat{K}}-p\cdot v-\hat{c}(v),
 \end{equation}
 
@@ -134,16 +134,16 @@ A verification theorem holds in this context. This result mimics one for classic
         \item if $W\geq 0$ and there exists $(\xi^{\ast}(\cdot),u^{\ast}(\cdot))\in\hat{\mathcal{A}}_{\nu}$ such that with probability one:
         
         \begin{enumerate}[label=(2.\alph*.)]
-            \item $x^{\ast}(t)\in\mathcal{P}$ for almost every $t\leq \tau$,
-            \item for all $t\leq\tau$
+            \item \label{4-2: fisrt bullet point} $x^{\ast}(t)\in\mathcal{P}$ for almost every $t\leq \tau$,
+            \item \label{4-2: second bullet point} for all $t\leq\tau$
             
             \[\int_{[0,t)} \left[u^{\ast}(s)\cdot DW(x^{\ast}(s)) + \hat{c}(u^{\ast}(s))\right]\,d\xi^{\ast}(s) = 0,\]
 
-            \item for all $t\leq \tau$
+            \item \label{4-2: third} for all $t\leq \tau$
             
             \[W(x^{\ast}(t)) - W(x^{\ast}(t^+)) = \hat{c}(u^{\ast}(t))\left[\xi^{\ast}(t^+) - \xi(t)\right],\]
             
-            \item and 
+            \item \label{4-2: fourth} and 
             
             \[\lim_{t\to+\infty} E_x\left[e^{-\beta(t\land\tau)}W(x^{\ast}(t\land\tau))\chi_{\tau=+\infty}\right] = 0.\]
         \end{enumerate}
@@ -153,6 +153,29 @@ A verification theorem holds in this context. This result mimics one for classic
 
     \begin{proof}
         $(\textit{1}.)$ 
+
+        $(\textit{2}.)$ let us suppose that for some $s\geq0$ we have $x^{\ast}(s)\in\mathcal{P}$. Since $\mathcal{P}$ is open
+
+        \[\mathcal{L}W_m(x^{\ast}(s))\xrightarrow{m\to+\infty}\mathcal{L}W(x^\ast(s))=\hat{L}(x^{ast}(s)).\]
+
+        By \ref{4-2: fisrt bullet point} and the dominated convergence theorem we have
+
+        \begin{equation}
+            \lim_{m\to+\infty}\int_0^{t\land\theta_m} e^{-\beta s}\mathcal{L}W_m(x^{\ast}(s))\,ds = E_{x}\int_0^{t\land\theta_N} e^{-\beta}\hat{L}(x^{\ast}(s))\,ds.
+        \end{equation}
+
+        If we now impose the optimal control into \eqref{} we get
+
+        \begin{equation}
+            \begin{aligned}
+                W_m(x) = & E_xe^{-\beta (t\land\tau_m)}W_m(x^{\ast}(t\land\tau_m)) \\
+                & + E_x \int_0^{t\land\tau_m} e^{-\beta s} \mathcal{L}W_m(x^{\ast}(s))\,ds \\
+                & + E_x \int_0^{t\land\tau_m} e^{-\beta s} \left[-u^{\ast}(s)\cdot DW_m(x^{\ast}(s))\right]d\xi^{\ast,c}(s) \\
+                & + E_x \sum_{0\leq s< t\land \tau_m} e^{-\beta s}\left[W_m(x^{ast}(s)) - W_m(x^{\ast}(s^+))\right],
+            \end{aligned}
+        \end{equation}
+
+        thus letting $m,N,t\to+\infty$ and recalling \ref{4-2: second bullet point}, \ref{4-2: third}, and \ref{4-2: fourth} we get the thesis.
     \end{proof}
 \end{theorem}
 
@@ -242,5 +265,51 @@ recalling what we did in previous chapters.
         \begin{equation}
             \max\left\{\mathcal{L}w(\overline{x}) - \hat{L}(\overline{x}), H(Dw(\overline{x}))\right\} \geq 0.
         \end{equation}
+
+        Let us suppose the contrary, that is the existence of $\delta,\gamma>0$ such that
+
+        \begin{equation}
+            \max\left\{\mathcal{L}w(\overline{x}) - \hat{L}(\overline{x}), H(Dw(\overline{x}))\right\} \leq -\gamma, \,\forall x\in B_{\gamma}(\overline{x}).
+        \end{equation}
+
+        Let $(\xi(\cdot),\hat{u}(\cdot))\in\hat{\mathcal{A}}_{\nu}$ and $\theta$ the exit time from the ball of $x(\cdot)$, thus $\theta<\tau$. Since $w\in C^2$ then $e^{-\beta s}w(x(s))$ is a semi-martingale, and we can apply Ito's formula to semi-martingales
+
+        \begin{equation}\label{4-2-eq: first w in proof viscosity}
+            \begin{aligned}
+                w(\overline{x}) = & E_{\overline{x}} e^{-\beta \theta}w(x(\theta)) + E_{\overline{x}}\int_0^{\theta} e^{-\beta s}\mathcal{L}w(x(s))\,ds \\
+                & + E_{\overline{x}}\int_0^{\theta} e^{-\beta s}\left[-\hat{u}(s)\cdot Dw(x(s))\right]\,d\xi^c(s) \\
+                & + E_{\overline{x}} \sum_{0\leq s <\theta} e^{-\beta s}\left[w(x(s)) - w(x(s^+))\right],
+            \end{aligned}
+        \end{equation}   
+
+        with $\xi^c(t) = \xi(t) - \sum_{0\leq s <t} \xi(s^+)\xi(s)$. Clearly the absurd condition implies
+
+        \begin{equation}\label{4-2-eq: mathcal L hat L}
+            \mathcal{L}w(x(s))\leq\hat{L}(x(s)) - \gamma,\, H(Dw(x(s)))\leq -\gamma,
+        \end{equation}
+
+        while we get
+
+        \begin{equation}\label{4-2-eq: h cdot Dw leq gamma}
+            -\hat{u}(s)\cdot Dw(x(s)) \leq \hat{c}(\hat{u}(s)) - \gamma\abs{\hat{u}(s)}
+        \end{equation}
+
+        by using the latter together with \eqref{4-2-eq: H definition}. Furthermore, by the fundamental theorem of calculus if we set $x_{\rho}=\rho x(s^+)+(1-\rho)x(s)$ for all $\rho\in[0,1]$ we have
+
+        \begin{align*}
+            w(x(s)) - w(x(s^+)) & = \int_0^1 -(x(s^+) - x(s))\cdot Dw(\rho x(s^+)+(1-\rho)x(s)) \,d\rho \\
+            & = \int_0^1 -(x(s^+) - x(s))\cdot Dw(x_{\rho}) \,d\rho \\
+            & \leq \left[\hat{c}(\hat{u}(s) - \gamma\abs{\hat{u}(s)})\right]\left[\xi(s^+) - \xi(s)\right].
+        \end{align*}
+
+        Thus, if we combine the latter with \eqref{4-2-eq: h cdot Dw leq gamma} and \eqref{4-2-eq: mathcal L hat L} into \eqref{4-2-eq: first w in proof viscosity} we get
+
+        \begin{align*}
+            w(\overline{x}) \leq & E_{\overline{x}} e^{-\beta \theta}w(x(\theta)) \\
+            & + E_{\overline{x}} \int_{[0,\theta)} e^{-\beta s}\left[\hat{L}(\hat{u}(s))ds + \hat{c}(\hat{u}(s))d\xi(s)\right] \\
+            & - \gamma E_{\overline{x}} \int_{[0,\theta)} e^{-\beta s} \left[ds + \abs{\hat{u}(s)}d\xi(s)\right]. 
+        \end{align*}
+
+
     \end{proof}
 \end{theorem}
