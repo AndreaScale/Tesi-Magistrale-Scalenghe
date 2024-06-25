@@ -152,7 +152,41 @@ A verification theorem holds in this context. This result mimics one for classic
     \end{enumerate}
 
     \begin{proof}
-        $(\textit{1}.)$ 
+        $(\textit{1}.)$ Let us extend $W$ to $\R^n$ by setting $W\equiv0$ in $\R^n\setminus \overline{O}$. We identify this extension with $W$, noticing that it is continuous since $W$ is null on $\partial O$. We will show an upper bound for $W$ given by a sort-of-mollified version of $J$, which will give the thesis at the limit. Let us consider a family of mollifiers $\{\varphi_m\}$ centered in the origin. We consider $W$ and $\hat{L}$ mollified by $\varphi_m$, that is 
+        
+        \begin{equation}
+            W_m = W \ast \varphi_m,\, \hat{L}_m = \hat{L} \ast \varphi_m.
+        \end{equation}
+
+        By classic results we have local uniform convergence of $W_m$, $\hat{L}_m$, and $DW_m$ to $W$, $\hat{L}$, and $DW$ respectively. Let us now consider
+        
+        \begin{equation}
+            O_{N,m} = \left\{x\in O \,|\, dist(x,\partial O) > \frac{1}{m}\right\} \cap B_N(0).
+        \end{equation}
+
+        Now, given the continuity of $\mathcal{L}$ and local boundedness of $D^2W$ we get
+        
+        \begin{equation*}
+            \lim_{m\to+\infty} \sup_{x\in\overline{O}_{N,m}} \abs{(\mathcal{L}W_m)(x) - (\mathcal{L}W\ast varphi_m)(x)} = 0,
+        \end{equation*}
+
+        while we get
+
+        \begin{equation*}
+            \limsup_{m\to+\infty} K_{N,m} = \limsup_{m\to+\infty}\sup_{x\in\overline{O}_{N,m}}\left\{\mathcal{L}W_m(x) - \hat{L}_m(x)\right\}\leq 0,
+        \end{equation*}
+        
+        since $\mathcal{L}W\leq \hat{L}$ almost everywhere in $O$. Hence, since
+
+        \[-\hat{v}\cdot DW_m(x) - \hat{c}(\hat{v}) = - [(\hat{v}\cdot DW + \hat{c}(\hat{v}))\ast\varphi_m](x)\leq0,\,x\in\overline{O}_m,\]
+
+        we have
+        
+        \begin{equation}
+            \max\left\{\mathcal{L}W_m(x) - \hat{L}_m(x), H(DW_m(x))\right\} \leq K_{N,m}\lor 0.
+        \end{equation}
+
+        
 
         $(\textit{2}.)$ let us suppose that for some $s\geq0$ we have $x^{\ast}(s)\in\mathcal{P}$. Since $\mathcal{P}$ is open
 
