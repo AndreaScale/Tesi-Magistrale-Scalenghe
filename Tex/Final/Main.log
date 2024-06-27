@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  25 JUN 2024 12:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.8)  27 JUN 2024 19:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1730,19 +1730,19 @@ LaTeX Warning: Reference `1-4-existenceliminf' on page 17 undefined on input lin
 LaTeX Warning: Reference `1-proofpontry-defvar' on page 20 undefined on input line 129.
 
 
-LaTeX Warning: Reference `1-proofpontrydervar0' on page 20 undefined on input line 144.
+LaTeX Warning: Reference `1-proofpontry-dervar0' on page 20 undefined on input line 144.
 
 
-Overfull \hbox (5.22215pt too wide) detected at line 150
-\OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 ; a; p\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq ^^P \OML/cmm/m/it/12 f\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 ; a\U/matha/m/n/12 q ^^D \OML/cmm/m/it/12 p\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q ¤ \OML/cmm/m/it/12 f\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 ; u\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq ^^D \OML/cmm/m/it/12 p\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q ^^P \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 ; u\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 ; p\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq
+Overfull \hbox (8.48601pt too wide) detected at line 150
+\OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 ; a; p\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq ^^P \OML/cmm/m/it/12 f\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 ; a\U/matha/m/n/12 q ^^D \OML/cmm/m/it/12 p\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q ¤ \OML/cmm/m/it/12 f\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 ; u\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq ^^D \OML/cmm/m/it/12 p\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q ^^P \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 ; u\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 ; p\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq\OML/cmm/m/it/12 :
  []
 
 
 LaTeX Warning: Reference `1-proofpontry-theo' on page 20 undefined on input line 166.
 
 [20]
-Overfull \hbox (8.58472pt too wide) detected at line 193
-[][][][]\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x; u\U/matha/m/n/12 q ^^P [] \OML/cmm/m/it/12 ;  [] \U/matha/m/n/12 ^^P [] \OML/cmm/m/it/12 ;  []\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q ^^P [] \OML/cmm/m/it/12 ;  []\U/matha/m/n/12 p[]p\OML/cmm/m/it/12 t[]\U/matha/m/n/12 qq ^^P \OML/cmm/m/it/12 g\U/matha/m/n/12 p\OML/cmm/m/it/12 x\U/matha/m/n/12 p\OML/cmm/m/it/12 t[]\U/matha/m/n/12 qq ^^@ \OML/cmm/m/it/12 x[]\U/matha/m/n/12 p\OML/cmm/m/it/12 t[]\U/matha/m/n/12 q
+Overfull \hbox (11.84857pt too wide) detected at line 193
+[]\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x; u\U/matha/m/n/12 q ^^P [] \OML/cmm/m/it/12 ;  [] \U/matha/m/n/12 ^^P [] \OML/cmm/m/it/12 ;  []\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q ^^P [] \OML/cmm/m/it/12 ;  []\U/matha/m/n/12 p[]p\OML/cmm/m/it/12 t[]\U/matha/m/n/12 qq ^^P \OML/cmm/m/it/12 g\U/matha/m/n/12 p\OML/cmm/m/it/12 x\U/matha/m/n/12 p\OML/cmm/m/it/12 t[]\U/matha/m/n/12 qq ^^@ \OML/cmm/m/it/12 x[]\U/matha/m/n/12 p\OML/cmm/m/it/12 t[]\U/matha/m/n/12 q\OML/cmm/m/it/12 ;
  []
 
 ) [21] [22
@@ -1751,329 +1751,179 @@ Overfull \hbox (8.58472pt too wide) detected at line 193
 Chapter 2.
 (./markov diffusion processes.tex [23]
 
-LaTeX Warning: Reference `2-1-markovprocessdef-chapkol' on page 24 undefined on input line 50.
+LaTeX Warning: Reference `2-1-markovprocessdef-chapkol' on page 24 undefined on input line 51.
 
 
-LaTeX Warning: Reference `2-1-backwarddef' on page 24 undefined on input line 64.
+LaTeX Warning: Reference `2-1-backwarddef' on page 24 undefined on input line 65.
 
 
 LaTeX Warning: Reference `2-1-propT' on page 24 undefined on input line 98.
 
-[24] [25]
+[24]
 
-LaTeX Warning: Reference `2-1-SDEdef' on page 26 undefined on input line 163.
+LaTeX Warning: Citation 'Varadhan' on page 25 undefined on input line 123.
+
+[25]
+
+LaTeX Warning: Reference `2-1-SDEdef' on page 26 undefined on input line 162.
 
 
-Overfull \hbox (98.0023pt too wide) detected at line 180
-[][][]\OT1/cmr/m/n/12 ^^H\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq ^^P \OT1/cmr/m/n/12 ^^H\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q ^^@ [][] \OT1/cmr/m/n/12 ^^H[]\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq \OML/cmm/m/it/12 dr \U/matha/m/n/12 ^^@ [] [][] \OT1/cmr/m/n/12 ^^H[]\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq \OML/cmm/m/it/12 dx[]\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q ^^@ [] [] [][] \OT1/cmr/m/n/12 ^^H[]\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq \OML/cmm/m/it/12 d\U/matha/m/n/12 r\OML/cmm/m/it/12 x; x\U/matha/m/n/12 s[]p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 :
+Overfull \hbox (1.05008pt too wide) detected at line 166
+[][][]\OML/cmm/m/it/12 d\OT1/cmr/m/n/12 ^^H\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq ^^P \OT1/cmr/m/n/12 ^^H[]\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq\OML/cmm/m/it/12 ds \U/matha/m/n/12 ^^@ [] \OT1/cmr/m/n/12 ^^H[]\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq\OML/cmm/m/it/12 dx[]\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q ^^@ [] [] \OT1/cmr/m/n/12 ^^H[]\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq\OML/cmm/m/it/12 d\U/matha/m/n/12 r\OML/cmm/m/it/12 x; x\U/matha/m/n/12 s[]p\OML/cmm/m/it/12 s\U/matha/m/n/12 q\OML/cmm/m/it/12 ;
  []
 
 
-LaTeX Warning: Reference `2-1-dynkform' on page 26 undefined on input line 182.
+Overfull \hbox (13.65364pt too wide) detected at line 175
+[][][][][]
+ []
 
 
-Overfull \hbox (15.88637pt too wide) detected at line 191
+LaTeX Warning: Reference `2-1-dynkform' on page 26 undefined on input line 177.
+
+
+Overfull \hbox (15.88637pt too wide) detected at line 186
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2753) has occurred while \output is active []
 
  [26]
 
-LaTeX Warning: Reference `2-1-SDEdef' on page 27 undefined on input line 227.
+LaTeX Warning: Reference `2-1-SDEdef' on page 27 undefined on input line 222.
 
 [27]) (./Markov control processes.tex
 
-LaTeX Warning: Reference `2-1-controlledSDE' on page 28 undefined on input line 31.
+LaTeX Warning: Reference `2-1-controlledSDE' on page 28 undefined on input line 30.
 
 [28]
 
-LaTeX Warning: Reference `2-1-condoncontrol' on page 29 undefined on input line 62.
+LaTeX Warning: Reference `2-1-condoncontrol' on page 29 undefined on input line 61.
 
 
-LaTeX Warning: Reference `2-1-systemopt' on page 29 undefined on input line 77.
+LaTeX Warning: Reference `2-1-systemopt' on page 29 undefined on input line 76.
+
+
+LaTeX Warning: Reference `2-1-opt' on page 29 undefined on input line 76.
 
 [29]
 
-LaTeX Warning: Reference `2-1-defhamilt' on page 30 undefined on input line 125.
-
-
-Overfull \hbox (87.75482pt too wide) detected at line 148
- \OML/cmm/m/it/12 u[]\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q P [] [] []
- []
-
-
-LaTeX Warning: Reference `2-1-hamilcond' on page 30 undefined on input line 158.
+LaTeX Warning: Reference `2-1-defhamilt' on page 30 undefined on input line 124.
 
 [30]
+
+LaTeX Warning: Reference `2-1-hamilcond' on page 31 undefined on input line 158.
+
+
 Overfull \hbox (19.12238pt too wide) detected at line 168
-[][][]\OML/cmm/m/it/12 W\U/matha/m/n/12 p\OML/cmm/m/it/12 ^^\; x\U/matha/m/n/12 p\OML/cmm/m/it/12 ^^\\U/matha/m/n/12 qq ^^A \OML/cmm/m/it/12 W\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q ^^P [][] \OML/cmm/m/it/12 A[]W\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq \OML/cmm/m/it/12 ds \U/matha/m/n/12 ^^@ [][] \OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 ^^H\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq ^^D \OML/cmm/m/it/12 ^^[\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q\OML/cmm/m/it/12 ; u\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq \OML/cmm/m/it/12 dw\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q\OML/cmm/m/it/12 :
+\OML/cmm/m/it/12 W\U/matha/m/n/12 p\OML/cmm/m/it/12 ^^\; x\U/matha/m/n/12 p\OML/cmm/m/it/12 ^^\\U/matha/m/n/12 qq ^^A \OML/cmm/m/it/12 W\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q ^^P [][] \OML/cmm/m/it/12 A[]W\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq \OML/cmm/m/it/12 ds \U/matha/m/n/12 ^^@ [][] \OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 ^^H\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq ^^D \OML/cmm/m/it/12 ^^[\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q\OML/cmm/m/it/12 ; u\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq \OML/cmm/m/it/12 dw\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q\OML/cmm/m/it/12 :
  []
 
 [31]
-Overfull \hbox (72.42871pt too wide) detected at line 211
-[][][][] \OML/cmm/m/it/12 E[] [] \U/matha/m/n/12 ^^P \OML/cmm/m/it/12 E[] [] :
- []
 
-
-LaTeX Warning: Reference `2-1-proofver-keyeq' on page 32 undefined on input line 213.
+LaTeX Warning: Reference `2-1-proofver-keyeq' on page 32 undefined on input line 214.
 
 ) (./Stochastic maximum Principle.tex
-Overfull \hbox (15.56477pt too wide) detected at line 26
+Overfull \hbox (15.56477pt too wide) detected at line 28
 [][][]\U/msb/m/n/12 S[]\U/matha/m/n/12 p\OML/cmm/m/it/12 t; t[]\U/matha/m/n/12 q ^^P []
  []
 
 
-Overfull \hbox (34.71654pt too wide) detected at line 32
+Overfull \hbox (34.71654pt too wide) detected at line 34
 [][][]\U/msb/m/n/12 H[]\U/matha/m/n/12 p\OML/cmm/m/it/12 t; t[]\U/matha/m/n/12 q[] ^^P [] \OML/cmm/m/it/12 :
  []
 
-
-LaTeX Warning: Reference `2-3-defBSDE' on page 32 undefined on input line 34.
-
-
-LaTeX Warning: Reference `2-3-solBSDE' on page 32 undefined on input line 37.
-
-
-LaTeX Warning: Reference `2-3-defBSDE' on page 32 undefined on input line 44.
-
 [32]
 
-LaTeX Warning: Reference `2-3-defBSDE' on page 33 undefined on input line 56.
-
-[33]
-./Stochastic maximum Principle.tex:97: Misplaced alignment tab character &.
-l.97 ...eft[\sup_{s\in[t,t_1]}\abs{y_s}^2\right] &
-                                                   \leq C_0E\left[\sup_{s\in...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+LaTeX Warning: Reference `2-3-defBSDE' on page 33 undefined on input line 36.
 
 
-Overfull \hbox (44.7222pt too wide) detected at line 102
-\OML/cmm/m/it/12 E [] \U/matha/m/n/12 ¤ \OML/cmm/m/it/12 C[]Em[] \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12 C[]E[]m[]E[] [] [][] \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12 C[]E[] [] [][] ;
- []
+LaTeX Warning: Reference `2-3-defBSDE' on page 33 undefined on input line 39.
 
 
-LaTeX Warning: Reference `2-3-derivat' on page 34 undefined on input line 125.
+LaTeX Warning: Reference `2-3-solBSDE' on page 33 undefined on input line 46.
 
 
-Overfull \hbox (24.36824pt too wide) detected at line 131
+LaTeX Warning: Reference `2-3-defBSDE' on page 33 undefined on input line 58.
+
+[33] [34]
+
+LaTeX Warning: Reference `2-3-derivat' on page 35 undefined on input line 131.
+
+
+Overfull \hbox (24.36824pt too wide) detected at line 137
 []
  []
 
-[34]
 
-LaTeX Warning: Reference `2-3-defBSDE-linear' on page 35 undefined on input line 147.
+LaTeX Warning: Reference `2-3-defBSDE-linear' on page 35 undefined on input line 154.
 
 
-LaTeX Warning: Reference `2-3-linearfsol' on page 35 undefined on input line 153.
+LaTeX Warning: Reference `2-3-linearfsol' on page 35 undefined on input line 160.
 
 [35]
 
-LaTeX Warning: Reference `1-3-pontry' on page 36 undefined on input line 198.
+LaTeX Warning: Reference `1-3-pontry' on page 36 undefined on input line 205.
 
 [36]
 
-./Stochastic maximum Principle.tex:235: LaTeX Error: Environment multiline* undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.235         \begin{multiline*}
-                                
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./Stochastic maximum Principle.tex:236: Missing $ inserted.
-<inserted text> 
-                $
-l.236             \int
-                      _t^{t_1} \partial_sV(r,x(r)) + D_xV(r,x(r))f(r,x(r),u(...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./Stochastic maximum Principle.tex:239: Misplaced \cr.
-\math@cr@@@ ->\cr 
-                  
-l.239         \end{multline*}
-                             
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./Stochastic maximum Principle.tex:239: Misplaced \noalign.
-\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
-                                                  {\vskip #1\relax }
-l.239         \end{multline*}
-                             
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-./Stochastic maximum Principle.tex:239: Missing $ inserted.
-<inserted text> 
-                $
-l.239         \end{multline*}
-                             
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./Stochastic maximum Principle.tex:239: Missing } inserted.
-<inserted text> 
-                }
-l.239         \end{multline*}
-                             
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+LaTeX Warning: Reference `Ito to V BSDE' on page 37 undefined on input line 255.
 
 
-Overfull \hbox (23.12537pt too wide) in paragraph at lines 236--239
-[]$[][] \U/matha/m/n/12 B[]\OML/cmm/m/it/12 V\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq ^^@ \OML/cmm/m/it/12 D[]V\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq\OML/cmm/m/it/12 f\U/matha/m/n/12 p\OML/cmm/m/it/12 r; x\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 q\OML/cmm/m/it/12 ; u\U/matha/m/n/12 p\OML/cmm/m/it/12 r\U/matha/m/n/12 qq ^^@ []\OML/cmm/m/it/12 tr []  dr[] 
- []
+LaTeX Warning: Reference `2-3-hjbinproof' on page 37 undefined on input line 262.
 
+[37]
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--239
-[][]  []$ 
- []
-
-./Stochastic maximum Principle.tex:239: Extra }, or forgotten \endgroup.
-\math@cr@@ ...th@cr@@@ \noalign {\vskip #1\relax }
-                                                  
-l.239         \end{multline*}
-                             
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./Stochastic maximum Principle.tex:239: Extra }, or forgotten \endgroup.
-<recently read> \egroup 
-                        
-l.239         \end{multline*}
-                             
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-./Stochastic maximum Principle.tex:239: LaTeX Error: \begin{proof} on input line 224 ended by \end{multline*}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.239         \end{multline*}
-                             
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./Stochastic maximum Principle.tex:239: Missing $ inserted.
-<inserted text> 
-                $
-l.239         \end{multline*}
-                             
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./Stochastic maximum Principle.tex:239: Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.239         \end{multline*}
-                             
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-LaTeX Warning: Reference `2-3-hjbinproof' on page 37 undefined on input line 248.
-
-
-Overfull \hbox (83.8462pt too wide) detected at line 262
-[]
- []
-
-
-./Stochastic maximum Principle.tex:270: Package amsmath Error: Erroneous nesting of equation structures;
+./Stochastic maximum Principle.tex:286: Package amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.270             \end{align*}
+l.286             \end{align*}
                               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (9.17448pt too wide) detected at line 271
-[][][][][]
- []
+LaTeX Warning: Reference `2-3-relD3G' on page 38 undefined on input line 289.
 
 
-LaTeX Warning: Reference `2-3-relD3G' on page 37 undefined on input line 273.
+LaTeX Warning: Reference `2-3-maxprinc-BSDE' on page 38 undefined on input line 289.
 
-
-LaTeX Warning: Reference `2-3-maxprinc-BSDE' on page 37 undefined on input line 273.
-
-
-Overfull \hbox (0.21237pt too wide) detected at line 280
-[]
- []
-
-[37]) [38]
+) [38]
 Chapter 3.
 (./Intro - Visco.tex [39
 
-]
-Overfull \hbox (114.8362pt too wide) detected at line 72
-[] [][] \OT1/cmr/m/n/12 1 \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12 p[] ds \U/matha/m/n/12 ^^P []p\OT1/cmr/m/n/12 1 \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12 p[]\U/matha/m/n/12 qp\OML/cmm/m/it/12 ^^\ \U/matha/m/n/12 ^^A \OML/cmm/m/it/12 t\U/matha/m/n/12 q ^^P []
- []
+] [40]
 
-[40]
+LaTeX Warning: Reference `4-1-fullynonlinear' on page 41 undefined on input line 139.
 
-LaTeX Warning: Reference `4-1-fullynonlinear' on page 41 undefined on input line 107.
 
-[41]
-Overfull \hbox (47.34436pt too wide) detected at line 143
+Overfull \hbox (47.34436pt too wide) detected at line 175
 \OML/cmm/m/it/12 v[]\U/matha/m/n/12 p\OML/cmm/m/it/12 x[]; t[]\U/matha/m/n/12 q ^^@ \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 Dv\U/matha/m/n/12 p\OML/cmm/m/it/12 x[]; t[]\U/matha/m/n/12 q\OML/cmm/m/it/12 ; x[]\U/matha/m/n/12 q [] \OML/cmm/m/it/12 v[]\U/matha/m/n/12 p\OML/cmm/m/it/12 x[]; t[]\U/matha/m/n/12 q ^^@ \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 Dv\U/matha/m/n/12 p\OML/cmm/m/it/12 x[]; t[]\U/matha/m/n/12 q\OML/cmm/m/it/12 ; x[]\U/matha/m/n/12 q ¤ \OT1/cmr/m/n/12 ^^A\OML/cmm/m/it/12 ^^O[]v\U/matha/m/n/12 p\OML/cmm/m/it/12 x[]; t[]\U/matha/m/n/12 q [] \OT1/cmr/m/n/12 0
  []
 
+[41]
 
-LaTeX Warning: Reference `4-1-fullynonlinear' on page 42 undefined on input line 150.
-
-
-LaTeX Warning: Reference `4-1-leqT' on page 42 undefined on input line 185.
+LaTeX Warning: Reference `4-1-fullynonlinear' on page 42 undefined on input line 182.
 
 
-LaTeX Warning: Reference `4-1-geqT' on page 42 undefined on input line 185.
+LaTeX Warning: Reference `4-1-leqT' on page 42 undefined on input line 217.
 
 
-LaTeX Warning: Reference `4-1-identityofT' on page 42 undefined on input line 185.
+LaTeX Warning: Reference `4-1-geqT' on page 42 undefined on input line 217.
+
+
+LaTeX Warning: Reference `4-1-identityofT' on page 42 undefined on input line 217.
 
 [42]
 
-LaTeX Warning: Reference `4-1-valuefunctreform' on page 43 undefined on input line 207.
+LaTeX Warning: Reference `4-1-valuefunctreform' on page 43 undefined on input line 239.
 
 
-Overfull \hbox (18.64078pt too wide) detected at line 234
+Overfull \hbox (18.64078pt too wide) detected at line 266
 [][][] \U/matha/m/n/12 @ \OML/cmm/m/it/12 w \U/matha/m/n/12 P \OMS/cmsy/m/n/12 D[][]\OML/cmm/m/it/12 ;  \OMS/cmsy/m/n/12 G[]\OML/cmm/m/it/12 w\U/matha/m/n/12 p\OML/cmm/m/it/12 t; \U/matha/m/n/12 ^^Dq[]\OML/cmm/m/it/12 w\U/matha/m/n/12 p\OML/cmm/m/it/12 t; \U/matha/m/n/12 ^^Dq P \OMS/cmsy/m/n/12 C \U/matha/m/n/12 @ \OML/cmm/m/it/12 t \U/matha/m/n/12 P r\OML/cmm/m/it/12 t[]; t[]\U/matha/m/n/12 s\OML/cmm/m/it/12 ;
  []
 
@@ -2084,56 +1934,62 @@ Overfull \hbox (15.24329pt too wide) has occurred while \output is active
 
 [43]
 
-LaTeX Warning: Reference `4-1-newprogreq' on page 44 undefined on input line 252.
+LaTeX Warning: Reference `4-1-newprogreq' on page 44 undefined on input line 284.
 
 
-LaTeX Warning: Reference `4-1-newprogreq' on page 44 undefined on input line 266.
+LaTeX Warning: Reference `4-1-newprogreq' on page 44 undefined on input line 298.
 
 
-LaTeX Warning: Reference `4-1-newprogreq' on page 44 undefined on input line 274.
+LaTeX Warning: Reference `4-1-newprogreq' on page 44 undefined on input line 306.
+
+
+LaTeX Warning: Reference `4-1-newprogreq' on page 44 undefined on input line 329.
 
 [44]
 
-LaTeX Warning: Reference `4-1-newprogreq' on page 45 undefined on input line 297.
+LaTeX Warning: Reference `4-1-newprogreq' on page 45 undefined on input line 343.
 
 
-LaTeX Warning: Reference `4-1-newprogreq' on page 45 undefined on input line 311.
+LaTeX Warning: Reference `4-1-newprogreq' on page 45 undefined on input line 343.
 
 
-LaTeX Warning: Reference `4-1-newprogreq' on page 45 undefined on input line 311.
+LaTeX Warning: Reference `4-1-subsolution' on page 45 undefined on input line 346.
 
 
-LaTeX Warning: Reference `4-1-subsolution' on page 45 undefined on input line 314.
+LaTeX Warning: Reference `4-1-supersolution' on page 45 undefined on input line 346.
 
 
-LaTeX Warning: Reference `4-1-supersolution' on page 45 undefined on input line 314.
+LaTeX Warning: Reference `4-1-defofT_dynam' on page 45 undefined on input line 362.
 
 
-LaTeX Warning: Reference `4-1-defofT_dynam' on page 45 undefined on input line 330.
+LaTeX Warning: Reference `4-1-newprogreq' on page 45 undefined on input line 363.
 
 
-LaTeX Warning: Reference `4-1-newprogreq' on page 45 undefined on input line 331.
+LaTeX Warning: Reference `4-1-identityofT' on page 45 undefined on input line 366.
 
 
-LaTeX Warning: Reference `4-1-identityofT' on page 45 undefined on input line 334.
+LaTeX Warning: Reference `4-1-geqT' on page 45 undefined on input line 366.
 
 
-LaTeX Warning: Reference `4-1-geqT' on page 45 undefined on input line 334.
+LaTeX Warning: Reference `4-1-leqT' on page 45 undefined on input line 366.
 
 
-LaTeX Warning: Reference `4-1-leqT' on page 45 undefined on input line 334.
+LaTeX Warning: Reference `4-1-conditiononD' on page 45 undefined on input line 367.
 
 
-LaTeX Warning: Reference `4-1-conditiononD' on page 45 undefined on input line 335.
+LaTeX Warning: Reference `4-1-conditiononG_t' on page 45 undefined on input line 367.
 
 
-LaTeX Warning: Reference `4-1-conditiononG_t' on page 45 undefined on input line 335.
+LaTeX Warning: Reference `4-1-newprogreq' on page 45 undefined on input line 371.
 
 
-LaTeX Warning: Reference `4-1-newprogreq' on page 45 undefined on input line 339.
+LaTeX Warning: Reference `4-1-geqT' on page 45 undefined on input line 375.
 
 
-LaTeX Warning: Reference `4-1-geqT' on page 45 undefined on input line 343.
+LaTeX Warning: Reference `4-1-conditiononD' on page 45 undefined on input line 379.
+
+
+LaTeX Warning: Reference `4-1-conditiononG_t' on page 45 undefined on input line 379.
 
 
 Overfull \hbox (15.24329pt too wide) has occurred while \output is active
@@ -2142,268 +1998,262 @@ Overfull \hbox (15.24329pt too wide) has occurred while \output is active
 
 [45]
 
-LaTeX Warning: Reference `4-1-conditiononD' on page 46 undefined on input line 347.
+LaTeX Warning: Reference `4-1-proof1-firsstineq' on page 46 undefined on input line 383.
 
 
-LaTeX Warning: Reference `4-1-conditiononG_t' on page 46 undefined on input line 347.
-
-
-LaTeX Warning: Reference `4-1-proof1-firsstineq' on page 46 undefined on input line 351.
-
-
-LaTeX Warning: Reference `4-1-defelliptic' on page 46 undefined on input line 394.
+LaTeX Warning: Reference `4-1-defelliptic' on page 46 undefined on input line 426.
 
 [46]
 
-LaTeX Warning: Reference `4-1-defelliptic' on page 47 undefined on input line 402.
+LaTeX Warning: Reference `4-1-defelliptic' on page 47 undefined on input line 434.
 
 
-LaTeX Warning: Reference `4-1-PDEwithW' on page 47 undefined on input line 416.
+LaTeX Warning: Reference `4-1-PDEwithW' on page 47 undefined on input line 448.
 
 
-LaTeX Warning: Reference `4-1-PDEwithW' on page 47 undefined on input line 424.
+LaTeX Warning: Reference `4-1-PDEwithW' on page 47 undefined on input line 456.
 
 
-LaTeX Warning: Reference `4-1-defviscsol' on page 47 undefined on input line 436.
+LaTeX Warning: Reference `4-1-defviscsol' on page 47 undefined on input line 468.
 
 
-LaTeX Warning: Reference `4-1-defviscforW' on page 47 undefined on input line 436.
+LaTeX Warning: Reference `4-1-defviscforW' on page 47 undefined on input line 468.
 
 
-LaTeX Warning: Reference `4-1-GPDEop' on page 47 undefined on input line 437.
+LaTeX Warning: Reference `4-1-GPDEop' on page 47 undefined on input line 469.
 
 
-LaTeX Warning: Reference `4-1-defviscsol' on page 47 undefined on input line 442.
+LaTeX Warning: Reference `4-1-defviscsol' on page 47 undefined on input line 474.
 
 
-LaTeX Warning: Reference `4-1-defviscforW' on page 47 undefined on input line 442.
+LaTeX Warning: Reference `4-1-defviscforW' on page 47 undefined on input line 474.
 
 
-LaTeX Warning: Reference `4-1-defviscforW' on page 47 undefined on input line 446.
+LaTeX Warning: Reference `4-1-defviscforW' on page 47 undefined on input line 478.
 
 
-LaTeX Warning: Reference `4-1-condonCandD' on page 47 undefined on input line 451.
+LaTeX Warning: Reference `4-1-condonCandD' on page 47 undefined on input line 483.
 
 
-LaTeX Warning: Reference `4-1-PDEwithW' on page 47 undefined on input line 466.
+LaTeX Warning: Reference `4-1-PDEwithW' on page 47 undefined on input line 498.
 
 
-LaTeX Warning: Reference `4-1-defviscsol' on page 47 undefined on input line 466.
+LaTeX Warning: Reference `4-1-defviscsol' on page 47 undefined on input line 498.
 
 
-LaTeX Warning: Reference `4-1-defviscforW' on page 47 undefined on input line 466.
+LaTeX Warning: Reference `4-1-defviscforW' on page 47 undefined on input line 498.
 
 [47]
 
-LaTeX Warning: Reference `4-1-defviscsol' on page 48 undefined on input line 469.
+LaTeX Warning: Reference `4-1-defviscsol' on page 48 undefined on input line 501.
 
 
-LaTeX Warning: Reference `4-1-condonCandD' on page 48 undefined on input line 493.
+LaTeX Warning: Reference `4-1-condonCandD' on page 48 undefined on input line 525.
 
 
-LaTeX Warning: Reference `4-1-defviscforW' on page 48 undefined on input line 502.
+LaTeX Warning: Reference `4-1-defviscforW' on page 48 undefined on input line 534.
 
 [48]
-Overfull \hbox (5.56255pt too wide) detected at line 526
+Overfull \hbox (5.56255pt too wide) detected at line 558
 [][][][] [] [] \U/matha/m/n/12 ^^P []\OML/cmm/m/it/12 w\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q ^^A \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x; D[]w\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 qq\OML/cmm/m/it/12 ;   \U/matha/m/n/12 @ p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q P []\OML/cmm/m/it/12 :
  []
 
 
-LaTeX Warning: Reference `4-1-viscodynamiceq-lim' on page 49 undefined on input line 531.
+LaTeX Warning: Reference `4-1-viscodynamiceq-lim' on page 49 undefined on input line 563.
 
 
-LaTeX Warning: Reference `1-2-HJB1' on page 49 undefined on input line 531.
+LaTeX Warning: Reference `1-2-HJB1' on page 49 undefined on input line 563.
 
 
-LaTeX Warning: Reference `4-1-thm:Vtoviscosity' on page 49 undefined on input line 531.
+LaTeX Warning: Reference `4-1-thm:Vtoviscosity' on page 49 undefined on input line 563.
 
 
-LaTeX Warning: Reference `4-1-inproof:limsup' on page 49 undefined on input line 545.
+LaTeX Warning: Reference `4-1-inproof:limsup' on page 49 undefined on input line 577.
 
 
-Overfull \hbox (70.1443pt too wide) detected at line 553
+Overfull \hbox (70.1443pt too wide) detected at line 585
 []
  []
 
 
-LaTeX Warning: Reference `4-1-inproof:limsup' on page 49 undefined on input line 555.
+LaTeX Warning: Reference `4-1-inproof:limsup' on page 49 undefined on input line 587.
 
 [49]
 
-LaTeX Warning: Reference `4-1-inproof:liminf' on page 50 undefined on input line 557.
+LaTeX Warning: Reference `4-1-inproof:liminf' on page 50 undefined on input line 589.
 
 
-Overfull \hbox (1.94775pt too wide) detected at line 573
+Overfull \hbox (1.94775pt too wide) detected at line 605
 [] \U/matha/m/n/12 p\OML/cmm/m/it/12 x\U/matha/m/n/12 q ¥ [][] \OML/cmm/m/it/12 L\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q\OML/cmm/m/it/12 ; u\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq \OML/cmm/m/it/12 ds \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12 w [] \U/matha/m/n/12 ^^A []\OML/cmm/m/it/12 ;
  []
 
 
-Overfull \hbox (8.40096pt too wide) detected at line 582
+Overfull \hbox (8.40096pt too wide) detected at line 614
 [][][][][]
  []
 
 
-Overfull \hbox (6.93033pt too wide) in paragraph at lines 594--595
+Overfull \hbox (6.93033pt too wide) in paragraph at lines 626--627
 []\OT1/cmr/m/n/12 (-20) Because of the con-ti-nu-ity of $\OML/cmm/m/it/12 L$\OT1/cmr/m/n/12 (-20) , of $\OML/cmm/m/it/12 f$ \OT1/cmr/m/n/12 (-20) and smooth-ness of $\OML/cmm/m/it/12 w$ \OT1/cmr/m/n/12 (-20) we have that $[][] \OML/cmm/m/it/12 e\U/matha/m/n/12 p\OML/cmm/m/it/12 n\U/matha/m/n/12 q ^^P
  []
 
 
-Overfull \hbox (78.90541pt too wide) detected at line 598
+Overfull \hbox (78.90541pt too wide) detected at line 630
 [][][]\OML/cmm/m/it/12 n [][] L\U/matha/m/n/12 p\OML/cmm/m/it/12 s; x\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 q\OML/cmm/m/it/12 ; u[]\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq \OML/cmm/m/it/12 ds \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12 n [][] f\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x; u[]\U/matha/m/n/12 p\OML/cmm/m/it/12 s\U/matha/m/n/12 qq \OML/cmm/m/it/12 ds \U/matha/m/n/12 ^^D \OML/cmm/m/it/12 D[]w\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q ¤ [] [] \OML/cmm/m/it/12 ;
  []
 
 [50]
 
-LaTeX Warning: Reference `4-1-inproof:geq' on page 51 undefined on input line 600.
+LaTeX Warning: Reference `4-1-inproof:geq' on page 51 undefined on input line 632.
 
 
-LaTeX Warning: Reference `miao' on page 51 undefined on input line 604.
+LaTeX Warning: Reference `miao' on page 51 undefined on input line 636.
 
 
-LaTeX Warning: Reference `1-2-HJB1' on page 51 undefined on input line 611.
+LaTeX Warning: Reference `1-2-HJB1' on page 51 undefined on input line 643.
 
 
-LaTeX Warning: Reference `4-1-viscodynamiceq' on page 51 undefined on input line 621.
+LaTeX Warning: Reference `4-1-viscodynamiceq' on page 51 undefined on input line 653.
 
 [51]
-Overfull \hbox (0.30894pt too wide) in paragraph at lines 656--657
+Overfull \hbox (0.30894pt too wide) in paragraph at lines 688--689
 []\OT1/cmr/m/n/12 (-20) There ex-ists $\OML/cmm/m/it/12 K \U/matha/m/n/12 P \U/msb/m/n/12 R$ \OT1/cmr/m/n/12 (-20) and $\OML/cmm/m/it/12 h \U/matha/m/n/12 P \OML/cmm/m/it/12 C\U/matha/m/n/12 pr\OT1/cmr/m/n/12 (-20) 0\OML/cmm/m/it/12 ; \U/matha/m/n/12 8qq$ \OT1/cmr/m/n/12 (-20) with $\OML/cmm/m/it/12 h\U/matha/m/n/12 p\OT1/cmr/m/n/12 (-20) 0\U/matha/m/n/12 q ^^P \OT1/cmr/m/n/12 (-20) 0$ such that $ \U/matha/m/n/12 @ p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q\OML/cmm/m/it/12 ; \U/matha/m/n/12 p\OML/cmm/m/it/12 s; y\U/matha/m/n/12 q P
  []
 
 
-Overfull \hbox (19.34325pt too wide) detected at line 658
+Overfull \hbox (19.34325pt too wide) detected at line 690
 \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x; p\U/matha/m/n/12 q ^^A \OML/cmm/m/it/12 H\U/matha/m/n/12 p\OML/cmm/m/it/12 s; y; p[]\U/matha/m/n/12 q ¤ \OML/cmm/m/it/12 h\U/matha/m/n/12 p[] ^^@ []q ^^@ \OML/cmm/m/it/12 h\U/matha/m/n/12 p[]q[] ^^@ \OML/cmm/m/it/12 K[][] \U/matha/m/n/12 ^^@ \OML/cmm/m/it/12 K[]:
  []
 
 
-LaTeX Warning: Reference `4-2-firstordereq' on page 52 undefined on input line 672.
+LaTeX Warning: Reference `4-2-firstordereq' on page 52 undefined on input line 704.
 
 
-LaTeX Warning: Reference `4-2-firstordereq' on page 52 undefined on input line 678.
+LaTeX Warning: Reference `4-2-firstordereq' on page 52 undefined on input line 710.
 
 [52]
 
-LaTeX Warning: Reference `4-2-Theo:Suponbound' on page 53 undefined on input line 687.
+LaTeX Warning: Reference `4-2-Theo:Suponbound' on page 53 undefined on input line 719.
 
 
-LaTeX Warning: Reference `4-2-Theo:Suponbound' on page 53 undefined on input line 691.
+LaTeX Warning: Reference `4-2-Theo:Suponbound' on page 53 undefined on input line 723.
 
 [53] [54]
 
-LaTeX Warning: Reference `4-2-InProofSup:qandp1' on page 55 undefined on input line 784.
+LaTeX Warning: Reference `4-2-InProofSup:qandp1' on page 55 undefined on input line 816.
 
 
-LaTeX Warning: Reference `4-2-InProofSup:qandp2' on page 55 undefined on input line 784.
+LaTeX Warning: Reference `4-2-InProofSup:qandp2' on page 55 undefined on input line 816.
 
 
-LaTeX Warning: Reference `4-2-InProofSup:phiestim1' on page 55 undefined on input line 807.
+LaTeX Warning: Reference `4-2-InProofSup:phiestim1' on page 55 undefined on input line 839.
 
 
-LaTeX Warning: Reference `4-2-InProofSup:phiestim2' on page 55 undefined on input line 808.
+LaTeX Warning: Reference `4-2-InProofSup:phiestim2' on page 55 undefined on input line 840.
 
 
-LaTeX Warning: Reference `4-2-InProofSup:limsuplimsup' on page 55 undefined on input line 818.
+LaTeX Warning: Reference `4-2-InProofSup:limsuplimsup' on page 55 undefined on input line 850.
 
 
-Overfull \hbox (40.90181pt too wide) detected at line 820
+Overfull \hbox (40.90181pt too wide) detected at line 852
 \OML/cmm/m/it/12 W\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q ^^A \OML/cmm/m/it/12 V\U/matha/m/n/12 p\OML/cmm/m/it/12 s; y\U/matha/m/n/12 q ^^P [] \OML/cmm/m/it/12 W\U/matha/m/n/12 p\OML/cmm/m/it/12 t; x\U/matha/m/n/12 q ^^A \OML/cmm/m/it/12 V\U/matha/m/n/12 p\OML/cmm/m/it/12 s; y\U/matha/m/n/12 q ^^@ \OML/cmm/m/it/12 ^^L\U/matha/m/n/12 p\OML/cmm/m/it/12 t \U/matha/m/n/12 ^^A \OML/cmm/m/it/12 t[]\U/matha/m/n/12 q ¤ [] \OT1/cmr/m/n/12 ^^H\U/matha/m/n/12 p\OML/cmm/m/it/12 t[]; x[]; s[]; y[]\U/matha/m/n/12 q ¤ []r\OML/cmm/m/it/12 W \U/matha/m/n/12 ^^A \OML/cmm/m/it/12 V\U/matha/m/n/12 s\OML/cmm/m/it/12 :
  []
 
 [55]
-Overfull \hbox (8.40312pt too wide) detected at line 844
+Overfull \hbox (8.40312pt too wide) detected at line 876
 \OML/cmm/m/it/12 m[]; m[] \U/matha/m/n/12 P \OML/cmm/m/it/12 C\U/matha/m/n/12 pr\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \U/matha/m/n/12 8qq\OML/cmm/m/it/12 ;  m[]\U/matha/m/n/12 p\OT1/cmr/m/n/12 0\U/matha/m/n/12 q ^^P \OML/cmm/m/it/12 m[]\U/matha/m/n/12 p\OT1/cmr/m/n/12 0\U/matha/m/n/12 q ^^P \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ;  K[] \U/matha/m/n/12 ^^P []t\OML/cmm/m/it/12 m[]\U/matha/m/n/12 p\OML/cmm/m/it/12 ^^Z\U/matha/m/n/12 q \OT1/cmr/m/n/12 :  \OML/cmm/m/it/12 ^^Z \U/matha/m/n/12 ¥ \OT1/cmr/m/n/12 0\U/matha/m/n/12 u   ^^@8\OML/cmm/m/it/12 :
  []
 
 [56]
 
-LaTeX Warning: Reference `4-2-inproofSup:unboundedCLAIMS' on page 57 undefined on input line 894.
+LaTeX Warning: Reference `4-2-inproofSup:unboundedCLAIMS' on page 57 undefined on input line 926.
 
 [57]
 
-LaTeX Warning: Reference `4-2-inproofSup:unboundedCLAIMS' on page 58 undefined on input line 945.
+LaTeX Warning: Reference `4-2-inproofSup:unboundedCLAIMS' on page 58 undefined on input line 977.
 
 
-LaTeX Warning: Reference `4-2-inproofSup:qandpwithbeta' on page 58 undefined on input line 945.
+LaTeX Warning: Reference `4-2-inproofSup:qandpwithbeta' on page 58 undefined on input line 977.
 
 
-LaTeX Warning: Reference `4-2-inproofSup:qandpwithoutbeta' on page 58 undefined on input line 945.
+LaTeX Warning: Reference `4-2-inproofSup:qandpwithoutbeta' on page 58 undefined on input line 977.
 
 
-Overfull \hbox (13.65894pt too wide) detected at line 953
+Overfull \hbox (13.65894pt too wide) detected at line 985
 []
  []
 
 [58]
 
-LaTeX Warning: Reference `4-3-boundonf' on page 59 undefined on input line 969.
+LaTeX Warning: Reference `4-3-boundonf' on page 59 undefined on input line 1001.
 
 
-Overfull \hbox (36.25522pt too wide) detected at line 995
+Overfull \hbox (36.25522pt too wide) detected at line 1027
 []
  []
 
 [59]
-Overfull \hbox (19.9334pt too wide) detected at line 1008
+Overfull \hbox (19.9334pt too wide) detected at line 1040
 [][][][] \U/matha/m/n/12 ¤ \OML/cmm/m/it/12 K[][] \U/matha/m/n/12 ^^@ p\OML/cmm/m/it/12 t[] \U/matha/m/n/12 ^^A \OML/cmm/m/it/12 t[]\U/matha/m/n/12 q\OML/cmm/m/it/12 m[]\U/matha/m/n/12 p[]\OML/cmm/m/it/12 K[]e[]\U/matha/m/n/12 q ^^@ \OML/cmm/m/it/12 m[]\U/matha/m/n/12 p[]\OML/cmm/m/it/12 K[]e[]\U/matha/m/n/12 q\OML/cmm/m/it/12 ;
  []
 
 
-LaTeX Warning: Reference `4-3-InProof:modulusx' on page 60 undefined on input line 1011.
+LaTeX Warning: Reference `4-3-InProof:modulusx' on page 60 undefined on input line 1043.
 
 
-LaTeX Warning: Reference `4-3-InProof:modulust' on page 60 undefined on input line 1011.
+LaTeX Warning: Reference `4-3-InProof:modulust' on page 60 undefined on input line 1043.
 
 
-LaTeX Warning: Reference `4-2-TerminalcondV' on page 60 undefined on input line 1024.
+LaTeX Warning: Reference `4-2-TerminalcondV' on page 60 undefined on input line 1056.
 
 
-LaTeX Warning: Reference `3-4-Coroll: Continuous V implies solution' on page 60 undefined on input line 1027.
+LaTeX Warning: Reference `3-4-Coroll: Continuous V implies solution' on page 60 undefined on input line 1059.
 
 
-LaTeX Warning: Reference `4-2-Theo:Suponbound' on page 60 undefined on input line 1027.
+LaTeX Warning: Reference `4-2-Theo:Suponbound' on page 60 undefined on input line 1059.
 
 
-LaTeX Warning: Reference `4-2-Hassumptions' on page 60 undefined on input line 1028.
+LaTeX Warning: Reference `4-2-Hassumptions' on page 60 undefined on input line 1060.
 
 
-Overfull \hbox (1.8001pt too wide) detected at line 1035
+Overfull \hbox (1.8001pt too wide) detected at line 1067
 []
  []
 
 
-LaTeX Warning: Reference `4-2-Hassumptions' on page 60 undefined on input line 1037.
+LaTeX Warning: Reference `4-2-Hassumptions' on page 60 undefined on input line 1069.
 
 
-LaTeX Warning: Reference `4-2-Theo:Suponbound' on page 60 undefined on input line 1037.
+LaTeX Warning: Reference `4-2-Theo:Suponbound' on page 60 undefined on input line 1069.
 
 
-LaTeX Warning: Reference `Section: Pontryagin Principle' on page 60 undefined on input line 1060.
+LaTeX Warning: Reference `Section: Pontryagin Principle' on page 60 undefined on input line 1092.
 
 [60]
 
-LaTeX Warning: Reference `Non diff V' on page 61 undefined on input line 1111.
+LaTeX Warning: Reference `Non diff V' on page 61 undefined on input line 1143.
 
 
-LaTeX Warning: Reference `Non diff V-problem' on page 61 undefined on input line 1116.
+LaTeX Warning: Reference `Non diff V-problem' on page 61 undefined on input line 1148.
 
 [61]
 
-LaTeX Warning: Reference `Non diff V-V' on page 62 undefined on input line 1126.
+LaTeX Warning: Reference `Non diff V-V' on page 62 undefined on input line 1158.
 
 
-LaTeX Warning: Reference `4-3-pontrydotp' on page 62 undefined on input line 1153.
+LaTeX Warning: Reference `4-3-pontrydotp' on page 62 undefined on input line 1185.
 
 
-LaTeX Warning: Reference `4-3-pontry-maxH' on page 62 undefined on input line 1153.
+LaTeX Warning: Reference `4-3-pontry-maxH' on page 62 undefined on input line 1185.
 
 
-LaTeX Warning: Reference `4-3-pontry-trans' on page 62 undefined on input line 1153.
+LaTeX Warning: Reference `4-3-pontry-trans' on page 62 undefined on input line 1185.
 
 
-LaTeX Warning: Reference `4-3-InProof:Pontryagin-der_t' on page 62 undefined on input line 1177.
+LaTeX Warning: Reference `4-3-InProof:Pontryagin-der_t' on page 62 undefined on input line 1209.
 
 
-Overfull \hbox (116.0798pt too wide) detected at line 1181
+Overfull \hbox (116.0798pt too wide) detected at line 1213
 []
  []
 
@@ -2411,23 +2261,23 @@ Overfull \hbox (116.0798pt too wide) detected at line 1181
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5.61}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1181         \end{align*}
+l.1213         \end{align*}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5.61}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1181         \end{align*}
+l.1213         \end{align*}
                            ]
 
-LaTeX Warning: Reference `4-3-InProof:Pontryagin-der_t' on page 63 undefined on input line 1202.
+LaTeX Warning: Reference `4-3-InProof:Pontryagin-der_t' on page 63 undefined on input line 1234.
 
 
-Overfull \hbox (95.93254pt too wide) detected at line 1211
+Overfull \hbox (95.93254pt too wide) detected at line 1243
 []
  []
 
 
-Overfull \hbox (51.1448pt too wide) detected at line 1224
+Overfull \hbox (51.1448pt too wide) detected at line 1256
 []
  []
 
@@ -2556,18 +2406,18 @@ Package logreq Info: Writing requests to 'Main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58638 strings out of 474267
- 1355778 string characters out of 5751465
- 2296765 words of memory out of 5000000
+ 58590 strings out of 474267
+ 1355029 string characters out of 5751465
+ 2293765 words of memory out of 5000000
  79272 multiletter control sequences out of 15000+600000
- 588808 words of font info for 255 fonts, out of 8000000 for 9000
+ 588640 words of font info for 253 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,107p,1624b,1948s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Main.pdf (73 pages, 575300 bytes).
+Output written on Main.pdf (73 pages, 576585 bytes).
 PDF statistics:
- 1050 PDF objects out of 1200 (max. 8388607)
- 905 compressed objects within 10 object streams
- 447 named destinations out of 1000 (max. 500000)
+ 997 PDF objects out of 1000 (max. 8388607)
+ 853 compressed objects within 9 object streams
+ 403 named destinations out of 1000 (max. 500000)
  47874 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -16,16 +16,16 @@ Let us consider the calculus of variation problem:
     \inf_{x\in Lip([0,1];[-1,1])} \int_t^{t_1} 1 + \frac{1}{4}(\dot{x}(s))^2 \,ds,
 \end{equation}
 
-where $Lip(I;U)$ is the collection of Lipschitz continuous functions from $I$ to $U$. The Hamiltonian related to 
-this problem is:
+where $Lip(I;U)$ is the collection of Lipschitz continuous functions from $I$ to $U$. We can see this as an optimal control problem where $I_0=[0,1]$, $\Psi\equiv 0$, and $L(t,x,v) = 1+\frac{v^2}{4}$. The Hamiltonian related to 
+this problem is
 
-\[H(t,x,p) = \max_{v\in [-1,1]} \left\{-v\cdot p - 1 - \frac{1}{4}v^2\right\}.\]
+\[H(t,x,p) = \max_{v\in \R} \left\{-v\cdot p - 1 - \frac{1}{4}v^2\right\}.\]
 
-We can explicitly compute the Hamiltonian and get:
+We can explicitly compute the Hamiltonian and get
 
 \[H(t,x,p)=p^2-1.\]
 
-Then the Hamilton-Jacobi equations read:
+Then the Hamilton-Jacobi equations read
 
 \[\begin{cases}
     \dot{x}^{\ast}(s) = -H_p(s,x^{\ast}(s),p^{\ast}(s)) =  2p^{\ast}(s)\\
@@ -36,45 +36,77 @@ therefore, we get:
 
 \[\dot{x}(s)^{\ast} = 2p^{\ast},\,s\in[0,1],\]
 
-for some $p^{\ast}\in\R$. We now compute the exit time of $(s,x(s))=(s,2(s-t)p^{\ast}+x)$ with initial data $(t,x)$. If $p=0$ then:
+thus a linear $x^{\ast}(\cdot)$ and a constant optimal control $u^{\ast}$. We have
 
-\[\tau=1,\,\abs{x}<1.\]
+\begin{equation*}
+    J(t,x;v) = \left(1+\frac{v^2}{4}\right)(\tau - t), 
+\end{equation*}
 
-If $p>0$ then $x(s)=2(s-t)p+x$ is increasing, which implies that the system is going to exit from the right boundary, that is from $x(s)=1$, and if 
-that happens before time $s=1$ the exit time will be determined by:
+where 
 
-\[2(s-t)p+x=1\Rightarrow s=t+\frac{1-x}{2p}.\]
-
-$x(s)=1$ for $s<1$ if:
-
-\[2(1-t)p+x\geq1\Rightarrow p\geq t+\frac{1-x}{2p},\]
-
-therefore:
-
-\[\tau=\begin{cases}
-    1 & p\geq t+\frac{1-x}{2p} \\
-    t+\frac{1-x}{2p} & p> t+\frac{1-x}{2p}.
+\[\tau = \begin{cases}
+    1 \\
+    t + \frac{1-x}{v}\\
+    t - \frac{1+x}{v},
 \end{cases}\]
 
-Analogously, if $p<0$:
+therefore, if we maximize for all values of $\tau$ we get one of the following $v=0,2,-2$.  In order to assign each $v$ a domain we observe that if $\abs{x}<t$ then neither $v=2$ nor $v=-2$ are enough for $x(\cdot)$ to optimally exit from $[-1,1]$ before $s=1$, and thus it is cost minimizing not to accelerate ($v=0$), while if $x\geq t$ or $x\leq -t$ it is worth and we respectively get $v=2$ and $v=-2$. Thus,
 
-\[\tau=\begin{cases}
-    1 & p\leq t-\frac{1+x}{2p} \\
-    t-\frac{1+x}{2p} & p< t-\frac{1+x}{2p}.
-\end{cases}.\]
-
-We now solve:
-
-\[\inf_{p\in\R} \int_t^{\tau}1+p^2\,ds=\inf_{p\in\R}(1+p^2)(\tau-t)=\begin{cases}
-    (1+p^2)(1-t), & p=0\text{ or }p>0\land p\geq \frac{1-x}{2(1-t)}\text{ or }p<0\land p\leq\frac{-1-x}{2(1-t)}\\
-    (1+p^2)\frac{1-x}{2p}, & p>0\land p\geq \frac{1-x}{2(1-t)} \\
-    -(1+p^2)\frac{1+x}{2p}, & p\leq\frac{-1-x}{2(1-t)},
+\[ u^{\ast}=\begin{cases}
+    2, & x\geq t, \\
+    0, & \abs{x}< t,\\
+    -2, & x\leq -t,
 \end{cases}\]
 
-which is solved as follows:
+and
 
-\begin{equation}\label{Non diff V-V}V(t,x)=\begin{cases}
-    1-t & \abs{x}\leq t \\
+\[\tau = \begin{cases}
+    \frac{1-x}{2}+t, & x\geq t,\\
+    1, & \abs{x}<t,\\
+    t+\frac{1+x}{2}, & x\leq-t.
+\end{cases}\]
+
+Thus,
+
+% for some $p^{\ast}\in\R$. We now compute the exit time of $(s,x(s))=(s,2(s-t)p^{\ast}+x)$ with initial data $(t,x)$. If $p=0$ then:
+
+% \[\tau=1,\,\abs{x}<1.\]
+
+% If $p>0$ then $x(s)=2(s-t)p+x$ is increasing, which implies that the system is going to exit from the right boundary, that is from $x(s)=1$, and if 
+% that happens before time $s=1$ the exit time will be determined by:
+
+% \[2(s-t)p+x=1\Rightarrow s=t+\frac{1-x}{2p}.\]
+
+% $x(s)=1$ for $s<1$ if:
+
+% \[2(1-t)p+x\geq1\Rightarrow p\geq t+\frac{1-x}{2p},\]
+
+% therefore:
+
+% \[\tau=\begin{cases}
+%     1 & p\geq t+\frac{1-x}{2p} \\
+%     t+\frac{1-x}{2p} & p> t+\frac{1-x}{2p}.
+% \end{cases}\]
+
+% Analogously, if $p<0$:
+
+% \[\tau=\begin{cases}
+%     1 & p\leq t-\frac{1+x}{2p} \\
+%     t-\frac{1+x}{2p} & p< t-\frac{1+x}{2p}.
+% \end{cases}.\]
+
+% We now solve:
+
+% \[\inf_{p\in\R} \int_t^{\tau}1+p^2\,ds=\inf_{p\in\R}(1+p^2)(\tau-t)=\begin{cases}
+%     (1+p^2)(1-t), & p=0\text{ or }p>0\land p\geq \frac{1-x}{2(1-t)}\text{ or }p<0\land p\leq\frac{-1-x}{2(1-t)}\\
+%     (1+p^2)\frac{1-x}{2p}, & p>0\land p\geq \frac{1-x}{2(1-t)} \\
+%     -(1+p^2)\frac{1+x}{2p}, & p\leq\frac{-1-x}{2(1-t)},
+% \end{cases}\]
+
+% which is solved as follows:
+
+\begin{equation}\label{Non diff V-V}V(t,x)=J(t,x;u^{\ast}) = \left(1+\frac{(u^{\ast})^2}{4}\right)(\tau - t) = \begin{cases}
+    1-\abs{x} & \abs{x}\leq t \\
     1-t& \abs{x}\geq t,
 \end{cases}\end{equation}
 

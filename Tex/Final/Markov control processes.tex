@@ -1,216 +1,217 @@
 \section{Markov control processes}
 
-So far we talked about Markov processes without specifying any kind of control. A control process in any 
-stochastic process $u:\Omega\rightarrow U$, where $U$ is the control space, that influences the evolution of the random process $x$. 
-Formally, let $Q=I_0\times O$ and $u$ as before and define:
+So far we talked about Markov processes without specifying any kind of control. A \textit{control process} is any 
+stochastic process $u:\Omega\rightarrow U$, where $U$ is the control space, that influences the evolution of the random process $x(\cdot,\cdot)$. 
+Formally, let $Q=I_0\times O$ and $u$ as before and define
 
 \begin{equation}\label{2-1-controlledSDE}
     \begin{cases}
         dx(r) = f(r,x(r),u(r))dr + \sigma(r,x(r),u(r))dw(r)\,r\in I_0 \\
-        x(t) = x
+        x(t) = x,
     \end{cases}
 \end{equation}
 
 where $U\subset\R^m$ closed, $f,\sigma\in C(\overline{Q}_0\times U)$, $f(\cdot,\cdot,v),\sigma(\cdot,\cdot,v)$ belong to $C^1(\overline{Q}_0)$ for all $v\in U$, 
-such that there exists $C>0$ such that:
+such that there exists a $C>0$ such that:
 
 \begin{align}
-        \abs{f_t}+\abs{f_x} \leq C,\,\abs{\sigma_t}+\abs{\sigma_x}\leq C \\
-        \abs{f(t,x,v)}\leq C(1+\abs{x}+\abs{v}) \\
-        \abs{\sigma(t,x,v)}\leq C(1+\abs{x}+\abs{v})
+        \abs{f_t}+\abs{f_x} \leq C,\,\abs{\sigma_t}+\abs{\sigma_x}\leq C, \\
+        \abs{f(t,x,v)}\leq C(1+\abs{x}+\abs{v}), \\
+        \abs{\sigma(t,x,v)}\leq C(1+\abs{x}+\abs{v}).
 \end{align}
 
-
 We can relax the assumption by imposing Lipschitz condition on $t$ and $x$ for every fixed $v$. Furthermore,
-we assume $u$ to be \textit{admissible}, that is:
+we assume $u$ to be \textit{admissible}, that is
 
 \begin{equation}\label{2-1-condoncontrol}
     E\int_t^{t_1} \abs{u(s)}^m\,ds <\infty\,\forall m\in\mathbb{N}.
 \end{equation}
 
-It is implied by $U$ being compact. Under these hypotheses, equation \ref{2-1-controlledSDE} has a unique (indistinguishable) solution. 
-Where does optimality play its role? We define running and terminal costs $L,\Psi$, both continuous and satisfying:
+Note that it is implied by $U$ being compact. Under these hypotheses, equation \eqref{2-1-controlledSDE} has a unique \footnote{We intend uniqueness as being indistinguishable.} solution. 
+Where does optimality play its role? We define running and terminal costs $L,\Psi$, both continuous and satisfying
 
 \begin{align}
-    \abs{L(s,x,v)} \leq C(1+\abs{x}^k+\abs{v}^k) \\
+    \abs{L(s,x,v)} \leq C(1+\abs{x}^k+\abs{v}^k), \\
     \abs{\Psi(s,x)} \leq C(1+\abs{x}^k)
 \end{align}
 
-for suitable $C,k>0$. We also define $\tau$ to be the exit time of $(s,x(s))$ from $Q$. We define:
+for suitable $C,k>0$. We also define $\tau$ to be the exit time of $(s,x(s))$ from $Q$. Finally, we define the final objective function
 
 \begin{equation}
     J(t,x;u) = E_{tx}\left\{\int_t^{\tau} L(s,x(s),u(s))\,ds + \Psi(\tau,x(\tau))\right\}
 \end{equation}
 
-for every initial condition $(t,x)\in Q$ and control $u$. We aim to minimize this criterion, that is:
+for every initial condition $(t,x)\in Q$ and control $u$. We aim to minimize this payoff, that is:
 
 \[\inf_{u\in\mathcal{U}}J(t,x;u).\]
 
-This formulation is not mathematically formal enough, let us restate it. We begin by defining an infimum criterion with respect to a probability space, or more 
+This formulation is not mathematically rigorous enough since we are not mentioning the probability space in which the system takes place; let us further specify optimality. We begin by defining an infimum criterion with respect to a probability space, or more 
 formally a \textit{probability system}, and then we'll take the infimum over all probability systems. 
 
 \begin{definition}
-    A reference probability system is a tuple $(\Omega,\{\mathcal{F}_s\},P,\omega)$ such that:
+    A reference probability system is a tuple $\nu=(\Omega,\{\mathcal{F}_s\},P,\omega)$ such that:
     
     \begin{enumerate}[label=\alph*)]
-        \item $\nu=(\Omega,\mathcal{F}_{t_1},P)$ is a probability space
-        \item $\{\mathcal{F}_s\}$ is a filtration on $\Omega$
+        \item $(\Omega,\mathcal{F}_{t_1},P)$ is a probability space,
+        \item $\{\mathcal{F}_s\}$ is a filtration on $\Omega$,
         \item $w$ is an $\mathcal{F}$-adapted Brownian motion on $[t,t_1]$.
     \end{enumerate}
 
-    We denote with $\mathcal{A}_{t\nu}$ the collection of all $\mathcal{F}$ progressively measurable (that is $\mathcal{B}([t,s])\times\mathcal{F}_s$-adapted), 
-    $U$ valued processes $u$ such that condition \ref{2-1-condoncontrol} holds on $[t,t_1]$.
+    We denote with $\mathcal{A}_{t\nu}$ the collection of all $\mathcal{F}-$progressively measurable (that is $(\mathcal{B}([t,s])\times\mathcal{F}_s)$-adapted), 
+    $U$ valued processes $u$ such that condition \eqref{2-1-condoncontrol} holds on $[t,t_1]$.
 \end{definition}
 
-We define:
+We now define
 
 \begin{equation}\label{2-1-systemopt}
-    V_{\nu} = \inf_{u\in\mathcal{A}_{t\nu}} J(t,x;u)
+    V_{\nu} = \inf_{u\in\mathcal{A}_{t\nu}} J(t,x;u),
 \end{equation}
 
-while we define:
+and
 
 \begin{equation}\label{2-1-opt}
     V_{PM} = \inf_{\nu} V_{\nu}.
 \end{equation}
 
-Equation \ref{2-1-systemopt} and \label{2-1-opt} respectively define $\nu$-\textit{optimality} and \textit{optimality} for those control that 
-satisfy them. We adapt the definition of operator $A$ to this situation by defining for every element of the control space $v$ the functional:
+Equation \eqref{2-1-systemopt} and \eqref{2-1-opt} respectively define $\nu$-\textit{optimality} and \textit{optimality} for those control that 
+satisfy them. We adapt the definition of operator $A$ to this situation incorporating in it every element of the control space $v$, getting the functional:
 
 \begin{equation}\label{2-1-defAwithv}
-    A^{v}\Phi = \Phi_t + \sum_{i=1}^nf_i(t,x,v)\Phi_{x_i} + \frac{1}{2}\sum_{i,j=1}^n a_{ij}(t,x,v)\Phi_{x_ix_j}, \Phi\in C^{1,2}_p(\overline{Q}_0)
+    A^{v}\Phi = \Phi_t + \sum_{i=1}^nf_i(t,x,v)\Phi_{x_i} + \frac{1}{2}\sum_{i,j=1}^n a_{ij}(t,x,v)\Phi_{x_ix_j}, \Phi\in C^{1,2}_p(\overline{Q}_0).
 \end{equation}
 
-where $a=\sigma\sigma'$. As we did in the determinist case, we provide a heuristic derivation of the Hamilton-Jacobi-Bellman equation (the verification theorem), 
-and then we'll formally prove it. Let us suppose that $O=\R^n$, then $J$ is:
+Where, again, $a=\sigma\sigma'$. As we did in the deterministic case, we provide a heuristic derivation of the Hamilton-Jacobi-Bellman equation (the verification theorem), 
+to formally prove it later. Let us suppose that $O=\R^n$, then $J$ is
 
 \begin{equation}
     J(t,x;u) = \int_t^{t_1} L(s,x(s),u(s))\,ds + \Phi(t_1,x(t_1)).
 \end{equation}
 
-By the dynamic programming principle for every $h<t_1-t$:
+By the dynamic programming principle, for every $h<t_1-t$ then
 
 \[V(t,x) = \inf_{u\in\mathcal{A}}E_{tx}\left\{\int_t^{t+h} L(s,x(s),u(s))\,ds + V(t+h,x(t+h))\right\}.\]
 
-If we take the constant control $u\equiv v$ then by Dynkin's formula we get:
+If we take the constant control $u\equiv v$, then by Dynkin's formula we get
 
-\begin{align}
+\begin{align*}
     0 & \leq E_{tx}V(t+h,x(t+h))-V(t,x) + E_{tx}\int_t^{t+h} L(s,x(s),v)\,ds \\
-    & = E_{tx}\int_t^{t+h} A^vV(s,x(s))\,ds + E_{tx}\int_t^{t+h} L(s,x(s),v)\,ds
-\end{align}
+    & = E_{tx}\int_t^{t+h} A^vV(s,x(s))\,ds + E_{tx}\int_t^{t+h} L(s,x(s),v)\,ds.
+\end{align*}
 
-dividing by $h$ and taking the limit for $h\to0^+$:
+Dividing by $h$ and taking the limit for $h\to0^+$:
 
 \[0 \leq A^vV(t,x) + L(t,x,v).\]
 
-If we take $u^{\ast}$ to be optimal, then equality holds:
+If we take $u^{\ast}$ to be optimal, then the equality holds:
 
 \[A^{u^{\ast}}V(t,x) + L(t,x,u^{\ast}(t)) = 0.\]
 
 We now present the verification theorem rigorously. Let us define the Hamiltonian for this problem. For every $(t,x)\in\overline{Q}_0$, 
-$p\in\R^n$ and $A\in\mathcal{S}_+^n$ (set of symmetric, non-negative definite $n\times n$ matrices) we define:
+$p\in\R^n$ and $A\in\mathcal{S}_+^n$ (set of symmetric, non-negative definite $n\times n$ matrices) we define
 
 \begin{equation}\label{2-1-defhamilt}
     \mathcal{H}(t,x,p,A) =  \sup_{v\in U}\left\{-f(t,x,v)\cdot p - \frac{1}{2}tr\left[a(t,x,v)\cdot A\right] - L(t,x,v)\right\}
 \end{equation}
 
-where for matrices $A,B\in\R^{n\times n}$:
+where for matrices $A,B\in\R^{n\times n}$ we have
 
-\begin{equation}
+\begin{equation*}
     tr\left(AB\right) = \sum_{i,j=1}^n A_{ij}B_{ji}, 
-\end{equation}
+\end{equation*}
 
 which is equal to $\sum_{i,j=1}^n A_{ij}B_{ij}$ for symmetric matrices.
 
-We can now state the verification theorem using the Hamiltonian defined in \ref{2-1-defhamilt}.
+We can now state the verification theorem using the Hamiltonian defined in \eqref{2-1-defhamilt}.
 
 \begin{theorem}
     Let $W\in C^{1,2}(Q)\cap C_p(\overline{Q})$ such that:
 
     \begin{align}\label{2-1-hamilcond}
-        -\frac{\partial W}{\partial t}(t,x) + \mathcal{H}(t,x,D_xW,D_x^2W) = 0, & \forall(t,x)\in Q \\
+        -\frac{\partial W}{\partial t}(t,x) + \mathcal{H}(t,x,D_xW,D_x^2W) = 0, & \forall(t,x)\in Q, \\
         W(t,x) = \Phi(t,x), & \forall(t,x)\in\partial Q.
     \end{align}
 
     Then:
 
     \begin{enumerate}
-        \item for any system $\nu$, initial condition $(t,x)\in Q$ and any $u\in \mathcal{A}_{t\nu}$ then:
-        
-        \begin{equation}
-            W(t,x) \leq J(t,x;u)
-        \end{equation}
-
-        \item If there exists $\nu^{\ast}=(\Omega^{\ast},\{\mathcal{F}_s^{\ast}\},P^{\ast},w^{\ast})$ and $u^{\ast}\in\mathcal{A}_{t\nu^{\ast}}$ such that:
+        \item for any system $\nu$, initial condition $(t,x)\in Q$ and any $u\in \mathcal{A}_{t\nu}$ then
         
         \begin{equation*}
-               \hspace{-10mm} u^{\ast}(s) \in \arg\min_{v\in U} \left\{f(s,x^{\ast}(s),v)\cdot D_xW(s,x^{\ast}(s)) + \frac{1}{2}tr\left[a(s,x^{\ast}(s),v)\cdot D_x^2(s,x^{\ast}(s))\right] + L(s,x^{\ast}(s),v)\right\}
+            W(t,x) \leq J(t,x;u).
         \end{equation*}
 
-        for almost all $(s,\omega)\in[t,\tau^{\ast}]\times\Omega^{\ast}$, then:
+        \item If there exists $\nu^{\ast}=(\Omega^{\ast},\{\mathcal{F}_s^{\ast}\},P^{\ast},w^{\ast})$ and $u^{\ast}\in\mathcal{A}_{t\nu^{\ast}}$ such that
+        
+        \begin{align*}
+            u^{\ast}(s) \in \arg\min_{v\in U} & \Bigg\{f(s,x^{\ast}(s),v) \cdot D_xW(s,x^{\ast}(s)) \\
+            & + \frac{1}{2}tr\left[a(s,x^{\ast}(s),v)\cdot D_x^2(s,x^{\ast}(s))\right] + L(s,x^{\ast}(s),v)\Bigg\}
+        \end{align*}
 
-        \begin{equation}
+        for almost all $(s,\omega)\in[t,\tau^{\ast}]\times\Omega^{\ast}$, then
+
+        \begin{equation*}
             V_{PM}(t,x) = J(t,x;u^{\ast}).
-        \end{equation}
+        \end{equation*}
     \end{enumerate}
 
     \begin{proof}
-        We assume $O$ to bounded and $W\in C^{1,2}(\overline{Q})$. Because of \ref{2-1-hamilcond} for all $s\in[t,\tau]$:
+        We assume $O$ to bounded and $W\in C^{1,2}(\overline{Q})$. Because of \eqref{2-1-hamilcond}, for all $s\in[t,\tau]$
 
         \begin{equation}\label{2-1-proofver-keyeq}
             0\leq A^{u(s)}W(s,x(s)) + L(s,x(s),u(s)).
         \end{equation}
 
-        Because of Ito:
+        Because of It\^o
 
-        \begin{equation}
+        \begin{equation*}
             W(\tau,x(\tau)) - W(t,x) = \int_t^{\tau} A^{u(s)}W(s,x(s))\,ds + \int_t^{\tau} D_x\Phi(s,x(s))\cdot \sigma(s,x(s),u(s))\,dw(s).
-        \end{equation}
+        \end{equation*}
 
-        Because of estimates on SDE solution the last stochastic integral is a $\mathcal{F}_s$-martingale. Then if we take the expectation $E_{tx}$ we get:
+        Because of estimates on SDE solution, the last stochastic integral is a $\mathcal{F}_s$-martingale. Then if we take the expectation $E_{tx}$ we get:
 
-        \begin{align}
-            0 & \leq E_{tx} \int_t^{\tau}A^{u(s)}W(s,x(s))\,ds + E_{tx}\int_t^{\tau} L(s,x(s),u(s))\,ds \\
-            & = E_{tx}\left(W(\tau,x(\tau)) - W(t,x)\right) - E_{tx}\int_t^{\tau} D_x\Phi(s,x(s))\cdot \sigma(s,x(s),u(s))\,dw(s) \\
+        \begin{align*}
+            0 \leq & E_{tx} \int_t^{\tau}A^{u(s)}W(s,x(s))\,ds + E_{tx}\int_t^{\tau} L(s,x(s),u(s))\,ds \\
+            = & E_{tx}\left[W(\tau,x(\tau)) - W(t,x)\right] - E_{tx}\int_t^{\tau} D_x\Phi(s,x(s))\cdot \sigma(s,x(s),u(s))\,dw(s) \\
             & + E_{tx}\int_t^{\tau} L(s,x(s),u(s))\,ds \\
-            & = -W(t,x) + E_{tx}\left\{\int_t^{\tau} L(s,x(s),u(s))\,ds + W(\tau,x(\tau))\right\} \\
-            & = -W(t,x) + J(t,x;u).
-        \end{align}
+            = & -W(t,x) + E_{tx}\left\{\int_t^{\tau} L(s,x(s),u(s))\,ds + W(\tau,x(\tau))\right\} \\
+            = & -W(t,x) + J(t,x;u).
+        \end{align*}
 
-        If $O$ is unbounded we define for every $\rho>0$ such that $\rho^{-1}<t_1-t_0$ the set:
+        If $O$ is unbounded we define for every $\rho>0$ such that $\rho^{-1}<t_1-t_0$ the sets
 
-        \begin{equation}
-            O_{\rho} = O\cap\left\{\abs{x}<\rho\,|\,d(x,\partial O)>\frac{1}{\rho}\right\},\, Q_{\rho} = [t_0,t_1-\rho^{-1}]\times O_{\rho}
-        \end{equation}
+        \begin{equation*}
+            O_{\rho} = O\cap\left\{\abs{x}<\rho\,|\,d(x,\partial O)>\frac{1}{\rho}\right\},\, Q_{\rho} = [t_0,t_1-\rho^{-1}]\times O_{\rho},
+        \end{equation*}
 
-        and $\tau_{\rho}$ the exit time from $Q_{\rho}$. Then $Q_{\rho}$ is bounded, and $W\in C^{1,2}(\overline{Q}_{\rho})$, then:
+        and $\tau_{\rho}$ the exit time from $Q_{\rho}$. $Q_{\rho}$ is bounded, and $W\in C^{1,2}(\overline{Q}_{\rho})$, thus
 
         \begin{equation}
             W(t,x) \leq E_{tx}\left\{\int_t^{\tau_{\rho}} L(s,x(s),u(s))\,ds + W(\tau_{\rho},x(\tau_{\rho}))\right\}.
         \end{equation}
 
         We now take $\rho\to+\infty$ and get the thesis. We have convergence in probability for $\tau_{\rho}\xrightarrow{\rho\to+\infty}\tau$. 
-        We prove uniform integrability of the rhs and therefore get $L^1$ convergence. We have:
+        We prove uniform integrability of the rhs, hence $L^1$ convergence. We have:
         
-        \begin{align}
+        \begin{align*}
             E_{tx}\int_t^{\tau_{\rho}} \abs{L(s,x(s),u(s))}\,ds & \leq E_{tx}\int_t^{t_1}\abs{L(s,x(s),u(s))}\,ds \\
             & \leq E_{tx}\int_t^{t_1}\left(1+\abs{x(s)}^k+\abs{u(s)}^k\right)\,ds < +\infty    
-        \end{align}
+        \end{align*}
         
-        because $u$ is admissible and estimates on SDE solutions. While we have:
+        because $u$ is admissible and estimates on SDE solutions. While also have
 
-        \begin{align}
+        \begin{align*}
             E_{tx}\abs{W(\tau_{\rho},x(\tau_{\rho}))}^{\alpha} & \leq K E_{tx}\left(1+\abs{x(\tau_{\rho})}^k\right)^{\alpha} \\
-            & \leq 2^{\alpha-1}K\left(1+E_{tx}\norm{x}^{\alpha k}\right) \leq C
-        \end{align}
+            & \leq 2^{\alpha-1}K\left(1+E_{tx}\norm{x}^{\alpha k}\right) \leq C,
+        \end{align*}
 
-        for $\alpha>\frac{1}{k}$ and estimates on SDE solutions. Therefore we get:
+        by estimates on SDE solutions and with $\alpha>\frac{1}{k}$. Therefore, we get
 
-        \begin{equation}
-            \lim_{\rho\to+\infty} E_{tx}\left\{\int_t^{\tau_{\rho}} L(s,x(s),u(s))\,ds + W(\tau_{\rho},x(\tau_{\rho}))\right\} = E_{tx}\left\{\int_t^{\tau} L(s,x(s),u(s))\,ds + W(\tau,x(\tau))\right\}.
-        \end{equation}
+        \begin{align*}
+            \lim_{\rho\to+\infty} E_{tx}\Bigg\{\int_t^{\tau_{\rho}} L(s,x(s),u(s))\,ds & + W(\tau_{\rho},x(\tau_{\rho}))\Bigg\} \\
+            = & E_{tx}\left\{\int_t^{\tau} L(s,x(s),u(s))\,ds + W(\tau,x(\tau))\right\}.
+        \end{align*}
 
-        Part $b)$ comes from equality in equation \ref{2-1-proofver-keyeq}.
+        Part $b)$ comes from equality in equation \eqref{2-1-proofver-keyeq}.
     \end{proof}
 \end{theorem}
 
@@ -218,7 +219,6 @@ We can now state the verification theorem using the Hamiltonian defined in \ref{
 % THEN CONTROLLED MARKOV PROCESSES.
 
 % I HAVE TO SEARCH FOR A MORE GENERAL VERSION OF EXISTENCE THEOREM for markov control policies.
-
 
 % THEN EXAMPLE IF TIME ALLOWS.
 

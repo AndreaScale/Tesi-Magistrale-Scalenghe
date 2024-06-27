@@ -2,3 +2,5 @@ Pontryagin
 measurability
 optimality
 transversality
+covariation
+Dynkin
