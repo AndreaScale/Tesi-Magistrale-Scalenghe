@@ -51,6 +51,37 @@
       \verb https://ethz.ch/content/dam/ethz/special-interest/mavt/dynamic-systems-n-control/idsc-dam/Lectures/Optimal-Control/Additional%20Material/tutorial.pdf
       \endverb
     \endentry
+    \entry{cannarsa2004semiconcave}{book}{}
+      \name{author}{2}{}{%
+        {{hash=2ae5b7452ef05cd389443bc017772518}{%
+           family={Cannarsa},
+           familyi={C\bibinitperiod},
+           given={Piermarco},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bae17f0d6feee7d75f210a313c96777f}{%
+           family={Sinestrari},
+           familyi={S\bibinitperiod},
+           given={Carlo},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Birkhäuser}%
+      }
+      \strng{namehash}{76f8b6ac2fcfb74bad52e1135cc1be94}
+      \strng{fullhash}{76f8b6ac2fcfb74bad52e1135cc1be94}
+      \strng{bibnamehash}{76f8b6ac2fcfb74bad52e1135cc1be94}
+      \strng{authorbibnamehash}{76f8b6ac2fcfb74bad52e1135cc1be94}
+      \strng{authornamehash}{76f8b6ac2fcfb74bad52e1135cc1be94}
+      \strng{authorfullhash}{76f8b6ac2fcfb74bad52e1135cc1be94}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Progress in Nonlinear Differential Equations and Their Applications}
+      \field{title}{Semiconcave Functions, Hamilton--Jacobi Equations, and Optimal Control}
+      \field{volume}{58}
+      \true{nocite}
+    \endentry
     \entry{dynkin1961}{book}{}
       \name{author}{1}{}{%
         {{hash=48d6fafe3b0145f4c45f2356082300cb}{%

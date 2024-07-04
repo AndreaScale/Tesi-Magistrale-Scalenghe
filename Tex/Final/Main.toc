@@ -28,4 +28,4 @@
 \contentsline {section}{\numberline {4.1}Singular Stochastic Control}{63}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Verification Theorem}{66}{subsection.4.1.1}%
 \contentsline {section}{\numberline {4.2}Viscosity Solution}{69}{section.4.2}%
-\contentsline {chapter}{Bibliography}{73}{chapter*.5}%
+\contentsline {chapter}{Bibliography}{74}{chapter*.5}%
