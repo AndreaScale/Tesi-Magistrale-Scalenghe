@@ -117,7 +117,10 @@ Equation \eqref{1-2-HJB1} turns out to be the key sufficient condition for the v
 
     \begin{equation}\label{1-2-uoptim}
         \hspace{-20mm}\begin{cases}
-            L(s,x^{\ast}(s),u^{\ast}(s)) + f(s,x^{\ast},u^{\ast}(s))\cdot D_xW(s,x^{\ast}(s)) = - H(s,x^{\ast}(s),D_xW(s,x^{\ast}(s))) & \text{a.s. for } s\in[t,\tau^{\ast}] \\
+            {\begin{aligned}
+                L(s,x^{\ast}(s),u^{\ast}(s)) + f(s,x^{\ast},u^{\ast}(s)) & \cdot D_xW(s,x^{\ast}(s)) \\ 
+                & = - H(s,x^{\ast}(s),D_xW(s,x^{\ast}(s))) 
+            \end{aligned} & \text{a.s. for } s\in[t,\tau^{\ast}]} \\
             W(\tau^{\ast},x^{\ast}(\tau^{\ast})) = g(\tau^{\ast},x^{\ast}(\tau^{\ast})) & \text{if } \tau^{\ast}<t_1,
         \end{cases}    
     \end{equation}

@@ -186,7 +186,61 @@ A verification theorem holds in this context. This result mimics one for classic
             \max\left\{\mathcal{L}W_m(x) - \hat{L}_m(x), H(DW_m(x))\right\} \leq K_{N,m}\lor 0.
         \end{equation}
 
+        Now for $x\in O_{N,m}$ and $(\xi,\hat{u})\in\hat{\mathcal{A}}_{\nu}$ we apply It\^o's rule for semimartingales \cite{guo2022itosformulaflowsmeasures} to $e^{-\beta t}W_m(x(t))$ and get
+
+        \begin{equation*}
+            \begin{aligned}
+                W_m(x) & = E_x e^{-\beta(t\land \tau_m)} W_m(x(t\land\tau_m)) + E_x\int_0^{t\land\tau_m} e^{-\beta s}\mathcal{L}W_m(x(s))\,ds \\
+                & \quad + E_x\int_0^{t\land\tau_m} -e^{-\beta s} u(s)\cdot DW_m(x(s)) \, d\xi^c(s) \\
+                & \quad + E_x \sum_{0\leq s< t\land\tau_m} e^{-\beta s}[W_m(x(s)) - W_m(x(s^+))],
+            \end{aligned}
+        \end{equation*}
+
+        for a given $N>0$ and where $\tau_m$ is the time from $\overline{O}_{N,m}$ and $\xi^c(t)$ is $\xi(t)$ minus all the jumps until then:
+
+        \[ \xi^c(t) = \xi(t) - \sum_{0\leq s < t} \xi(s^+) - \xi(s).\]
+
+        If we let $m\to+\infty$ then
+
+        \begin{equation*}
+            \begin{aligned}
+                W(x) & \leq E_x e^{-\beta (t\land\omega_N)} W(x(t\land \omega_N)) + E_x\int_0^{t\land \omega_N} e^{-\beta s}\hat{c}(\hat{u}(s))\,d\xi^c(s) \\
+                & \quad + E_x \sum_{0\leq s <t\land\omega_N} e^{-\beta s}\hat{c}(\hat{u}(s)) (\xi(s^+) - \xi(s)),
+            \end{aligned}
+        \end{equation*}
+
+        but if $N\to+\infty$ then
+
+        \begin{equation*}
+            W(x) \leq E_x e^{-\beta (t\land\tau)}W(x(t\land\tau)) + E_x \int_0^{t\land \tau}e^{-\beta s}(\hat{L}(x(s))ds + \hat{c}(\hat{u}(s))dxi(s)),
+        \end{equation*}
+
+        which yields 
+
+        \begin{equation*}
+            W(x) \leq E_x e^{-\beta (t\land\tau)}W(x(\tau))\chi_{\tau<\infty} + E_x \int_0^{\tau}e^{-\beta s}(\hat{L}(x(s))ds + \hat{c}(\hat{u}(s))dxi(s)).          
+        \end{equation*}
+
+        If we prove that for $\tau<\infty$ we have
+
+        \begin{equation}\label{almost last eq}
+            W(x(\tau)) \leq \hat{c}(\hat{u}(\tau))[\xi(\tau^+) - \xi(\tau)],
+        \end{equation}
+
+        then the thesis holds true. The boundary condition implies \eqref{almost last eq} for $x(\tau)\in\partial O$. If $x(\tau)\in O$ then there exists $x^{\ast}$ between $x(\tau)$ and $x(\tau^+)$ on the boundary of $O$. Thus, 
+
+        \[-\hat{u}(\tau)\cdot DW(x_{\lambda}) - \hat{c}(\hat{u}(\tau)) \leq H(DW(x_{\lambda})) \leq 0,\]
+
+        for $x_{\lambda} = x(\tau) + \lambda(x^{\ast} - x(\tau))$ for all $\lambda\in[0,1]$. Since 
         
+        \[x^{\ast} - x(\tau) = \gamma\hat{u}(\tau)(\xi(\tau^+)-\xi(\tau)),\] 
+        
+        then we get 
+        
+        \begin{align*}
+            W(x(\tau)) & = W(x^{\ast}) - \int_0^1 DW(x_{\lambda})d\lambda\cdot(x^{\ast} - x(\tau)) \\
+            & = -\gamma\int_0^1\hat{u}(\tau)\cdot DW(x_{\lambda})d\lambda[\xi(\tau^+)-\xi(\tau)]\leq \hat{c}(\hat{u}(\tau))[\xi(\tau^+) - \xi(\tau)].
+        \end{align*}        
 
         $(\textit{2}.)$ let us suppose that for some $s\geq0$ we have $x^{\ast}(s)\in\mathcal{P}$. Since $\mathcal{P}$ is open
 
@@ -328,7 +382,7 @@ recalling what we did in previous chapters.
             -\hat{u}(s)\cdot Dw(x(s)) \leq \hat{c}(\hat{u}(s)) - \gamma\abs{\hat{u}(s)}
         \end{equation}
 
-        by using the latter together with \eqref{4-2-eq: H definition}. Furthermore, by the fundamental theorem of calculus if we set $x_{\rho}=\rho x(s^+)+(1-\rho)x(s)$ for all $\rho\in[0,1]$ we have
+        by using the latter together with \eqref{4-2-eq: H definition}. Furthermore, by the fundamental theorem of calculus (FTC) if we set $x_{\rho}=\rho x(s^+)+(1-\rho)x(s)$ for all $\rho\in[0,1]$ we have
 
         \begin{align*}
             w(x(s)) - w(x(s^+)) & = \int_0^1 -(x(s^+) - x(s))\cdot Dw(\rho x(s^+)+(1-\rho)x(s)) \,d\rho \\
@@ -338,12 +392,74 @@ recalling what we did in previous chapters.
 
         Thus, if we combine the latter with \eqref{4-2-eq: h cdot Dw leq gamma} and \eqref{4-2-eq: mathcal L hat L} into \eqref{4-2-eq: first w in proof viscosity} we get
 
-        \begin{align*}
-            w(\overline{x}) \leq & E_{\overline{x}} e^{-\beta \theta}w(x(\theta)) \\
-            & + E_{\overline{x}} \int_{[0,\theta)} e^{-\beta s}\left[\hat{L}(\hat{u}(s))ds + \hat{c}(\hat{u}(s))d\xi(s)\right] \\
-            & - \gamma E_{\overline{x}} \int_{[0,\theta)} e^{-\beta s} \left[ds + \abs{\hat{u}(s)}d\xi(s)\right]. 
-        \end{align*}
+        \begin{equation}\label{last not}
+            \begin{aligned}
+                w(\overline{x}) \leq & E_{\overline{x}} e^{-\beta \theta}w(x(\theta)) \\
+                & + E_{\overline{x}} \int_{[0,\theta)} e^{-\beta s}\left[\hat{L}(x(s))ds + \hat{c}(\hat{u}(s))d\xi(s)\right] \\
+                & - \gamma E_{\overline{x}} \int_{[0,\theta)} e^{-\beta s} \left[ds + \abs{\hat{u}(s)}d\xi(s)\right]. 
+            \end{aligned}
+        \end{equation}
 
+        Moreover, there exists $\lambda\in[0,1]$ random variable such that
 
+        \[x_{\lambda} = x(\theta) + \lambda \hat{u}(\theta)[\xi(\theta^+) - \xi(\theta)] \in \partial B_{\delta}(\overline{x}),\]
+
+        since $x(\theta^+)\notin B_{\delta}(\overline{x})$ and $x(\theta^+)=x(\theta) + \hat{u}(\theta)[\xi(\theta^+) - \xi(\theta)]$. Rewriting via the FTC once again we get
+
+        \begin{equation*}
+            w(x(\theta))\leq w(x_{\lambda}) + \lambda[\hat{c}(\hat{u}(\theta))-\gamma\abs{\hat{u}(\theta)}][\xi(\theta^+)-\xi(\theta)].
+        \end{equation*}
+
+        Thus, we have that
+
+        \begin{equation*}
+            w(x(\theta)) \leq V(x(\theta^+)) + [\hat{c}(\hat{u}(\theta))-\lambda\gamma\abs{\hat{u}(\theta)}][\xi(\theta^+)-\xi(\theta)],
+        \end{equation*}
+
+        this comes from the obvious inequality
+
+        \[V(x) - V(x+hv)\leq h\hat{c}(v),\,\forall v\in U\]
+
+        and sufficiently small $h>0$, when $x(\theta^+)\in\overline{O}$, and from the same reasoning used while proving \eqref{almost last eq}, that is via convexity of $O$ and FTC if $x(\theta^+)\notin \overline{O}$. Recalling \eqref{last not}
+
+        \begin{equation}\label{last}
+            \begin{aligned}
+                w(\overline{x}) & \leq E_{\overline{x}} e^{-\beta \theta}V(x(\theta)) \\
+                & \quad + E_{\overline{x}} \int_{[0,\theta]} e^{-\beta s}\left[\hat{L}(x(s))ds + \hat{c}(\hat{u}(s))d\xi(s)\right] \\
+                & \quad - \gamma E_{\overline{x}} \int_{[0,\theta)} e^{-\beta s} \left[ds + \abs{\hat{u}(s)}d\xi(s)\right] \\
+                & \quad - E_{\overline{x}}e^{-\beta\theta}\lambda\gamma\abs{\hat{u}(\theta)}][\xi(\theta^+)-\xi(\theta)].
+            \end{aligned}
+        \end{equation}
+
+        If we prove the existence of $\alpha_0>0$ such that
+
+        \begin{equation}\label{lastlast}
+            E_{\overline{x}} \int_{[0,\theta)} e^{-\beta s} \left[ds + \abs{\hat{u}(s)}d\xi(s)\right] + E_{\overline{x}}e^{-\beta\theta}\lambda\abs{\hat{u}(\theta)}][\xi(\theta^+)-\xi(\theta)] \leq \alpha_0,
+        \end{equation}
+
+        for all controls over all systems, then \eqref{last} implies
+
+        \begin{equation*}
+            \begin{aligned}
+                V(\overline{x}) = & \leq E_{\overline{x}} e^{-\beta \theta}V(x(\theta)) \\
+                    & \quad + E_{\overline{x}} \int_{[0,\theta]} e^{-\beta s}\left[\hat{L}(x(s))ds + \hat{c}(\hat{u}(s))d\xi(s)\right] \\
+                    & \quad - \gamma E_{\overline{x}} \int_{[0,\theta)} e^{-\beta s} \left[ds + \abs{\hat{u}(s)}d\xi(s)\right] \\
+                    & \quad - \gamma\alpha_0,
+            \end{aligned}
+        \end{equation*}
+
+        which contradicts
+
+        \begin{equation*}
+            V(x) = \inf_{\nu} \inf_{\mathcal{A}_{\nu}} \left\{E_x e^{-\beta(\theta)}V(x(\theta^+)) + E_x\int_{[0,\theta]}e^{-\beta s}\left[\hat{L}(x(s))ds + \hat{c}(\hat{u}(s))d\xi(s)\right]\right\},
+        \end{equation*}
+
+        which is \eqref{4-2-eq: porgramming principle} with stopping time $\theta+h$ and $h\to0$. Equation \eqref{lastlast} holds true since the lhs can be seen as the payoff of a singular stochastic control problem $\tilde{J}(x;\tilde{\xi},\hat{u})$ where $\tilde{\xi}=\xi\chi_{t\leq\theta} + (\xi(\theta) + \lambda(\xi(\theta^+)-\xi(\theta)))\chi_{t>\theta}$, then if we define 
+        
+        \[W(x)=C(\delta^2-\abs{x-\overline{x}}^2),\, x\in B_{\delta}(\overline{x}),\]
+
+        we get 
+
+        \[\tilde{V}(\overline{x})\geq \tilde{J}(\overline{x};\tilde{\xi},\hat{u})\geq W(\overline{x})=\left(\sup_{\abs{x-\overline{x}}\leq\delta}\left\{\beta\delta^2+tr(\hat{a}(x))+2\abs{\hat{f}(x)\cdot(x-\overline{x})}\right\}\land \frac{1}{2\delta}\right)\delta^2.\]
     \end{proof}
 \end{theorem}

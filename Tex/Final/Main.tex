@@ -1,4 +1,5 @@
-\documentclass[12pt,a4paper]{book}
+\documentclass[12pt,a4paper,oneside]{book}
+% \renewcommand{\baselinestretch}{1.5} 
 % \usepackage{times}
 \usepackage[a4paper, margin=1.25in]{geometry}
 \usepackage[utf8]{inputenc}
@@ -207,15 +208,39 @@
 
 \newpage
 
-\ 
+\thispagestyle{empty}
+
+\
 
 \newpage
+
 
 \section*{Introduction}
 
-In this dissertation I will address optimal control theory both from a deterministic and stochastic point of view. 
+Optimal control problems typically originate from the need to make decisions over time to optimize a specific objective. For example, in economics, firms may seek to maximize profit or minimize costs over time, leading to problems where the state of the system evolves according to economic laws and control inputs. In engineering, optimal control is used in systems such as robotics, aerospace, and process control, where the objective might be to minimize energy consumption, reduce time to completion, or improve system stability. These problems are generally formulated in terms of state variables that describe the system, control variables that can be manipulated, and an objective functional that quantifies the performance of the system under given controls.
+
+We will both study deterministic and stochastic optimal control problems. The formers assume that the system dynamics and external influences are known with certainty. This framework is suitable for scenarios where the environment is highly predictable. However, many practical situations involve uncertainty, making the stochastic framework more appropriate. Stochastic control problems incorporate randomness into the system dynamics, leading to solutions that are robust to variations and uncertainties.
+
+In Chapter 1 we first formalize the problem by defining the system dynamics through differential equations and specifying the control space. The value function is introduced to represent the optimal payoff. We then derive necessary conditions for optimality, such as the Hamilton-Jacobi-Bellman (HJB) equation, and prove verification theorems that establish these conditions as essentially sufficient for optimality. The Pontryagin Maximum Principle is then presented as an alternative method, offering a different perspective on deriving optimal controls by introducing the Hamiltonian and the costate variable. Finally, we discuss existence results for optimal controls under various conditions.
+
+Chapter 2 mirrors the structure of Chapter 1 but extends the discussion to stochastic systems. The problem is first formalized with stochastic differential equations (SDEs) governing the system dynamics. We then derive the Stochastic Hamilton-Jacobi-Bellman (SHJB) equation as a necessary condition for optimality and prove stochastic verification theorems. The stochastic counterpart of the Pontryagin Maximum Principle, known as the Stochastic Maximum Principle, is introduced, involving backward stochastic differential equations (BSDEs) to characterize the optimal control. These mathematical objects are introduced and studied as well. 
+
+Chapter 3 delves into the theory and application of viscosity solutions within the context of optimal control problems. In many instances, the value function arising from an optimal control problem may fail to be differentiable. This failure invalidates the derivation of the Hamilton-Jacobi equation and necessitates a weaker notion of solution to obtain a consistent and unique resolution to the dynamic programming equation for non-differentiable value functions. The viscosity solution is presented via a vanishing viscosity procedure, which allows the computation of the solution of a fully non-linear first-order partial differential equation (PDE) as the limiting solution of quasi-linear parabolic PDEs obtained via infinitesimal perturbations of second-order derivatives. Then, the formal definition of viscosity solutions is provided, establishing conditions under which a function is considered a viscosity subsolution or supersolution. This definition is crucial for ensuring that the solution adheres to the dynamic programming principle even when the value function is not smooth. The chapter also presents an abstract dynamic programming framework, which generalizes the dynamic programming principle and facilitates the definition of viscosity solutions for the dynamic programming equation. The chapter further discusses the extension of the Verification Theorem and Pontryagin's principle to non-differentiable settings using viscosity solutions. Since the Hamiltonian may not be differentiable, the classical adjoint variable must be extended to accommodate non-smooth points by defining the sets of superdifferentials and subdifferentials.
+
+Finally, chapter 4 addresses singular stochastic control problems, a special class of stochastic optimal control issues where control actions can cause instantaneous and discontinuous state changes. These problems are relevant in various fields such as finance (e.g., optimal trading strategies), manufacturing (e.g., optimal machine switching), and energy management (e.g., optimal resource extraction). The chapter begins by introducing the concept of singular stochastic control, emphasizing the need for controls that are not continuous functions of time but rather measures that can implement abrupt changes. The core of the chapter is dedicated to adapting and proving necessary conditions for optimality in this context, such as the Hamilton-Jacobi-Bellman (HJB) equation and verification theorems. The chapter also explores the use of viscosity solutions in the context of singular stochastic control. 
+
+The main bibliographical reference is the book `Controlled Markov Processes and Viscosity Solutions' by Wendell H. Fleming and H.M. Soner\cite{fleming2006}. It is a broad, technical, complete, and almost self-contained dissertation, which covers virtually all the topics in this thesis. Nevertheless, the Pontryagin's maximum principle is only briefly mentioned, thus we followed the lectures by Evans\cite{evans2005} for the deterministic setting, and the book by Huyên Pham `Continuous-time Stochastic Control and Optimization with Financial Applications'\cite{pham2009} for the stochastic counterpart. Finally, several other references were used to fill the technical gaps we encountered (e.g. lectures note by Varadhan\cite{Varadhan}, Bressan\cite{bressan}, or the book `The Theory of Markov Processes' by Dynkin\cite{dynkin1961} among others cited in the bibliography).    
+% Chapter 3 delves into the theory of viscosity solutions and their application to optimal control problems. It explains the motivation behind viscosity solutions, their formal definition, and the properties that make them suitable for non-differentiable value functions. The chapter also covers the method of vanishing viscosity, which links viscosity solutions to classical solutions through a limiting process.
+
+% Singular control problems arise in scenarios where the control actions can cause abrupt changes in the state of the system. These problems are characterized by control strategies that are not absolutely continuous functions of time but rather measures that can induce instantaneous changes. Such situations occur in fields like finance (e.g., optimal trading strategies), manufacturing (e.g., optimal switching of machines), and energy (e.g., optimal resource extraction). Tackling these problems involves specialized techniques such as measure theory and the study of impulsive control systems.
+
+% Chapter 4 addresses singular stochastic control problems. It begins with an introduction to the concept of singular control, followed by the mathematical formulation and examples of such problems. The chapter explores methods to solve these problems, including verification theorems and the use of viscosity solutions in this context.
+
+\addcontentsline{toc}{chapter}{Introduction}
 
 \newpage
+
+\thispagestyle{empty}
 
 {\hypersetup{linkbordercolor=black, hidelinks}
 % or \hypersetup{linkcolor=black}, if the colorlinks=true option of hyperref is used
@@ -225,13 +250,10 @@ In this dissertation I will address optimal control theory both from a determini
 
 \hypersetup{colorlinks, linkcolor = gray, citecolor = gray, hidelinks}
 
-\newpage
 
 \chapter{Deterministic Optimal Control}
 
-We now study deterministic optimal control. The system we aim to control is governed by differential equations. 
-
-Short description of what is done in this chapter.
+This chapter begins by formalizing the optimal control problem, defining the system's state dynamics through differential equations and specifying the control space. The primary objective is to minimize or maximize a performance criterion represented by a value function, which depends on the state and control variables over a given time horizon. The chapter introduces the Hamilton-Jacobi-Bellman (HJB) equation as a necessary condition for optimality. This partial differential equation characterizes the value function and provides a foundation for deriving optimal controls. Verification theorems are then presented to establish that the HJB equation's conditions are essentially sufficient, ensuring that any function satisfying these conditions is indeed the optimal value function. In addition to the dynamic programming approach, the chapter explores the Pontryagin Maximum Principle. This principle offers an alternative method to derive optimal controls by introducing the Hamiltonian function and costate variables. It provides a set of necessary conditions that any optimal control must satisfy, offering a complementary perspective to the HJB equation. This chapter concludes with a discussion on existence theorems, providing rigorous proofs for the existence of optimal controls under various conditions.
 
 \input{Finite horizon.tex}
 
@@ -241,19 +263,15 @@ Short description of what is done in this chapter.
 
 \input{Existence.tex}
 
-\input{Infinite horizon.tex}
-
 \input{Proof of Pontryagin.tex}
 
-\newpage
+\clearpage
 
 \chapter{Stochastic Optimal Control}
 
-We now study stochastic optimal control. The system we aim to control is governed by stochastic differential equations. 
+This chapter provides an introduction to stochastic optimal control, paralleling the deterministic framework. We begin by formalizing the optimal control problem in stochastic settings, where system dynamics are influenced by random disturbances. The state dynamics are defined using stochastic differential equations (SDEs), and the control space is specified. The goal is to optimize a performance criterion, represented by a value function dependent on state and control variables over time. The chapter introduces the Stochastic Hamilton-Jacobi-Bellman (SHJB) equation as a necessary condition for optimality. This equation characterizes the value function in the stochastic context, providing a basis for deriving optimal controls. Verification theorems are presented to show that the conditions derived from the SHJB equation are essentially sufficient, ensuring that any function satisfying these conditions is the optimal value function. Following the dynamic programming approach, the chapter explores the Stochastic Maximum Principle. This principle extends Pontryagin's Maximum Principle to stochastic systems, introducing the Hamiltonian function and costate variables in the stochastic setting. It provides necessary conditions for optimality, involving backward stochastic differential equations (BSDEs) to capture the stochastic nature of the problem. BSDEs are rigorously presented and an existence result is proven.
 
-Short description of what is done in this chapter.
-
-\input{markov diffusion processes.tex}\
+\input{markov diffusion processes.tex}
 
 \input{Markov control processes.tex}
 
@@ -263,7 +281,7 @@ Short description of what is done in this chapter.
 
 \chapter{Viscosity Solutions}
 
-We now study viscosity solutions and their relation with optimal control.
+This chapter introduces the theory and application of viscosity solutions within the context of optimal control problems. It addresses the challenge of non-differentiable value functions, which often arise in practical scenarios, making classical solution methods inapplicable. Viscosity solutions provide a framework to handle these cases by weakening the differentiability requirements while still ensuring a well-defined and unique solution to the Hamilton-Jacobi-Bellman (HJB) equations. The chapter begins with an introduction to the concept of viscosity solutions, motivated by an explicit computation of a non-differentiable value function. The method of vanishing viscosity is introduced as a historical motivation for this new notion of solution; perturbing the system to convert a fully non-linear first-order PDE into a semi-linear one then taking the limit of these solutions as the perturbation parameter approaches zero, a viscosity solution is obtained. The formal definition of viscosity solutions is provided, establishing conditions under which a function is considered a viscosity subsolution or supersolution. This section emphasizes the importance of these definitions for ensuring that the solution adheres to the dynamic programming principle even when the value function is not smooth. The chapter also explores the standard approach to viscosity solutions for partial differential operators, highlighting the maximum principle and ellipticity conditions that the operator must satisfy. Detailed discussions on the continuity properties of the value function are included, proving that under specific assumptions, the value function remains bounded and uniformly continuous. Further, the extension of Pontryagin's principle to non-differentiable settings using viscosity solutions is discussed. The classical adjoint variable is extended to accommodate non-smooth points by defining superdifferentials and subdifferentials. This ensures that the viscosity solution framework remains robust and consistent for solving optimal control problems where traditional differentiable approaches fail.
 
 \input{Intro - Visco.tex}
 
@@ -271,10 +289,12 @@ We now study viscosity solutions and their relation with optimal control.
 
 \chapter{Singular Stochastic Control}
 
-We now study singular stochastic control, that is stochastic optimal control problem where the displacement of the state due to the control is allowed to be discontinuous. 
-A singular stochastic optimal control problem is a special case of a stochastic optimal control problem where the control appears linearly in the dynamics, and there are constraints on the control that lead to the control being "singular" in some regions. This often results in the optimal control being a measure rather than a function, implying that the control can change instantaneously in time.
+% We now study singular stochastic control, that is stochastic optimal control problem where the displacement of the state due to the control is allowed to be discontinuous. 
+% A singular stochastic optimal control problem is a special case of a stochastic optimal control problem where the control appears linearly in the dynamics, and there are constraints on the control that lead to the control being "singular" in some regions. This often results in the optimal control being a measure rather than a function, implying that the control can change instantaneously in time.
 
-\input{spacecraft.tex}
+This chapter delves into singular stochastic control problems, which are unique in their allowance for control actions that can cause immediate and discontinuous changes in the state of a system. These types of problems are common in fields like finance, where optimal trading strategies may require sudden large trades, in manufacturing for switching machinery on and off, and in energy management for resource extraction. The chapter starts by introducing the concept of singular stochastic control and discussing its necessity in scenarios where continuous control is not viable or optimal. This is followed by a formalization of the problem, where the state dynamics are described using stochastic differential equations (SDEs) that incorporate control variables capable of inducing jumps. This framework sets the foundation for deriving optimality conditions for these problems. A significant portion of the chapter is devoted to establishing and proving necessary conditions for optimality. This is achieved through the derivation of the Hamilton-Jacobi-Bellman (HJB) equation and the adaptation of verification theorems to the singular control context. These theoretical tools are crucial for determining the optimal control strategies in systems subject to abrupt state changes. The chapter also emphasizes the role of viscosity solutions in dealing with singular stochastic control problems. 
+
+% \input{spacecraft.tex}
 
 \input{Singular Stochastic Control.tex}
 

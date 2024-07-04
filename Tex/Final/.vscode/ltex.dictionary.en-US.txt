@@ -4,3 +4,4 @@ optimality
 transversality
 covariation
 Dynkin
+costate

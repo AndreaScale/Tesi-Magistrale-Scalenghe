@@ -3,8 +3,6 @@
 The stochastic analogous of Pontryagin's principle is the stochastic maximum principle. It relies on the notion of 
 backward stochastic differential equation, whose solution will provide a necessary condition on the controlled system. 
 
-{\color{red}{} ADD}
-
 \subsection{Backward Stochastic Differential Equation}
 
 A backward stochastic differential equation (BSDE) is a stochastic differential equation (SDE) where the initial condition is replaced by a final distribution. We 
@@ -45,7 +43,7 @@ We can now define the solution concept of \eqref{2-3-defBSDE}.
 
 Some measurability and integrability conditions are necessary for equation \eqref{2-3-solBSDE} to make sense; indeed existence 
 of a solution will be obtained through a classical fixed point method, which will rise from Banach-Cacciopoli's theorem, invokable thanks to a Lipschitz condition on $f$. 
-We denote by $m$ the Lebesgue measure on $[t,t_1]$.
+We denote by $m$ the Lebesgue measure on $[t,t_1]$. We first need some preliminary results.
 
 \begin{theorem}
     Let $f:\Omega\times[t,t_1]\times\R\times\R^n\rightarrow \R$ such that $f(\cdot,\cdot,y,z)$ is progressively measurable for all 
@@ -60,11 +58,11 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
     \begin{proof}
         We use the completeness of the space $(\mathbb{S}(t,t_1)\times\mathbb{H}^2(t,t_1)^n, \norm{\cdot}_{\beta})$, where
 
-        \begin{equation}
+        \begin{equation*}
             \norm{(y,z)}_{\beta} = \left(E\left[\int_t^{t_1} e^{\beta s}\left(\abs{y_s}^2+\abs{z_s}^2\right)ds\right]\right).
-        \end{equation}
+        \end{equation*}
 
-        {\color{red}{}This result is proven in the lemma below. PROVE. }. We denote by $(X,\norm{\cdot})$ the previous Banach space. We construct the map 
+        We denote by $(X,\norm{\cdot})$ the previous Banach space. We construct the map 
         $\Phi:X\rightarrow X:(u,v)\mapsto(y,z)$, where processes $y$ and $z$ are defined as follows. We define
 
         \begin{equation}
@@ -142,9 +140,6 @@ We denote by $m$ the Lebesgue measure on $[t,t_1]$.
     \end{proof}
 \end{theorem}
 
-{\color{red}{}
-PUT IT IN A LEMMA. The previous proof used the concept of local martingale and the Burkholder-Davis-Gundy inequality, they are detailed in the appendix. In particular the fact that if $X\in\mathbb{H}^2$ then $\int X\,dw$ is a martingale uses these concepts.
-}
 A notable case is the one with a generator $f$ linear in $y$ and $z$. That is, there exists 
 $a,b$ bounded progressively measurable processes valued in $\R$ and $\R^n$ and $c\in\mathbb{H}(t,t_1)^1$ which define:
 
@@ -241,18 +236,14 @@ This functional will define the BSDE in the next theorem.
 
         \begin{equation}\label{Ito to V BSDE}
             \begin{aligned}
-                & \int_t^{t_1} \partial_sV(r,x(r)) + D_xV(r,x(r))f(r,x(r),u(r)) \\
-                & + \frac{1}{2}tr\left[\sigma\sigma'(r,x(r),u(r))D_xx^2V(r,x(r))\right] \,dr \\
-                & + \int_t^{t_1} D_xV(r,x(r))\sigma(r,x(r),u(r))\,dw_r + V(t,x) \\
-                = & \int_t^{t_1} - f(r,x(r),u(r))\,dr + \int_t^{t_1}\alpha_r\,dw_r + V(t,x)
+                V(s,x(s)) & = \int_t^{t_1} \partial_sV(r,x(r)) + D_xV(r,x(r))f(r,x(r),u(r)) \\
+                & \quad + \frac{1}{2}tr\left[\sigma\sigma'(r,x(r),u(r))D_x^2V(r,x(r))\right] \,dr \\
+                & \quad + \int_t^{t_1} D_xV(r,x(r))\sigma(r,x(r),u(r))\,dw_r + V(t,x) \\
+                & = \int_t^{t_1} - f(r,x(r),u(r))\,dr + \int_t^{t_1}\alpha_r\,dw_r + V(t,x),
             \end{aligned}
         \end{equation}
 
-        {\color{red}{} DOOOO where we used the integral representation of a martingale}
-        
-        \[\dots\]
-        
-        Thus equation \eqref{Ito to V BSDE} implies
+        then taking the expectation and identifying the terms we get
 
         \begin{equation}\label{2-3-hjbinproof}
             -\frac{\partial V}{\partial t} + \mathcal{H}(s,x(s),u(s),D_xV(s,x(s)),D_x^2V(s,x(s))) = 0.

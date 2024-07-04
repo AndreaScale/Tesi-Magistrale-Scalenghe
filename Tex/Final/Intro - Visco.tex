@@ -1,12 +1,12 @@
-\section{Introduction}
+% \section{Introduction}
 
-As previously mentioned, in many instances the value function arising from an optimal control problem may fail to be continuously 
-differentiable. If that happens the derivation of the Hamilton-Jacobi equation is no longer valid, but more importantly 
-the notion of classical solution to it does hold anymore. Therefore, we have to weaken the notion of solution in order to get 
-a consistent and unique solution to the dynamic programming equation for non-differentiable value functions. The \textit{viscosity solution} 
-is exactly what we are searching for. It arises from a standard procedure called vanishing viscosity, which allows us to compute the 
-solution of a fully non-linear first order PDE as the limiting solution of quasilinear parabolic PDEs, obtained via infinitesimal 
-perturbations of second order derivatives. 
+% As previously mentioned, in many instances the value function arising from an optimal control problem may fail to be continuously 
+% differentiable. If that happens the derivation of the Hamilton-Jacobi equation is no longer valid, but more importantly 
+% the notion of classical solution to it does hold anymore. Therefore, we have to weaken the notion of solution in order to get 
+% a consistent and unique solution to the dynamic programming equation for non-differentiable value functions. The \textit{viscosity solution} 
+% is exactly what we are searching for. It arises from a standard procedure called vanishing viscosity, which allows us to compute the 
+% solution of a fully non-linear first order PDE as the limiting solution of quasilinear parabolic PDEs, obtained via infinitesimal 
+% perturbations of second order derivatives. 
 
 \subsection{Non-differentiable value functions}\label{Non diff V}
 
@@ -45,12 +45,12 @@ thus a linear $x^{\ast}(\cdot)$ and a constant optimal control $u^{\ast}$. We ha
 where 
 
 \[\tau = \begin{cases}
-    1 \\
-    t + \frac{1-x}{v}\\
+    1 & \text{or}\\
+    t + \frac{1-x}{v} & \text{or}\\
     t - \frac{1+x}{v},
 \end{cases}\]
 
-therefore, if we maximize for all values of $\tau$ we get one of the following $v=0,2,-2$.  In order to assign each $v$ a domain we observe that if $\abs{x}<t$ then neither $v=2$ nor $v=-2$ are enough for $x(\cdot)$ to optimally exit from $[-1,1]$ before $s=1$, and thus it is cost minimizing not to accelerate ($v=0$), while if $x\geq t$ or $x\leq -t$ it is worth and we respectively get $v=2$ and $v=-2$. Thus,
+therefore, if we maximize $J$ for each values of $\tau$ we get $v=0,2,-2$ respectively.  In order to assign each $v$ a domain we observe that if $\abs{x}<t$ then neither $v=2$ nor $v=-2$ are enough for $x(\cdot)$ to optimally exit from $[-1,1]$ before $s=1$, and thus it is cost minimizing not to move ($v=0$), while if $x\geq t$ or $x\leq -t$ it is worth and we respectively get $v=2$ and $v=-2$. Thus,
 
 \[ u^{\ast}=\begin{cases}
     2, & x\geq t, \\
@@ -115,8 +115,8 @@ which is continuous on the whole space, but clearly no differentiable in $\abs{x
 \subsection{Vanishing viscosity}
 
 We now euristichally expose a technique called vanishing viscosity, which is widely used in 
-calculus of variations problems and will show us one of the origins of the viscosity 
-solution notion. Let us consider the initial value problem:
+calculus of variations problems. It will show us one of the origins of the viscosity 
+solution notion. Let us consider the initial value problem
 
 \begin{equation}\label{4-1-fullynonlinear}
     \begin{cases}
@@ -126,18 +126,18 @@ solution notion. Let us consider the initial value problem:
 \end{equation}
 
 The method of characteristics shows that there cannot be a smooth solution of the above problem over the whole positive 
-real line. Indeed, a weaker notion of solution is needed. One approach is to use Hopf-Lax solution concept. We are not 
-interested in it, instead we start by perturbing the system as:
+real line, thus a weaker notion of solution is needed. One approach is to use Hopf-Lax solution concept. We are not 
+interested in it, instead we search for solution from similar problems which we already know. Let us perturbate the system as
 
-\begin{equation}
+\begin{equation}\label{4-1-semilinear}
     \begin{cases}
         u^{\epsilon}_t + H(u^{\epsilon},Du^{\epsilon}) -\epsilon\Delta u^{\epsilon}= 0,& \R^n\times(0,+\infty) \\
         u^{\epsilon} = g,& \R^n\times\{t=0\},
     \end{cases}
 \end{equation}
 
-so that the fully non-linear system in \ref{4-1-fullynonlinear} becomes a semilinear one, which turn out to have a smooth solution {\color{red}{}READ EVANS}. 
-Then, we take $\epsilon\to0$. We expect the solution $u^{\epsilon}$ to lose the bounds on the derivatives, as they strongly depend on the 
+so that the fully non-linear system in \ref{4-1-fullynonlinear} becomes a semilinear one, which has a smooth solution, e.g. Evans\cite{evans10} illustrates the Galerkin approximation method. Since the system \eqref{4-1-fullynonlinear} is some sort of limit version of \eqref{4-1-semilinear} we are tempted to take the limit of its solutions as $\epsilon\to 0$ and see if, provided convergence, we get the solution.  
+Thus, we take $\epsilon\to0$. We expect the solution $u^{\epsilon}$ to lose the bounds on the derivatives, as they strongly depend on the 
 regularization effect of $\epsilon\Delta$. Turns out that many times Ascoli-Arzelà theorem's hypotheses are satisfied, that is $(u^{\epsilon})_{\epsilon}$ 
 is uniformly bounded and equicontinuous, then we have local uniform convergence along a subsequence $u^{\epsilon_j}$. We now use the limit
 $u\xleftarrow{j\to+\infty}u^{\epsilon_j}$ as a solution. 
@@ -145,56 +145,51 @@ We know the limit to be continuous but we lack information about its derivatives
 Unlike the classical variational weak solution concept, where integration by part plays the central role, we will use the maximum principle 
 to translate the derivates of $u$ onto the test functions. 
 
-Let us take $v\in C^{\infty}(\R^n\times(0,+\infty))$ and suppose that $u-v$ has a strict local maximum at $(x_0,t_0)$ and 
-
-\[u(x_0,t_0) = v(x_0,t_0),\]
-
-then:
+Let us take $v\in C^{\infty}(\R^n\times(0,+\infty))$ and suppose that $u-v$ has a strict local maximum at $(x_0,t_0)$ and $u(x_0,t_0) = v(x_0,t_0)$, then
 
 \[(u-v)(x_0,t_0) > (u-v)(x,t),\]
 
 for all $(t,x)$ sufficiently close to $(x_0,t_0)$. It can be shown that it implies that there exists $J>0$ such that for all 
-$j>J$ there exists $(x_{\epsilon_j},t_{\epsilon_j})$ such that:
+$j>J$ there exists $(x_{\epsilon_j},t_{\epsilon_j})$ such that
 
 \[(u^{\epsilon}-v)(x_{\epsilon_j},t_{\epsilon_j}) \geq (u^{\epsilon}-v)(x,t),\]
 
-for $(x,t)$ sufficiently close to $(x_{\epsilon_j},t_{\epsilon_j})$ and such that:
+for $(x,t)$ sufficiently close to $(x_{\epsilon_j},t_{\epsilon_j})$ and such that
 
 \[(x_{\epsilon_j},t_{\epsilon_j})\xrightarrow{j\to+\infty}(x_0,t_0).\]
 
-Because $(u^{\epsilon}-v)$ has a local maximum at $(x_{\epsilon_j},t_{\epsilon_j})$:
+Because $(u^{\epsilon}-v)$ has a local maximum at $(x_{\epsilon_j},t_{\epsilon_j})$ then
 
 \[Du^{\epsilon_j}(x_{\epsilon_j},t_{\epsilon_j})=Dv(x_{\epsilon_j},t_{\epsilon_j}),\,u^{\epsilon_j}_t(x_{\epsilon_j},t_{\epsilon_j}) =v(x_{\epsilon_j},t_{\epsilon_j}),\]
 
-and:
+and
 
 \[-\Delta u^{\epsilon_j}(x_{\epsilon_j},t_{\epsilon_j}) \geq -\Delta v(x_{\epsilon_j},t_{\epsilon_j}).\]
 
-Therefore, we get:
+Therefore,
 
-\[v_t(x_0,t_0)+H(Dv(x_0,t_0),x_0)\xleftarrow{j\to+\infty}v_t(x_{\epsilon_j},t_{\epsilon_j}) +H(Dv(x_{\epsilon_j},t_{\epsilon_j}) ,x_{\epsilon_j})\leq \Delta \epsilon_jv(x_{\epsilon_j},t_{\epsilon_j}) \xrightarrow{j\to+\infty}0\]
+\[v_t(x_0,t_0)+H(Dv(x_0,t_0),x_0)\xleftarrow{j\to+\infty}v_t(x_{\epsilon_j},t_{\epsilon_j}) +H(Dv(x_{\epsilon_j},t_{\epsilon_j}) ,x_{\epsilon_j})\leq \Delta \epsilon_jv(x_{\epsilon_j},t_{\epsilon_j}) \xrightarrow{j\to+\infty}0.\]
 
 Analogous computations can be done for local minimum of $u-v$, obtaining the opposite inequality above.
 
 We can now grasp the intuition behind the following definition.
 
 \begin{definition}
-    A viscosity solution of \ref{4-1-fullynonlinear} is a function $u$ bounded and uniformly continuous on $\R^n\times[0,T]$ for all $T>0$ such that 
-    for all $v\in C^{\infty}(\R^n\times(0,+\infty))$:
+    A viscosity solution of \ref{4-1-fullynonlinear} is a function $u$ bounded and uniformly continuous on $\R^n\times[0,T]$ for all $T>0$ such that $\forall v\in C^{\infty}(\R^n\times(0,+\infty))$
 
     \[v_t(x,t)+H(Dv(x,t),x)\leq0\]
 
-    for all $(x,t)\in\arg \max\{u-v\}$ and:
+    for all $(x,t)\in\arg \max\{u-v\}$ and
 
     \[v_t(x,t)+H(Dv(x,t),x)\geq0\]
 
     for all $(x,t)\in\arg \min\{u-v\}$. Furthermore, $u\equiv g$ for $t=0$. 
 \end{definition}
 
-\section{Abstract dynamic programming and viscosity solutions}
+\section{Abstract dynamic programming}
 
 We now present an abstraction of the dynamic programming principle, which will allow us to define the viscosity solutions of the dynamic programming 
-equation. Let $\Sigma$ be a closed subset of a Banach space and $\mathcal{C}$ a collection of functions on $\Sigma$, closed under addition:
+equation. Let $\Sigma$ be a closed subset of a Banach space and $\mathcal{C}$ a collection of functions on $\Sigma$, closed under addition, that is
 
 \[\phi,\psi\in\mathcal{C}\Rightarrow \phi+\psi\in\mathcal{C}.\]
 
@@ -208,47 +203,47 @@ We consider the family of operators $\{\mathcal{T}_{tr}\}_{t_0\leq t\leq r\leq t
     \mathcal{T}_{tr}\phi\leq\mathcal{T}_{ts}\psi \text{ if } \phi\leq \mathcal{T}_{rs}\psi,
 \end{equation}
 
-and:
+and
 
 \begin{equation}\label{4-1-geqT}
     \mathcal{T}_{tr}\phi\geq\mathcal{T}_{ts}\psi \text{ if } \phi\geq \mathcal{T}_{rs}\psi.
 \end{equation}
 
 Conditions \ref{4-1-leqT} and \ref{4-1-geqT} are a weaker version of monotonicity; they imply it together with \ref{4-1-identityofT}. 
-Moreover, they also imply the semigroup property, provided that $\mathcal{T}_{rt}:\mathcal{C}\rightarrow\mathcal{C}$. Under this assumption,
-the two conditions are equivalent to monotonicity. The semigroup property:
+Moreover, they also imply the semigroup property, provided that $\mathcal{T}_{rt}:\mathcal{C}\rightarrow\mathcal{C}$. If the latter holds true,
+the two conditions are equivalent to monotonicity. The semigroup property
 
 \begin{equation}
     \mathcal{T}_{tr}\left(\mathcal{T}_{rs}\psi\right)=\mathcal{T}_{ts}\psi,\,\mathcal{T}_{rs}\psi\in\mathcal{C},
 \end{equation}
 
-is going to be the dynamic programming principle. Indeed, let us consider the classical optimal control problem defined on a bounded set 
-$O\subset\R^n$, which we set to be $\Sigma=\overline{O}$ and $\mathcal{C}=\mathcal{M}(\Sigma)$, the collection of measurable functions bounded by below. Then as in chapter 1 we aim at minimize a functional, 
-we set this functional to be the operator $\mathcal{T}$. Let us define:
+will mimic the dynamic programming principle. Indeed, let us consider the classical optimal control problem defined on a bounded set 
+$O\subset\R^n$, which we choose to be $\Sigma=\overline{O}$ and $\mathcal{C}=\mathcal{M}(\Sigma)$, the collection of measurable functions bounded by below. Then, as in chapter 1, we aim at minimizing a functional, 
+we set this functional to be the operator $\mathcal{T}$. Let us define
 
-\begin{equation}\label{4-1-valuefunctreform}
+\begin{equation*}\label{4-1-valuefunctreform}
     \mathcal{T}_{t,r;u}\psi(x) = \int_t^{\tau\wedge r}L(s,x(s),u(s)),\,ds + g(\tau,x(\tau))\chi_{\tau<r} + \psi(x(r))\chi_{\tau\geq r}, 
-\end{equation}
+\end{equation*}
 
-which gives:
+which gives
 
 \begin{equation}\label{4-1-defofT_dynam}
     \mathcal{T}_{tr}\psi = \inf_{u\in\mathcal{U}(t,x)} \mathcal{T}_{t,r;u}\psi.
 \end{equation}
 
-Under the usual assumption on the running and terminal costs, as well as on the control space $U$ we now that the value function defined in \ref{4-1-valuefunctreform} 
+Under the usual assumption on the running and terminal costs as well as on the control space $U$, we note that the value function defined in \ref{4-1-valuefunctreform} 
 is measurable and bounded by below. Therefore, $\mathcal{T}_{rt}:\mathcal{C}\rightarrow\mathcal{C}$ and we can formulate the semigroup property just by asking $\psi\in\mathcal{C}$. 
-It is clear by its definition that the dynamic programming principle is translated as:
+It is clear by its definition that the dynamic programming principle is
 
 \[\mathcal{T}_{tt_1}\psi(x)=\mathcal{T}_{tr}\left(\mathcal{T}_{rt_1}\psi\right)(x),\]
 
-for $(t,x)\in\overline{Q}$ and $\psi\in\mathcal{C}$. Let us define the value function As
+for $(t,x)\in\overline{Q}$ and $\psi\in\mathcal{C}$. Let us define the value function as
 
 \begin{equation}
     V(t,x) = (\mathcal{T}_{tt_1}\psi)(x).
 \end{equation}
 
-We now derive the abstract dynamic programming equation. The same procedure as in chapter 1 gives:
+We now derive the abstract dynamic programming equation. The same procedure as in chapter 1 yields
 
 \[-\frac{1}{h}\left[\mathcal{T}_{tt+h}V(t+h,\cdot)(x)-V(t,x)\right]=0.\]
 
@@ -265,7 +260,7 @@ for all $w\in\mathcal{D},(t,x)\in Q=[t_0,t_1)\times\Sigma'$. The space $\mathcal
     \forall w\in\mathcal{D} \text{ the functions }\frac{\partial w}{\partial t},\,\mathcal{G}_tw(t,\cdot) \text{ are continuous on $Q$ and }w(t,\cdot)\in\mathcal{C} \forall t\in[t_0,t_1], 
 \end{equation}
 
-and $\mathcal{D}$ is a vector space:
+and $\mathcal{D}$ is a vector space
 
 \begin{equation}
     w,\tilde{w}\in\mathcal{D} \Rightarrow w+\tilde{w}\in\mathcal{D},\,\lambda w\in\mathcal{D}.
@@ -275,39 +270,41 @@ The elements of $\mathcal{D}$ are called test functions and $\mathcal{G}_t$ the 
 $\mathcal{D}$ will vary from case to case, usually they are chosen to satisfy certain integrability conditions on the functions. 
 
 If we require the existence of a test function space and an infinitesimal generator of the semigroup given by the value function, the 
-dynamic programming equation becomes:
+dynamic programming equation becomes
 
 \begin{equation}\label{4-1-newprogreq}
     -\frac{\partial }{\partial t}V(t,x) + (\mathcal{G}_tV(t,\cdot))(x) = 0,\,(t,x)\in Q.
 \end{equation}
 
-Then if a function $V\in\mathcal{D}$ satisfies \ref{4-1-newprogreq} point wise it is called a classical solution of it. Thanks to this reformulation we will be able 
-to weaken this notion of solution and finally get the viscosity solution of the dynamic programming equation.
+Then, if a function $V\in\mathcal{D}$ satisfies \ref{4-1-newprogreq} point wise it is called a classical solution of it. Thanks to this reformulation we will be able 
+to weaken this notion of solution and get the viscosity solution of the dynamic programming equation.
 
-We point out that in the canonical deterministic optimal control studied in chapter 1, the infinitesimal generator has the form:
+We point out that in deterministic optimal control, the infinitesimal generator has the form
 
 \[(\mathcal{G}_t\phi)(x) = H(t,x,D\phi(x)) = \sup_{v \in U}\left\{-f(t,x,v)\cdot D\phi(x) - L(t,x,v)\right\},\]
 
 with test functions space $\mathcal{D}= C^1(Q)\cap \mathcal{M}(\overline{Q})$ and $\Sigma'=O$.
+
+\subsection{Viscosity Solutions}
 
 In view of what we saw in previous sections, we give the definition of viscosity solution. 
 
 \begin{definition}\label{4-1-defviscsol}
     Let $W\in C([t_0,t_1]\times\Sigma)$. Then:
     \begin{enumerate}
-        \item $W$ is a \textit{viscosity subsolution} of \ref{4-1-newprogreq} in $Q$ if for every $w\in\mathcal{D}$:
+        \item $W$ is a \textit{viscosity subsolution} of \ref{4-1-newprogreq} in $Q$ if for every $w\in\mathcal{D}$
         \begin{equation}\label{4-1-defsubsolution}
             -\frac{\partial}{\partial t}w\left(\overline{t},\overline{x}\right) + \left(\mathcal{G}_{\overline{t}}w\left(\overline{t},\cdot\right)\right)\left(\overline{x}\right) \leq 0,
         \end{equation} 
-        at every:
+        at every
         \[\left(\overline{t},\overline{x}\right)\in \arg \max_{(t,x)\in Q}\left\{(W-w)(t,x)\right\},\]
 
         and $W\left(\overline{t},\overline{x}\right)=w\left(\overline{t},\overline{x}\right)$.
-        \item $W$ is a \textit{viscosity supersolution} of \ref{4-1-newprogreq} in $Q$ if for every $w\in\mathcal{D}$:
+        \item $W$ is a \textit{viscosity supersolution} of \ref{4-1-newprogreq} in $Q$ if for every $w\in\mathcal{D}$
         \begin{equation}\label{4-1-defsupersolution}
             -\frac{\partial}{\partial t}w\left(\overline{t},\overline{x}\right) + \left(\mathcal{G}_{\overline{t}}w\left(\overline{t},\cdot\right)\right)\left(\overline{x}\right) \geq 0,
         \end{equation} 
-        at every:
+        at every
         \[\left(\overline{t},\overline{x}\right)\in \arg \min_{(t,x)\in Q}\left\{(W-w)(t,x)\right\},\]
 
         and $W\left(\overline{t},\overline{x}\right)=w\left(\overline{t},\overline{x}\right)$.
@@ -317,23 +314,22 @@ In view of what we saw in previous sections, we give the definition of viscosity
 
 As a first step after the definition of viscosity solutions, we prove its consistency with the classical notion. To do so we require the 
 operator to satisfy a maximum principle, that is if $\mathcal{G}_t$ is a general 
-operator and:
+operator and
 
 \[\mathcal{D}=\left\{W\in C([t_0,t_1]\times\Sigma)\,|\,W_t(t,x),(\mathcal{G}_tW(t,\cdot))(x)\in C(Q)\right\},\]
 
-then $\mathcal{G}_t$ satisfies the \textit{maximum principle} if:
+then $\mathcal{G}_t$ satisfies the \textit{maximum principle} if
 
 \[\mathcal{G}_t\phi(\overline{x})\geq\mathcal{G}_t\psi(\overline{x})\]
 
-for every $\overline{x}\in\arg \max \{(\phi-\psi)(x)\,|\,x\in\Sigma\}\cap\Sigma'$ with $\phi(\overline{x})=\psi(\overline{x})$. Now,
-if $W$ is a classical solution of \ref{4-1-newprogreq}, then for a $w\in\mathcal{D}$ and $\left(\overline{t},\overline{x}\right) \in \arg \max_{(t,x)\in Q}\left\{(W-w)(t,x)\right\}$ 
-and $W\left(\overline{t},\overline{x}\right)=w\left(\overline{t},\overline{x}\right)$ then:
+for every $\overline{x}\in\arg \max \{(\phi-\psi)(x)\,|\,x\in\Sigma\}\cap\Sigma'$ with $\phi(\overline{x})=\psi(\overline{x})$. If $W$ is a classical solution of \ref{4-1-newprogreq}, then for a $w\in\mathcal{D}$ and $\left(\overline{t},\overline{x}\right) \in \arg \max_{(t,x)\in Q}\left\{(W-w)(t,x)\right\}$ 
+and $W\left(\overline{t},\overline{x}\right)=w\left(\overline{t},\overline{x}\right)$ we have
 
-\begin{align}
+\begin{align*}
     -\frac{\partial}{\partial t}w\left(\overline{t},\overline{x}\right) + \left(\mathcal{G}_{\overline{t}}w\left(\overline{t},\cdot\right)\right)\left(\overline{x}\right) \leq -\frac{\partial}{\partial t}W\left(\overline{t},\overline{x}\right) + \left(\mathcal{G}_{\overline{t}}W\left(\overline{t},\cdot\right)\right)\left(\overline{x}\right) = 0,
-\end{align}
+\end{align*}
 
-since we asked continuity of time derivatives. For the supersolution recall that:
+Since we asked continuity of time derivatives. For the supersolution recall that:
 
 \[ \max \{(\phi-\psi)(x)\,|\,x\in \Sigma\} = \min \{-(\phi-\psi)(x)\,|\,x\in \Sigma\}.\]
 
@@ -343,11 +339,11 @@ If $\mathcal{G}_t$ is the infinitesimal generator of a two-parameter semigroup t
     Let $W\in\mathcal{D}$. Then $W$ is a classical solution of \ref{4-1-newprogreq} if and only if it is a viscosity solution of \ref{4-1-newprogreq} in $Q$.
 
     \begin{proof}
-        If $W$ is a viscosity solution, since it is also a test function then \ref{4-1-subsolution} and \ref{4-1-supersolution} hold for every point $(t,x)\in Q$, 
-        which implies that:
+        If $W$ is a viscosity solution, since it is also a test function then \ref{4-1-defsubsolution} and \ref{4-1-defsupersolution} hold for every point $(t,x)\in Q$, 
+        which implies that
         \[-\frac{\partial}{\partial t}w(t,x) + \left(\mathcal{G}_tw(t,\cdot)\right)(x) = 0,\,\forall(t,x)\in Q.\] 
 
-        If $W$ is a classical solution and prove the subsolution property. Let $w\in\mathcal{D}$ and $(t,x)$ as usual. Since $w\geq W$:
+        If $W$ is a classical solution and prove the subsolution property. Let $w\in\mathcal{D}$ and $(t,x)$ as usual. Since $w\geq W$
 
         \begin{align*}
             -\frac{\partial}{\partial t}w(t,x) + (\mathcal{G}_tw(t,\cdot))(x) & = - \lim_{h\to0} \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right] \\
@@ -364,7 +360,7 @@ equation \ref{4-1-newprogreq}.
 
 \begin{theorem}\label{4-1-thm:Vtoviscosity}
     Let $\{\mathcal{T}_{tr}\}_{t_0\leq t\leq r\leq t_1}$ such that \ref{4-1-identityofT},\ref{4-1-geqT},\ref{4-1-leqT} and also there exists a vector space 
-    $\mathcal{D}$ and another family of operator $\{\mathcal{G}_t\}_{t\in[t_0,t_1]}$ such that \ref{4-1-conditiononD} and \ref{4-1-conditiononG_t} hold. Let:
+    $\mathcal{D}$ and another family of operator $\{\mathcal{G}_t\}_{t\in[t_0,t_1]}$ such that \ref{4-1-conditiononD} and \ref{4-1-conditiononG_t} hold. Let
     
     \[V(t,x)=\left(\mathcal{T}_{tt_1}\psi\right)(x).\]
 
@@ -386,9 +382,9 @@ equation \ref{4-1-newprogreq}.
 
 \section{The Standard Approach}
 
-We have talked about \textit{viscosity solutions} for $\mathcal{G}_t$ that are infinitesimal generators of semigroups. Historically the notion of viscosity solution was introduced 
+We have talked about \textit{viscosity solutions} for $\mathcal{G}_t$ that are infinitesimal generators of semigroups. The notion of viscosity solution was introduced 
 for partial differential equations, that is when $\mathcal{G}_t$ is a partial differential operator. In this section we will introduce this classical notion and provide some properties, 
-establishing as well the relevant links to the already proven theory. 
+establishing as well the relevant links to what we have already proven. 
 
 Let $\mathcal{G}_t$ be a partial differential operator defined as
 
@@ -409,7 +405,7 @@ where $Q=[t_0,t_1)\times O$ as usual. A useful result is the following.
     The operator $\mathcal{G}_t$ obeys to the maximum principle if and only if $F$ is elliptic.
 
     \begin{proof}
-        Recall that $F$ is elliptic If
+        Recall that $F$ is elliptic if
 
         \begin{equation}\label{4-1-defelliptic}
             F(t,x,p,A+B,V) \leq F(t,x,p,A,V)
@@ -468,7 +464,7 @@ I this context we give the following definition.
 We will prove that definitions \ref{4-1-defviscsol} and \ref{4-1-defviscforW} are equivalent for partial differential operators 
 of the form \ref{4-1-GPDEop}, provided that the function has sub-polynomial growth and is measurable.
 
-An handy way of verifying both the definitions is the following.
+A handy way of verifying both the definitions is the following.
 
 \begin{lemma}
     If the conditions in the definitions \ref{4-1-defviscsol}, \ref{4-1-defviscforW} is satisfied only at strict extrema 
@@ -560,7 +556,7 @@ assumptions. We now prove that it is a viscosity solution of the dynamic program
 
 \vspace{5mm}
 
-Note that equation \ref{4-1-viscodynamiceq-lim} implies that $V$ is a viscosity solution of \ref{1-2-HJB1} via theorem \ref{4-1-thm:Vtoviscosity}.
+Note that equation \ref{4-1-viscodynamiceq-lim} implies that $V$ is a viscosity solution of \ref{1-2-HJB1} via Theorem \ref{4-1-thm:Vtoviscosity}.
 
 \vspace{5mm}
 
@@ -579,12 +575,13 @@ Note that equation \ref{4-1-viscodynamiceq-lim} implies that $V$ is a viscosity 
     to the control $u(\cdot)$ such that $x(t)=x$. Let also $\tau$ the exit time of $(s,x(s))$ from $Q$. If we take a sufficiently small $h>0$ we can compute
     
     \begin{align*}
-        \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right] & \leq \frac{1}{h}\int_t^{t+h}L(s,x(s),u(s))\,ds + \frac{1}{h}\left[w(t+h,x(t+h))-w(t,x)\right] \\
+        \frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right] & \leq \frac{1}{h}\int_t^{t+h}L(s,x(s),u(s))\,ds \\
+        & \quad + \frac{1}{h}\left[w(t+h,x(t+h))-w(t,x)\right] \\
         & =  \frac{1}{h}\int_t^{t+h}\bigg[L(s,x(s),u(s)) \\ 
         & \quad + \frac{\partial}{\partial t}w(s,x(s)) + f(s,x(s),u(s))\cdot D_xw(s,x(s))\bigg]\,ds.
     \end{align*}
     
-    Then \ref{4-1-inproof:limsup} holds true. 
+    Then, \ref{4-1-inproof:limsup} holds true. 
     
     Let us prove \ref{4-1-inproof:liminf}. Using $\abs{f(t,x,v)}\leq K(1+\abs{x})$ we get
 
@@ -626,14 +623,21 @@ Note that equation \ref{4-1-viscodynamiceq-lim} implies that $V$ is a viscosity 
     Because of the continuity of $L$, of $f$ and smoothness of $w$ we have that $\lim_{n\to+\infty}e(n)=0$. If we prove that
 
     \begin{equation}\label{miao}
-        n\int_t^{t+1/n} L(s,x(s),u^n(s))\,ds + n\int_t^{t+1/n} f(t,x,u^n(s))\,ds \cdot D_x w(t,x) \leq \sup_{v\in U}\left\{f(t,x,v)\cdot p + L(t,x,v)\right\},
+        \begin{aligned}
+            n\int_t^{t+1/n} L(s,x(s),u^n(s))\,ds + n\int_t^{t+1/n} f(t,x,u^n(s))\,ds \cdot D_x w(t,x) \\
+            \leq \inf_{v\in U}\left\{f(t,x,v)\cdot p + L(t,x,v)\right\},
+        \end{aligned}
     \end{equation}  
 
     then from \ref{4-1-inproof:geq} we get
 
     \[\liminf_{h\to0}\frac{1}{h}\left[\left(\mathcal{T}_{tt+h}w\left(t+h\right)\right)(x) - w(t,x)\right] \geq \frac{\partial}{\partial t}w(t,x) - H(t,x,D_x w(t,x)).\]
  
-    \color{red}{PROVE THAT \ref{miao} VIA CONVEXHULL STUFF.}\color{black}{}
+    % If we define
+
+    % \[FL(t,x)\left\{(f(t,x,v),L(t,x,v))\,|\, v\in U\right\}\]
+
+    % then $
 \end{proof}
 
 We state a general result for later use.
@@ -650,7 +654,7 @@ and get a similar result, but we need to require the existence of an optimal con
     If for each $(t,x)\in Q$ there exists a $u^{\ast}\in\mathcal{U}(t,x)$ be an optimal control, then a continuous value function is a viscosity solution of its dynamic programming equation.
     
     \begin{proof}
-        Let us drop the $^{\ast}$. As we did before in theorem \ref{4-1-viscodynamiceq}, for every $w\in C^{\infty}(Q)$ we have
+        Let us drop the $^{\ast}$. As we did before in Theorem \ref{4-1-viscodynamiceq}, for every $w\in C^{\infty}(Q)$ we have
 
         \[\limsup_{h\to0}\frac{1}{h}\left[(\mathcal{T}_{tt+h}w(t+h,\cdot))(x)-w(t,x)\right]\leq\frac{\partial}{\partial t}w(t,x) - H(t,x,D_xw(t,x)).\]
 
@@ -684,7 +688,7 @@ We will show that under technical assumptions on $H$, which are satisfied by the
 can be computed only on the frontier. Therefore, if we impose boundary conditions we get uniqueness of the viscosity solution. 
 The assumptions on $H$ are
 
-\begin{itemize}\label{4-2-Hassumptions}
+\begin{enumerate}\label{4-2-Hassumptions}
     \item There exists $K\in\R$ and $h\in C([0,\infty))$ with $h(0)=0$ such that $\forall (t,x),(s,y)\in\overline{Q}$ and $\forall p,p'\in\R^n$ we have
     
     \[H(t,x,p)-H(s,y,p')\leq h(\abs{t-s}+\abs{x-y})+h(\abs{t-s})\abs{p}+K\abs{x-y}\abs{p} + K\abs{p-p'}.\]
@@ -696,9 +700,9 @@ The assumptions on $H$ are
     and
 
     \[\abs{H_p}\leq K'.\]
-\end{itemize}
+\end{enumerate}
 
-Under this hypotheses we can state the following theorem.
+Under these hypotheses we can state the following theorem.
 
 \begin{theorem}\label{4-2-Theo:Suponbound}
     Let $W$ and $V$ viscosity subsolution and supersolution of \ref{4-2-firstordereq} in $Q$, respectively. If $Q$ is unbounded we assume $W$, $V$ to be bounded and 
@@ -707,7 +711,7 @@ Under this hypotheses we can state the following theorem.
     \[\sup_{\overline{Q}}[W-V] = \sup_{\partial^{\ast}Q}[W-V].\]
 \end{theorem}
 
-This theorem implies that if $V$ and $W$ are two viscosity solution of \ref{4-2-firstordereq} satisfying the boundary conditions
+This Theorem implies that if $V$ and $W$ are two viscosity solution of \ref{4-2-firstordereq} satisfying the boundary conditions
 
 \begin{equation}\label{4-2-TerminalcondV}
     \begin{aligned}
@@ -716,7 +720,7 @@ This theorem implies that if $V$ and $W$ are two viscosity solution of \ref{4-2-
     \end{aligned}
 \end{equation}
 
-then, if the assumption of theorem \ref{4-2-Theo:Suponbound} are satisfied, we get
+then, if the assumption of Theorem \ref{4-2-Theo:Suponbound} are satisfied, we get
 
 \[\norm{W-V}_{\infty} = \sup_{\overline{Q}}[W-V]=\sup_{\partial^{\ast}Q}[W-V] = 0.\]
 
@@ -726,9 +730,9 @@ The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove th
     
     Let $Q$ be bounded. For $\epsilon, \delta, \beta >0$ define
     
-    \begin{equation}\label{4-2-InProofSup:phi}
+    \begin{equation*}\label{4-2-InProofSup:phi}
         \Phi(t,x,s,y) = W(t,x) - V(s,y) - \frac{1}{2\epsilon} \abs{x-y}^2 -\frac{1}{2\delta} \abs{t-s}^2 + \beta(s-t_1).   
-    \end{equation}
+    \end{equation*}
 
     Since $\overline{Q}$ is bounded the function $\Phi$ achieves its supremum at $(t',x'),(s',y')\in\overline{Q}\times\overline{Q}$. We will essentially prove 
     that $\Phi$ divides $W-V$ from its supremum over the boundary in an inequality chain.
@@ -736,9 +740,9 @@ The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove th
     \begin{enumerate}
         \item Let $\rho>$ and define
         
-        \begin{equation}\label{4-2-InProofSup:Drho}
+        \begin{equation*}\label{4-2-InProofSup:Drho}
             D_{\rho} = \left\{(t,x),(s,y)\in\overline{Q}\times\overline{Q}\,|\,\abs{t-s}^2+\abs{x-y}^2\leq\rho\right\},
-        \end{equation}
+        \end{equation*}
 
         and 
 
@@ -753,12 +757,12 @@ The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove th
         Since $\overline{Q}$ is compact and $W$,$V$ are continuous they are uniformly continuous, therefore $m_W,m_V\in C([0,\infty))$. Clearly 
         $m_W(0)=m_V(0)=0$. We now claim two estimates on $\abs{x-y}$ and $\abs{t-s}$:
 
-        \begin{equation}
+        \begin{equation*}
             \begin{aligned}
                 \abs{t'-s'}\leq\sqrt{K_1\delta} \\
                 \abs{x'-y'}\leq \sqrt{\epsilon m_W(K_1[\epsilon+\delta])}.
             \end{aligned}
-        \end{equation}
+        \end{equation*}
 
         From the maximum in $((t',x'),(s',y'))$ we have
 
@@ -824,9 +828,9 @@ The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove th
         
         \item We denote
         
-        \begin{equation}\label{4-2-inproofSup:k}
+        \begin{equation*}\label{4-2-inproofSup:k}
             k(\epsilon,\delta) = h(\sqrt{K_1\epsilon} + \sqrt{K_1\delta}) + h(\sqrt{K_1\delta})\sqrt{\frac{K_1\epsilon}{\epsilon}} + Km_W(K_1[\epsilon+\delta]),
-        \end{equation}
+        \end{equation*}
 
         then
 
@@ -861,9 +865,9 @@ The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove th
 
     since $W$ and $V$ are bounded. We therefore define
 
-    \begin{equation}
+    \begin{equation*}
         \Phi_{\gamma}(t,x,s,y) = \Phi(t,x,s,y) - \frac{\gamma}{2}\left[\abs{t-t_{\gamma}}^2+\abs{s-s_{\gamma}}^2 + \abs{x-x_{\gamma}}^2 + \abs{y-y_{\gamma}}^2\right],
-    \end{equation}
+    \end{equation*}
 
     for $(t,x),(s,y)\in \overline{Q}$. 
     
@@ -885,9 +889,9 @@ The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove th
 
         The supremum of $\Phi_{\gamma}$ is achieved since $\Phi_{\gamma}$ is bounded by $\Phi(t_{\gamma},x_{\gamma},s_{\gamma},y_{\gamma})$. It is achieved at $(t',x'),(s',y')$. Then
 
-        \begin{equation}
+        \begin{equation*}
             \abs{t-t_{\gamma}}^2+\abs{s-s_{\gamma}}^2 + \abs{x-x_{\gamma}}^2 + \abs{y-y_{\gamma}}^2\leq2.
-        \end{equation}
+        \end{equation*}
 
         We now claim two estimates on the distance between the time variables and space variables. For $\gamma,\delta,\epsilon\leq\frac{1}{2}$ we have
 
@@ -927,22 +931,22 @@ The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove th
 
         \item Replicating the same argument of the bounded case we get if $(t',x')\in\partial^{\ast}Q$ then
         
-        \begin{equation}
+        \begin{equation*}
             \Phi_{\gamma}(t',x',s',y') \leq \frac{1}{2}m_V\left(2(K_1+1)(\epsilon+\delta)\right) + \sup_{\partial^{\ast}Q}[W-V],
-        \end{equation}
+        \end{equation*}
 
         and if $(s',y')\in\partial^{\ast}Q$ then
 
-        \begin{equation}
+        \begin{equation*}
             \Phi_{\gamma}(t',x',s',y') \leq \frac{1}{2}m_W\left(2(K_1+1)(\epsilon+\delta)\right) + \sup_{\partial^{\ast}Q}[W-V].
-        \end{equation}
+        \end{equation*}
 
         \item Finally, if we find a bound over $\beta$ for $(t',x'),(s',y')\in Q$ we then prove that this bound is not satisfied and then we can invoke 
         point $2'$ and get
 
-        \begin{equation}
+        \begin{equation*}
             \limsup_{\epsilon\to0}\limsup_{\delta\to0}\limsup_{\gamma\to0}\Phi_{\gamma}(t',x',s',y') \leq \sup_{\partial^{\ast}Q}[W-V],
-        \end{equation}
+        \end{equation*}
 
         which implies, as before, that
 
@@ -962,7 +966,7 @@ The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove th
 
         \[p_{\epsilon}=\frac{1}{\epsilon}(x'-y'),\, p_{\gamma}=\gamma(x'-x_{\gamma}).\]
 
-        With the same reasoning we define the test function
+        By the same reasoning we define the test function
 
         \[w^{\ast}(s,y)=-\frac{1}{2\delta}\abs{t'-s}^2-\frac{1}{2\epsilon}\abs{x'-y}^2+\frac{\gamma}{2}\left(\abs{s-s_{\gamma}}^2+\abs{y-y_{\gamma}}^2\right)+\beta(s-t_1),\]
 
@@ -988,8 +992,7 @@ The proof of Theorem \ref{4-2-Theo:Suponbound} is rather long; we first prove th
 
 \subsection{Continuity Properties of the Value Function}
 
-We now investigate continuity properties of the value function. In particular, we consider two different sets of assumptions which guarantee continuity, actually 
-something stronger: Lipschitz continuity and Uniform continuity. Let us consider $f,L,\psi$ as usual, recalling that there exists $K_{\rho}>0$ such that 
+We now investigate continuity properties of the value function. In particular, we consider two different sets of assumptions regarding continuity: Lipschitz continuity and Uniform continuity. Let us consider $f,L,\psi$ as usual, recalling that there exists $K_{\rho}>0$ such that 
 
 \begin{equation}\label{4-3-boundonf}
     \abs{f(t,x,v) - f(t,y,v)} \leq K_{\rho}\abs{x-y}, 
@@ -1008,7 +1011,7 @@ for all $\abs{v}\leq\rho$. Note that these are minimal assumption to start worki
 
         where $K_g$ is the bound over the function $g$. 
 
-        $V$ is uniformly continuous. Standard arguments on solutions of ODE (integral form of the solution, bound on the flow and Gronwall) yield 
+        $V$ is uniformly continuous. Standard arguments on solutions of ODE that we have already used many times (integral form of the solution, bound on the flow and Gronwall) yield 
 
         \begin{equation}
             \Lambda(s) \overset{def}{=} \abs{x(s)-y(s)} \leq \abs{x-y}e^{K(s-t)},
@@ -1021,9 +1024,10 @@ for all $\abs{v}\leq\rho$. Note that these are minimal assumption to start worki
         Then
 
         \begin{align*}
-            \abs{J(t,x,u) - J(t,y,u)} & \leq \int_t^{t_1} \abs{L(s,x(s),u(s)) - L(s,y(s), u(s))}\,ds + \abs{\psi(x(t_1)) - \psi(y(t_1))} \\
+            \abs{J(t,x,u) - J(t,y,u)} & \leq \int_t^{t_1} \abs{L(s,x(s),u(s)) - L(s,y(s), u(s))}\,ds \\
+            & \quad + \abs{\psi(x(t_1)) - \psi(y(t_1))} \\
             & \leq \int_t^{t_1} m_L(\Lambda(s))\,ds + m_{\psi}(\Lambda(t_1)) \\
-            & + (t_1-t_0)m_L(\abs{x-y}e^{K(t_1-t_0)}) + m_{\psi}(\abs{x-y}e^{K(t_1-t_0)}),
+            & \quad + (t_1-t_0)m_L(\abs{x-y}e^{K(t_1-t_0)}) + m_{\psi}(\abs{x-y}e^{K(t_1-t_0)}),
         \end{align*}
 
         where $m_g$ is the modulus of continuity of the function $g$. Since both $L$ and $\psi$ are uniformly continuous $m_L,m_{\psi}\in C([0,\infty))$ and 
@@ -1050,7 +1054,7 @@ From the proof it is clear that by taking $L$ and $\psi$ Lipschitz continuous we
 
 for some constants $K_L,K_{\psi}>0$. 
 
-This theorem allows us to conclude the following result.
+This Theorem allows us to conclude the following result.
 
 \begin{corollary} 
     Under the previous assumptions, the value function is the unique viscosity solution of the dynamic programming equation with fixed terminal conditions \ref{4-2-TerminalcondV}. 
@@ -1090,10 +1094,10 @@ This theorem allows us to conclude the following result.
 \section{Pontryagin's Principle for Viscosity Solutions}
 
 In section \ref{Section: Pontryagin Principle} we stated the Pontryagin's principle for continuously differentiable value functions. 
-As we come to understand in this chapter, value functions may easily fail to be $C^1$ which requires a weaker notion of solution. We have introduced 
-the concept of viscosity solution, which turns out to be also a handy notion to extend Pontryagin's principle in non-differentiable settings. 
-Recall that it states the relation between a so-called adjoint variable $P$ and the state variable via a system of differential equations. Since may fail 
-to be differentiable somewhere we need to carefully extend the possible values of the adjoint variable for those instances. Let us 
+It is now clear that value functions may easily fail to be even differentiable, and thus the necessity of a weaker notion of solution. We have introduced 
+the concept of viscosity solution, which turns out to be a key concept to extend Pontryagin's principle in non-differentiable settings. 
+Recall that Pontryagin states the relation between a so-called adjoint variable $P$ and the state variable via a system of differential equations. Since the Hamiltonian may fail 
+to be differentiable, we need to carefully extend the possible values of the adjoint variable for those instances. Let us 
 define two new key concepts that incorporate the possible value that the incremental limit may have in non-smooth points. 
 
 \begin{definition}
@@ -1101,7 +1105,7 @@ define two new key concepts that incorporate the possible value that the increme
 
     \begin{enumerate}
         \item The set of \textit{superdifferentials} of $W$ at $(t,x)$ as the collection of all $(q,p)\in\R\times\R^n$ such that 
-        there exists some $w\in C^1(Q)$ for which:
+        there exists some $w\in C^1(Q)$ for which
         
         \begin{equation}
             (q,p) = \left(\frac{\partial}{\partial t}w(t,x),D_x w(t,x)\right),
@@ -1116,7 +1120,7 @@ define two new key concepts that incorporate the possible value that the increme
         We denote it with $D^+W(t,x)$.
 
         \item The set of \textit{subdifferentials} of $W$ at $(t,x)$ as the collection of all $(q,p)\in\R\times\R^n$ such that 
-        there exists some $w\in C^1(Q)$ for which:
+        there exists some $w\in C^1(Q)$ for which
         
         \begin{equation}
             (q,p) = \left(\frac{\partial}{\partial t}w(t,x),D_x w(t,x)\right),
@@ -1151,13 +1155,33 @@ and similarly for a supersolution.
     
     \begin{equation}
         V(t,x)=\begin{cases}
-            1-t & \abs{x}\leq t \\
+            1-\abs{x} & \abs{x}\leq t \\
             1-t& \abs{x}\geq t.
         \end{cases}
         \tag{\ref{Non diff V-V}}
     \end{equation}
 
-    Let us compute $D^+V(t,x)$ and $D^-V(t,x)$. \dots
+    Let us compute $D^+V(t,x)$ and $D^-V(t,x)$. If $(t,x)$ are not of the form $t=\abs{x}$ the value function is differentiable and the superdifferential and subdifferential coincide with the derivative. Let $a\in[0,1]$ let us compute $D^+V(a,a)$, we compute all the gradients the function can take, the superdifferential will be their convex. When \( x > 0 \) at \( t = x \), \( V(t, x) = 1 - t \). The partial derivatives when approaching from different sides are:
+    \[
+    \frac{\partial V}{\partial t} = -1 \quad \text{(approaching from the \( t < |x| \) side)}.
+    \]
+    \[
+    \frac{\partial V}{\partial x} = -1 \quad \text{(approaching from the \( t > |x| \) side)}.
+    \]
+    
+    When \( x < 0 \), at \( t = -x \), \( V(t, x) = 1 - t \). The partial derivatives when approaching from different sides are:
+    \[
+    \frac{\partial V}{\partial t} = -1 \quad \text{(approaching from the \( t < |x| \) side)}.
+    \]
+    \[
+    \frac{\partial V}{\partial x} = 1 \quad \text{(approaching from the \( t > |x| \) side)}.
+    \]
+    
+    The superdifferential is given by the convex combination of these gradients:
+    \[
+    D^+ V(t, x) = \left\{ \lambda(-1, 0) + (1 - \lambda)\left(0, -\frac{x}{|x|}\right) : \lambda \in [0, 1] \right\}.
+    \]
+      
 \end{example}
 
 The notion of superdifferential will take the place of the derivative in Pontryagin's result. We recall the definition of the adjoint variable for a state variable $x$ defined by the flow $f$, a control $u$, 
@@ -1209,7 +1233,8 @@ We can now state Pontryagin's maximum principle in this broader context.
         for $s\in[t,t_1)$, then the thesis holds by definition. We prove \ref{4-3-InProof:Pontryagin-der_t} by direct computation 
 
         \begin{align*}
-            \frac{\partial}{\partial x_i}J(s,x^{\ast}(s);u^{\ast}) & = \sum_{j=1}^n\left\{\int_s^{t_1} L_{x_j}(r,x^{\ast}(r),u^{\ast}(r))frac{\partial}{\partial x_j}x_i(r,x^{\ast}(r))\,dr + \psi_{x_j}(x^{\ast}(t_1))\frac{\partial}{\partial x_i}x_j(t_1,x^{\ast}(t_1))\right\},
+            \frac{\partial}{\partial x_i}J(s,x^{\ast}(s);u^{\ast}) & = \sum_{j=1}^n\Bigg\{\int_s^{t_1} L_{x_j}(r,x^{\ast}(r),u^{\ast}(r))\frac{\partial}{\partial x_j}x_i(r,x^{\ast}(r))\,dr \\
+            & \quad + \psi_{x_j}(x^{\ast}(t_1))\frac{\partial}{\partial x_i}x_j(t_1,x^{\ast}(t_1))\Bigg\},
         \end{align*}
 
         but we have
@@ -1239,7 +1264,8 @@ We can now state Pontryagin's maximum principle in this broader context.
 
         \begin{align*}
             \frac{\partial}{\partial r}J(r,x^{\ast}(r);u^{\ast}) & = -L(r,x^{\ast}(r), u^{\ast}(r)) \\
-            & + \sum_{j=1}^n\left\{\int_r^{t_1}\frac{\partial}{\partial x_j}L(s,x^{\ast}(s),u^{\ast}(s))z_j(s;r,x^{\ast}(r))\,ds + \frac{\partial}{\partial x_j}\psi(t_1,x^{\ast}(t_1))z_j(t_1;r,x^{\ast}(r))\right\},
+            & \quad + \sum_{j=1}^n\Bigg\{\int_r^{t_1}\frac{\partial}{\partial x_j}L(s,x^{\ast}(s),u^{\ast}(s))z_j(s;r,x^{\ast}(r))\,ds \\
+            & \quad + \frac{\partial}{\partial x_j}\psi(t_1,x^{\ast}(t_1))z_j(t_1;r,x^{\ast}(r))\Bigg\},
         \end{align*}
 
         but 
@@ -1251,15 +1277,14 @@ We can now state Pontryagin's maximum principle in this broader context.
         then
 
         \begin{align*}
-            -f(r,x^{\ast}(r),u^{\ast}(r))\cdot p(r) & = z(r)\cdot p(r) = z(t_1)\cdot p(t_1) - \int_r^{t_1} \frac{d}{ds}[z(s)\cdot p(s)]\,ds \\
-            & = \sum_{j=1}^n\left\{\frac{\partial}{\partial x_j}\psi(t_1,x^{\ast}(t_1))z_j(t_1) + \int_r^{t_1} \frac{\partial}{\partial x_j}L(s,x^{\ast}(s),u^{\ast}(s))z_j(s)\,ds\right\},
+            -f(r,x^{\ast}(r),u^{\ast}(r))\cdot p(r) & = z(r)\cdot p(r)\\
+            & = z(t_1)\cdot p(t_1) - \int_r^{t_1} \frac{d}{ds}[z(s)\cdot p(s)]\,ds \\
+            & = \sum_{j=1}^n\Bigg\{\frac{\partial}{\partial x_j}\psi(t_1,x^{\ast}(t_1))z_j(t_1) \\
+            & \quad + \int_r^{t_1} \frac{\partial}{\partial x_j}L(s,x^{\ast}(s),u^{\ast}(s))z_j(s)\,ds\Bigg\},
         \end{align*}
 
         which implies that
 
         \[\frac{\partial}{\partial r}J(r,x^{\ast}(r);u^{\ast}) = - L(r,x^{\ast}(r),u^{\ast}(r)) - f(r,x^{\ast}(r),u^{\ast}(r))\cdot p(r).\]
-
-
-
     \end{proof}
 \end{theorem}

@@ -566,11 +566,11 @@ INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsl12.tfm
+INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./Dynamic programming principle.tex
 INPUT ./Dynamic programming principle.tex
 INPUT Dynamic programming principle.tex
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsl12.tfm
-INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm

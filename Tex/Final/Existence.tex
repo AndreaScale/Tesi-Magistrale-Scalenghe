@@ -37,7 +37,7 @@ argument proves the optimal control existence.
 
         \[V(t,x)\leq J(t,x;u^{\ast}) \leq \liminf_{n\to+\infty} J(t,x;u_n) = V(t,x).\]
 
-        We need to prove the convergence of $x_n$ and $u_n$. {\color{red}{} Because $U$ is compact and \textit{convex} then $L^{\infty}([t,t_1];U)$ is 
+        We need to prove the convergence of $x_n$ and $u_n$. {Because $U$ is compact and \textit{convex} then $L^{\infty}([t,t_1];U)$ is 
         weakly sequentially compact}. For what concerns $x_n$ we use Ascoli-Arzela's theorem to show that is admits a uniformly convergent subsequence. Being 
         uniformly limitated comes from:
 
@@ -96,4 +96,12 @@ the same procedure as before: we take a minimizing sequence, show its (weak) con
 and its corresponding state evolution (uniform) convergence, then we show 
 optimality, slightly modifying the proof because of convergence issues.
 
-{\color{red}{} Mayer}
+We could consider more general $f(\cdot,\cdot,\cdot)$ and still get existence, indeed as \cite[Cannarsa] prove the key conditions on $f$ is for the
+
+\[f(t,x,U)=\left\{f(t,x,v):\, v\in U\right\}\]
+
+to be convex. Indeed, the Following holds true.
+
+\begin{theorem}
+    Let $U$ compact and $f$ Lipschitz with respect to the state variable and such that $f(t,x,U)$ is convex for all $(t,x)$, then there exists an optimal control for all $(t,x)$.
+\end{theorem}

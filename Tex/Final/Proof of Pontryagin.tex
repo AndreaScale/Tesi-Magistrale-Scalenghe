@@ -69,9 +69,13 @@ the following lemma.
                 & = y^s\epsilon + o(\epsilon)
             \end{align*}
 
-            \color{red}{If $s>r$ then: FARE}
+            If $s>r$ then $x(\cdot)$ and $x_{\epsilon}(\cdot)$ solve the same ODE with initial condition at $s$ given by\footnote{via first order approximation.}
 
+            \[x_{\epsilon}(s) = x(s) + \epsilon (f(x(s),a) - f(x(s),u(s))) + o(\epsilon),\]
 
+            thus, it can be shown\footnote{Evans} that this necessarily implies
+
+            \[x_{\epsilon}(s) = x(s) + \epsilon y(s) + o(\epsilon).\]
         \end{itemize}
     \end{proof}
 \end{lemma}
@@ -192,5 +196,7 @@ Then, by defining $\overline{f}, \overline{g}, \overline{x},\overline{x}(s)$ as
     \end{bmatrix},\,\overline{g}(\overline{x}(t_1)) = g(x(t_1)) + x^{n+1}(t_1),
 \end{equation*}
 
-the problem has no running cost: We can apply the theorem and, noticing that 
+the problem has no running cost, thus we can apply the theorem and, noticing that 
 $p^{n+1}\equiv1$, we get the thesis.
+
+\clearpage
